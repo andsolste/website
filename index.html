@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andreas Steffensen</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #cbd5e1;
+        }
+
+        nav {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #2563eb;
+            padding: 0.75rem 1.2rem;
+            border-radius: 10px;
+            transition: background-color 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #1d4ed8;
+        }
+
+        main {
+            flex: 1;
+            padding: 3rem 2rem;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 16px;
+            width: 300px;
+            border: 1px solid #334155;
+        }
+
+        .card h2 {
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: white;
+            background-color: #2563eb;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        footer {
+            border-top: 1px solid #334155;
+            padding: 1rem 2rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Andreas Steffensen</h1>
+    <p>Digital Infrastruktur og Cybersikkerhet • NTNU</p>
+
+    <nav>
+        <a href="about.html">Om meg</a>
+        <a href="projects/index.html">Prosjekter</a>
+    </nav>
+</header>
+
+<main>
+    <div class="card-container">
+
+        <div class="card">
+            <h2>Om meg</h2>
+            <p>
+                Kort informasjon om erfaring, interesser og utdanning.
+            </p>
+            <a href="about.html">Gå til side</a>
+        </div>
+
+        <div class="card">
+            <h2>Prosjekter</h2>
+            <p>
+                Samling av fagprosjekter, labber og tekniske writeups.
+            </p>
+            <a href="projects/index.html">Se prosjekter</a>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    © 2026 Andreas Steffensen
+</footer>
+
+</body>
+</html>
