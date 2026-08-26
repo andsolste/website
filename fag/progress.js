@@ -1,8 +1,9 @@
 (() => {
-    const course = document.body.dataset.course;
+    const context = document.querySelector("[data-course]");
+    const course = context?.dataset.course;
     if (!course) return;
 
-    const moduleCount = Number(document.body.dataset.moduleCount || 0);
+    const moduleCount = Number(context.dataset.moduleCount || 0);
     const storageKey = "fag-progress:" + course;
 
     function getProgress() {
@@ -41,7 +42,7 @@
 
     const toggle = document.querySelector("[data-complete-toggle]");
     if (toggle) {
-        const module = document.body.dataset.module;
+        const module = context.dataset.module;
         const progress = getProgress();
         toggle.checked = Boolean(progress[module]);
         toggle.addEventListener("change", () => {
