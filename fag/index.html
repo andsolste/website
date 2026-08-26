@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fag | Andreas Steffensen</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+        header, main, footer { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem; }
+        header { border-bottom: 1px solid #334155; }
+        h1 { margin: 0 0 .5rem; }
+        p { color: #cbd5e1; line-height: 1.6; }
+        a {
+            color: #fff;
+            background: #2563eb;
+            padding: .65rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        a:hover { background: #1d4ed8; }
+        .intro { margin: 2rem 0; }
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+        .subject {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 1.5rem;
+        }
+        .subject h2 { margin-top: 0; font-size: 1.25rem; }
+        .subject p { min-height: 4.5rem; }
+        .hint {
+            margin-top: 2rem;
+            padding: 1rem 1.25rem;
+            border-left: 4px solid #60a5fa;
+            background: #172554;
+            border-radius: 6px;
+        }
+        footer { color: #94a3b8; border-top: 1px solid #334155; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html">← Til forsiden</a>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Fag</h1>
+            <p>Her kan du samle notater, pensum, øvingsoppgaver og nyttige lenker for hvert fag.</p>
+        </section>
+
+        <section class="subjects" aria-label="Fagoversikt">
+            <article class="subject">
+                <h2>Nytt fag</h2>
+                <p>Bruk mal-siden som utgangspunkt når du vil legge til et nytt fag.</p>
+                <a href="mal.html">Åpne mal</a>
+            </article>
+        </section>
+
+        <aside class="hint">
+            <strong>Slik legger du til et fag:</strong>
+            Kopier <code>fag/mal.html</code>, gi kopien et beskrivende navn (for eksempel <code>tdt4100.html</code>), og legg deretter inn en lenke til siden her.
+        </aside>
+    </main>
+
+    <footer>© 2026 Andreas Steffensen</footer>
+</body>
+</html>
