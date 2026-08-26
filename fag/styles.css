@@ -1,299 +1,528 @@
-:root {
-    color-scheme: dark;
-    --bg: #0f172a;
-    --surface: #1e293b;
-    --surface-dark: #172554;
-    --border: #334155;
-    --text: #f8fafc;
-    --muted: #cbd5e1;
-    --subtle: #94a3b8;
-    --blue: #2563eb;
-    --blue-dark: #1d4ed8;
-    --blue-light: #93c5fd;
+/*
+ * Fag- og modulkomponenter.
+ * Grunnstil, fargevariabler, sidebar og sideoppsett kommer fra ../assets/site.css.
+ */
+
+/* Felles introduksjon og metadata */
+.course-code,
+.module-number {
+    margin: 0 0 .5rem;
+    color: var(--blue-light);
+    font-size: .82rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
 }
 
-* { box-sizing: border-box; }
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+.page-intro .course-code {
+    margin-bottom: .65rem;
 }
 
-header, main, footer {
-    width: min(1100px, 100%);
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
+.page-intro .course-code + h1 {
+    font-size: clamp(2.25rem, 5vw, 3.45rem);
 }
 
-header { border-bottom: 1px solid var(--border); }
-footer { margin-top: 3rem; color: var(--subtle); border-top: 1px solid var(--border); }
-
-h1 { margin: 0 0 .4rem; font-size: clamp(2rem, 5vw, 2.5rem); }
-h2 { margin: 0; font-size: 1.45rem; }
-h3 { margin-top: 0; color: var(--blue-light); }
-p, li, td { color: var(--muted); line-height: 1.6; }
-
-.back-link, .button-link {
-    display: inline-block;
-    padding: .7rem 1rem;
-    border-radius: 8px;
-    background: var(--blue);
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.back-link:hover, .button-link:hover { background: var(--blue-dark); }
-.back-link:focus-visible, .button-link:focus-visible, summary:focus-visible, input:focus-visible {
-    outline: 3px solid var(--blue-light);
-    outline-offset: 3px;
-}
-
-.page-intro { margin: 2rem 0; }
-.page-intro p { max-width: 720px; }
-
-.course-grid, .module-grid {
+/* Fagoversikt */
+.course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 1rem;
-}
-
-.course-card, .module-card, .content-card, details {
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: var(--surface);
-    padding: 1.5rem;
 }
 
 .course-card {
     display: flex;
-    min-height: 220px;
+    min-width: 0;
+    min-height: 230px;
+    padding: 1.75rem;
+    grid-column: span 6;
     flex-direction: column;
     align-items: flex-start;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    transition: border-color .15s ease, background-color .15s ease;
 }
 
-.course-code {
-    margin: 0 0 .5rem;
-    color: var(--blue-light);
-    font-weight: bold;
+.course-card:nth-child(4n + 2),
+.course-card:nth-child(4n + 3) {
+    background: var(--surface-subtle);
 }
 
-.course-card h2, .module-card h3 { margin-bottom: .75rem; }
-.course-card .button-link { margin-top: auto; }
+.course-card:hover {
+    border-color: var(--purple);
+}
 
-.module-section { margin-top: 2rem; }
-.module-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.module-card { position: relative; }
-.module-card.is-complete { border-color: #60a5fa; }
-.module-number { margin: 0 0 .3rem; color: var(--blue-light); font-weight: bold; }
-.module-status { min-height: 1.6rem; margin: 1rem 0 .5rem; font-size: .95rem; }
+.course-card h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+.course-card > p:not(.course-code) {
+    max-width: 50ch;
+    margin: .8rem 0 1.5rem;
+}
+
+.course-card .button-link {
+    margin-top: auto;
+}
+
+/* Enkle fag-sider som ennå ikke har moduler */
+.content-card {
+    max-width: 760px;
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.content-card > :first-child {
+    margin-top: 0;
+}
+
+.content-card > :last-child {
+    margin-bottom: 0;
+}
+
+/* Progresjon */
+.overview-progress {
+    max-width: 780px;
+    margin: -1rem 0 3rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 12px;
+    background: var(--surface-subtle);
+}
+
+.overview-progress p {
+    margin: 0 0 .75rem;
+}
+
+.overview-progress strong {
+    color: var(--text-primary);
+}
 
 .progress-track {
     width: 100%;
-    height: .65rem;
+    height: .5rem;
     overflow: hidden;
     border-radius: 999px;
-    background: #334155;
+    background: var(--border);
 }
 
 .progress-bar {
     width: 0;
     height: 100%;
     border-radius: inherit;
-    background: #60a5fa;
+    background: var(--purple);
     transition: width .2s ease;
 }
 
-.module-card .button-link { margin-top: 1.25rem; }
-
-.overview-progress {
-    margin: 1.5rem 0 2rem;
-    padding: 1rem 1.25rem;
-    border-left: 4px solid #60a5fa;
-    border-radius: 6px;
-    background: var(--surface-dark);
-}
-
-.overview-progress p { margin: 0 0 .6rem; }
-
-.completion-control {
-    display: flex;
-    gap: .65rem;
-    align-items: center;
-    width: fit-content;
-    margin: 1.25rem 0;
-    padding: .85rem 1rem;
-    border-radius: 8px;
-    background: var(--surface-dark);
-    color: var(--text);
-    cursor: pointer;
-}
-
-.completion-control input { width: 1.1rem; height: 1.1rem; accent-color: var(--blue); }
-
-.module-navigation {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-}
-
-.module-navigation .button-link:last-child { margin-left: auto; }
-
-.study-intro { margin: 1.25rem 0 0; }
-.key-idea {
-    margin: 1.25rem 0;
-    padding: 1rem 1.25rem;
-    border-left: 4px solid #60a5fa;
-    border-radius: 6px;
-    background: var(--surface-dark);
-}
-
-.study-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.study-card {
-    padding: 1rem 1.25rem;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--bg);
-}
-
-.study-card p, .study-card li, details p, details li { color: var(--muted); }
-details { margin-top: .75rem; background: var(--bg); }
-summary { cursor: pointer; color: var(--text); font-weight: bold; }
-details[open] summary { margin-bottom: 1rem; }
-
-code {
-    color: #bfdbfe;
-    font-family: Consolas, "Courier New", monospace;
-}
-
-pre {
-    overflow-x: auto;
-    margin: 1rem 0 0;
-    padding: 1rem;
-    border-radius: 8px;
-    background: #020617;
-    color: #dbeafe;
-    line-height: 1.5;
-}
-
-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-th, td { padding: .75rem; text-align: left; border-bottom: 1px solid var(--border); }
-th { color: var(--blue-light); }
-.question-list { columns: 2; gap: 2rem; padding-left: 1.25rem; }
-
-@media (max-width: 600px) {
-    header, main, footer { padding-right: 1rem; padding-left: 1rem; }
-    .course-grid, .module-grid { grid-template-columns: 1fr; }
-    .module-navigation { flex-wrap: wrap; }
-    .module-navigation .button-link:last-child { margin-left: 0; }
-    .question-list { columns: 1; }
-    th, td { min-width: 120px; }
-    table { display: block; overflow-x: auto; }
-}
-
-.module-page { padding-bottom: 0; }
-
-.module-header {
-    margin: 2rem 0 0;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.module-header .module-number {
-    margin-bottom: .5rem;
-    color: var(--blue-light);
-    font-weight: bold;
-}
-
-.module-description {
-    max-width: 720px;
-    margin: .75rem 0 0;
-    color: var(--muted);
-}
-
+/* Moduloversikt på fagets index-side */
 .module-section {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border);
 }
 
 .module-section > h2 {
-    margin-bottom: 1rem;
-    font-size: 1.35rem;
+    margin: 0 0 1.25rem;
+    font-size: 1.45rem;
+}
+
+.module-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: .75rem;
+}
+
+.module-card {
+    display: grid;
+    min-width: 0;
+    padding: 1.35rem 1.5rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "number action"
+        "title action"
+        "status action"
+        "progress action";
+    align-items: center;
+    column-gap: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    transition: border-color .15s ease, background-color .15s ease;
+}
+
+.module-card:hover {
+    border-color: var(--purple);
+}
+
+.module-card.is-complete {
+    border-color: var(--purple-light);
+    background: var(--purple-subtle);
+}
+
+.module-card .module-number {
+    grid-area: number;
+}
+
+.module-card h3 {
+    margin: 0;
+    grid-area: title;
+    font-size: 1.15rem;
+}
+
+.module-status {
+    min-height: 1.5rem;
+    margin: .65rem 0 .55rem;
+    grid-area: status;
+    color: var(--text-muted);
+    font-size: .92rem;
+}
+
+.module-card .progress-track {
+    max-width: 520px;
+    grid-area: progress;
+}
+
+.module-card .button-link {
+    margin: 0;
+    grid-area: action;
+    white-space: nowrap;
+}
+
+/* Modulside */
+.module-page {
+    max-width: 980px;
+    padding-bottom: 0;
+}
+
+.module-header {
+    max-width: 820px;
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+.module-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.45rem);
+}
+
+.module-description,
+.study-intro {
+    max-width: 720px;
+    margin: 1rem 0 0;
+    color: var(--text-secondary);
+    font-size: 1.03rem;
+    line-height: 1.7;
 }
 
 .module-panel {
-    padding: 1.25rem;
+    padding: 1.35rem;
     border: 1px solid var(--border);
     border-radius: 12px;
     background: var(--surface);
 }
 
+.module-panel > :first-child,
+.lecture-content > :first-child {
+    margin-top: 0;
+}
+
+.module-panel > :last-child,
+.lecture-content > :last-child {
+    margin-bottom: 0;
+}
+
+/* Sjekklister og fullføringskontroll */
 .checklist {
     display: grid;
-    gap: .8rem;
     margin: 0;
     padding: 0;
+    gap: .85rem;
     list-style: none;
 }
 
 .checklist label {
     display: flex;
-    gap: .75rem;
     align-items: flex-start;
-    color: var(--text);
-    line-height: 1.5;
+    gap: .75rem;
+    color: var(--text-primary);
+    line-height: 1.55;
     cursor: pointer;
 }
 
-.checklist input {
+.checklist input,
+.completion-control input {
     width: 1.1rem;
     height: 1.1rem;
     flex: 0 0 auto;
-    margin-top: .18rem;
-    accent-color: var(--blue);
+    accent-color: var(--purple);
 }
 
+.checklist input {
+    margin-top: .2rem;
+}
+
+.completion-control {
+    display: flex;
+    width: fit-content;
+    margin: 2rem 0 0;
+    padding: .8rem 1rem;
+    align-items: center;
+    gap: .7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-subtle);
+    color: var(--text-primary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color .15s ease, background-color .15s ease;
+}
+
+.completion-control:hover {
+    border-color: var(--purple);
+    background: var(--purple-subtle);
+}
+
+.checklist input:focus-visible,
+.completion-control input:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--purple-light);
+    outline-offset: 3px;
+}
+
+/* Begreper og faginnhold */
 .concept-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: .75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin: 0;
     padding: 0;
+    gap: .75rem;
     list-style: none;
 }
 
 .concept-list li {
-    padding: .85rem 1rem;
+    min-width: 0;
+    padding: .9rem 1rem;
     border: 1px solid var(--border);
     border-radius: 8px;
-    background: var(--bg);
-    color: var(--muted);
+    background: var(--surface-subtle);
 }
 
 .concept-list strong {
     display: block;
-    margin-bottom: .2rem;
-    color: var(--text);
+    margin-bottom: .25rem;
+    color: var(--text-primary);
 }
 
-.lecture-content > :first-child { margin-top: 0; }
-.lecture-content .key-idea { margin-top: 0; }
-.lecture-content details { background: var(--bg); }
+.lecture-content {
+    min-width: 0;
+}
 
-@media (max-width: 600px) {
-    .module-header { margin-top: 1.5rem; }
-    .module-section { margin-top: 1.5rem; }
+.key-idea {
+    margin: 1.25rem 0;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 8px;
+    background: var(--amber-subtle);
+    color: var(--text-secondary);
+}
+
+.key-idea strong {
+    color: var(--amber-light);
+}
+
+.study-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1.5rem 0;
+    gap: 1rem;
+}
+
+.study-card {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+.study-card h3 {
+    margin: 0 0 .75rem;
+    font-size: 1.05rem;
+}
+
+.study-card ul,
+.study-card ol {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+details {
+    margin-top: .75rem;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+details[open] {
+    background: var(--surface-subtle);
+}
+
+summary {
+    color: var(--text-primary);
+    font-weight: 750;
+    line-height: 1.45;
+    cursor: pointer;
+}
+
+details[open] summary {
+    margin-bottom: 1rem;
+}
+
+details > :last-child {
+    margin-bottom: 0;
+}
+
+code {
+    color: var(--blue-light);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0 0;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--background);
+    color: var(--text-secondary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: .9rem;
+    line-height: 1.55;
+    tab-size: 4;
+}
+
+table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    min-width: 140px;
+    padding: .75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+th {
+    color: var(--blue-light);
+    font-size: .9rem;
+}
+
+.question-list {
+    columns: 2;
+    column-gap: 2.5rem;
+    padding-left: 1.25rem;
+}
+
+.question-list li {
+    break-inside: avoid;
+    margin-bottom: .4rem;
+}
+
+/* Forrige/neste modul */
+.module-navigation {
+    display: flex;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.module-navigation .button-link:last-child {
+    margin-left: auto;
+}
+
+/* Eldre mal-side bruker fortsatt .back. */
+.back {
+    color: var(--blue-light);
+    font-weight: 700;
+    text-decoration: none;
+    text-underline-offset: .22em;
+}
+
+.back:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+    .course-card {
+        grid-column: 1 / -1;
+        min-height: 0;
+    }
+
+    .module-card {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "number"
+            "title"
+            "status"
+            "progress"
+            "action";
+        gap: 0;
+    }
+
+    .module-card .button-link {
+        margin-top: 1.1rem;
+    }
+
+    .concept-list,
+    .study-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .question-list {
+        columns: 1;
+    }
+}
+
+@media (max-width: 520px) {
+    .course-card,
+    .content-card,
+    .module-card,
+    .module-panel,
+    .study-card,
+    details {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .overview-progress {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .module-navigation {
+        flex-direction: column;
+    }
+
+    .module-navigation .button-link,
+    .module-navigation .button-link:last-child {
+        width: 100%;
+        margin-left: 0;
+    }
 }
