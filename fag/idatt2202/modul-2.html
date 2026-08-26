@@ -10,17 +10,41 @@
     <header>
         <a class="back-link" href="index.html">← Til IDATT2202</a>
     </header>
-    <main data-course="idatt2202" data-module="2" data-module-count="8">
+    <main class="module-page" data-course="idatt2202" data-module="2" data-module-count="8">
         <section class="module-header">
             <p class="module-number">Modul 2</p>
             <h1>The kernel abstraction – part 1</h1>
+            <p class="module-description">Process isolation, dual-mode operation, virtual memory og kontrollerte overganger mellom user mode og kernel mode.</p>
         </section>
-        <label class="completion-control">
-            <input type="checkbox" data-complete-toggle>
-            Marker modul som fullført
-        </label>
 
-            <p class="study-intro">Studieguide for prosesser, beskyttelse, virtuelt minne og overganger mellom user mode og kernel mode.</p>
+        <section class="module-section">
+            <h2>Før forelesningen</h2>
+            <div class="module-panel">
+<ul class="checklist">
+                    <li><label><input type="checkbox" data-check-id="before-1"> Les slides 1–22</label></li>
+                    <li><label><input type="checkbox" data-check-id="before-2"> Se modulvideoen</label></li>
+                    <li><label><input type="checkbox" data-check-id="before-3"> Forstå process-begrepet</label></li>
+                    <li><label><input type="checkbox" data-check-id="before-4"> Forstå dual-mode operation</label></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="module-section">
+            <h2>Viktig å kunne</h2>
+            <div class="module-panel">
+<ul class="concept-list">
+                    <li><strong>Process</strong>Et program som kjører med begrensede rettigheter</li>
+                    <li><strong>User mode</strong>Begrensede privilegier</li>
+                    <li><strong>Kernel mode</strong>Full tilgang til systemressurser</li>
+                    <li><strong>Mode transfer</strong>Kontrollert overgang mellom user og kernel</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="module-section">
+            <h2>Under forelesningen</h2>
+            <div class="lecture-content">
+<p class="study-intro">Studieguide for prosesser, beskyttelse, virtuelt minne og overganger mellom user mode og kernel mode.</p>
 
             <div class="key-idea">
                 <strong>Den røde tråden:</strong> Process isolation oppnås gjennom <em>privileged instructions + memory protection + hardware timer + sikker mode transfer</em>.
@@ -162,7 +186,25 @@ int main() {
                     <li>Hvorfor trenger kernel en egen stack?</li>
                 </ol>
             </details>
-        
+            </div>
+        </section>
+
+        <section class="module-section">
+            <h2>Etter forelesningen</h2>
+            <div class="module-panel">
+<ul class="checklist">
+                    <li><label><input type="checkbox" data-check-id="after-1"> Oppsummer modulen</label></li>
+                    <li><label><input type="checkbox" data-check-id="after-2"> Gjør C-eksempelet</label></li>
+                    <li><label><input type="checkbox" data-check-id="after-3"> Test deg selv med spørsmålene</label></li>
+                </ul>
+            </div>
+        </section>
+
+        <label class="completion-control">
+            <input type="checkbox" data-complete-toggle>
+            Marker modul som fullført
+        </label>
+
         <nav class="module-navigation" aria-label="Modulnavigasjon">
             <a class="button-link" href="modul-1.html">← Forrige modul</a>
             <a class="button-link" href="modul-3.html">Neste modul →</a>

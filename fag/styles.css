@@ -206,3 +206,98 @@ th { color: var(--blue-light); }
     th, td { min-width: 120px; }
     table { display: block; overflow-x: auto; }
 }
+
+.module-page { padding-bottom: 0; }
+
+.module-header {
+    margin: 2rem 0 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.module-header .module-number {
+    margin-bottom: .5rem;
+    color: var(--blue-light);
+    font-weight: bold;
+}
+
+.module-description {
+    max-width: 720px;
+    margin: .75rem 0 0;
+    color: var(--muted);
+}
+
+.module-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.module-section > h2 {
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+}
+
+.module-panel {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.checklist {
+    display: grid;
+    gap: .8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.checklist label {
+    display: flex;
+    gap: .75rem;
+    align-items: flex-start;
+    color: var(--text);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.checklist input {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex: 0 0 auto;
+    margin-top: .18rem;
+    accent-color: var(--blue);
+}
+
+.concept-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: .75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.concept-list li {
+    padding: .85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--muted);
+}
+
+.concept-list strong {
+    display: block;
+    margin-bottom: .2rem;
+    color: var(--text);
+}
+
+.lecture-content > :first-child { margin-top: 0; }
+.lecture-content .key-idea { margin-top: 0; }
+.lecture-content details { background: var(--bg); }
+
+@media (max-width: 600px) {
+    .module-header { margin-top: 1.5rem; }
+    .module-section { margin-top: 1.5rem; }
+}
