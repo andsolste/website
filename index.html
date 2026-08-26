@@ -6,79 +6,291 @@
     <title>Andreas Steffensen</title>
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --background: #0F172A;
+            --surface: #1E293B;
+            --surface-subtle: #172033;
+            --border: #334155;
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #94A3B8;
+            --purple: #8B5CF6;
+            --purple-hover: #7C3AED;
+            --purple-light: #A78BFA;
+            --purple-subtle: #2E1B4E;
+            --amber: #F59E0B;
+            --amber-light: #FBBF24;
+            --amber-subtle: #451A03;
+            --blue: #60A5FA;
+            --blue-light: #93C5FD;
+            --blue-subtle: #172554;
+        }
+
+        * { box-sizing: border-box; }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
             min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
             display: flex;
             flex-direction: column;
         }
 
-        header { padding: 2rem; border-bottom: 1px solid #334155; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        p { color: #cbd5e1; }
+        .site-header,
+        main,
+        footer {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
 
-        nav { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-        nav a, .card a {
+        .site-header {
+            padding-top: 1.25rem;
+            padding-bottom: 4.5rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: .45rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            padding: .65rem .85rem;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            color: var(--text-secondary);
             text-decoration: none;
-            color: white;
-            background-color: #2563eb;
-            padding: 0.75rem 1.2rem;
-            border-radius: 10px;
-            transition: background-color 0.2s ease;
+            transition: color .2s ease, background-color .2s ease, border-color .2s ease;
         }
-        nav a:hover, .card a:hover { background-color: #1d4ed8; }
 
-        main { flex: 1; padding: 3rem 2rem; }
-        .card-container { display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a:hover,
+        nav a:focus-visible {
+            border-color: var(--border);
+            background: var(--surface-subtle);
+            color: var(--text-primary);
+        }
+
+        nav a:last-child {
+            border-color: var(--purple);
+            background: var(--purple);
+            color: var(--text-primary);
+        }
+
+        nav a:last-child:hover,
+        nav a:last-child:focus-visible {
+            border-color: var(--purple-hover);
+            background: var(--purple-hover);
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--purple-light);
+            outline-offset: 3px;
+        }
+
+        .hero {
+            position: relative;
+            max-width: 780px;
+            margin-top: 5rem;
+            padding-left: 1.25rem;
+        }
+
+        .hero::before {
+            position: absolute;
+            top: .35rem;
+            bottom: .35rem;
+            left: 0;
+            width: 3px;
+            border-radius: 99px;
+            background: var(--amber);
+            content: "";
+        }
+
+        h1 {
+            max-width: 680px;
+            margin: 0;
+            color: var(--text-primary);
+            font-size: clamp(2.75rem, 7vw, 5.25rem);
+            line-height: .98;
+            letter-spacing: -.055em;
+        }
+
+        .hero p {
+            max-width: 620px;
+            margin: 1.35rem 0 0;
+            color: var(--blue-light);
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            line-height: 1.6;
+        }
+
+        main {
+            flex: 1;
+            padding-top: 0;
+            padding-bottom: 4.5rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
         .card {
-            background-color: #1e293b;
-            padding: 2rem;
+            display: flex;
+            min-height: 260px;
+            padding: 1.6rem;
+            flex-direction: column;
+            border: 1px solid var(--border);
             border-radius: 16px;
-            width: 300px;
-            border: 1px solid #334155;
+            background: var(--surface);
+            box-shadow: 0 16px 36px rgb(2 6 23 / 18%);
+            transition: transform .2s ease, border-color .2s ease, background-color .2s ease;
         }
-        .card h2 { margin-bottom: 1rem; }
-        .card p { margin-bottom: 1.5rem; }
-        .card a { display: inline-block; padding: 0.6rem 1rem; border-radius: 8px; }
 
-        footer { border-top: 1px solid #334155; padding: 1rem 2rem; color: #94a3b8; }
+        .card:hover {
+            border-color: var(--purple-light);
+            background: var(--surface-subtle);
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 1.35rem;
+        }
+
+        .card p {
+            margin: .9rem 0 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .card a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin-top: auto;
+            padding: .72rem 1rem;
+            border: 1px solid var(--purple);
+            border-radius: 8px;
+            background: var(--purple);
+            color: var(--text-primary);
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+
+        .card a:hover,
+        .card a:focus-visible {
+            border-color: var(--purple-hover);
+            background: var(--purple-hover);
+            transform: translateY(-1px);
+        }
+
+        .card:last-child {
+            border-color: #5B3AA2;
+            background: linear-gradient(145deg, var(--surface) 0%, var(--purple-subtle) 100%);
+        }
+
+        .card:last-child::after {
+            display: block;
+            width: 2.3rem;
+            height: 2px;
+            margin-top: 1.25rem;
+            border-radius: 99px;
+            background: var(--amber-light);
+            content: "";
+            order: -1;
+        }
+
+        footer {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: .95rem;
+        }
+
+        @media (max-width: 760px) {
+            .site-header,
+            main,
+            footer {
+                padding-right: 1rem;
+                padding-left: 1rem;
+            }
+
+            .site-header { padding-bottom: 3rem; }
+
+            nav {
+                justify-content: flex-start;
+                gap: .35rem;
+            }
+
+            .hero {
+                margin-top: 3.75rem;
+                padding-left: 1rem;
+            }
+
+            .card-container { grid-template-columns: 1fr; }
+
+            .card { min-height: 210px; }
+        }
+
+        @media (max-width: 400px) {
+            nav a { padding: .6rem .7rem; }
+            h1 { font-size: 2.6rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
-<header>
-    <h1>Andreas Steffensen</h1>
-    <p>Digital Infrastruktur og Cybersikkerhet • NTNU</p>
-    <nav>
-        <a href="about.html">Om meg</a>
-        <a href="projects/index.html">Prosjekter</a>
-        <a href="fag/index.html">Fag</a>
-    </nav>
-</header>
+    <header class="site-header">
+        <nav>
+            <a href="about.html">Om meg</a>
+            <a href="projects/index.html">Prosjekter</a>
+            <a href="fag/index.html">Fag</a>
+        </nav>
 
-<main>
-    <div class="card-container">
-        <div class="card">
-            <h2>Om meg</h2>
-            <p>Kort informasjon om erfaring, interesser og utdanning.</p>
-            <a href="about.html">Gå til side</a>
+        <div class="hero">
+            <h1>Andreas Steffensen</h1>
+            <p>Digital Infrastruktur og Cybersikkerhet • NTNU</p>
         </div>
-        <div class="card">
-            <h2>Prosjekter</h2>
-            <p>Samling av fagprosjekter, labber og tekniske writeups.</p>
-            <a href="projects/index.html">Se prosjekter</a>
-        </div>
-        <div class="card">
-            <h2>Fag</h2>
-            <p>Notater, pensum og ressurser samlet for hvert fag.</p>
-            <a href="fag/index.html">Se fag</a>
-        </div>
-    </div>
-</main>
+    </header>
 
-<footer>© 2026 Andreas Steffensen</footer>
+    <main>
+        <div class="card-container">
+            <div class="card">
+                <h2>Om meg</h2>
+                <p>Kort informasjon om erfaring, interesser og utdanning.</p>
+                <a href="about.html">Gå til side</a>
+            </div>
+            <div class="card">
+                <h2>Prosjekter</h2>
+                <p>Samling av fagprosjekter, labber og tekniske writeups.</p>
+                <a href="projects/index.html">Se prosjekter</a>
+            </div>
+            <div class="card">
+                <h2>Fag</h2>
+                <p>Notater, pensum og ressurser samlet for hvert fag.</p>
+                <a href="fag/index.html">Se fag</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>© 2026 Andreas Steffensen</footer>
 </body>
 </html>
