@@ -119,10 +119,6 @@ p, li, td { color: var(--muted); line-height: 1.6; }
 
 .overview-progress p { margin: 0 0 .6rem; }
 
-.module-header { margin: 2rem 0 1.5rem; }
-.module-header .module-number { margin-bottom: .5rem; }
-.module-header h1 { margin-bottom: .5rem; }
-
 .completion-control {
     display: flex;
     gap: .65rem;
