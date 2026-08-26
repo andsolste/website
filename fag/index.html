@@ -6,47 +6,94 @@
     <title>Fag | Andreas Steffensen</title>
     <style>
         * { box-sizing: border-box; }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #0f172a;
             color: #f8fafc;
         }
-        header, main, footer { max-width: 1100px; margin: 0 auto; padding: 1.5rem 2rem; }
+
+        header, main, footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
         header { border-bottom: 1px solid #334155; }
         h1 { margin: 0 0 .5rem; }
+        h2 { margin-top: 0; }
         p { color: #cbd5e1; line-height: 1.6; }
-        a {
+
+        a, .tab {
             color: #fff;
             background: #2563eb;
             padding: .65rem 1rem;
             border-radius: 8px;
             text-decoration: none;
             display: inline-block;
+            font: inherit;
         }
-        a:hover { background: #1d4ed8; }
-        .intro { margin: 2rem 0; }
-        .subjects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
+
+        a:hover, .tab:hover { background: #1d4ed8; }
+        a:focus-visible, .tab:focus-visible {
+            outline: 3px solid #93c5fd;
+            outline-offset: 3px;
         }
-        .subject {
+
+        .intro { margin: 2rem 0 1.5rem; }
+
+        .tab-list {
+            display: flex;
+            gap: .75rem;
+            overflow-x: auto;
+            padding: .25rem 0 .75rem;
+            scrollbar-color: #475569 #0f172a;
+        }
+
+        .tab {
+            border: 1px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .tab[aria-selected="true"] {
+            background: #1e40af;
+            border-color: #93c5fd;
+        }
+
+        .tab-panel {
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 14px;
             padding: 1.5rem;
         }
-        .subject h2 { margin-top: 0; font-size: 1.25rem; }
-        .subject p { min-height: 4.5rem; }
-        .hint {
-            margin-top: 2rem;
+
+        .course-code {
+            color: #93c5fd;
+            font-weight: bold;
+            margin-bottom: .35rem;
+        }
+
+        .placeholder {
+            margin: 1.25rem 0 0;
             padding: 1rem 1.25rem;
             border-left: 4px solid #60a5fa;
             background: #172554;
             border-radius: 6px;
         }
-        footer { color: #94a3b8; border-top: 1px solid #334155; margin-top: 3rem; }
+
+        footer {
+            color: #94a3b8;
+            border-top: 1px solid #334155;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            header, main, footer { padding-left: 1rem; padding-right: 1rem; }
+            .tab-list { margin-right: -1rem; padding-right: 1rem; }
+            .tab-panel { padding: 1.25rem; }
+        }
     </style>
 </head>
 <body>
@@ -57,23 +104,77 @@
     <main>
         <section class="intro">
             <h1>Fag</h1>
-            <p>Her kan du samle notater, pensum, øvingsoppgaver og nyttige lenker for hvert fag.</p>
+            <p>Velg et fag for å finne notater, pensum, oppgaver og nyttige ressurser når innholdet er klart.</p>
         </section>
 
-        <section class="subjects" aria-label="Fagoversikt">
-            <article class="subject">
-                <h2>Nytt fag</h2>
-                <p>Bruk mal-siden som utgangspunkt når du vil legge til et nytt fag.</p>
-                <a href="mal.html">Åpne mal</a>
-            </article>
+        <div class="tab-list" role="tablist" aria-label="Velg fag">
+            <button class="tab" type="button" role="tab" id="tab-dcst1001" aria-selected="true" aria-controls="panel-dcst1001" tabindex="0">DCST1001</button>
+            <button class="tab" type="button" role="tab" id="tab-tdt4100" aria-selected="false" aria-controls="panel-tdt4100" tabindex="-1">TDT4100</button>
+            <button class="tab" type="button" role="tab" id="tab-dcst1005" aria-selected="false" aria-controls="panel-dcst1005" tabindex="-1">DCST1005</button>
+            <button class="tab" type="button" role="tab" id="tab-idatt2202" aria-selected="false" aria-controls="panel-idatt2202" tabindex="-1">IDATT2202</button>
+        </div>
+
+        <section class="tab-panel" role="tabpanel" id="panel-dcst1001" aria-labelledby="tab-dcst1001">
+            <p class="course-code">DCST1001</p>
+            <h2>Datakommunikasjon og nettverk</h2>
+            <p class="placeholder">Innhold for faget kommer her.</p>
         </section>
 
-        <aside class="hint">
-            <strong>Slik legger du til et fag:</strong>
-            Kopier <code>fag/mal.html</code>, gi kopien et beskrivende navn (for eksempel <code>tdt4100.html</code>), og legg deretter inn en lenke til siden her.
-        </aside>
+        <section class="tab-panel" role="tabpanel" id="panel-tdt4100" aria-labelledby="tab-tdt4100" hidden>
+            <p class="course-code">TDT4100</p>
+            <h2>Objektorientert programmering</h2>
+            <p class="placeholder">Innhold for faget kommer her.</p>
+        </section>
+
+        <section class="tab-panel" role="tabpanel" id="panel-dcst1005" aria-labelledby="tab-dcst1005" hidden>
+            <p class="course-code">DCST1005</p>
+            <h2>Databaser</h2>
+            <p class="placeholder">Innhold for faget kommer her.</p>
+        </section>
+
+        <section class="tab-panel" role="tabpanel" id="panel-idatt2202" aria-labelledby="tab-idatt2202" hidden>
+            <p class="course-code">IDATT2202</p>
+            <h2>Operativsystemer</h2>
+            <p class="placeholder">Innhold for faget kommer her.</p>
+        </section>
     </main>
 
     <footer>© 2026 Andreas Steffensen</footer>
+
+    <script>
+        const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+        const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+        function activateTab(selectedTab) {
+            tabs.forEach((tab) => {
+                const isSelected = tab === selectedTab;
+                tab.setAttribute('aria-selected', isSelected);
+                tab.tabIndex = isSelected ? 0 : -1;
+            });
+
+            panels.forEach((panel) => {
+                panel.hidden = panel.id !== selectedTab.getAttribute('aria-controls');
+            });
+        }
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => activateTab(tab));
+
+            tab.addEventListener('keydown', (event) => {
+                if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+
+                event.preventDefault();
+                let nextIndex = index;
+
+                if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+                if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+                if (event.key === 'Home') nextIndex = 0;
+                if (event.key === 'End') nextIndex = tabs.length - 1;
+
+                tabs[nextIndex].focus();
+                activateTab(tabs[nextIndex]);
+            });
+        });
+    </script>
 </body>
 </html>
