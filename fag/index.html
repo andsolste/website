@@ -4,371 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fag | Andreas Steffensen</title>
-    <style>
-        * { box-sizing: border-box; }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #f8fafc;
-        }
-
-        header, main, footer {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-        }
-
-        header { border-bottom: 1px solid #334155; }
-        h1 { margin: 0 0 .5rem; }
-        h2 { margin-top: 0; }
-        p { color: #cbd5e1; line-height: 1.6; }
-
-        a, .tab {
-            color: #fff;
-            background: #2563eb;
-            padding: .65rem 1rem;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            font: inherit;
-        }
-
-        a:hover, .tab:hover { background: #1d4ed8; }
-        a:focus-visible, .tab:focus-visible {
-            outline: 3px solid #93c5fd;
-            outline-offset: 3px;
-        }
-
-        .intro { margin: 2rem 0 1.5rem; }
-
-        .tab-list {
-            display: flex;
-            gap: .75rem;
-            overflow-x: auto;
-            padding: .25rem 0 .75rem;
-            scrollbar-color: #475569 #0f172a;
-        }
-
-        .tab {
-            border: 1px solid transparent;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .tab[aria-selected="true"] {
-            background: #1e40af;
-            border-color: #93c5fd;
-        }
-
-        .tab-panel {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 14px;
-            padding: 1.5rem;
-        }
-
-        .course-code {
-            color: #93c5fd;
-            font-weight: bold;
-            margin-bottom: .35rem;
-        }
-
-        .placeholder {
-            margin: 1.25rem 0 0;
-            padding: 1rem 1.25rem;
-            border-left: 4px solid #60a5fa;
-            background: #172554;
-            border-radius: 6px;
-        }
-
-        .study-intro { margin: 1.25rem 0 0; }
-
-        .key-idea {
-            margin: 1.25rem 0;
-            padding: 1rem 1.25rem;
-            border-left: 4px solid #60a5fa;
-            background: #172554;
-            border-radius: 6px;
-        }
-
-        .study-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .study-card, details {
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-        }
-
-        .study-card h3 { margin-top: 0; color: #bfdbfe; }
-        .study-card p, .study-card li, details p, details li { color: #cbd5e1; }
-
-        details { margin-top: .75rem; }
-        summary { cursor: pointer; font-weight: bold; color: #f8fafc; }
-        details[open] summary { margin-bottom: 1rem; }
-
-        code {
-            color: #bfdbfe;
-            font-family: Consolas, "Courier New", monospace;
-        }
-
-        pre {
-            overflow-x: auto;
-            margin: 1rem 0 0;
-            padding: 1rem;
-            border-radius: 8px;
-            background: #020617;
-            color: #dbeafe;
-            line-height: 1.5;
-        }
-
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        th, td { padding: .75rem; text-align: left; border-bottom: 1px solid #334155; }
-        th { color: #bfdbfe; }
-        td { color: #cbd5e1; }
-
-        .question-list { columns: 2; gap: 2rem; padding-left: 1.25rem; }
-
-        footer {
-            color: #94a3b8;
-            border-top: 1px solid #334155;
-            margin-top: 3rem;
-        }
-
-        @media (max-width: 600px) {
-            header, main, footer { padding-left: 1rem; padding-right: 1rem; }
-            .tab-list { margin-right: -1rem; padding-right: 1rem; }
-            .tab-panel { padding: 1.25rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <a href="../index.html">← Til forsiden</a>
+        <a class="back-link" href="../index.html">← Til forsiden</a>
     </header>
-
     <main>
-        <section class="intro">
+        <section class="page-intro">
             <h1>Fag</h1>
-            <p>Velg et fag for å finne notater, pensum, oppgaver og nyttige ressurser når innholdet er klart.</p>
+            <p>Velg et fag for å lese moduler, samle notater og følge egen progresjon.</p>
         </section>
-
-        <div class="tab-list" role="tablist" aria-label="Velg fag">
-            <button class="tab" type="button" role="tab" id="tab-dcst1001" aria-selected="true" aria-controls="panel-dcst1001" tabindex="0">DCST1001</button>
-            <button class="tab" type="button" role="tab" id="tab-tdt4100" aria-selected="false" aria-controls="panel-tdt4100" tabindex="-1">TDT4100</button>
-            <button class="tab" type="button" role="tab" id="tab-dcst1005" aria-selected="false" aria-controls="panel-dcst1005" tabindex="-1">DCST1005</button>
-            <button class="tab" type="button" role="tab" id="tab-idatt2202" aria-selected="false" aria-controls="panel-idatt2202" tabindex="-1">IDATT2202</button>
-        </div>
-
-        <section class="tab-panel" role="tabpanel" id="panel-dcst1001" aria-labelledby="tab-dcst1001">
-            <p class="course-code">DCST1001</p>
-            <h2>Datakommunikasjon og nettverk</h2>
-            <p class="placeholder">Innhold for faget kommer her.</p>
-        </section>
-
-        <section class="tab-panel" role="tabpanel" id="panel-tdt4100" aria-labelledby="tab-tdt4100" hidden>
-            <p class="course-code">TDT4100</p>
-            <h2>Objektorientert programmering</h2>
-            <p class="placeholder">Innhold for faget kommer her.</p>
-        </section>
-
-        <section class="tab-panel" role="tabpanel" id="panel-dcst1005" aria-labelledby="tab-dcst1005" hidden>
-            <p class="course-code">DCST1005</p>
-            <h2>Databaser</h2>
-            <p class="placeholder">Innhold for faget kommer her.</p>
-        </section>
-
-        <section class="tab-panel" role="tabpanel" id="panel-idatt2202" aria-labelledby="tab-idatt2202" hidden>
-            <p class="course-code">IDATT2202</p>
-            <h2>Operativsystemer</h2>
-            <p class="study-intro">Studieguide for prosesser, beskyttelse, virtuelt minne og overganger mellom user mode og kernel mode.</p>
-
-            <div class="key-idea">
-                <strong>Den røde tråden:</strong> Process isolation oppnås gjennom <em>privileged instructions + memory protection + hardware timer + sikker mode transfer</em>.
-            </div>
-
-            <div class="study-grid">
-                <article class="study-card">
-                    <h3>Må kunne veldig godt</h3>
-                    <ul>
-                        <li>Process abstraction</li>
-                        <li>User mode og kernel mode</li>
-                        <li>Virtual memory og memory protection</li>
-                        <li>Hardware timer</li>
-                        <li>System calls, interrupts og exceptions</li>
-                    </ul>
-                </article>
-                <article class="study-card">
-                    <h3>Bør kunne</h3>
-                    <ul>
-                        <li>Code, data, heap og stack</li>
-                        <li>Base + bound og fragmentation</li>
-                        <li>ASLR</li>
-                        <li>Interrupt vector og kernel stack</li>
-                    </ul>
-                </article>
-            </div>
-
-            <details open>
-                <summary>1. Process: den viktigste abstraksjonen</summary>
-                <p>En <strong>process</strong> er en instans av et program som kjører, med begrensede rettigheter. Et program er selve programfilen; en process er programmet mens det utføres. Flere prosesser kan kjøre samme program samtidig, for eksempel flere Chrome-prosesser.</p>
-                <p>En process har blant annet et address space, én eller flere threads og rettigheter til system calls, filer og andre ressurser. I denne delen av faget er utgangspunktet én thread per process.</p>
-                <p><strong>Formulering å lære:</strong> «En process er OS-abstraksjonen for et program som kjører med begrensede rettigheter.»</p>
-            </details>
-
-            <details>
-                <summary>2–5. Hvorfor isolasjon, modes og beskyttelse?</summary>
-                <p>Programmer kan være buggy eller ondsinnede. Uten begrensninger kunne de lese andre prosessers minne, endre kernel-minne, styre maskinvare direkte, deaktivere interrupts eller ta over CPU-en. Operativsystemet må derfor isolere prosessene.</p>
-                <p><strong>User mode</strong> brukes av vanlige programmer og har begrensede rettigheter. <strong>Kernel mode</strong> brukes av OS-kjernen og har full tilgang til maskinvare og minne.</p>
-                <p>En <strong>privileged instruction</strong> kan bare utføres i kernel mode, for eksempel endring av memory protection, direkte maskinvarekontroll eller deaktivering av interrupts. Forsøk fra user mode gir en exception, og kernel tar kontroll.</p>
-                <p>De tre sentrale maskinvaremekanismene er:</p>
-                <ol>
-                    <li>Privileged instructions</li>
-                    <li>Memory protection</li>
-                    <li>Hardware timer</li>
-                </ol>
-            </details>
-
-            <details>
-                <summary>6–10. Memory protection og virtual memory</summary>
-                <p>I modellen <strong>base + bound</strong> får en process et avgrenset fysisk minneområde. En adresse må oppfylle <code>base ≤ address &lt; base + bound</code>; ellers oppstår en exception.</p>
-                <p>Modellen er enkel, men har problemer med voksende heap og stack, minnedeling, binding til fysiske adresser og fragmentering. Ledig minne kan være delt i små hull selv om total mengde er stor nok.</p>
-                <p><strong>Virtual memory</strong> lar prosessen bruke virtuelle adresser. Maskinvaren oversetter dem til fysiske adresser ved hjelp av en translation table som kernel setter opp. To prosesser kan dermed bruke samme virtuelle adresse uten å bruke samme fysiske minne.</p>
-                <p>Et process address space består hovedsakelig av code, data, heap og stack. Heap vokser vanligvis oppover, mens stack vokser nedover. <strong>ASLR</strong> randomiserer plasseringen av blant annet stack, heap og code/data for å gjøre angrep mindre forutsigbare.</p>
-            </details>
-
-            <details>
-                <summary>11–12. Hardware timer og trade-off</summary>
-                <p>En hardware timer genererer periodiske interrupts, slik at kernel får kontroll tilbake selv når et user-program kjører en uendelig løkke. User code kan ikke deaktivere timeren.</p>
-                <p>Hyppige timer interrupts gir bedre responsivitet, men mer overhead. Sjeldnere interrupts gir mindre overhead, men dårligere responsivitet.</p>
-            </details>
-
-            <details>
-                <summary>13–16. Mode transfer og system calls</summary>
-                <p>Overgangen fra user mode til kernel mode skjer på tre måter:</p>
-                <table>
-                    <thead><tr><th>Type</th><th>Hva utløser den?</th><th>Eksempel</th></tr></thead>
-                    <tbody>
-                        <tr><td>Interrupt</td><td>Maskinvare trenger oppmerksomhet</td><td>Timer, nettverkskort, disk</td></tr>
-                        <tr><td>Exception</td><td>En uventet hendelse under kjøring</td><td>Divide by zero, ulovlig minneaksess</td></tr>
-                        <tr><td>System call</td><td>Programmet ber OS om hjelp</td><td><code>write</code>, <code>open</code>, <code>exit</code></td></tr>
-                    </tbody>
-                </table>
-                <p>Et system call er et begrenset, kontrollert inngangspunkt til kernel. Når et program for eksempel åpner en fil, går det via bibliotekfunksjon og trap til kernel. Kernel finner argumentene, oversetter user-adresser, validerer argumenter og rettigheter, utfører operasjonen og returnerer resultatet til user mode.</p>
-                <p>Kernel går tilbake til user mode når et system call, en exception eller interrupt er håndtert, når et nytt program starter eller når scheduler bytter prosess.</p>
-            </details>
-
-            <details>
-                <summary>17–18. Interrupt vector og kernel stack</summary>
-                <p>En interrupt vector er en tabell som kobler en interrupt-type til riktig handler, for eksempel timer interrupt til en timer-handler eller divide by zero til en exception-handler.</p>
-                <p>Når en interrupt skjer, må CPU-en lagre program counter, stack pointer og processor state. Kernel bruker sin egen kernel/interrupt stack, fordi den ikke kan stole på user memory. State må kunne gjenopprettes før utførelsen returnerer.</p>
-            </details>
-
-            <details>
-                <summary>19. Hele modellen</summary>
-                <pre>USER MODE
-  Process A / Process B / Process C
-  begrensede rettigheter og virtuelle adresser
-              │
-  system call / exception / interrupt
-              ▼
-KERNEL MODE
-  OS-kernel med full tilgang til maskinvare
-              │
-       return to user mode
-
-Virtual addresses → translation → physical memory
-Hardware timer → gir kernel kontroll tilbake</pre>
-            </details>
-
-            <details>
-                <summary>20. Aktiv læring og eksamensforberedelse</summary>
-                <p>Les Chapter 2.1–2.3 og slidesene først. Tegn så sammenhengen mellom process, user mode, memory protection og kernel mode. Test deg selv ved å forklare mekanismene høyt uten notater.</p>
-                <p>Prøv C-eksempelet nedenfor flere ganger for å se data-, stack- og heap-adresser, samt ASLR i praksis:</p>
-                <pre>int staticVar = 0;
-
-int main() {
-    int stackVar = 0;
-    int *heapVar = malloc(sizeof(int));
-
-    printf("%p\\n", (void *)&amp;staticVar);
-    printf("%p\\n", (void *)&amp;stackVar);
-    printf("%p\\n", (void *)heapVar);
-}</pre>
-                <p><strong>Viktigste muntlige forklaring:</strong> Et program i user mode kan ikke utføre privileged operations direkte. Det gjør et system call, CPU-en foretar en kontrollert mode transfer til kernel mode, kernel validerer og utfører operasjonen, og returnerer deretter kontrollen til user mode.</p>
-            </details>
-
-            <details>
-                <summary>Selvtest: 20 spørsmål</summary>
-                <ol class="question-list">
-                    <li>Hva er forskjellen på et program og en process?</li>
-                    <li>Hva er user mode?</li>
-                    <li>Hva er kernel mode?</li>
-                    <li>Hvorfor kan ikke user code utføre privileged instructions?</li>
-                    <li>Hva skjer hvis den prøver?</li>
-                    <li>Hvorfor trenger vi memory protection?</li>
-                    <li>Hva er base + bound?</li>
-                    <li>Hvorfor er base + bound utilstrekkelig?</li>
-                    <li>Hva er virtual memory?</li>
-                    <li>Hvem setter opp address translation?</li>
-                    <li>Hva er ASLR?</li>
-                    <li>Hvorfor trenger vi en hardware timer?</li>
-                    <li>Hva er et interrupt?</li>
-                    <li>Hva er en exception?</li>
-                    <li>Hva er et system call?</li>
-                    <li>Hva skiller de tre?</li>
-                    <li>Hva skjer når <code>printf()</code> kjøres?</li>
-                    <li>Hvordan returnerer CPU-en til user mode?</li>
-                    <li>Hva er en interrupt vector?</li>
-                    <li>Hvorfor trenger kernel en egen stack?</li>
-                </ol>
-            </details>
+        <section class="course-grid" aria-label="Fagoversikt">
+            <article class="course-card">
+                <p class="course-code">DCST1001</p>
+                <h2>Datakommunikasjon og nettverk</h2>
+                <p>Moduler, notater og ressurser samles på fagets egen side.</p>
+                <a class="button-link" href="dcst1001/">Åpne fag →</a>
+            </article>
+            <article class="course-card">
+                <p class="course-code">TDT4100</p>
+                <h2>Objektorientert programmering</h2>
+                <p>Moduler, notater og ressurser samles på fagets egen side.</p>
+                <a class="button-link" href="tdt4100/">Åpne fag →</a>
+            </article>
+            <article class="course-card">
+                <p class="course-code">DCST1005</p>
+                <h2>Databaser</h2>
+                <p>Moduler, notater og ressurser samles på fagets egen side.</p>
+                <a class="button-link" href="dcst1005/">Åpne fag →</a>
+            </article>
+            <article class="course-card">
+                <p class="course-code">IDATT2202</p>
+                <h2>Operativsystemer</h2>
+                <p>Moduler, notater og ressurser samles på fagets egen side.</p>
+                <a class="button-link" href="idatt2202/">Åpne fag →</a>
+            </article>
         </section>
     </main>
-
     <footer>© 2026 Andreas Steffensen</footer>
 
-    <script>
-        const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-        const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
-
-        function activateTab(selectedTab) {
-            tabs.forEach((tab) => {
-                const isSelected = tab === selectedTab;
-                tab.setAttribute('aria-selected', isSelected);
-                tab.tabIndex = isSelected ? 0 : -1;
-            });
-
-            panels.forEach((panel) => {
-                panel.hidden = panel.id !== selectedTab.getAttribute('aria-controls');
-            });
-        }
-
-        tabs.forEach((tab, index) => {
-            tab.addEventListener('click', () => activateTab(tab));
-
-            tab.addEventListener('keydown', (event) => {
-                if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
-
-                event.preventDefault();
-                let nextIndex = index;
-
-                if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
-                if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
-                if (event.key === 'Home') nextIndex = 0;
-                if (event.key === 'End') nextIndex = tabs.length - 1;
-
-                tabs[nextIndex].focus();
-                activateTab(tabs[nextIndex]);
-            });
-        });
-    </script>
 </body>
 </html>

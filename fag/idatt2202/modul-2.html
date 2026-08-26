@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDATT2202 – Modul 2 | Andreas Steffensen</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <a class="back-link" href="index.html">← Til IDATT2202</a>
+    </header>
+    <main data-course="idatt2202" data-module="2" data-module-count="8">
+        <section class="module-header">
+            <p class="module-number">Modul 2</p>
+            <h1>The kernel abstraction – part 1</h1>
+        </section>
+        <label class="completion-control">
+            <input type="checkbox" data-complete-toggle>
+            Marker modul som fullført
+        </label>
+
+            <p class="study-intro">Studieguide for prosesser, beskyttelse, virtuelt minne og overganger mellom user mode og kernel mode.</p>
+
+            <div class="key-idea">
+                <strong>Den røde tråden:</strong> Process isolation oppnås gjennom <em>privileged instructions + memory protection + hardware timer + sikker mode transfer</em>.
+            </div>
+
+            <div class="study-grid">
+                <article class="study-card">
+                    <h3>Må kunne veldig godt</h3>
+                    <ul>
+                        <li>Process abstraction</li>
+                        <li>User mode og kernel mode</li>
+                        <li>Virtual memory og memory protection</li>
+                        <li>Hardware timer</li>
+                        <li>System calls, interrupts og exceptions</li>
+                    </ul>
+                </article>
+                <article class="study-card">
+                    <h3>Bør kunne</h3>
+                    <ul>
+                        <li>Code, data, heap og stack</li>
+                        <li>Base + bound og fragmentation</li>
+                        <li>ASLR</li>
+                        <li>Interrupt vector og kernel stack</li>
+                    </ul>
+                </article>
+            </div>
+
+            <details open>
+                <summary>1. Process: den viktigste abstraksjonen</summary>
+                <p>En <strong>process</strong> er en instans av et program som kjører, med begrensede rettigheter. Et program er selve programfilen; en process er programmet mens det utføres. Flere prosesser kan kjøre samme program samtidig, for eksempel flere Chrome-prosesser.</p>
+                <p>En process har blant annet et address space, én eller flere threads og rettigheter til system calls, filer og andre ressurser. I denne delen av faget er utgangspunktet én thread per process.</p>
+                <p><strong>Formulering å lære:</strong> «En process er OS-abstraksjonen for et program som kjører med begrensede rettigheter.»</p>
+            </details>
+
+            <details>
+                <summary>2–5. Hvorfor isolasjon, modes og beskyttelse?</summary>
+                <p>Programmer kan være buggy eller ondsinnede. Uten begrensninger kunne de lese andre prosessers minne, endre kernel-minne, styre maskinvare direkte, deaktivere interrupts eller ta over CPU-en. Operativsystemet må derfor isolere prosessene.</p>
+                <p><strong>User mode</strong> brukes av vanlige programmer og har begrensede rettigheter. <strong>Kernel mode</strong> brukes av OS-kjernen og har full tilgang til maskinvare og minne.</p>
+                <p>En <strong>privileged instruction</strong> kan bare utføres i kernel mode, for eksempel endring av memory protection, direkte maskinvarekontroll eller deaktivering av interrupts. Forsøk fra user mode gir en exception, og kernel tar kontroll.</p>
+                <p>De tre sentrale maskinvaremekanismene er:</p>
+                <ol>
+                    <li>Privileged instructions</li>
+                    <li>Memory protection</li>
+                    <li>Hardware timer</li>
+                </ol>
+            </details>
+
+            <details>
+                <summary>6–10. Memory protection og virtual memory</summary>
+                <p>I modellen <strong>base + bound</strong> får en process et avgrenset fysisk minneområde. En adresse må oppfylle <code>base ≤ address &lt; base + bound</code>; ellers oppstår en exception.</p>
+                <p>Modellen er enkel, men har problemer med voksende heap og stack, minnedeling, binding til fysiske adresser og fragmentering. Ledig minne kan være delt i små hull selv om total mengde er stor nok.</p>
+                <p><strong>Virtual memory</strong> lar prosessen bruke virtuelle adresser. Maskinvaren oversetter dem til fysiske adresser ved hjelp av en translation table som kernel setter opp. To prosesser kan dermed bruke samme virtuelle adresse uten å bruke samme fysiske minne.</p>
+                <p>Et process address space består hovedsakelig av code, data, heap og stack. Heap vokser vanligvis oppover, mens stack vokser nedover. <strong>ASLR</strong> randomiserer plasseringen av blant annet stack, heap og code/data for å gjøre angrep mindre forutsigbare.</p>
+            </details>
+
+            <details>
+                <summary>11–12. Hardware timer og trade-off</summary>
+                <p>En hardware timer genererer periodiske interrupts, slik at kernel får kontroll tilbake selv når et user-program kjører en uendelig løkke. User code kan ikke deaktivere timeren.</p>
+                <p>Hyppige timer interrupts gir bedre responsivitet, men mer overhead. Sjeldnere interrupts gir mindre overhead, men dårligere responsivitet.</p>
+            </details>
+
+            <details>
+                <summary>13–16. Mode transfer og system calls</summary>
+                <p>Overgangen fra user mode til kernel mode skjer på tre måter:</p>
+                <table>
+                    <thead><tr><th>Type</th><th>Hva utløser den?</th><th>Eksempel</th></tr></thead>
+                    <tbody>
+                        <tr><td>Interrupt</td><td>Maskinvare trenger oppmerksomhet</td><td>Timer, nettverkskort, disk</td></tr>
+                        <tr><td>Exception</td><td>En uventet hendelse under kjøring</td><td>Divide by zero, ulovlig minneaksess</td></tr>
+                        <tr><td>System call</td><td>Programmet ber OS om hjelp</td><td><code>write</code>, <code>open</code>, <code>exit</code></td></tr>
+                    </tbody>
+                </table>
+                <p>Et system call er et begrenset, kontrollert inngangspunkt til kernel. Når et program for eksempel åpner en fil, går det via bibliotekfunksjon og trap til kernel. Kernel finner argumentene, oversetter user-adresser, validerer argumenter og rettigheter, utfører operasjonen og returnerer resultatet til user mode.</p>
+                <p>Kernel går tilbake til user mode når et system call, en exception eller interrupt er håndtert, når et nytt program starter eller når scheduler bytter prosess.</p>
+            </details>
+
+            <details>
+                <summary>17–18. Interrupt vector og kernel stack</summary>
+                <p>En interrupt vector er en tabell som kobler en interrupt-type til riktig handler, for eksempel timer interrupt til en timer-handler eller divide by zero til en exception-handler.</p>
+                <p>Når en interrupt skjer, må CPU-en lagre program counter, stack pointer og processor state. Kernel bruker sin egen kernel/interrupt stack, fordi den ikke kan stole på user memory. State må kunne gjenopprettes før utførelsen returnerer.</p>
+            </details>
+
+            <details>
+                <summary>19. Hele modellen</summary>
+                <pre>USER MODE
+  Process A / Process B / Process C
+  begrensede rettigheter og virtuelle adresser
+              │
+  system call / exception / interrupt
+              ▼
+KERNEL MODE
+  OS-kernel med full tilgang til maskinvare
+              │
+       return to user mode
+
+Virtual addresses → translation → physical memory
+Hardware timer → gir kernel kontroll tilbake</pre>
+            </details>
+
+            <details>
+                <summary>20. Aktiv læring og eksamensforberedelse</summary>
+                <p>Les Chapter 2.1–2.3 og slidesene først. Tegn så sammenhengen mellom process, user mode, memory protection og kernel mode. Test deg selv ved å forklare mekanismene høyt uten notater.</p>
+                <p>Prøv C-eksempelet nedenfor flere ganger for å se data-, stack- og heap-adresser, samt ASLR i praksis:</p>
+                <pre>int staticVar = 0;
+
+int main() {
+    int stackVar = 0;
+    int *heapVar = malloc(sizeof(int));
+
+    printf("%p\\n", (void *)&amp;staticVar);
+    printf("%p\\n", (void *)&amp;stackVar);
+    printf("%p\\n", (void *)heapVar);
+}</pre>
+                <p><strong>Viktigste muntlige forklaring:</strong> Et program i user mode kan ikke utføre privileged operations direkte. Det gjør et system call, CPU-en foretar en kontrollert mode transfer til kernel mode, kernel validerer og utfører operasjonen, og returnerer deretter kontrollen til user mode.</p>
+            </details>
+
+            <details>
+                <summary>Selvtest: 20 spørsmål</summary>
+                <ol class="question-list">
+                    <li>Hva er forskjellen på et program og en process?</li>
+                    <li>Hva er user mode?</li>
+                    <li>Hva er kernel mode?</li>
+                    <li>Hvorfor kan ikke user code utføre privileged instructions?</li>
+                    <li>Hva skjer hvis den prøver?</li>
+                    <li>Hvorfor trenger vi memory protection?</li>
+                    <li>Hva er base + bound?</li>
+                    <li>Hvorfor er base + bound utilstrekkelig?</li>
+                    <li>Hva er virtual memory?</li>
+                    <li>Hvem setter opp address translation?</li>
+                    <li>Hva er ASLR?</li>
+                    <li>Hvorfor trenger vi en hardware timer?</li>
+                    <li>Hva er et interrupt?</li>
+                    <li>Hva er en exception?</li>
+                    <li>Hva er et system call?</li>
+                    <li>Hva skiller de tre?</li>
+                    <li>Hva skjer når <code>printf()</code> kjøres?</li>
+                    <li>Hvordan returnerer CPU-en til user mode?</li>
+                    <li>Hva er en interrupt vector?</li>
+                    <li>Hvorfor trenger kernel en egen stack?</li>
+                </ol>
+            </details>
+        
+        <nav class="module-navigation" aria-label="Modulnavigasjon">
+            <a class="button-link" href="modul-1.html">← Forrige modul</a>
+            <a class="button-link" href="modul-3.html">Neste modul →</a>
+        </nav>
+    </main>
+    <footer>© 2026 Andreas Steffensen</footer>
+    <script src="../../progress.js"></script>
+</body>
+</html>
