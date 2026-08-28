@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "entries": [
     {
       "id": "page-home",
@@ -137,55 +137,154 @@
       "type": "Side",
       "title": "Fag",
       "context": "Studier",
-      "description": "Oversikt over fag, moduler, notater, ressurser og progresjon.",
-      "keywords": ["DCST1001", "TDT4100", "DCST1005", "IDATT2202", "moduler", "notater", "ressurser", "progresjon"],
+      "description": "Aktive fag høsten 2026 og tidligere emner fra første studieår.",
+      "keywords": ["aktive fag", "tidligere fag", "høst 2026", "DCST2001", "EXPH0300", "IDATT2202", "IT2810", "DCST1001", "DCST1002", "HMS0002", "TDT4109", "TMA4412", "DCST1005", "DCST1006", "IDATT2002", "TDT4100", "moduler", "notater", "progresjon"],
       "url": "fag/index.html",
       "featured": true,
       "priority": 20
     },
     {
-      "id": "subject-dcst1001",
+      "id": "subject-dcst2001",
       "type": "Fag",
-      "title": "Datakommunikasjon og nettverk",
-      "code": "DCST1001",
-      "context": "NTNU",
-      "description": "Fagside klargjort for moduler, notater og ressurser.",
-      "keywords": ["datakommunikasjon", "nettverk", "moduler", "notater", "ressurser"],
-      "url": "fag/dcst1001/index.html",
-      "priority": 30
+      "title": "Sammenkoblede nettverk og nettverkssikkerhet",
+      "code": "DCST2001",
+      "context": "Aktivt fag · Høst 2026",
+      "description": "Sammenkobling og sikring av nettverk med routing, ACL-er, trådløse nettverk, WAN/VPN, QoS, overvåking og nettverksvirtualisering.",
+      "keywords": ["nettverk", "nettverkssikkerhet", "routing", "ACL", "VPN", "WAN", "trådløse nettverk", "QoS", "overvåking", "nettverksvirtualisering", "sikre nettverksløsninger"],
+      "url": "fag/dcst2001/index.html",
+      "priority": 35
     },
     {
-      "id": "subject-tdt4100",
+      "id": "subject-exph0300",
       "type": "Fag",
-      "title": "Objektorientert programmering",
-      "code": "TDT4100",
-      "context": "NTNU",
-      "description": "Fagside klargjort for moduler, notater og ressurser.",
-      "keywords": ["objektorientert programmering", "moduler", "notater", "ressurser"],
-      "url": "fag/tdt4100/index.html",
-      "priority": 30
-    },
-    {
-      "id": "subject-dcst1005",
-      "type": "Fag",
-      "title": "Databaser",
-      "code": "DCST1005",
-      "context": "NTNU",
-      "description": "Fagside klargjort for moduler, notater og ressurser.",
-      "keywords": ["databaser", "moduler", "notater", "ressurser"],
-      "url": "fag/dcst1005/index.html",
-      "priority": 30
+      "title": "Examen philosophicum for naturvitenskap og teknologi",
+      "code": "EXPH0300",
+      "context": "Aktivt fag · Høst 2026",
+      "description": "Kritisk tenkning om kunnskap, vitenskap, etikk, teknologi og samfunn, med trening i argumentasjon, kildekritikk og refleksjon.",
+      "keywords": ["exphil", "filosofi", "vitenskap", "kunnskap", "etikk", "teknologi", "samfunn", "bærekraft", "argumentasjon", "kildekritikk", "kritisk tenkning"],
+      "url": "fag/exph0300/index.html",
+      "priority": 35
     },
     {
       "id": "subject-idatt2202",
       "type": "Fag",
       "title": "Operativsystemer",
       "code": "IDATT2202",
-      "context": "NTNU · 7,5 studiepoeng",
-      "description": "Hvordan moderne operativsystemer abstraherer, fordeler og beskytter ressurser mellom applications/users og hardware.",
-      "keywords": ["operativsystemer", "kernel", "prosesser", "threads", "concurrency", "scheduling", "minne", "virtual memory", "file systems", "security", "system programming", "programvare", "maskinvare", "moduler", "progresjon"],
+      "context": "Aktivt fag · Høst 2026 · 7,5 studiepoeng",
+      "description": "Operativsystemer, prosesser, tråder, scheduling, minne, filsystemer, virtualisering, samtidighet, sikkerhet og systemprogrammering.",
+      "keywords": ["operativsystemer", "kernel", "prosesser", "threads", "concurrency", "scheduling", "minne", "virtual memory", "file systems", "security", "system programming", "synkronisering", "feilsøking", "programvare", "maskinvare", "moduler", "progresjon"],
       "url": "fag/idatt2202/index.html",
       "priority": 40
+    },
+    {
+      "id": "subject-it2810",
+      "type": "Fag",
+      "title": "Webutvikling",
+      "code": "IT2810",
+      "context": "Aktivt fag · Høst 2026",
+      "description": "Design, utvikling og testing av moderne, dynamiske webapplikasjoner med vekt på universell utforming, kodekvalitet og prosjektarbeid.",
+      "keywords": ["webutvikling", "webapplikasjoner", "frontend", "arkitektur", "rammeverk", "dataformater", "testing", "universell utforming", "bærekraft", "kodekvalitet", "utviklingsverktøy"],
+      "url": "fag/it2810/index.html",
+      "priority": 35
+    },
+    {
+      "id": "previous-subject-dcst1001",
+      "type": "Tidligere fag",
+      "title": "Infrastruktur: grunnleggende ferdigheter",
+      "code": "DCST1001",
+      "context": "Høst 2025 · NTNU",
+      "description": "Maskinvare, operativsystemer, datanettverk, virtualisering, skytjenester og praktisk systemadministrasjon.",
+      "keywords": ["maskinvare", "operativsystemer", "datanettverk", "virtualisering", "skytjenester", "kommandolinje", "tilgangsstyring", "lagring", "sikkerhetskopiering", "feilsøking", "logganalyse"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
+    },
+    {
+      "id": "previous-subject-dcst1002",
+      "type": "Tidligere fag",
+      "title": "Cybersikkerhet og teamarbeid",
+      "code": "DCST1002",
+      "context": "Høst 2025 · NTNU",
+      "description": "Cybersikkerhet, sårbarheter, identitets- og tilgangsstyring, trussel- og risikoanalyse samt team- og prosjektarbeid.",
+      "keywords": ["cybersikkerhet", "sårbarheter", "digital infrastruktur", "identitetsstyring", "tilgangsstyring", "trusselanalyse", "risikoanalyse", "teamarbeid", "prosjektarbeid", "opphavsrett"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
+    },
+    {
+      "id": "previous-subject-hms0002",
+      "type": "Tidligere fag",
+      "title": "HMS-kurs for 1. årsstudenter",
+      "code": "HMS0002",
+      "context": "Høst 2025 · 0 studiepoeng · NTNU",
+      "description": "Førstehjelp, hjerte-lunge-redning, hjertestarter, brannvern, slukkearbeid og evakuering.",
+      "keywords": ["HMS", "førstehjelp", "HLR", "hjerte-lunge-redning", "hjertestarter", "brannvern", "slukkearbeid", "evakuering", "sikkerhet"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 8
+    },
+    {
+      "id": "previous-subject-tdt4109",
+      "type": "Tidligere fag",
+      "title": "Informasjonsteknologi, grunnkurs",
+      "code": "TDT4109",
+      "context": "Høst 2025 · NTNU",
+      "description": "Datamaskiners oppbygging, digital representasjon, versjonskontroll og prosedyreorientert programmering i Python.",
+      "keywords": ["informasjonsteknologi", "Python", "programmering", "algoritmer", "datastrukturer", "filbehandling", "testing", "feilsøking", "versjonskontroll", "digital representasjon"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
+    },
+    {
+      "id": "previous-subject-tma4412",
+      "type": "Tidligere fag",
+      "title": "Matematikk 2C: Diskret matematikk",
+      "code": "TMA4412",
+      "context": "Høst 2025 · NTNU",
+      "description": "Logikk, mengdelære, kombinatorikk, tallteori, kryptologi, rekursjon, induksjon, grafer og formelle språk.",
+      "keywords": ["diskret matematikk", "logikk", "mengdelære", "kombinatorikk", "tallteori", "kryptologi", "rekursjon", "induksjon", "relasjoner", "grafer", "trær", "formelle språk", "endelige automater"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
+    },
+    {
+      "id": "previous-subject-dcst1005",
+      "type": "Tidligere fag",
+      "title": "Infrastruktur: sikre grunntjenester",
+      "code": "DCST1005",
+      "context": "Vår 2026 · NTNU",
+      "description": "Skyløsninger, katalogtjenester, identitets- og tilgangsstyring, overvåkning, logging og sikker infrastrukturdrift.",
+      "keywords": ["infrastruktur", "skyløsninger", "cloud", "katalogtjenester", "identitetsstyring", "tilgangsstyring", "overvåkning", "logging", "migrering", "sikkerhet", "ytelse"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
+    },
+    {
+      "id": "previous-subject-dcst1006",
+      "type": "Tidligere fag",
+      "title": "Datakommunikasjon og nettverk",
+      "code": "DCST1006",
+      "context": "Vår 2026 · NTNU",
+      "description": "Lagdelt datakommunikasjon, IP-adressering, Ethernet, TCP/UDP, switching, routing og sentrale nettverkstjenester.",
+      "keywords": ["datakommunikasjon", "nettverk", "IP-adressering", "Ethernet", "TCP", "UDP", "switching", "routing", "nettverkstjenester", "konfigurering", "feilsøking"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
+    },
+    {
+      "id": "previous-subject-idatt2002",
+      "type": "Tidligere fag",
+      "title": "Databaser",
+      "code": "IDATT2002",
+      "context": "Vår 2026 · NTNU",
+      "description": "Datamodellering, relasjonsdatabaser, SQL, normalisering, integritet, transaksjoner, databasesikkerhet og NoSQL.",
+      "keywords": ["databaser", "datamodellering", "relasjonsdatabaser", "SQL", "normalisering", "integritet", "transaksjoner", "databasesikkerhet", "ytelse", "NoSQL"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
+    },
+    {
+      "id": "previous-subject-tdt4100",
+      "type": "Tidligere fag",
+      "title": "Objektorientert programmering",
+      "code": "TDT4100",
+      "context": "Vår 2026 · NTNU",
+      "description": "Objektorientert programmering i Java, algoritmer, datastrukturer, modularisering, testing, UML og design patterns.",
+      "keywords": ["objektorientert programmering", "Java", "algoritmer", "datastrukturer", "modularisering", "gjenbruk", "objektorientert design", "enhetstesting", "feilsøking", "UML", "design patterns"],
+      "url": "fag/index.html#tidligere-fag",
+      "priority": 12
     },
     {
       "id": "module-idatt2202-1",
@@ -447,4 +546,3 @@
     }
   ]
 }
-
