@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "page-home",
+      "type": "Side",
+      "title": "Forside",
+      "context": "Andreas Sollie Steffensen",
+      "description": "Personlig nettside med snarveier til Om meg, Prosjekter og Fag.",
+      "keywords": ["Digital Infrastruktur og Cybersikkerhet", "NTNU", "fagprosjekter", "labber", "tekniske writeups", "notater", "pensum", "studieressurser"],
+      "url": "index.html",
+      "featured": true,
+      "priority": 40
+    },
+    {
+      "id": "page-about",
+      "type": "Side",
+      "title": "Om meg",
+      "context": "Andreas Sollie Steffensen",
+      "description": "Utdanning, erfaring, kompetanse, teknisk prosjekt og engasjement.",
+      "keywords": ["NTNU", "IT-drift", "infrastruktur", "sikkerhet", "Forsvaret"],
+      "url": "about.html",
+      "featured": true,
+      "priority": 10
+    },
+    {
+      "id": "about-education",
+      "type": "Seksjon",
+      "title": "Utdanning",
+      "context": "Om meg",
+      "description": "Bachelor i Digital Infrastruktur og Cybersikkerhet ved NTNU og Medier og kommunikasjon ved Ullern videregående skole.",
+      "keywords": ["NTNU", "2025", "Ullern videregående skole", "2020", "2023", "Java", "Python", "datakommunikasjon", "nettverk", "IT-infrastruktur", "sikkerhet", "Photoshop", "Premiere Pro", "InDesign", "R1", "R2"],
+      "url": "about.html#utdanning-heading",
+      "priority": 5
+    },
+    {
+      "id": "about-defense",
+      "type": "Seksjon",
+      "title": "Forsvaret",
+      "context": "Om meg · Ledererfaring",
+      "description": "Lagfører og vaktkommandør med personalansvar, operative oppdrag og lagførerkurs i Cyberforsvaret.",
+      "keywords": ["lagfører", "vaktkommandør", "personalansvar", "operative oppdrag", "Cyberforsvaret", "ledererfaring"],
+      "url": "about.html#forsvaret-heading",
+      "priority": 10
+    },
+    {
+      "id": "about-work",
+      "type": "Seksjon",
+      "title": "Arbeidserfaring",
+      "context": "Om meg",
+      "description": "Arbeid som medarbeider i Meny ferskvare og tilsynsvakt på Bestum skole.",
+      "keywords": ["Meny", "ferskvare", "kundebehandling", "varehåndtering", "Bestum skole", "tilsynsvakt", "Ullern Basket"],
+      "url": "about.html#arbeid-heading"
+    },
+    {
+      "id": "about-skills",
+      "type": "Seksjon",
+      "title": "Kompetanse",
+      "context": "Om meg",
+      "description": "Programmering, verktøy, systemer, plattformer, medier, design og språk.",
+      "keywords": ["Python", "Java", "PowerShell", "Git", "VS Code", "Windows Server", "Active Directory", "Microsoft Azure", "Photoshop", "Premiere Pro", "InDesign", "norsk", "engelsk", "fransk"],
+      "url": "about.html#kompetanse-heading",
+      "priority": 20
+    },
+    {
+      "id": "project-active-directory",
+      "type": "Prosjekt",
+      "title": "Active Directory-lab",
+      "context": "Teknisk prosjekt · VM-infrastruktur",
+      "description": "Active Directory-domene med OU-struktur, Group Policy, PowerShell-skript, logging og overvåkning.",
+      "keywords": ["Active Directory", "VM-infrastruktur", "OU-struktur", "Group Policy", "PowerShell", "automatisk brukeropprettelse", "logging", "overvåkning", "Windows Server"],
+      "url": "about.html#prosjekt-heading",
+      "priority": 25
+    },
+    {
+      "id": "about-engagement",
+      "type": "Seksjon",
+      "title": "Engasjement",
+      "context": "Om meg",
+      "description": "Hovedfadder i BDIGSEC og arbeid med Ullerns årbokredaksjon og digitale åpne dag.",
+      "keywords": ["hovedfadder", "BDIGSEC", "fadderuken", "årbokredaksjon", "fotografi", "grafisk design", "layout", "kamerateknikk", "redigering"],
+      "url": "about.html#engasjement-heading"
+    },
+    {
+      "id": "page-projects",
+      "type": "Side",
+      "title": "Prosjekter",
+      "context": "Portefølje",
+      "description": "Arbeid fra studier, egne tekniske prosjekter og tidligere arbeid med medier og design.",
+      "keywords": ["portefølje", "BDIGSEC", "medier", "visuell design"],
+      "url": "projects/index.html",
+      "featured": true,
+      "priority": 30
+    },
+    {
+      "id": "projects-bdigsec",
+      "type": "Seksjon",
+      "title": "Digital infrastruktur & cybersikkerhet",
+      "context": "Prosjekter · BDIGSEC · NTNU",
+      "description": "Seksjon klargjort for studieprosjekter innen nettverk, cybersikkerhet, Linux, servere, infrastruktur, sky, programmering og databaser.",
+      "keywords": ["BDIGSEC", "NTNU", "nettverk", "cybersikkerhet", "Linux", "servere", "infrastruktur", "sky", "programmering", "databaser"],
+      "url": "projects/index.html#bdigsec-heading"
+    },
+    {
+      "id": "projects-media-design",
+      "type": "Seksjon",
+      "title": "Medier & visuell design",
+      "context": "Prosjekter · Tidligere arbeid",
+      "description": "Grafisk design, visuelle identiteter, foto, video og medieproduksjon.",
+      "keywords": ["grafisk design", "visuelle identiteter", "foto", "video", "medieproduksjon"],
+      "url": "projects/index.html#media-design"
+    },
+    {
+      "id": "project-vogue-hommes",
+      "type": "Prosjekt",
+      "title": "Vogue Hommes – magasinlayout",
+      "context": "Redaksjonell design · 2023 · Adobe InDesign",
+      "description": "Syvsiders konseptmagasin med omslag, innholdsfortegnelse, editorialoppslag og typografiske artikkelsider.",
+      "keywords": ["Vogue", "Vogue Hommes", "Chris Hemsworth", "Christopher Hemsworth", "Chanel", "NYFW", "magasinlayout", "redaksjonell design", "omslag", "innholdsfortegnelse", "editorial", "typografi", "Adobe InDesign", "PDF"],
+      "url": "projects/media-design/vogue-hemsworth-magasin/index.html",
+      "priority": 15
+    },
+    {
+      "id": "project-vote-poster",
+      "type": "Prosjekt",
+      "title": "Din stemme, ditt valg",
+      "context": "Plakatdesign · 2023 · Adobe Illustrator",
+      "description": "Plakat om forhåndsstemming og valgdeltakelse blant unge voksne.",
+      "keywords": ["forhåndsstemming", "valgdeltakelse", "unge voksne", "typografi", "stemmeurne", "fargefelt", "kontrastfarger", "Valgdirektoratet", "Adobe Illustrator"],
+      "url": "projects/media-design/din-stemme-ditt-valg/index.html",
+      "priority": 15
+    },
+    {
+      "id": "project-ullern-cover",
+      "type": "Prosjekt",
+      "title": "Ullern VGS 2022/2023 – forside",
+      "context": "Omslagsdesign · 2022/2023 · Adobe Illustrator",
+      "description": "Forsidedesign med bølgende linjegrafikk og en mørk blå og turkis fargepalett.",
+      "keywords": ["Ullern VGS", "forside", "omslagsdesign", "linjegrafikk", "bølgelinjer", "mørk blå", "turkis", "Adobe Illustrator"],
+      "url": "projects/media-design/ullern-vgs-forside/index.html",
+      "priority": 15
+    },
+    {
+      "id": "project-light-painting",
+      "type": "Prosjekt",
+      "title": "Idrett tegnet med lys",
+      "context": "Fotografi · 2021 · Lysmaling",
+      "description": "Fotografisk serie som kombinerer sportsbevegelse med tegnede lysspor og lang eksponering.",
+      "keywords": ["fotografi", "sportsbevegelse", "lysspor", "lang eksponering", "langeksponering", "lysmaling", "Bevegelse", "Luft"],
+      "url": "projects/media-design/tegne-med-lys/index.html",
+      "priority": 15
+    },
+    {
+      "id": "project-blue-iris",
+      "type": "Prosjekt",
+      "title": "Blå iris",
+      "context": "Fotografi · 2023 · Nærbilde",
+      "description": "Nærbilde av et blått øye med vekt på irisens struktur, kontrast og refleksjoner.",
+      "keywords": ["blått øye", "øye", "iris", "nærbilde", "fotografi", "struktur", "kontrast", "refleksjoner"],
+      "url": "projects/media-design/oye-makrofoto/index.html",
+      "priority": 15
+    },
+    {
+      "id": "page-subjects",
+      "type": "Side",
+      "title": "Fag",
+      "context": "Studier",
+      "description": "Oversikt over fag, moduler, notater, ressurser og progresjon.",
+      "keywords": ["DCST1001", "TDT4100", "DCST1005", "IDATT2202", "moduler", "notater", "ressurser", "progresjon"],
+      "url": "fag/index.html",
+      "featured": true,
+      "priority": 20
+    },
+    {
+      "id": "subject-dcst1001",
+      "type": "Fag",
+      "title": "Datakommunikasjon og nettverk",
+      "code": "DCST1001",
+      "context": "NTNU",
+      "description": "Fagside klargjort for moduler, notater og ressurser.",
+      "keywords": ["datakommunikasjon", "nettverk", "moduler", "notater", "ressurser"],
+      "url": "fag/dcst1001/index.html",
+      "priority": 30
+    },
+    {
+      "id": "subject-tdt4100",
+      "type": "Fag",
+      "title": "Objektorientert programmering",
+      "code": "TDT4100",
+      "context": "NTNU",
+      "description": "Fagside klargjort for moduler, notater og ressurser.",
+      "keywords": ["objektorientert programmering", "moduler", "notater", "ressurser"],
+      "url": "fag/tdt4100/index.html",
+      "priority": 30
+    },
+    {
+      "id": "subject-dcst1005",
+      "type": "Fag",
+      "title": "Databaser",
+      "code": "DCST1005",
+      "context": "NTNU",
+      "description": "Fagside klargjort for moduler, notater og ressurser.",
+      "keywords": ["databaser", "moduler", "notater", "ressurser"],
+      "url": "fag/dcst1005/index.html",
+      "priority": 30
+    },
+    {
+      "id": "subject-idatt2202",
+      "type": "Fag",
+      "title": "Operativsystemer",
+      "code": "IDATT2202",
+      "context": "NTNU",
+      "description": "Grunnleggende mekanismer i operativsystemer, prosesser, minne og samspillet mellom programvare og maskinvare.",
+      "keywords": ["operativsystemer", "prosesser", "minne", "programvare", "maskinvare", "moduler", "progresjon"],
+      "url": "fag/idatt2202/index.html",
+      "priority": 40
+    },
+    {
+      "id": "module-idatt2202-1",
+      "type": "Modul",
+      "title": "Modul 1 · Introduksjon",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "En felles startside for det grunnleggende rammeverket i operativsystemer.",
+      "keywords": ["introduksjon", "grunnbegreper", "studieplan", "forelesningsmateriale", "notater", "ressurser", "oppgaver"],
+      "url": "fag/idatt2202/modul-1.html",
+      "priority": 15
+    },
+    {
+      "id": "module-idatt2202-2",
+      "type": "Modul",
+      "title": "Modul 2 · The kernel abstraction – part 1",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "Process isolation, dual-mode operation, virtual memory og kontrollerte overganger mellom user mode og kernel mode.",
+      "keywords": ["process", "process abstraction", "process isolation", "address space", "threads", "user mode", "kernel mode", "dual-mode operation", "privileged instructions", "memory protection", "base + bound", "fragmentation", "virtual memory", "translation table", "physical memory", "code", "data", "heap", "stack", "ASLR", "hardware timer", "timer interrupts", "system calls", "interrupts", "exceptions", "mode transfer", "interrupt vector", "kernel stack", "scheduler", "trap", "CPU", "C", "printf"],
+      "url": "fag/idatt2202/modul-2.html",
+      "priority": 25
+    },
+    {
+      "id": "module-idatt2202-3",
+      "type": "Modul",
+      "title": "Modul 3 – kommer snart",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
+      "keywords": ["modul 3", "kommer snart", "modulinnhold", "sjekklister", "notater"],
+      "url": "fag/idatt2202/modul-3.html",
+      "priority": -100
+    },
+    {
+      "id": "module-idatt2202-4",
+      "type": "Modul",
+      "title": "Modul 4 – kommer snart",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
+      "keywords": ["modul 4", "kommer snart", "modulinnhold", "sjekklister", "notater"],
+      "url": "fag/idatt2202/modul-4.html",
+      "priority": -100
+    },
+    {
+      "id": "module-idatt2202-5",
+      "type": "Modul",
+      "title": "Modul 5 – kommer snart",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
+      "keywords": ["modul 5", "kommer snart", "modulinnhold", "sjekklister", "notater"],
+      "url": "fag/idatt2202/modul-5.html",
+      "priority": -100
+    },
+    {
+      "id": "module-idatt2202-6",
+      "type": "Modul",
+      "title": "Modul 6 – kommer snart",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
+      "keywords": ["modul 6", "kommer snart", "modulinnhold", "sjekklister", "notater"],
+      "url": "fag/idatt2202/modul-6.html",
+      "priority": -100
+    },
+    {
+      "id": "module-idatt2202-7",
+      "type": "Modul",
+      "title": "Modul 7 – kommer snart",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
+      "keywords": ["modul 7", "kommer snart", "modulinnhold", "sjekklister", "notater"],
+      "url": "fag/idatt2202/modul-7.html",
+      "priority": -100
+    },
+    {
+      "id": "module-idatt2202-8",
+      "type": "Modul",
+      "title": "Modul 8 – kommer snart",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Operativsystemer",
+      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
+      "keywords": ["modul 8", "kommer snart", "modulinnhold", "sjekklister", "notater"],
+      "url": "fag/idatt2202/modul-8.html",
+      "priority": -100
+    }
+  ]
+}
