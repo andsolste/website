@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDATT2202 – Modul 1 | Andreas Sollie Steffensen</title>
     <link rel="stylesheet" href="../../assets/site.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=20260828d">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
@@ -62,14 +62,29 @@
 
         <main class="site-main content-page module-page" id="main-content" data-course="idatt2202" data-module="1" data-module-count="8">
         <a class="back-link" href="index.html">← Til IDATT2202</a>
-        <section class="module-header">
-            <p class="module-number">Modul 1</p>
-            <h1>Introduksjon</h1>
-            <p class="module-description">En felles startside for det grunnleggende rammeverket i operativsystemer.</p>
-        </section>
+        <header class="module-header module-study-header">
+            <p class="module-number">IDATT2202 · Modul 1</p>
+            <h1>Introduction to Operating Systems</h1>
+            <p class="module-description">Modulen etablerer grunnmodellen for resten av faget: hva et operativsystem er, hvordan det forvalter og abstraherer ressurser, og hvilke kvaliteter og trade-offs et OS må balansere.</p>
+            <ul class="module-meta" aria-label="Modulmetadata">
+                <li>Chapter 1</li>
+                <li>Sections 1.1–1.3</li>
+                <li>8 hovedtemaer</li>
+            </ul>
 
-        <section class="module-section">
-            <h2>Før forelesningen</h2>
+            <div class="module-page-progress" aria-live="polite">
+                <div class="module-page-progress-labels">
+                    <strong data-module-page-status>0 av 15 aktiviteter fullført</strong>
+                    <span data-module-page-percent>0 %</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="progress-bar" data-module-page-progress></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="module-section module-preparation" aria-labelledby="for-forelesningen-heading">
+            <h2 id="for-forelesningen-heading">Før forelesningen</h2>
             <div class="module-panel">
 <ul class="checklist">
                     <li><label><input type="checkbox" data-check-id="before-1"> Se oversikten over faget</label></li>
@@ -79,31 +94,486 @@
             </div>
         </section>
 
-        <section class="module-section">
-            <h2>Viktig å kunne</h2>
-            <div class="module-panel">
-<ul class="concept-list">
-                    <li><strong>Grunnbegreper</strong>Kommer i modulinnholdet</li>
-                    <li><strong>Studieplan</strong>Bygg et godt overblikk</li>
-                </ul>
-            </div>
+        <section class="module-section module-outcomes" id="dette-skal-du-forsta" aria-labelledby="forsta-heading">
+            <p class="os-section-kicker">Kart før du leser</p>
+            <h2 id="forsta-heading">Dette skal du forstå</h2>
+            <p>Etter modulen bør du kunne:</p>
+            <ul class="learning-outcomes">
+                <li>definere et <em>operating system</em> og plassere det mellom applications/users og hardware</li>
+                <li>forklare Referee, Illusionist og Glue med konkrete eksempler</li>
+                <li>forklare hvorfor resource allocation, isolation og controlled communication trengs</li>
+                <li>beskrive system calls som kontrollert tilgang til OS-tjenester</li>
+                <li>skille sentrale kvalitets- og performance-begreper</li>
+                <li>diskutere hvordan workload og mål påvirker OS-design</li>
+                <li>forklare utviklingen fra early systems til moderne systemer</li>
+                <li>vurdere når bare metal er nok, og når et OS gir verdi</li>
+            </ul>
         </section>
 
-        <section class="module-section">
-            <h2>Under forelesningen</h2>
-            <div class="module-panel"><p>Innholdet for denne modulen kommer snart. Strukturen er klar for notater, ressurser og oppgaver.</p></div>
-        </section>
+        <div class="module-study-layout">
+            <nav class="module-toc" aria-labelledby="innhold-heading">
+                <p class="os-section-kicker">På denne siden</p>
+                <h2 id="innhold-heading">Innhold</h2>
+                <ol>
+                    <li><a href="#hva-er-et-operativsystem">Hva er et operativsystem?</a></li>
+                    <li><a href="#referee-illusionist-glue">Referee, Illusionist og Glue</a></li>
+                    <li><a href="#protection-resource-allocation">Protection og resource allocation</a></li>
+                    <li><a href="#os-challenges">OS challenges</a></li>
+                    <li><a href="#performance-trade-offs">Performance og trade-offs</a></li>
+                    <li><a href="#utvikling-virtualisering">Utvikling og virtualisering</a></li>
+                    <li><a href="#senere-i-faget">Dette kommer tilbake senere</a></li>
+                    <li><a href="#eksamensfokus">Eksamensfokus</a></li>
+                    <li><a href="#kortversjonen">Kortversjonen</a></li>
+                    <li><a href="#selvtest">Test deg selv</a></li>
+                </ol>
+            </nav>
 
-        <section class="module-section">
-            <h2>Etter forelesningen</h2>
-            <div class="module-panel">
-<ul class="checklist">
-                    <li><label><input type="checkbox" data-check-id="after-1"> Skriv et kort sammendrag</label></li>
-                    <li><label><input type="checkbox" data-check-id="after-2"> Noter sentrale begreper</label></li>
-                    <li><label><input type="checkbox" data-check-id="after-3"> Marker modulen som fullført når du er klar</label></li>
-                </ul>
+            <div class="module-study-content">
+                <section class="module-study-section" id="hva-er-et-operativsystem" aria-labelledby="os-definisjon-heading">
+                    <p class="os-section-kicker">Grunnmodellen</p>
+                    <h2 id="os-definisjon-heading">Hva er et operativsystem?</h2>
+                    <blockquote class="definition-callout">
+                        <p>An operating system is software that manages a computer's resources for its users and applications.</p>
+                    </blockquote>
+                    <p>Operativsystemet ligger mellom programmene og den fysiske maskinvaren. Hardware-laget omfatter blant annet CPU/processors, memory, disks/storage, network interfaces, graphics processors og andre I/O-devices som tastatur og mus.</p>
+
+                    <div class="technical-model os-layer-model" role="img" aria-label="Users og applications bruker operativsystemet, som igjen kontrollerer hardware">
+                        <div class="model-node">
+                            <strong>Users / Applications</strong>
+                            <span>Applications og system libraries · user mode</span>
+                        </div>
+                        <span class="model-arrow" aria-hidden="true">↓</span>
+                        <div class="model-node model-node-accent">
+                            <strong>Operating System</strong>
+                            <span>OS services · kernel mode</span>
+                        </div>
+                        <span class="model-arrow" aria-hidden="true">↓</span>
+                        <div class="model-node">
+                            <strong>Hardware</strong>
+                            <span>CPU · memory · storage · network · I/O</span>
+                        </div>
+                    </div>
+
+                    <p>Applikasjoner skal normalt ikke kontrollere hardware direkte. OS-et tilbyr abstraksjoner og grensesnitt som gjør maskinvaren enklere og tryggere å bruke. Programmet trenger derfor ikke vite hvordan en disk, et nettverkskort eller en annen device fungerer fysisk.</p>
+
+                    <h3>System calls: kontrollert tilgang til OS-tjenester</h3>
+                    <p>Et program ber operativsystemet utføre operasjoner gjennom <em>system calls</em>. I denne modulen er hovedpoenget selve grensesnittet; detaljene kommer senere.</p>
+                    <div class="inline-flow" aria-label="Flyt fra program via system call til operativsystem og hardware">
+                        <span>Program</span><span aria-hidden="true">→</span><span>system call</span><span aria-hidden="true">→</span><span>OS service</span><span aria-hidden="true">→</span><span>hardware</span>
+                    </div>
+                    <p class="module-note-line"><strong>Eksempler:</strong> <code>open()</code>, <code>read()</code>, <code>write()</code>, create process og allocate memory.</p>
+                </section>
+
+                <section class="module-study-section" id="referee-illusionist-glue" aria-labelledby="roller-heading">
+                    <p class="os-section-kicker">Ett OS · tre roller</p>
+                    <h2 id="roller-heading">Referee, Illusionist og Glue</h2>
+                    <p>De tre rollene forklarer hvorfor operativsystemet både må fordele, skjule og binde sammen ressurser.</p>
+
+                    <div class="role-framework">
+                        <section aria-labelledby="referee-heading">
+                            <p class="role-number">01</p>
+                            <h3 id="referee-heading">Referee</h3>
+                            <p>Fordeler ressurser og beskytter programmer og brukere mot hverandre.</p>
+                            <dl>
+                                <div><dt>Resource allocation</dt><dd>Hvem får CPU, memory, disk eller network interface – og hvor lenge?</dd></div>
+                                <div><dt>Isolation</dt><dd>Et program skal ikke lese eller overskrive et annet programs minne uten tillatelse. Et untrusted game skal for eksempel ikke kunne hente data fra en banking application.</dd></div>
+                                <div><dt>Controlled communication</dt><dd>Programmer isoleres når de skal være separate, men får kontrollerte mekanismer for samarbeid.</dd></div>
+                            </dl>
+                        </section>
+                        <section aria-labelledby="illusionist-heading">
+                            <p class="role-number">02</p>
+                            <h3 id="illusionist-heading">Illusionist</h3>
+                            <p>Skjuler den fysiske virkeligheten og presenterer enklere eller større virtuelle ressurser.</p>
+                            <ul>
+                                <li>Raske bytter <code>A → B → C</code> kan få hvert program til å oppleve at det har CPU-en.</li>
+                                <li>Prosesser kan oppleve at de har hvert sitt memory address space, selv om fysisk RAM deles.</li>
+                                <li>En virtual machine kan oppleve egen CPU, RAM, disk og network card.</li>
+                            </ul>
+                        </section>
+                        <section aria-labelledby="glue-heading">
+                            <p class="role-number">03</p>
+                            <h3 id="glue-heading">Glue</h3>
+                            <p>Binder applications og hardware sammen gjennom standardiserte tjenester og abstraksjoner.</p>
+                            <p>En webserver kan motta en HTTP request, finne data og sende et svar uten selv å implementere Ethernet-driver, TCP, disk controller, hardware interrupts eller low-level memory management.</p>
+                            <p class="module-note-line">System libraries · system calls · file systems · networking · user-interface services</p>
+                        </section>
+                    </div>
+
+                    <div class="key-idea">
+                        <strong>Husk:</strong> Referee fordeler og beskytter. Illusionist skjuler og virtualiserer. Glue tilbyr felles tjenester og grensesnitt.
+                    </div>
+
+                    <h3>File systems viser alle tre rollene</h3>
+                    <div class="role-example-grid">
+                        <div><strong>Referee</strong><span>OS-et kontrollerer hvem som kan lese og skrive filer.</span></div>
+                        <div><strong>Illusionist</strong><span><code>/home/user/report.txt</code> fremstår som sammenhengende data uten at brukeren ser disk blocks.</span></div>
+                        <div><strong>Glue</strong><span><code>open</code>, <code>read</code>, <code>write</code> og <code>close</code> gir et praktisk felles grensesnitt.</span></div>
+                    </div>
+                </section>
+
+                <section class="module-study-section" id="protection-resource-allocation" aria-labelledby="protection-heading">
+                    <p class="os-section-kicker">Kontroll og mål</p>
+                    <h2 id="protection-heading">Protection og resource allocation</h2>
+                    <h3>Hvordan kjører vi en untrustworthy application trygt?</h3>
+                    <p>Et program kan være buggy, malicious, compromised eller bare dårlig programmert. Det må likevel kunne kjøre uten å kompromittere hele maskinen.</p>
+
+                    <div class="protection-flow">
+                        <div>
+                            <strong>Programmet må ikke kunne</strong>
+                            <ul>
+                                <li>lese vilkårlig memory eller endre kernel memory</li>
+                                <li>kontrollere hardware fritt</li>
+                                <li>ta all CPU-tid eller bruke all memory</li>
+                                <li>ødelegge andre prosesser</li>
+                            </ul>
+                        </div>
+                        <span class="model-arrow" aria-hidden="true">→</span>
+                        <div>
+                            <strong>Chapter 2 bygger videre med</strong>
+                            <ul>
+                                <li>user mode og kernel mode</li>
+                                <li>memory protection</li>
+                                <li>privileged instructions</li>
+                                <li>hardware timer</li>
+                            </ul>
+                            <a href="modul-2.html">Åpne Modul 2 →</a>
+                        </div>
+                    </div>
+
+                    <div class="key-idea">
+                        <strong>Viktig prinsipp:</strong> OS security depends on both software and hardware. Meltdown og Spectre brukes her som påminnelse om at svikt i hardware-mekanismene kan bryte antakelsene OS-et bruker for process isolation.
+                    </div>
+
+                    <h3>Riktig ressursfordeling avhenger av systemets mål</h3>
+                    <p>Det finnes ikke nødvendigvis én riktig scheduling policy. Workload og mål avgjør hva som bør prioriteres.</p>
+                    <div class="workload-grid">
+                        <section><h4>Desktop</h4><p>Brukeren forventer rask respons. <strong>Low response time</strong> står sentralt.</p></section>
+                        <section><h4>Batch system</h4><p>Store jobs kjører med lite interaksjon. Job completion og samlet effektivitet/resource utilization kan veie tyngst.</p></section>
+                        <section><h4>Server</h4><p>Mange requests gjør throughput, fairness, response time og resource utilization relevante samtidig.</p></section>
+                    </div>
+                    <p class="module-principle">Scheduling policy depends on workload and goals.</p>
+                </section>
+
+                <section class="module-study-section" id="os-challenges" aria-labelledby="challenges-heading">
+                    <p class="os-section-kicker">Kvalitetsmål</p>
+                    <h2 id="challenges-heading">Operating System Challenges</h2>
+                    <p>Et OS skal ikke bare fungere. Det skal fungere korrekt, være tilgjengelig, beskytte data og kunne brukes på ulike systemer.</p>
+
+                    <div class="comparison-pair">
+                        <section>
+                            <p class="comparison-label">Reliability</p>
+                            <h3>Gjør systemet det det er designet for?</h3>
+                            <p>Crashes, corrupt data, feil scheduling, feil resultater eller at et program påvirker feil process er reliability-problemer.</p>
+                        </section>
+                        <section>
+                            <p class="comparison-label">Availability</p>
+                            <h3>Hvor mye av tiden virker systemet?</h3>
+                            <p><strong>MTTF</strong> er gjennomsnittlig tid før feil – høy er bra. <strong>MTTR</strong> er gjennomsnittlig tid til gjenoppretting – lav er bra.</p>
+                            <p>Availability forbedres ved å feile sjeldnere eller recover faster.</p>
+                        </section>
+                    </div>
+
+                    <div class="comparison-pair">
+                        <section>
+                            <p class="comparison-label">Security</p>
+                            <h3>Kan systemet kompromitteres?</h3>
+                            <p>OS-et må kontrollere access to resources, process isolation, permissions og authentication/authorization-relaterte mekanismer.</p>
+                        </section>
+                        <section>
+                            <p class="comparison-label">Privacy</p>
+                            <h3>Hvem kan se informasjonen?</h3>
+                            <p>Data skal bare være tilgjengelig for dem som har lov. Bugs og feilkonfigurasjon kan lekke privat informasjon selv uten et aktivt angrep.</p>
+                        </section>
+                    </div>
+
+                    <h3>Portability på to nivåer</h3>
+                    <div class="portability-grid">
+                        <section>
+                            <p class="comparison-label">Applications</p>
+                            <h4>API og abstractions</h4>
+                            <p>Et standardisert Application Programming Interface gjør at programmer kan bruke de samme abstraksjonene i stedet for å snakke direkte med hardware.</p>
+                        </section>
+                        <div class="technical-model hal-model" role="img" aria-label="Operativsystemet bruker et hardware abstraction layer over maskinvarespesifikke deler">
+                            <div class="model-node"><strong>Operating System</strong></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node model-node-accent"><strong>Hardware Abstraction Layer</strong><span>HAL</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Architecture-specific hardware</strong></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="module-study-section" id="performance-trade-offs" aria-labelledby="performance-heading">
+                    <p class="os-section-kicker">Mål og avveininger</p>
+                    <h2 id="performance-heading">Performance og trade-offs</h2>
+                    <p>Performance er mer enn hvor «rask» maskinen er. Fem metrics beskriver ulike sider ved systemet.</p>
+
+                    <dl class="performance-metrics">
+                        <div><dt>Latency / response time</dt><dd>Tiden én operasjon bruker. Lav latency er særlig viktig i interactive systems.</dd></div>
+                        <div><dt>Throughput</dt><dd>Antall operasjoner per tidsenhet, for eksempel requests per second.</dd></div>
+                        <div><dt>Overhead</dt><dd>OS-arbeid som ikke direkte utfører brukeroppgaven, som et context switch.</dd></div>
+                        <div><dt>Fairness</dt><dd>Hvor likt service eller performance fordeles mellom brukere og programmer.</dd></div>
+                        <div><dt>Predictability</dt><dd>Hvor konsistent systemets performance er fra operasjon til operasjon.</dd></div>
+                    </dl>
+
+                    <div class="key-idea">
+                        <strong>Latency er ikke throughput:</strong> Et system kan ha god latency, men lav throughput – eller høy throughput, men dårlig latency.
+                    </div>
+
+                    <h3>Time slice: responsiveness mot overhead</h3>
+                    <div class="tradeoff-grid">
+                        <section>
+                            <p class="comparison-label">Short time slice</p>
+                            <ol class="cause-chain">
+                                <li>Flere context switches</li>
+                                <li>Mer overhead</li>
+                                <li>Potensielt bedre responsiveness</li>
+                            </ol>
+                        </section>
+                        <section>
+                            <p class="comparison-label">Long time slice</p>
+                            <ol class="cause-chain">
+                                <li>Færre context switches</li>
+                                <li>Mindre overhead</li>
+                                <li>Potensielt dårligere responsiveness</li>
+                            </ol>
+                        </section>
+                    </div>
+
+                    <h3>OS-design er balansering</h3>
+                    <p>Performance, security, reliability, fairness, resource utilization, responsiveness og portability kan trekke i ulike retninger. Det finnes sjelden én universelt beste løsning.</p>
+                    <ul class="tradeoff-list">
+                        <li><span>Mer isolation</span><span>kan gi mer overhead</span></li>
+                        <li><span>Hyppigere scheduling</span><span>kan gi bedre responsiveness, men mer overhead</span></li>
+                        <li><span>Aggressiv resource utilization</span><span>kan gi bedre throughput, men dårligere latency</span></li>
+                        <li><span>Mer fairness</span><span>må ofte veies mot throughput eller latency</span></li>
+                    </ul>
+                </section>
+
+                <section class="module-study-section" id="utvikling-virtualisering" aria-labelledby="utvikling-heading">
+                    <p class="os-section-kicker">Fra maskintid til brukertid</p>
+                    <h2 id="utvikling-heading">Utvikling og moderne systemer</h2>
+                    <p>Historien forklarer hvorfor OS-prioriteringene har flyttet seg, selv om de grunnleggende problemene fortsatt er de samme.</p>
+
+                    <ol class="history-timeline">
+                        <li>
+                            <span>01</span>
+                            <div><h3>Early systems</h3><p>Datamaskiner var dyre. Én application kjørte om gangen, hadde stor kontroll over hardware og møtte lite protection. Brukere ventet på tilgang.</p></div>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <div><h3>Batch systems</h3><p>Jobs ble lagt i kø, og systemet startet automatisk neste jobb. Resource utilization ble bedre, men brukeren hadde lite eller ingen interaktiv kontakt.</p></div>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <div><h3>Time-sharing og multiprogramming</h3><p>Flere brukere og programmer kunne være aktive samtidig. CPU-en ble delt, og fokuset flyttet seg fra bare computer time mot human/user time.</p></div>
+                        </li>
+                        <li>
+                            <span>04</span>
+                            <div><h3>Modern systems</h3><p>Smartphones, laptops, tablets, servers, virtual machines, data centers og embedded systems bruker fortsatt allocation, protection, concurrency, virtualization, storage og communication.</p></div>
+                        </li>
+                    </ol>
+
+                    <h3>Bare metal eller et fullverdig OS?</h3>
+                    <div class="comparison-pair">
+                        <section>
+                            <p class="comparison-label">Bare metal</p>
+                            <h4>Én bestemt oppgave</h4>
+                            <p>Et enkelt microcontroller-/coffee-roaster-system med begrenset hardware og uten behov for flere applications kan kjøre direkte på hardware. Et OS kan da gi unødvendig kompleksitet og overhead.</p>
+                        </section>
+                        <section>
+                            <p class="comparison-label">Operating system</p>
+                            <h4>Mange ressurser må koordineres</h4>
+                            <p>Et Raspberry Pi-/RetroPie-system med input, display, sound, file system, networking og flere services har stor nytte av OS-abstraksjoner og resource management.</p>
+                        </section>
+                    </div>
+                    <p class="module-principle">Jo flere programmer, devices, users og resources som skal koordineres, desto større verdi gir operativsystemet.</p>
+
+                    <h3>Virtualization som Illusionist</h3>
+                    <div class="technical-model virtualization-model" role="img" aria-label="Fysisk hardware brukes av en hypervisor eller host som tilbyr tre virtuelle maskiner">
+                        <div class="model-node"><strong>Physical hardware</strong></div>
+                        <span class="model-arrow" aria-hidden="true">↓</span>
+                        <div class="model-node model-node-accent"><strong>Hypervisor / Host</strong></div>
+                        <span class="model-arrow" aria-hidden="true">↓</span>
+                        <div class="vm-row"><span>VM 1</span><span>VM 2</span><span>VM 3</span></div>
+                    </div>
+                    <p>Hver VM kan oppleve at den har sin egen CPU, memory, storage og network, selv om de fysiske ressursene deles.</p>
+                </section>
+
+                <section class="module-study-section" id="senere-i-faget" aria-labelledby="senere-heading">
+                    <p class="os-section-kicker">Bygger videre</p>
+                    <h2 id="senere-heading">Dette kommer tilbake senere</h2>
+                    <p>Modul 1 introduserer spørsmålene. Senere moduler går inn i mekanismene som besvarer dem.</p>
+                    <ul class="later-topic-links">
+                        <li><a href="modul-2.html"><strong>Kernel protection</strong><span>user/kernel mode, privileged instructions, memory protection og hardware timer</span></a></li>
+                        <li><a href="modul-3.html"><strong>System calls og IPC</strong><span>programmeringsgrensesnitt og controlled communication</span></a></li>
+                        <li><a href="modul-4.html"><strong>Concurrency</strong><span>flere aktive execution flows og delte ressurser</span></a></li>
+                        <li><a href="modul-5.html"><strong>Scheduling</strong><span>context switching og workload-avhengig CPU-fordeling</span></a></li>
+                        <li><a href="modul-6.html"><strong>Virtual memory</strong><span>illusjonen om et eget memory address space</span></a></li>
+                        <li><a href="modul-7.html"><strong>File systems</strong><span>Referee, Illusionist og Glue i samme system</span></a></li>
+                        <li><a href="modul-8.html"><strong>Security</strong><span>protection som et gjennomgående OS-perspektiv</span></a></li>
+                    </ul>
+                </section>
+
+                <section class="module-study-section" id="eksamensfokus" aria-labelledby="eksamen-heading">
+                    <p class="os-section-kicker">Prioritert repetisjon</p>
+                    <h2 id="eksamen-heading">Eksamensfokus</h2>
+                    <p>Bruk punktene som en ærlig kontroll på om du kan forklare sammenhengene uten notater.</p>
+                    <div class="module-panel exam-checklist-panel">
+                        <ul class="checklist exam-checklist">
+                            <li><label><input type="checkbox" data-check-id="exam-1"> Jeg kan definere et operating system og forklare <em>applications → OS → hardware</em>.</label></li>
+                            <li><label><input type="checkbox" data-check-id="exam-2"> Jeg kan forklare Referee, Illusionist og Glue med egne eksempler.</label></li>
+                            <li><label><input type="checkbox" data-check-id="exam-3"> Jeg kan forklare resource allocation, isolation, controlled communication, system calls og hvorfor untrusted applications må begrenses.</label></li>
+                            <li><label><input type="checkbox" data-check-id="exam-4"> Jeg kan skille reliability, availability, security og privacy, og forklare MTTF og MTTR.</label></li>
+                            <li><label><input type="checkbox" data-check-id="exam-5"> Jeg kan forklare portability gjennom API, abstractions og HAL.</label></li>
+                            <li><label><input type="checkbox" data-check-id="exam-6"> Jeg kan skille latency, throughput og overhead, og forklare fairness og predictability.</label></li>
+                            <li><label><input type="checkbox" data-check-id="exam-7"> Jeg kan diskutere response time mot context-switch overhead og forklare hvorfor scheduling policy avhenger av workload.</label></li>
+                            <li><label><input type="checkbox" data-check-id="exam-8"> Jeg kan forklare early systems → batch → time-sharing → modern systems, vurdere bare metal mot OS og knytte virtualization til Illusionist.</label></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="module-study-section" id="kortversjonen" aria-labelledby="kortversjon-heading">
+                    <p class="os-section-kicker">Rask repetisjon</p>
+                    <h2 id="kortversjon-heading">Kortversjonen</h2>
+                    <div class="summary-sheet">
+                        <div class="technical-model compact-model" aria-label="Users og applications, operativsystem og hardware">
+                            <div class="model-node"><strong>Users / Applications</strong></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node model-node-accent"><strong>Operating System</strong></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Hardware</strong></div>
+                        </div>
+                        <dl class="summary-definitions">
+                            <div><dt>Referee</dt><dd>fordeler og beskytter ressurser</dd></div>
+                            <div><dt>Illusionist</dt><dd>skjuler hardware og lager virtuelle abstraksjoner</dd></div>
+                            <div><dt>Glue</dt><dd>tilbyr standardiserte tjenester og grensesnitt</dd></div>
+                        </dl>
+                        <div class="summary-groups">
+                            <p><strong>OS-et må balansere</strong><br>Reliability · availability · security · privacy · portability · performance</p>
+                            <p><strong>Performance vurderes gjennom</strong><br>Latency · throughput · overhead · fairness · predictability</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="module-study-section quiz-section" id="selvtest" aria-labelledby="selvtest-heading" data-quiz>
+                    <p class="os-section-kicker">8 spørsmål</p>
+                    <h2 id="selvtest-heading">Test deg selv</h2>
+                    <p>Svar på alle spørsmålene og sjekk resultatet. Forklaring vises etter innsending, og du kan prøve på nytt.</p>
+
+                    <form class="module-quiz" data-quiz-form novalidate>
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="OS-et ligger mellom users/applications og hardware og forvalter maskinens ressurser.">
+                            <legend><span>1</span> Hvilken definisjon beskriver best et operating system?</legend>
+                            <div class="quiz-options">
+                                <label><input type="radio" name="quiz-q1" value="a"> Hardware som utfører alle programinstruksjoner</label>
+                                <label><input type="radio" name="quiz-q1" value="b"> Software som forvalter datamaskinens ressurser for brukere og applikasjoner</label>
+                                <label><input type="radio" name="quiz-q1" value="c"> Et brukerprogram som bare styrer nettverk</label>
+                                <label><input type="radio" name="quiz-q1" value="d"> Et API som erstatter fysisk hardware</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Illusionist-rollen skjuler at den fysiske CPU-en deles, og gir programmene en enklere virtuell opplevelse.">
+                            <legend><span>2</span> Én CPU bytter raskt mellom A, B og C, slik at hvert program opplever at det har CPU-en. Hvilken rolle er tydeligst?</legend>
+                            <div class="quiz-options">
+                                <label><input type="radio" name="quiz-q2" value="a"> Referee</label>
+                                <label><input type="radio" name="quiz-q2" value="b"> Illusionist</label>
+                                <label><input type="radio" name="quiz-q2" value="c"> Glue</label>
+                                <label><input type="radio" name="quiz-q2" value="d"> HAL</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="System calls er det kontrollerte grensesnittet til OS-tjenester som open, read og write.">
+                            <legend><span>3</span> Hvordan ber et program normalt OS-et om å lese eller skrive data uten å styre disken direkte?</legend>
+                            <div class="quiz-options">
+                                <label><input type="radio" name="quiz-q3" value="a"> Direct hardware access</label>
+                                <label><input type="radio" name="quiz-q3" value="b"> System calls</label>
+                                <label><input type="radio" name="quiz-q3" value="c"> Bare metal</label>
+                                <label><input type="radio" name="quiz-q3" value="d"> Context switching</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Reliability handler om korrekt oppførsel; availability handler om hvor stor del av tiden systemet er tilgjengelig og fungerende.">
+                            <legend><span>4</span> Reliability og availability betyr det samme.</legend>
+                            <div class="quiz-options quiz-options-compact">
+                                <label><input type="radio" name="quiz-q4" value="a"> Sant</label>
+                                <label><input type="radio" name="quiz-q4" value="b"> Usant</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Høy MTTF betyr lengre tid mellom feil, mens lav MTTR betyr raskere gjenoppretting.">
+                            <legend><span>5</span> Hvilken kombinasjon forbedrer availability?</legend>
+                            <div class="quiz-options">
+                                <label><input type="radio" name="quiz-q5" value="a"> Lav MTTF og høy MTTR</label>
+                                <label><input type="radio" name="quiz-q5" value="b"> Høy MTTF og lav MTTR</label>
+                                <label><input type="radio" name="quiz-q5" value="c"> Lav MTTF og lav fairness</label>
+                                <label><input type="radio" name="quiz-q5" value="d"> Høy latency og høy overhead</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Throughput er antall operasjoner per tidsenhet; latency er tiden én operasjon bruker.">
+                            <legend><span>6</span> En server fullfører 10 000 requests per sekund. Hvilken metric beskrives?</legend>
+                            <div class="quiz-options">
+                                <label><input type="radio" name="quiz-q6" value="a"> Latency</label>
+                                <label><input type="radio" name="quiz-q6" value="b"> Throughput</label>
+                                <label><input type="radio" name="quiz-q6" value="c"> Overhead</label>
+                                <label><input type="radio" name="quiz-q6" value="d"> Predictability</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Hyppigere bytter gir programmer raskere mulighet til å kjøre, men hvert context switch koster CPU-tid.">
+                            <legend><span>7</span> Hva er den forventede kjeden ved kortere CPU time slices?</legend>
+                            <div class="quiz-options">
+                                <label><input type="radio" name="quiz-q7" value="a"> Færre context switches → mer overhead → bedre predictability</label>
+                                <label><input type="radio" name="quiz-q7" value="b"> Flere context switches → mer overhead → potensielt bedre responsiveness</label>
+                                <label><input type="radio" name="quiz-q7" value="c"> Flere context switches → mindre overhead → dårligere responsiveness</label>
+                                <label><input type="radio" name="quiz-q7" value="d"> Ingen påvirkning på overhead</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Desktop, batch og servere har ulike mål, så resource allocation må tilpasses workload og ønsket resultat.">
+                            <legend><span>8</span> Hvorfor finnes det ikke nødvendigvis én universelt riktig scheduling policy?</legend>
+                            <div class="quiz-options">
+                                <label><input type="radio" name="quiz-q8" value="a"> Alle workloads prioriterer bare latency</label>
+                                <label><input type="radio" name="quiz-q8" value="b"> Policy avhenger av workload og mål som responsiveness, throughput, fairness og resource utilization</label>
+                                <label><input type="radio" name="quiz-q8" value="c"> OS-et kan ikke fordele CPU-tid</label>
+                                <label><input type="radio" name="quiz-q8" value="d"> Scheduling brukes bare i batch systems</label>
+                            </div>
+                            <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                        </fieldset>
+
+                        <div class="quiz-actions">
+                            <button class="button-link" type="submit">Sjekk svar</button>
+                            <button class="quiz-retry" type="button" data-quiz-retry hidden>Prøv på nytt</button>
+                            <p class="quiz-summary" data-quiz-summary aria-live="polite"></p>
+                        </div>
+                    </form>
+
+                    <label class="quiz-progress-status">
+                        <input type="checkbox" data-check-id="quiz-complete" data-quiz-progress-check disabled>
+                        Full poengsum i selvtesten
+                    </label>
+                </section>
+
+                <section class="module-study-section" aria-labelledby="etter-heading">
+                    <p class="os-section-kicker">Avslutt arbeidet</p>
+                    <h2 id="etter-heading">Etter forelesningen</h2>
+                    <div class="module-panel">
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="after-1"> Skriv et kort sammendrag</label></li>
+                            <li><label><input type="checkbox" data-check-id="after-2"> Noter sentrale begreper</label></li>
+                            <li><label><input type="checkbox" data-check-id="after-3"> Marker modulen som fullført når du er klar</label></li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
 
         <label class="completion-control">
             <input type="checkbox" data-complete-toggle>
@@ -112,13 +582,15 @@
 
         <nav class="module-navigation" aria-label="Modulnavigasjon">
             <a class="button-link" href="index.html">← Til moduloversikten</a>
-            <a class="button-link" href="modul-2.html">Neste modul →</a>
+            <a class="button-link" href="modul-2.html">Neste: The kernel abstraction – part 1 →</a>
         </nav>
         </main>
         <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>
     </div>
 
     <script src="../../assets/site.js"></script>
-    <script src="../progress.js?v=20260826b"></script>
+    <script src="../progress.js?v=20260828d"></script>
+    <script src="../quiz.js?v=20260828a"></script>
 </body>
 </html>
+

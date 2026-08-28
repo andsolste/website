@@ -70,6 +70,25 @@
         }
     }
 
+    function renderModulePage(state, checks) {
+        const checked = checks.filter(check => check.checked).length;
+        const percentage = state.completed
+            ? 100
+            : checks.length
+                ? Math.round((checked / checks.length) * 100)
+                : 0;
+        const status = document.querySelector("[data-module-page-status]");
+        const percent = document.querySelector("[data-module-page-percent]");
+
+        if (status) {
+            status.textContent = state.completed
+                ? "Modulen er markert fullført"
+                : checked + " av " + checks.length + " aktiviteter fullført";
+        }
+        if (percent) percent.textContent = percentage + " %";
+        setProgressBar(document.querySelector("[data-module-page-progress]"), percentage);
+    }
+
     function renderContinue(summaries, completedCount) {
         const container = document.querySelector("[data-continue-card]");
         if (!container) return;
@@ -155,6 +174,7 @@
         let state = moduleState(progress, module);
         toggle.checked = state.completed;
         checks.forEach(check => check.checked = Boolean(state.checks[check.dataset.checkId]));
+        renderModulePage(state, checks);
 
         toggle.addEventListener("change", () => {
             progress = getProgress();
@@ -162,6 +182,7 @@
             state.completed = toggle.checked;
             progress[module] = state;
             saveProgress(progress);
+            renderModulePage(state, checks);
         });
 
         checks.forEach(check => check.addEventListener("change", () => {
@@ -172,7 +193,21 @@
             progress[module] = state;
             toggle.checked = state.completed;
             saveProgress(progress);
+            renderModulePage(state, checks);
         }));
+
+        const refreshModulePage = () => {
+            progress = getProgress();
+            state = moduleState(progress, module);
+            toggle.checked = state.completed;
+            checks.forEach(check => check.checked = Boolean(state.checks[check.dataset.checkId]));
+            renderModulePage(state, checks);
+        };
+
+        window.addEventListener("storage", event => {
+            if (event.key === storageKey) refreshModulePage();
+        });
+        window.addEventListener("pageshow", refreshModulePage);
     }
 
     if (document.querySelector("[data-module-card]")) {
@@ -183,3 +218,4 @@
         window.addEventListener("pageshow", () => renderOverview(getProgress()));
     }
 })();
+

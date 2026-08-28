@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "entries": [
     {
       "id": "page-home",
@@ -221,10 +221,10 @@
       "title": "Modul 1 · Introduction to Operating Systems",
       "code": "IDATT2202",
       "context": "IDATT2202 · Chapter 1 · Sections 1.1–1.3",
-      "description": "Introduksjon til OS abstraction, resource management og forholdet mellom applications, operativsystem og hardware.",
-      "keywords": ["introduksjon", "Chapter 1", "Sections 1.1–1.3", "OS abstraction", "resource management", "applications", "hardware", "protection", "isolation", "system calls", "referee", "illusionist", "glue", "reliability", "performance"],
+      "description": "Hva et operativsystem er, hvordan det fordeler og abstraherer ressurser, og hvilke kvaliteter og trade-offs et OS må balansere.",
+      "keywords": ["introduksjon", "operating system", "operativsystem", "OS", "Chapter 1", "Sections 1.1–1.3", "OS abstraction", "hardware abstraction", "resource management", "resource allocation", "applications", "users", "hardware", "system calls", "referee", "illusionist", "glue"],
       "url": "fag/idatt2202/modul-1.html",
-      "priority": 15
+      "priority": 25
     },
     {
       "id": "module-idatt2202-2",
@@ -240,12 +240,62 @@
     {
       "id": "topic-idatt2202-introduction",
       "type": "Tema",
-      "title": "Introduction to Operating Systems",
+      "title": "Hva er et operativsystem?",
       "context": "Operativsystemer · Chapter 1 · Sections 1.1–1.3",
-      "description": "Hva et operativsystem gjør som abstraction-, ressursfordelings- og beskyttelseslag.",
-      "keywords": ["OS abstraction", "applications", "operating system", "hardware", "resource management", "protection", "isolation", "system calls", "referee", "illusionist", "glue", "reliability", "availability", "privacy", "portability", "latency", "throughput", "overhead", "fairness", "predictability", "batch processing", "multiprogramming", "time-sharing"],
-      "url": "fag/idatt2202/index.html#tema-introduction",
-      "priority": 8
+      "description": "Definisjonen av et OS, modellen applications/users → operating system → hardware og kontrollert tilgang gjennom system calls.",
+      "keywords": ["OS abstraction", "applications", "users", "operating system", "hardware", "CPU", "memory", "storage", "I/O", "system calls", "open", "read", "write"],
+      "url": "fag/idatt2202/modul-1.html#hva-er-et-operativsystem",
+      "priority": 12
+    },
+    {
+      "id": "topic-idatt2202-roles",
+      "type": "Tema",
+      "title": "Referee, Illusionist og Glue",
+      "context": "Operativsystemer · Modul 1",
+      "description": "Tre roller som forklarer hvordan OS-et fordeler, beskytter, abstraherer og binder sammen ressurser.",
+      "keywords": ["referee", "illusionist", "glue", "resource allocation", "isolation", "protection", "controlled communication", "IPC", "virtual resources", "abstractions", "system libraries", "file systems", "networking"],
+      "url": "fag/idatt2202/modul-1.html#referee-illusionist-glue",
+      "priority": 12
+    },
+    {
+      "id": "topic-idatt2202-protection",
+      "type": "Tema",
+      "title": "Protection og resource allocation",
+      "context": "Operativsystemer · Modul 1",
+      "description": "Hvorfor untrusted applications må begrenses, og hvorfor scheduling policy avhenger av workload og mål.",
+      "keywords": ["untrusted application", "buggy", "malicious", "process isolation", "kernel memory", "user mode", "kernel mode", "privileged instructions", "hardware timer", "Meltdown", "Spectre", "scheduling policy", "workload"],
+      "url": "fag/idatt2202/modul-1.html#protection-resource-allocation",
+      "priority": 12
+    },
+    {
+      "id": "topic-idatt2202-challenges",
+      "type": "Tema",
+      "title": "Reliability, availability og portability",
+      "context": "Operativsystemer · Modul 1",
+      "description": "Kvalitetsmålene reliability, availability, security, privacy og portability, inkludert MTTF, MTTR, API og HAL.",
+      "keywords": ["reliability", "availability", "MTTF", "MTTR", "security", "privacy", "portability", "API", "HAL", "Hardware Abstraction Layer"],
+      "url": "fag/idatt2202/modul-1.html#os-challenges",
+      "priority": 12
+    },
+    {
+      "id": "topic-idatt2202-performance",
+      "type": "Tema",
+      "title": "Performance og OS trade-offs",
+      "context": "Operativsystemer · Modul 1",
+      "description": "Latency, throughput, overhead, fairness og predictability – og trade-offen mellom time slice, context switches og responsiveness.",
+      "keywords": ["performance", "trade-offs", "latency", "response time", "throughput", "overhead", "fairness", "predictability", "time slice", "context switch", "responsiveness", "resource utilization", "scheduling"],
+      "url": "fag/idatt2202/modul-1.html#performance-trade-offs",
+      "priority": 14
+    },
+    {
+      "id": "topic-idatt2202-history",
+      "type": "Tema",
+      "title": "Fra batch systems til virtualisering",
+      "context": "Operativsystemer · Modul 1",
+      "description": "Utviklingen fra early operating systems via batch og time-sharing til moderne systemer, bare metal og virtual machines.",
+      "keywords": ["early operating systems", "batch systems", "time-sharing", "multiprogramming", "modern systems", "embedded systems", "bare metal", "virtualization", "virtual machines", "hypervisor"],
+      "url": "fag/idatt2202/modul-1.html#utvikling-virtualisering",
+      "priority": 12
     },
     {
       "id": "topic-idatt2202-kernel",
@@ -425,3 +475,4 @@
     }
   ]
 }
+
