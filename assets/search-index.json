@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "entries": [
     {
       "id": "page-home",
@@ -17,69 +17,41 @@
       "type": "Side",
       "title": "Om meg",
       "context": "Andreas Sollie Steffensen",
-      "description": "Utdanning, erfaring, kompetanse, teknisk prosjekt og engasjement.",
-      "keywords": ["NTNU", "IT-drift", "infrastruktur", "sikkerhet", "Forsvaret"],
+      "description": "Kort om hvem jeg er, hva jeg gjør nå, bakgrunnen min og hvilken faglig retning jeg ønsker å utvikle meg innen.",
+      "keywords": ["NTNU", "Digital infrastruktur og cybersikkerhet", "nettverk", "operativsystemer", "infrastruktur", "sikkerhet", "Forsvaret", "medier", "visuell design"],
       "url": "about.html",
       "featured": true,
       "priority": 10
     },
     {
-      "id": "about-education",
+      "id": "about-now",
       "type": "Seksjon",
-      "title": "Utdanning",
+      "title": "Akkurat nå",
       "context": "Om meg",
-      "description": "Bachelor i Digital Infrastruktur og Cybersikkerhet ved NTNU og Medier og kommunikasjon ved Ullern videregående skole.",
-      "keywords": ["NTNU", "2025", "Ullern videregående skole", "2020", "2023", "Java", "Python", "datakommunikasjon", "nettverk", "IT-infrastruktur", "sikkerhet", "Photoshop", "Premiere Pro", "InDesign", "R1", "R2"],
-      "url": "about.html#utdanning-heading",
-      "priority": 5
+      "description": "Bachelorstudiet ved NTNU og nettsiden som samler fagnotater, studiemoduler og prosjekter.",
+      "keywords": ["NTNU", "bachelor", "Digital infrastruktur og cybersikkerhet", "fagnotater", "studiemoduler", "prosjekter"],
+      "url": "about.html#akkurat-na",
+      "priority": 8
     },
     {
-      "id": "about-defense",
+      "id": "about-background",
       "type": "Seksjon",
-      "title": "Forsvaret",
-      "context": "Om meg · Ledererfaring",
-      "description": "Lagfører og vaktkommandør med personalansvar, operative oppdrag og lagførerkurs i Cyberforsvaret.",
-      "keywords": ["lagfører", "vaktkommandør", "personalansvar", "operative oppdrag", "Cyberforsvaret", "ledererfaring"],
-      "url": "about.html#forsvaret-heading",
+      "title": "Bakgrunn",
+      "context": "Om meg · Erfaring",
+      "description": "Ledererfaring fra Forsvaret, arbeidserfaring, Medier og kommunikasjon og engasjement som hovedfadder.",
+      "keywords": ["Forsvaret", "lagfører", "vaktkommandør", "ledererfaring", "arbeidserfaring", "Ullern", "Medier og kommunikasjon", "foto", "grafisk design", "layout", "video", "hovedfadder", "BDIGSEC"],
+      "url": "about.html#bakgrunn",
       "priority": 10
     },
     {
-      "id": "about-work",
+      "id": "about-direction",
       "type": "Seksjon",
-      "title": "Arbeidserfaring",
-      "context": "Om meg",
-      "description": "Arbeid som medarbeider i Meny ferskvare og tilsynsvakt på Bestum skole.",
-      "keywords": ["Meny", "ferskvare", "kundebehandling", "varehåndtering", "Bestum skole", "tilsynsvakt", "Ullern Basket"],
-      "url": "about.html#arbeid-heading"
-    },
-    {
-      "id": "about-skills",
-      "type": "Seksjon",
-      "title": "Kompetanse",
-      "context": "Om meg",
-      "description": "Programmering, verktøy, systemer, plattformer, medier, design og språk.",
-      "keywords": ["Python", "Java", "PowerShell", "Git", "VS Code", "Windows Server", "Active Directory", "Microsoft Azure", "Photoshop", "Premiere Pro", "InDesign", "norsk", "engelsk", "fransk"],
-      "url": "about.html#kompetanse-heading",
-      "priority": 20
-    },
-    {
-      "id": "project-active-directory",
-      "type": "Prosjekt",
-      "title": "Active Directory-lab",
-      "context": "Teknisk prosjekt · VM-infrastruktur",
-      "description": "Active Directory-domene med OU-struktur, Group Policy, PowerShell-skript, logging og overvåkning.",
-      "keywords": ["Active Directory", "VM-infrastruktur", "OU-struktur", "Group Policy", "PowerShell", "automatisk brukeropprettelse", "logging", "overvåkning", "Windows Server"],
-      "url": "about.html#prosjekt-heading",
-      "priority": 25
-    },
-    {
-      "id": "about-engagement",
-      "type": "Seksjon",
-      "title": "Engasjement",
-      "context": "Om meg",
-      "description": "Hovedfadder i BDIGSEC og arbeid med Ullerns årbokredaksjon og digitale åpne dag.",
-      "keywords": ["hovedfadder", "BDIGSEC", "fadderuken", "årbokredaksjon", "fotografi", "grafisk design", "layout", "kamerateknikk", "redigering"],
-      "url": "about.html#engasjement-heading"
+      "title": "Faglig retning",
+      "context": "Om meg · Interesser",
+      "description": "Nettverk, infrastruktur, cybersikkerhet, operativsystemer, cloud og programmering.",
+      "keywords": ["nettverk", "infrastruktur", "cybersikkerhet", "operativsystemer", "cloud", "programmering", "drift", "sikre systemer"],
+      "url": "about.html#faglig-retning",
+      "priority": 15
     },
     {
       "id": "page-projects",
