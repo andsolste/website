@@ -193,6 +193,469 @@
     white-space: nowrap;
 }
 
+/* IDATT2202 – samlet emneoversikt */
+.os-overview-page {
+    max-width: 1120px;
+}
+
+.os-course-header {
+    max-width: 900px;
+    margin-bottom: 2.75rem;
+}
+
+.os-course-lede {
+    max-width: 78ch;
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+.os-course-facts {
+    display: flex;
+    margin: 1.35rem 0 0;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: .55rem 1.35rem;
+    color: var(--text-muted);
+    font-size: .9rem;
+    list-style: none;
+}
+
+.os-course-facts li {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+}
+
+.os-course-facts li::before {
+    width: 5px;
+    height: 5px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--blue);
+    content: "";
+}
+
+.os-section-kicker,
+.os-topic-meta,
+.os-chapter {
+    margin: 0 0 .45rem;
+    color: var(--blue-light);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .09em;
+    line-height: 1.45;
+    text-transform: uppercase;
+}
+
+.os-progress-section {
+    display: grid;
+    margin: 0 0 3.5rem;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+    gap: 1rem;
+}
+
+.os-progress-summary,
+.os-continue {
+    min-width: 0;
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface-subtle);
+}
+
+.os-progress-summary {
+    border-left: 3px solid var(--purple);
+}
+
+.os-progress-summary h2,
+.os-continue h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.os-progress-labels {
+    display: flex;
+    margin: 1.15rem 0 .75rem;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.os-progress-labels strong {
+    color: var(--text-primary);
+}
+
+.os-progress-labels span,
+.os-continue > p:not(.os-section-kicker, .os-continue-module) {
+    color: var(--text-muted);
+    font-size: .9rem;
+}
+
+.os-continue {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.os-continue-module {
+    margin: .6rem 0 .25rem;
+    color: var(--purple-light);
+    font-size: .82rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.os-continue > p:not(.os-section-kicker, .os-continue-module) {
+    margin: .45rem 0 1rem;
+}
+
+.os-continue .button-link {
+    margin-top: auto;
+}
+
+.os-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+}
+
+.os-section-header {
+    max-width: 780px;
+    margin-bottom: 1.75rem;
+}
+
+.os-section-header h2,
+.os-security-thread h2 {
+    margin: 0;
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    line-height: 1.25;
+}
+
+.os-section-header > p:last-child {
+    margin: .8rem 0 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.os-learning-flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.os-flow-stage {
+    min-width: 0;
+    padding-top: 1rem;
+    border-top: 2px solid var(--purple);
+}
+
+.os-flow-stage:last-child {
+    border-top-color: var(--amber);
+}
+
+.os-flow-number {
+    margin: 0 0 .35rem;
+    color: var(--blue);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+.os-flow-stage h3 {
+    min-height: 2.7em;
+    margin: 0 0 .9rem;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.os-flow-stage ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.os-flow-stage li {
+    border-top: 1px solid var(--border);
+}
+
+.os-flow-stage a {
+    display: block;
+    padding: .85rem 0;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.os-flow-stage a:hover strong {
+    color: var(--purple-light);
+}
+
+.os-flow-stage a:focus-visible {
+    border-radius: 6px;
+    outline: 3px solid var(--purple-light);
+    outline-offset: 3px;
+}
+
+.os-flow-stage strong,
+.os-flow-stage span {
+    display: block;
+}
+
+.os-flow-stage strong {
+    font-size: .92rem;
+    line-height: 1.4;
+}
+
+.os-flow-stage span {
+    margin-top: .22rem;
+    color: var(--text-muted);
+    font-size: .82rem;
+    line-height: 1.45;
+}
+
+.os-module-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.os-module-card {
+    min-width: 0;
+    padding: 1.55rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    transition: border-color .15s ease, background-color .15s ease;
+}
+
+.os-module-card:hover {
+    border-color: #5b4c78;
+}
+
+.os-module-card.is-complete {
+    border-color: var(--purple-light);
+    background: var(--purple-subtle);
+}
+
+.os-module-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.os-module-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+.os-chapter {
+    max-width: 300px;
+    margin: .1rem 0 0;
+    flex: 0 0 auto;
+    text-align: right;
+}
+
+.os-module-description {
+    max-width: 78ch;
+    margin: .9rem 0 0;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.os-concepts {
+    margin: .9rem 0 0;
+    color: var(--text-muted);
+    font-size: .9rem;
+    line-height: 1.65;
+}
+
+.os-concepts strong {
+    margin-right: .4rem;
+    color: var(--blue-light);
+    font-size: .76rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.os-module-note {
+    max-width: 82ch;
+    margin: 1rem 0 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--blue);
+    color: var(--text-muted);
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+.os-module-note strong {
+    color: var(--text-secondary);
+}
+
+.os-topic-grid {
+    display: grid;
+    margin-top: 1.2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.os-topic {
+    min-width: 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.os-topic h4 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.os-topic > p:not(.os-topic-meta, .os-concepts) {
+    margin: .55rem 0 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.os-module-footer {
+    display: grid;
+    margin-top: 1.35rem;
+    padding-top: 1.2rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.os-module-footer > div {
+    min-width: 0;
+}
+
+.os-module-footer .module-status {
+    margin: 0 0 .55rem;
+}
+
+.os-module-footer .progress-track {
+    max-width: 560px;
+}
+
+.os-module-footer .button-link {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.os-security-thread {
+    display: grid;
+    padding: 1.6rem 1.75rem;
+    grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr);
+    gap: 2rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 12px;
+    background: var(--surface-subtle);
+}
+
+.os-security-thread > p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.os-principle-chain {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    list-style: none;
+}
+
+.os-principle-chain li {
+    min-width: 0;
+    padding-top: 1rem;
+    border-top: 2px solid var(--purple);
+}
+
+.os-principle-chain span,
+.os-principle-chain strong {
+    display: block;
+}
+
+.os-principle-chain span {
+    margin-bottom: .45rem;
+    color: var(--blue-light);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.os-principle-chain strong {
+    color: var(--text-secondary);
+    font-size: .94rem;
+    line-height: 1.55;
+}
+
+.os-practical-note {
+    max-width: 860px;
+    margin-top: 2rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--blue);
+}
+
+.os-practical-note h3 {
+    margin: 0;
+    font-size: 1.08rem;
+}
+
+.os-practical-note p {
+    margin: .6rem 0 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.os-learning-goals {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.os-learning-goals section {
+    min-width: 0;
+    padding: 0 1.5rem;
+    border-left: 1px solid var(--border);
+}
+
+.os-learning-goals section:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.os-learning-goals section:last-child {
+    padding-right: 0;
+}
+
+.os-learning-goals h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.os-learning-goals p {
+    margin: .65rem 0 0;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.os-module-card:target,
+.os-topic:target,
+.os-module-header:target,
+.os-module-description:target {
+    scroll-margin-top: 2rem;
+    outline: 2px solid var(--purple);
+    outline-offset: 5px;
+}
+
 /* Modulside */
 .module-page {
     max-width: 980px;
@@ -498,6 +961,38 @@ th {
     .question-list {
         columns: 1;
     }
+
+    .os-progress-section,
+    .os-security-thread {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .os-learning-flow,
+    .os-principle-chain {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .os-topic-grid,
+    .os-learning-goals {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .os-learning-goals section,
+    .os-learning-goals section:first-child,
+    .os-learning-goals section:last-child {
+        padding: 1.25rem 0;
+        border-top: 1px solid var(--border);
+        border-left: 0;
+    }
+
+    .os-learning-goals section:first-child {
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .os-learning-goals section:last-child {
+        padding-bottom: 0;
+    }
 }
 
 @media (max-width: 520px) {
@@ -514,6 +1009,55 @@ th {
     .overview-progress {
         padding-right: 1rem;
         padding-left: 1rem;
+    }
+
+    .os-course-facts {
+        display: grid;
+        gap: .55rem;
+    }
+
+    .os-progress-summary,
+    .os-continue,
+    .os-module-card,
+    .os-security-thread {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+    .os-progress-labels,
+    .os-module-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .os-progress-labels {
+        display: flex;
+        gap: .3rem;
+    }
+
+    .os-chapter {
+        max-width: none;
+        text-align: left;
+    }
+
+    .os-learning-flow,
+    .os-principle-chain {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    .os-flow-stage h3 {
+        min-height: 0;
+    }
+
+    .os-module-footer {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+    }
+
+    .os-module-footer .button-link {
+        width: 100%;
+        white-space: normal;
     }
 
     .module-navigation {

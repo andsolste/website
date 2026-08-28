@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "entries": [
     {
       "id": "page-home",
@@ -209,20 +209,20 @@
       "type": "Fag",
       "title": "Operativsystemer",
       "code": "IDATT2202",
-      "context": "NTNU",
-      "description": "Grunnleggende mekanismer i operativsystemer, prosesser, minne og samspillet mellom programvare og maskinvare.",
-      "keywords": ["operativsystemer", "prosesser", "minne", "programvare", "maskinvare", "moduler", "progresjon"],
+      "context": "NTNU · 7,5 studiepoeng",
+      "description": "Hvordan moderne operativsystemer abstraherer, fordeler og beskytter ressurser mellom applications/users og hardware.",
+      "keywords": ["operativsystemer", "kernel", "prosesser", "threads", "concurrency", "scheduling", "minne", "virtual memory", "file systems", "security", "system programming", "programvare", "maskinvare", "moduler", "progresjon"],
       "url": "fag/idatt2202/index.html",
       "priority": 40
     },
     {
       "id": "module-idatt2202-1",
       "type": "Modul",
-      "title": "Modul 1 · Introduksjon",
+      "title": "Modul 1 · Introduction to Operating Systems",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
-      "description": "En felles startside for det grunnleggende rammeverket i operativsystemer.",
-      "keywords": ["introduksjon", "grunnbegreper", "studieplan", "forelesningsmateriale", "notater", "ressurser", "oppgaver"],
+      "context": "IDATT2202 · Chapter 1 · Sections 1.1–1.3",
+      "description": "Introduksjon til OS abstraction, resource management og forholdet mellom applications, operativsystem og hardware.",
+      "keywords": ["introduksjon", "Chapter 1", "Sections 1.1–1.3", "OS abstraction", "resource management", "applications", "hardware", "protection", "isolation", "system calls", "referee", "illusionist", "glue", "reliability", "performance"],
       "url": "fag/idatt2202/modul-1.html",
       "priority": 15
     },
@@ -231,11 +231,131 @@
       "type": "Modul",
       "title": "Modul 2 · The kernel abstraction – part 1",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
+      "context": "IDATT2202 · Chapter 2 · Sections 2.1–2.3",
       "description": "Process isolation, dual-mode operation, virtual memory og kontrollerte overganger mellom user mode og kernel mode.",
       "keywords": ["process", "process abstraction", "process isolation", "address space", "threads", "user mode", "kernel mode", "dual-mode operation", "privileged instructions", "memory protection", "base + bound", "fragmentation", "virtual memory", "translation table", "physical memory", "code", "data", "heap", "stack", "ASLR", "hardware timer", "timer interrupts", "system calls", "interrupts", "exceptions", "mode transfer", "interrupt vector", "kernel stack", "scheduler", "trap", "CPU", "C", "printf"],
       "url": "fag/idatt2202/modul-2.html",
       "priority": 25
+    },
+    {
+      "id": "topic-idatt2202-introduction",
+      "type": "Tema",
+      "title": "Introduction to Operating Systems",
+      "context": "Operativsystemer · Chapter 1 · Sections 1.1–1.3",
+      "description": "Hva et operativsystem gjør som abstraction-, ressursfordelings- og beskyttelseslag.",
+      "keywords": ["OS abstraction", "applications", "operating system", "hardware", "resource management", "protection", "isolation", "system calls", "referee", "illusionist", "glue", "reliability", "availability", "privacy", "portability", "latency", "throughput", "overhead", "fairness", "predictability", "batch processing", "multiprogramming", "time-sharing"],
+      "url": "fag/idatt2202/index.html#tema-introduction",
+      "priority": 8
+    },
+    {
+      "id": "topic-idatt2202-kernel",
+      "type": "Tema",
+      "title": "The Kernel Abstraction",
+      "context": "Operativsystemer · Chapter 2 · Sections 2.1–2.4, 2.6–2.10",
+      "description": "Hvordan kernel isolerer prosesser, kontrollerer privilegier og håndterer sikre overganger mellom user og kernel mode.",
+      "keywords": ["process abstraction", "address space", "PCB", "dual-mode operation", "privileged instructions", "hardware timer", "interrupts", "exceptions", "system calls", "safe mode transfer", "secure system calls", "process creation", "upcalls", "booting", "firmware", "BIOS", "UEFI", "bootloader", "virtual machines"],
+      "url": "fag/idatt2202/index.html#tema-kernel",
+      "priority": 8
+    },
+    {
+      "id": "topic-idatt2202-programming-interface",
+      "type": "Tema",
+      "title": "The Programming Interface",
+      "context": "Operativsystemer · Chapter 3 · Sections 3.1–3.5",
+      "description": "Process management, I/O, shell, interprocess communication og operativsystemets struktur sett fra programmererens side.",
+      "keywords": ["process management", "process identifiers", "PID", "parent child", "open", "close", "read", "write", "file descriptors", "I/O abstraction", "shell", "IPC", "interprocess communication", "operating system structure"],
+      "url": "fag/idatt2202/index.html#tema-programming-interface",
+      "priority": 8
+    },
+    {
+      "id": "topic-idatt2202-concurrency",
+      "type": "Tema",
+      "title": "Concurrency and Threads",
+      "context": "Operativsystemer · Chapter 4 · Sections 4.1–4.5, 4.8",
+      "description": "Flere execution flows i samme process, thread lifecycle, context switching og parallel execution.",
+      "keywords": ["concurrency", "threads", "process vs thread", "shared address space", "thread state", "thread creation", "thread termination", "thread lifecycle", "thread data structures", "context switching", "multi-threaded applications", "parallel execution"],
+      "url": "fag/idatt2202/index.html#tema-concurrency",
+      "priority": 8
+    },
+    {
+      "id": "topic-idatt2202-synchronization",
+      "type": "Tema",
+      "title": "Synchronizing Access to Shared Objects",
+      "context": "Operativsystemer · Chapter 5 · Sections 5.1–5.8",
+      "description": "Hvordan samtidige operasjoner bruker shared state korrekt med locks og condition variables.",
+      "keywords": ["shared state", "race conditions", "atomicity", "critical sections", "mutual exclusion", "locks", "acquire", "release", "condition variables", "wait", "signal", "broadcast", "synchronization primitives", "semaphores"],
+      "url": "fag/idatt2202/index.html#tema-synchronization",
+      "priority": 10
+    },
+    {
+      "id": "topic-idatt2202-deadlock",
+      "type": "Tema",
+      "title": "Multi-object Synchronization og Deadlock",
+      "context": "Operativsystemer · Chapter 6 · Sections 6.1–6.3, 6.5",
+      "description": "Lock performance og koordinering av flere ressurser, inkludert hvorfor deadlock oppstår og hvordan det kan håndteres.",
+      "keywords": ["multiprocessor synchronization", "lock performance", "lock design patterns", "lock contention", "lock granularity", "multiple locks", "deadlock", "vranglås", "resource dependencies", "deadlock avoidance", "deadlock handling"],
+      "url": "fag/idatt2202/index.html#tema-deadlock",
+      "priority": 10
+    },
+    {
+      "id": "topic-idatt2202-scheduling",
+      "type": "Tema",
+      "title": "Scheduling",
+      "context": "Operativsystemer · Chapter 7 · Sections 7.1–7.2",
+      "description": "Hvordan OS-et fordeler CPU-tid på én eller flere prosessorer og balanserer ulike mål.",
+      "keywords": ["scheduler", "scheduling policy", "CPU allocation", "preemption", "response time", "throughput", "fairness", "waiting time", "processor utilization", "uniprocessor", "multiprocessor", "cores"],
+      "url": "fag/idatt2202/index.html#tema-scheduling",
+      "priority": 8
+    },
+    {
+      "id": "topic-idatt2202-address-translation",
+      "type": "Tema",
+      "title": "Address Translation",
+      "context": "Operativsystemer · Chapter 8 · Sections 8.1–8.4",
+      "description": "Hvordan virtuelle adresser oversettes til fysisk minne samtidig som process isolation og memory protection opprettholdes.",
+      "keywords": ["virtual addresses", "physical addresses", "address translation", "virtual address spaces", "process isolation", "memory protection", "segmentation", "paging", "page tables", "hardware software cooperation", "software protection"],
+      "url": "fag/idatt2202/index.html#tema-address-translation",
+      "priority": 10
+    },
+    {
+      "id": "topic-idatt2202-virtual-memory",
+      "type": "Tema",
+      "title": "Caching and Virtual Memory",
+      "context": "Operativsystemer · Chapter 9 · Sections 9.1–9.7",
+      "description": "Hvordan caching, locality og replacement policies gjør minnesystemet effektivt og fleksibelt.",
+      "keywords": ["caching", "locality", "memory hierarchy", "cache hits", "cache misses", "cache lookup", "replacement policies", "page replacement", "virtual memory", "pages", "memory-mapped files", "RAM", "secondary storage", "performance trade-offs"],
+      "url": "fag/idatt2202/index.html#tema-virtual-memory",
+      "priority": 10
+    },
+    {
+      "id": "topic-idatt2202-file-systems",
+      "type": "Tema",
+      "title": "File Systems",
+      "context": "Operativsystemer · Chapters 11 og 13",
+      "description": "Filsystemets abstraction, API og software layers, og hvordan files og directories kobles til physical storage.",
+      "keywords": ["Chapter 11", "Sections 11.1–11.3", "Chapter 13", "Sections 13.1–13.4", "persistent storage", "file abstraction", "file system API", "files", "directories", "naming", "file metadata", "software layers", "directory structures", "directory lookup", "file access", "physical storage organization"],
+      "url": "fag/idatt2202/index.html#tema-file-systems",
+      "priority": 10
+    },
+    {
+      "id": "topic-idatt2202-security",
+      "type": "Tema",
+      "title": "Operating System Security",
+      "context": "Operativsystemer · Kursmateriale · Hailpernin Chapter 11",
+      "description": "Security goals og mekanismene som beskytter kernel, prosesser, minne, objekter og data.",
+      "keywords": ["security goals", "protection", "isolation", "access control", "object security", "memory safety", "malware", "OS security mechanisms", "hardware protection", "kernel protection", "process isolation", "memory protection", "secure system calls"],
+      "url": "fag/idatt2202/index.html#tema-security",
+      "priority": 10
+    },
+    {
+      "id": "topic-idatt2202-system-programming",
+      "type": "Tema",
+      "title": "Low-level / System Programming",
+      "context": "Operativsystemer · Tverrgående praktisk arbeid",
+      "description": "Praktisk arbeid med Unix/Linux, C og/eller Rust, compilation, debugging og low-level interaction med OS-et.",
+      "keywords": ["Unix", "Linux", "command line", "C", "Rust", "compilation", "debugging", "memory", "pointers", "addresses", "processes", "threads", "system calls", "synchronization", "x86", "x64", "assembly"],
+      "url": "fag/idatt2202/index.html#praktisk-systemprogrammering",
+      "priority": 8
     },
     {
       "id": "module-idatt2202-3",

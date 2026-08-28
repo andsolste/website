@@ -161,7 +161,7 @@
         };
     };
 
-    const indexPromise = fetch(searchIndexUrl, { credentials: "same-origin" })
+    const indexPromise = fetch(searchIndexUrl, { credentials: "same-origin", cache: "no-cache" })
         .then((response) => {
             if (!response.ok) throw new Error(`Search index returned ${response.status}`);
             return response.json();
@@ -192,7 +192,27 @@
     const scoreEntry = (entry, query) => {
         const fields = entry.normalized;
         const tokens = query.split(" ").filter(Boolean);
+        const chapterMatch = query.match(/^chapters?\s+(\d+)$/);
         let score = 0;
+
+        if (query.length === 1) {
+            const titleWordMatch = fields.title.split(" ").includes(query);
+            const keywordWordMatch = fields.keywords.some(keyword => keyword.split(" ").includes(query));
+            if (!titleWordMatch && fields.code !== query && !keywordWordMatch) return null;
+            if (titleWordMatch) score += 700;
+            if (fields.code === query) score += 650;
+            if (keywordWordMatch) score += 500;
+            if (entry.type === "Tema") score += 50;
+            return score + Number(entry.priority || 0);
+        }
+
+        if (chapterMatch) {
+            const chapterNumber = chapterMatch[1];
+            const chapterText = [fields.title, fields.context, fields.description, ...fields.keywords].join(" ");
+            const hasRequestedChapter = chapterText.includes("chapter " + chapterNumber)
+                || chapterText.includes("chapters " + chapterNumber);
+            if (!hasRequestedChapter) return null;
+        }
 
         if (fields.title === query) score += 1600;
         else if (fields.title.startsWith(query)) score += 900;
@@ -221,7 +241,7 @@
             else if (fields.code.includes(token)) tokenScore = Math.max(tokenScore, 170);
 
             if (fields.keywords.some((keyword) => keyword === token)) tokenScore = Math.max(tokenScore, 180);
-            else if (fields.keywords.some((keyword) => keyword.includes(token) || wordsMatch(keyword, token))) tokenScore = Math.max(tokenScore, 130);
+            else if (fields.keywords.some((keyword) => wordsMatch(keyword, token))) tokenScore = Math.max(tokenScore, 130);
 
             if (fields.context.includes(token) || wordsMatch(fields.context, token)) tokenScore = Math.max(tokenScore, 90);
             if (fields.description.includes(token) || wordsMatch(fields.description, token)) tokenScore = Math.max(tokenScore, 55);
