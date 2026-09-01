@@ -32,18 +32,308 @@
             <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="site-sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><span>Meny</span></button>
             <span class="mobile-brand">AS</span>
         </div>
-        <main class="site-main content-page" id="main-content">
+        <main class="site-main content-page it2810-overview-page" id="main-content">
             <a class="back-link" href="../index.html">← Til fagoversikten</a>
-            <section class="page-intro">
+            <header class="page-intro it2810-course-header">
                 <p class="course-code">IT2810</p>
                 <h1>Webutvikling</h1>
-                <p>Faget bygger kompetanse i å designe, utvikle og teste moderne, dynamiske webapplikasjoner med relevante språk, arkitekturer, rammeverk, dataformater og utviklingsverktøy. Prosjektarbeidet vektlegger universell utforming, bærekraft, kodekvalitet, kritisk bruk av verktøy og samarbeid.</p>
+                <p class="it2810-course-lede">Et prosjektbasert emne i moderne webapplikasjonsutvikling. Faget går fra webplattformens grunnlag med HTML, CSS og JavaScript til komponentbasert frontend med TypeScript og React, tilstandshåndtering, kommunikasjon med backend, kvalitetssikring og samarbeid.</p>
+                <ul class="it2810-course-facts" aria-label="Emnefakta">
+                    <li>Høst 2026</li>
+                    <li>Prosjektbasert undervisning</li>
+                    <li>Gruppearbeid</li>
+                    <li>Mappeevaluering</li>
+                    <li>Prosjekt 1 + Prosjekt 2</li>
+                </ul>
+                <div class="it2810-course-actions">
+                    <a class="ntnu-link" href="https://www.ntnu.no/studier/emner/IT2810/2026" target="_blank" rel="noopener noreferrer" aria-label="Se IT2810 hos NTNU, åpnes i ny fane">Se emnet hos NTNU <span aria-hidden="true">↗</span></a>
+                </div>
+            </header>
+
+            <section class="it2810-section" id="laeringsomraader" aria-labelledby="laeringsomraader-heading">
+                <header class="it2810-section-header">
+                    <p class="it2810-section-kicker">Kompetanse</p>
+                    <h2 id="laeringsomraader-heading">Hva skal jeg lære?</h2>
+                    <p>Emnet kombinerer webteknologi, programmering og samarbeid i prosjekter der løsningene skal fungere, kunne forstås og kunne forbedres.</p>
+                </header>
+                <ol class="it2810-competency-grid">
+                    <li class="it2810-competency">
+                        <span class="it2810-competency-number" aria-hidden="true">01</span>
+                        <h3>Webplattform og grensesnitt</h3>
+                        <p>Strukturere innhold med semantisk HTML og bygge responsive, tilgjengelige grensesnitt med moderne CSS.</p>
+                        <p class="it2810-concepts">HTML · CSS · Grid · Flexbox · responsive design · WCAG</p>
+                    </li>
+                    <li class="it2810-competency">
+                        <span class="it2810-competency-number" aria-hidden="true">02</span>
+                        <h3>Programmering og frontend</h3>
+                        <p>Bruke JavaScript og TypeScript til applikasjonslogikk og utvikle komponentbaserte brukergrensesnitt med React.</p>
+                        <p class="it2810-concepts">JavaScript · TypeScript · functional programming · React · props · state · hooks</p>
+                    </li>
+                    <li class="it2810-competency">
+                        <span class="it2810-competency-number" aria-hidden="true">03</span>
+                        <h3>Data og applikasjonsarkitektur</h3>
+                        <p>Organisere lokal og delt tilstand, lagre data i klienten og kommunisere med backend gjennom web-API-er og asynkrone operasjoner.</p>
+                        <p class="it2810-concepts">Context · Web Storage · HTTP · REST · fetch · GraphQL</p>
+                    </li>
+                    <li class="it2810-competency">
+                        <span class="it2810-competency-number" aria-hidden="true">04</span>
+                        <h3>Profesjonell utvikling</h3>
+                        <p>Samarbeide med Git, videreutvikle andres kode og forbedre løsninger gjennom testing, code review, dokumentasjon og kritisk bruk av utviklingsverktøy.</p>
+                        <p class="it2810-concepts">Git · testing · code review · accessibility · deployment · KI-assistanse</p>
+                    </li>
+                </ol>
             </section>
-            <section class="content-card" aria-labelledby="course-content-heading">
-                <p class="section-kicker">Fagområde</p>
-                <h2 id="course-content-heading">Klar for faginnhold</h2>
-                <p>Moduler, notater og ressurser legges inn her etter hvert som faget bygges ut.</p>
-                <a class="ntnu-link" href="https://www.ntnu.no/studier/emner/IT2810/2026" target="_blank" rel="noopener noreferrer" aria-label="Se IT2810 hos NTNU, åpnes i ny fane">Se emnet hos NTNU <span aria-hidden="true">↗</span></a>
+
+            <section class="it2810-section" id="webarkitektur" aria-labelledby="webarkitektur-heading">
+                <header class="it2810-section-header">
+                    <p class="it2810-section-kicker">Webstack og dataflyt</p>
+                    <h2 id="webarkitektur-heading">Hvordan en moderne webapplikasjon henger sammen</h2>
+                    <p>React står ikke alene. Grensesnittet bygger på webplattformen og programmeringsspråkene, håndterer data i klienten og kommuniserer med tjenester gjennom API-er.</p>
+                </header>
+                <div class="it2810-architecture">
+                    <ol class="it2810-stack" aria-label="Lagene i en moderne webapplikasjon">
+                        <li class="it2810-stack-layer" id="stack-webplattform">
+                            <span class="it2810-stack-number" aria-hidden="true">01</span>
+                            <div>
+                                <h3>Webplattform</h3>
+                                <p>HTML gir innholdet struktur og mening, mens CSS former layout og presentasjon i nettleseren.</p>
+                                <p class="it2810-stack-tech">HTML · CSS · Browser APIs</p>
+                            </div>
+                        </li>
+                        <li class="it2810-stack-layer" id="stack-programmering">
+                            <span class="it2810-stack-number" aria-hidden="true">02</span>
+                            <div>
+                                <h3>Programmering</h3>
+                                <p>JavaScript gir applikasjonen oppførsel, mens TypeScript gjør datatyper og grensesnitt tydeligere.</p>
+                                <p class="it2810-stack-tech">JavaScript · TypeScript · ES modules · functional programming</p>
+                            </div>
+                        </li>
+                        <li class="it2810-stack-layer" id="stack-react">
+                            <span class="it2810-stack-number" aria-hidden="true">03</span>
+                            <div>
+                                <h3>Brukergrensesnitt</h3>
+                                <p>React bygger grensesnittet av JSX og funksjonelle komponenter, med props, events og callbacks som del av dataflyten.</p>
+                                <p class="it2810-stack-tech">React · JSX · components · props</p>
+                            </div>
+                        </li>
+                        <li class="it2810-stack-layer" id="stack-state">
+                            <span class="it2810-stack-number" aria-hidden="true">04</span>
+                            <div>
+                                <h3>Data i klienten</h3>
+                                <p>State og hooks styrer hva grensesnittet viser. Context og Web Storage blir relevante når data skal deles eller bevares.</p>
+                                <p class="it2810-stack-tech">state · hooks · Context · localStorage · sessionStorage</p>
+                            </div>
+                        </li>
+                        <li class="it2810-stack-layer" id="stack-api">
+                            <span class="it2810-stack-number" aria-hidden="true">05</span>
+                            <div>
+                                <h3>Kommunikasjon</h3>
+                                <p>Frontend henter og sender asynkrone data over HTTP, blant annet gjennom REST-baserte API-er.</p>
+                                <p class="it2810-stack-tech">HTTP · REST · JSON · Promise · fetch</p>
+                            </div>
+                        </li>
+                        <li class="it2810-stack-layer" id="stack-backend">
+                            <span class="it2810-stack-number" aria-hidden="true">06</span>
+                            <div>
+                                <h3>Backend og data</h3>
+                                <p>Backend gjør data og funksjonalitet tilgjengelig for klienten gjennom API-er. GraphQL introduseres senere som en annen måte å arbeide med slike data på.</p>
+                                <p class="it2810-stack-tech">REST API · GraphQL senere i emnet</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <aside class="it2810-cross-cutting" id="stack-kvalitet" aria-labelledby="stack-kvalitet-heading">
+                        <p class="it2810-section-kicker">På tvers av hele stacken</p>
+                        <h3 id="stack-kvalitet-heading">Kvalitet og levering</h3>
+                        <p>God utviklingspraksis er ikke et siste lag som legges på etterpå. Den følger arbeidet fra første commit til en ferdig løsning.</p>
+                        <p class="it2810-cross-cutting-topics">Git · testing · accessibility · code quality · dokumentasjon · bærekraft · deployment · kritisk KI-bruk</p>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="it2810-section" id="prosjektloep" aria-labelledby="prosjektloep-heading">
+                <header class="it2810-section-header">
+                    <p class="it2810-section-kicker">Prosjektbasert læring</p>
+                    <h2 id="prosjektloep-heading">Fra grunnlag til større webapplikasjon</h2>
+                    <p>Prosjekt 1 etablerer teknologiene og arbeidsformen. Prosjekt 2 kombinerer fundamentet i en større applikasjon med backend og mer omfattende håndtering av data og tilstand.</p>
+                </header>
+                <ol class="it2810-project-path">
+                    <li>
+                        <article class="it2810-project-phase">
+                            <p class="it2810-project-label">Prosjekt 1 · Fundament</p>
+                            <h3>Bli kjent med teknologiene</h3>
+                            <p>Et treningsprosjekt for å forstå mekanismene og arbeidsformen i en moderne webapplikasjon.</p>
+                            <p class="it2810-concepts">TypeScript · Node.js · Vite · React · components · props · state · hooks · responsive design · accessibility · Git · REST API · testing · installasjon og kjøring</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-project-phase">
+                            <p class="it2810-project-label">Prosjekt 2 · Sammenheng</p>
+                            <h3>Kombinere konseptene</h3>
+                            <p>En større React-applikasjon der fundamentet brukes sammen med backend og mer avanserte konsepter.</p>
+                            <p class="it2810-concepts">backend · mer state management · GraphQL · accessibility · bærekraft og energieffektivt design · testing</p>
+                        </article>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="it2810-section" id="teorimoduler" aria-labelledby="teorimoduler-heading">
+                <header class="it2810-section-header">
+                    <p class="it2810-section-kicker">Semesterstruktur</p>
+                    <h2 id="teorimoduler-heading">Teorimoduler</h2>
+                    <p>Modulene bygges ut gjennom semesteret etter hvert som temaene gjennomgås i undervisningen og brukes i prosjektene.</p>
+                </header>
+                <ol class="it2810-module-grid">
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-1">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 1</p>
+                                    <h3>Webplattformen og frontendgrunnlaget</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Fundamentet for webgrensesnitt: hvordan HTML beskriver struktur og mening, CSS styrer presentasjon og layout, og responsivt og tilgjengelig design gjør løsningen brukbar på tvers av enheter og brukere.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTML · semantisk HTML · CSS · selectors · CSS Grid · Flexbox · viewport · media queries · responsive design · tilgjengelighet · WCAG</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-2">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 2</p>
+                                    <h3>JavaScript og TypeScript</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Programmeringsgrunnlaget for moderne frontendutvikling, fra JavaScripts dynamiske modell til TypeScripts statiske typesystem og den funksjonelle programmeringsstilen som brukes videre i React.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> JavaScript · ES modules · import/export · arrow functions · functional programming · immutability · map/filter/reduce · TypeScript · types · interfaces · type inference · union types</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-3">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 3</p>
+                                    <h3>Utviklingsmiljø og tooling</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Verktøyene rundt kildekoden: hvordan Node, pakkebehandlere og Vite brukes til å utvikle, bygge, kjøre og kvalitetssikre moderne frontendprosjekter.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> Node.js · Node v24 · npm/pnpm · packages · dependencies · Vite · development server · build · hot reload · ESLint</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-4">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 4</p>
+                                    <h3>React fundamentals</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Komponentbasert og deklarativ utvikling av brukergrensesnitt, med fokus på hvordan UI bygges av komponenter og hvordan data og brukerhandlinger driver rendering.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> React · JSX · functional components · component hierarchy · props · state · useState · events · callbacks · useEffect · rendering</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-5">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 5</p>
+                                    <h3>State management</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Hvordan applikasjonstilstand eies, flyttes, deles og lagres når en React-applikasjon vokser fra enkle komponenter til mer sammensatte grensesnitt.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> local state · lifting state up · props · callbacks · Context API · useContext · Web Storage · localStorage · sessionStorage · global state management</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-6">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 6</p>
+                                    <h3>Data, HTTP og API-er</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Hvordan frontend kommuniserer med andre systemer, hvordan REST modellerer ressurser over HTTP, og hvordan asynkrone data hentes og håndteres i klienten.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTTP · REST · resources · URI · GET · POST · PUT · DELETE · CRUD · JSON · Promises · fetch · async data · TanStack Query</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-7">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 7</p>
+                                    <h3>Git og samarbeid</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Versjonskontroll og arbeidsflyt for utvikling i team, med branching, pull requests, issues og code review som mekanismer for koordinering og kvalitet.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> Git · repository · clone · commit · pull · push · branches · merge · pull requests · issues · code review · team workflow</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="it2810-module-card" id="planlagt-modul-8">
+                            <header class="it2810-module-header">
+                                <div>
+                                    <p class="module-number">Modul 8</p>
+                                    <h3>Kvalitet i webapplikasjoner</h3>
+                                </div>
+                                <span class="it2810-module-status">Planlagt</span>
+                            </header>
+                            <p class="it2810-module-description">Kvaliteten rundt selve funksjonaliteten: testing, tilgjengelighet, kodekvalitet, dokumentasjon, bærekraft, levering og kritisk bruk av utviklingsverktøy og KI.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> code quality · linting · testing · documentation · accessibility · responsive design · sustainability · deployment · AI-assisted development</p>
+                        </article>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="it2810-section" id="arbeidsform" aria-labelledby="arbeidsform-heading">
+                <header class="it2810-section-header">
+                    <p class="it2810-section-kicker">Gjennomføring</p>
+                    <h2 id="arbeidsform-heading">Arbeidsform og vurdering</h2>
+                    <p>Prosjektene er hovedarenaen for å utforske teknologiene, samarbeide om kode og vise hva som er forstått gjennom semesteret.</p>
+                </header>
+                <div class="it2810-coursework-grid">
+                    <article class="it2810-workflow">
+                        <h3>Arbeidsform</h3>
+                        <p>Arbeidet skjer normalt i grupper på 3–4, med veiledning, prøving og feiling og dokumentasjon av utviklingsprosessen.</p>
+                        <ul>
+                            <li>Git og issues som del av arbeidsflyten</li>
+                            <li>Testing og forbedring underveis</li>
+                            <li>Medstudentvurdering av løsninger og kode</li>
+                            <li>Dokumentasjon av arbeidet</li>
+                        </ul>
+                    </article>
+                    <article class="it2810-assessment">
+                        <h3>Mappeevaluering</h3>
+                        <dl>
+                            <div>
+                                <dt>Prosjekt 1 · godkjent innlevering og medstudentvurdering</dt>
+                                <dd>10 %</dd>
+                            </div>
+                            <div>
+                                <dt>Prosjekt 1 · sluttvurdering</dt>
+                                <dd>5 %</dd>
+                            </div>
+                            <div>
+                                <dt>Prosjekt 2 · fire innleveringer og medstudentvurderinger</dt>
+                                <dd>4 × 10 %</dd>
+                            </div>
+                            <div>
+                                <dt>Prosjekt 2 · sluttvurdering</dt>
+                                <dd>45 %</dd>
+                            </div>
+                        </dl>
+                    </article>
+                </div>
+                <aside class="it2810-ai-note" aria-labelledby="ki-heading">
+                    <p class="it2810-section-kicker">KI i utviklingsarbeidet</p>
+                    <h3 id="ki-heading">Assistanse krever egen vurdering</h3>
+                    <p>Generativ KI kan brukes som utviklingsassistanse, men studenten må selv kunne forstå, evaluere og forbedre resultatet. Bruken skal dokumenteres, og KI erstatter ikke forståelse av koden.</p>
+                </aside>
             </section>
         </main>
         <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>

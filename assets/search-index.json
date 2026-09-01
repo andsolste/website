@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "entries": [
     {
       "id": "page-home",
@@ -182,10 +182,109 @@
       "title": "Webutvikling",
       "code": "IT2810",
       "context": "Aktivt fag · Høst 2026",
-      "description": "Design, utvikling og testing av moderne, dynamiske webapplikasjoner med vekt på universell utforming, kodekvalitet og prosjektarbeid.",
-      "keywords": ["webutvikling", "webapplikasjoner", "frontend", "arkitektur", "rammeverk", "dataformater", "testing", "universell utforming", "bærekraft", "kodekvalitet", "utviklingsverktøy"],
+      "description": "Prosjektbasert utvikling av moderne webapplikasjoner fra HTML, CSS, JavaScript og TypeScript til React, state, API-er, testing og tilgjengelighet.",
+      "keywords": ["webutvikling", "webapplikasjoner", "frontend", "backend", "HTML", "CSS", "JavaScript", "TypeScript", "React", "state management", "HTTP", "REST", "GraphQL", "Git", "testing", "universell utforming", "WCAG", "responsive design", "bærekraft", "kodekvalitet", "utviklingsverktøy", "prosjektarbeid"],
       "url": "fag/it2810/index.html",
       "priority": 35
+    },
+    {
+      "id": "it2810-planned-module-1",
+      "type": "Tema",
+      "title": "Webplattformen og frontendgrunnlaget",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 1",
+      "description": "Semantisk HTML, moderne CSS, responsive grensesnitt og tilgjengelighet på tvers av enheter og brukere.",
+      "keywords": ["HTML", "semantisk HTML", "CSS", "selectors", "CSS Grid", "Flexbox", "viewport", "media queries", "responsive design", "tilgjengelighet", "accessibility", "WCAG"],
+      "url": "fag/it2810/index.html#planlagt-modul-1",
+      "priority": 16
+    },
+    {
+      "id": "it2810-planned-module-2",
+      "type": "Tema",
+      "title": "JavaScript og TypeScript",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 2",
+      "description": "Programmeringsgrunnlaget for frontend, fra JavaScript og ES modules til TypeScript og functional programming.",
+      "keywords": ["JavaScript", "TypeScript", "ES modules", "import", "export", "arrow functions", "functional programming", "immutability", "map", "filter", "reduce", "types", "interfaces", "type inference", "union types"],
+      "url": "fag/it2810/index.html#planlagt-modul-2",
+      "priority": 16
+    },
+    {
+      "id": "it2810-planned-module-3",
+      "type": "Tema",
+      "title": "Utviklingsmiljø og tooling",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 3",
+      "description": "Node, pakkebehandlere og Vite som miljø for å utvikle, bygge, kjøre og kvalitetssikre frontendprosjekter.",
+      "keywords": ["Node.js", "Node v24", "npm", "pnpm", "packages", "dependencies", "Vite", "development server", "build", "hot reload", "ESLint", "tooling"],
+      "url": "fag/it2810/index.html#planlagt-modul-3",
+      "priority": 14
+    },
+    {
+      "id": "it2810-planned-module-4",
+      "type": "Tema",
+      "title": "React fundamentals",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 4",
+      "description": "Komponentbasert React-utvikling med JSX, props, state, hooks, events og deklarativ rendering.",
+      "keywords": ["React", "JSX", "components", "functional components", "component hierarchy", "props", "state", "hooks", "useState", "useEffect", "events", "callbacks", "rendering"],
+      "url": "fag/it2810/index.html#planlagt-modul-4",
+      "priority": 18
+    },
+    {
+      "id": "it2810-planned-module-5",
+      "type": "Tema",
+      "title": "State management",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 5",
+      "description": "Hvordan React-applikasjoner eier, flytter, deler og lagrer lokal og mer global tilstand.",
+      "keywords": ["state", "state management", "local state", "lifting state up", "props", "callbacks", "Context API", "useContext", "Web Storage", "localStorage", "sessionStorage", "global state management"],
+      "url": "fag/it2810/index.html#planlagt-modul-5",
+      "priority": 18
+    },
+    {
+      "id": "it2810-planned-module-6",
+      "type": "Tema",
+      "title": "Data, HTTP og API-er",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 6",
+      "description": "REST, HTTP og asynkrone data mellom frontend og andre systemer.",
+      "keywords": ["HTTP", "REST", "REST API", "resources", "URI", "GET", "POST", "PUT", "DELETE", "CRUD", "JSON", "Promises", "fetch", "async data", "TanStack Query"],
+      "url": "fag/it2810/index.html#planlagt-modul-6",
+      "priority": 18
+    },
+    {
+      "id": "it2810-graphql",
+      "type": "Tema",
+      "title": "Backend, API-er og GraphQL",
+      "code": "IT2810",
+      "context": "IT2810 · Webstack · Senere i emnet",
+      "description": "Backend gjør data og funksjonalitet tilgjengelig gjennom API-er; GraphQL introduseres senere i emnet.",
+      "keywords": ["backend", "API", "GraphQL", "frontend backend", "dataflyt", "Prosjekt 2"],
+      "url": "fag/it2810/index.html#stack-backend",
+      "priority": 16
+    },
+    {
+      "id": "it2810-planned-module-7",
+      "type": "Tema",
+      "title": "Git og samarbeid",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 7",
+      "description": "Versjonskontroll og teamflyt med branches, pull requests, issues og code review.",
+      "keywords": ["Git", "GitHub", "repository", "clone", "commit", "pull", "push", "branches", "merge", "pull requests", "issues", "code review", "team workflow"],
+      "url": "fag/it2810/index.html#planlagt-modul-7",
+      "priority": 16
+    },
+    {
+      "id": "it2810-planned-module-8",
+      "type": "Tema",
+      "title": "Kvalitet i webapplikasjoner",
+      "code": "IT2810",
+      "context": "IT2810 · Planlagt modul 8",
+      "description": "Testing, tilgjengelighet, kodekvalitet, dokumentasjon, bærekraft, levering og kritisk KI-bruk.",
+      "keywords": ["code quality", "linting", "testing", "documentation", "accessibility", "tilgjengelighet", "WCAG", "responsive design", "sustainability", "bærekraft", "deployment", "AI-assisted development", "KI"],
+      "url": "fag/it2810/index.html#planlagt-modul-8",
+      "priority": 16
     },
     {
       "id": "previous-subject-dcst1001",
