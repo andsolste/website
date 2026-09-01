@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT2810 – Modul 1 | Andreas Sollie Steffensen</title>
+    <link rel="stylesheet" href="../../assets/site.css">
+    <link rel="stylesheet" href="../styles.css?v=20260901a">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
+
+    <aside class="sidebar" id="site-sidebar" aria-label="Sidepanel">
+        <div class="sidebar-header">
+            <div class="sidebar-brand" aria-label="Andreas Sollie Steffensen">
+                <span class="brand-mark" aria-hidden="true">AS</span>
+                <span class="brand-name">Andreas</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="site-sidebar" aria-expanded="true" aria-label="Fold sammen meny" title="Fold sammen meny">
+                <svg class="collapse-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"></path></svg>
+                <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+            </button>
+        </div>
+        <nav class="sidebar-nav" id="primary-navigation" aria-label="Hovednavigasjon">
+            <ul>
+                <li><a href="../../about.html" aria-label="Om meg" title="Om meg"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.5 20c.7-4 3-6 6.5-6s5.8 2 6.5 6"></path></svg></span><span class="nav-label">Om meg</span></a></li>
+                <li><a href="../../projects/index.html" aria-label="Prosjekter" title="Prosjekter"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.5 5l-3 14"></path></svg></span><span class="nav-label">Prosjekter</span></a></li>
+                <li><a href="../index.html" aria-current="page" aria-label="Fag" title="Fag"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5c3-.8 5.6-.2 8 1.8v11c-2.4-2-5-2.6-8-1.8zM20 5.5c-3-.8-5.6-.2-8 1.8v11c2.4-2 5-2.6 8-1.8z"></path></svg></span><span class="nav-label">Fag</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">NTNU · 2026</div>
+    </aside>
+
+    <button class="sidebar-scrim" id="sidebar-scrim" type="button" aria-label="Lukk meny" hidden></button>
+
+    <div class="page-shell" id="page-shell">
+        <div class="mobile-bar">
+            <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="site-sidebar" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+                <span>Meny</span>
+            </button>
+            <span class="mobile-brand">AS</span>
+        </div>
+
+        <main class="site-main content-page module-page it2810-module-page" id="main-content" data-course="it2810" data-module="1" data-module-count="8">
+            <a class="back-link" href="index.html">← Til IT2810</a>
+
+            <header class="module-header module-study-header it2810-study-header">
+                <p class="module-number">IT2810 · Modul 1</p>
+                <h1>Webplattformen og frontendgrunnlaget</h1>
+                <p class="module-description">Fundamentet for moderne frontendutvikling: hvordan HTML beskriver struktur og mening, CSS styrer presentasjon og layout, og responsivt og tilgjengelig design gjør webgrensesnitt brukbare på tvers av enheter og brukere.</p>
+                <ul class="module-meta" aria-label="Modulmetadata">
+                    <li>HTML &amp; CSS</li>
+                    <li>Responsive design</li>
+                    <li>Accessibility</li>
+                    <li>Frontend fundamentals</li>
+                </ul>
+
+                <div class="module-page-progress" aria-live="polite">
+                    <div class="module-page-progress-labels">
+                        <strong data-module-page-status>0 av 15 aktiviteter fullført</strong>
+                        <span data-module-page-percent>0 %</span>
+                    </div>
+                    <div class="progress-track" role="progressbar" aria-label="Progresjon i IT2810 modul 1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="progress-bar" data-module-page-progress></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="module-section module-preparation" id="for-forelesningen" aria-labelledby="for-forelesningen-heading">
+                <h2 id="for-forelesningen-heading">Før forelesningen</h2>
+                <div class="module-panel">
+                    <ul class="checklist">
+                        <li><label><input type="checkbox" data-check-id="before-1"> Se over emneoversikten for IT2810</label></li>
+                        <li><label><input type="checkbox" data-check-id="before-2"> Finn frem forelesningsmaterialet om HTML, CSS og responsivt design</label></li>
+                        <li><label><input type="checkbox" data-check-id="before-3"> Noter begreper eller mekanismer du ikke forstår</label></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="module-section module-outcomes it2810-learning-map" id="dette-skal-du-forsta" aria-labelledby="forsta-heading">
+                <p class="it2810-section-kicker">Kart før du leser</p>
+                <h2 id="forsta-heading">Dette skal du forstå</h2>
+                <p>Kryss av etter hvert som du kan forklare sammenhengene med egne ord.</p>
+                <div class="it2810-understanding-grid">
+                    <section aria-labelledby="understanding-platform-heading">
+                        <h3 id="understanding-platform-heading">Webplattform og HTML</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-1"> Jeg kan forklare rollene til HTML, CSS og JavaScript og plassere dem i webplattformen</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-2"> Jeg kan skille mellom element, attribute og content og velge relevante HTML-elementer</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-semantics-heading">
+                        <h3 id="understanding-semantics-heading">Semantikk og tilgjengelighet</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-3"> Jeg kan forklare semantic HTML og hvorfor native elementer er fundamentet for accessibility</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-4"> Jeg kan forklare selectors og skille element-, class- og ID-selector</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-layout-heading">
+                        <h3 id="understanding-layout-heading">Layout</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-5"> Jeg kan skille Flexbox som primært endimensjonalt fra Grid som todimensjonalt, og forklare parent/container-prinsippet</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-6"> Jeg kan forklare responsive web design, viewport og viewport-meta-elementet</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-responsive-heading">
+                        <h3 id="understanding-responsive-heading">Responsivitet</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-7"> Jeg kan forklare media queries, breakpoints og hvordan layout kan reorganiseres</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-8"> Jeg kan forklare responsive bilder, mobile-first som mulig metode og hvorfor mekanismene læres før UI-rammeverk</label></li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+
+            <div class="module-study-layout">
+                <nav class="module-toc" aria-labelledby="innhold-heading">
+                    <p class="it2810-section-kicker">På denne siden</p>
+                    <h2 id="innhold-heading">Innhold</h2>
+                    <ol>
+                        <li><a href="#webplattformen">Webplattformen</a></li>
+                        <li><a href="#html-grunnlag">HTML: struktur og attributter</a></li>
+                        <li><a href="#semantikk-tilgjengelighet">Semantikk og tilgjengelighet</a></li>
+                        <li><a href="#frontend-lagene">HTML, CSS og JavaScript</a></li>
+                        <li><a href="#css-selectors">CSS og selectors</a></li>
+                        <li><a href="#flexbox-grid">Flexbox og Grid</a></li>
+                        <li><a href="#responsivt-design">Responsivt webdesign</a></li>
+                        <li><a href="#responsive-mekanismer">Viewport, queries og bilder</a></li>
+                        <li><a href="#mobile-first-rammeverk">Mobile-first og rammeverk</a></li>
+                        <li><a href="#helheten">Hvordan alt henger sammen</a></li>
+                        <li><a href="#prosjektfokus">Prosjektfokus og fallgruver</a></li>
+                        <li><a href="#kortversjonen">Kortversjonen</a></li>
+                        <li><a href="#selvtest">Test deg selv</a></li>
+                    </ol>
+                </nav>
+
+                <div class="module-study-content">
+                    <section class="module-study-section" id="webplattformen" aria-labelledby="webplattformen-heading">
+                        <p class="it2810-section-kicker">Større enn én nettside</p>
+                        <h2 id="webplattformen-heading">Webplattformen</h2>
+                        <p>HTML og CSS er deler av et større sett med standarder og mekanismer som utgjør World Wide Web. Her er målet å plassere dem i helheten, ikke å gjøre modulen til et nettverkskapittel.</p>
+
+                        <dl class="it2810-platform-terms">
+                            <div><dt>HTTP</dt><dd>Kommunikasjon mellom klienter og tjenester på web.</dd></div>
+                            <div><dt>URI / URL</dt><dd>Identifiserer og adresserer ressurser.</dd></div>
+                            <div><dt>DNS</dt><dd>Knytter domenenavn til tjenestene nettleseren skal nå.</dd></div>
+                            <div><dt>MIME types</dt><dd>Beskriver hvilken type innhold som sendes.</dd></div>
+                            <div><dt>HTML</dt><dd>Beskriver dokumentets struktur og mening.</dd></div>
+                            <div><dt>CSS</dt><dd>Styrer presentasjon og layout.</dd></div>
+                            <div><dt>ECMAScript / JavaScript</dt><dd>Gir webapplikasjonen dynamisk oppførsel.</dd></div>
+                        </dl>
+
+                        <figure class="technical-model it2810-browser-flow">
+                            <div class="model-node"><strong>Bruker</strong><span>leser, navigerer og utfører handlinger</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node model-node-accent"><strong>Browser</strong><span>tolker dokument, stil og programlogikk</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="it2810-layer-row" aria-label="Nettleserens tre frontendlag">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                            </div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Web APIs / HTTP</strong><span>kobler grensesnittet til nettleserfunksjoner og andre tjenester</span></div>
+                            <figcaption>HTML og CSS virker i en browser som igjen inngår i en større webplattform.</figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="module-study-section" id="html-grunnlag" aria-labelledby="html-heading">
+                        <p class="it2810-section-kicker">Struktur og mening</p>
+                        <h2 id="html-heading">HTML</h2>
+                        <blockquote class="definition-callout">
+                            <p>HTML står for HyperText Markup Language og er dokumentformatet for websider.</p>
+                        </blockquote>
+                        <p>Et HTML-dokument består av standardiserte elementer og attributter. Elementene beskriver hva innholdet er og hvordan dokumentet er strukturert.</p>
+
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="no"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Min side&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Webutvikling&lt;/h1&gt;
+    &lt;p&gt;Dette er innholdet på siden.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                        <div class="it2810-element-groups" aria-label="Eksempler på HTML-elementer">
+                            <section><h3>Dokument</h3><p><code>html</code> · <code>head</code> · <code>body</code></p></section>
+                            <section><h3>Tekst og lenker</h3><p><code>h1–h6</code> · <code>p</code> · <code>a</code></p></section>
+                            <section><h3>Media og samlinger</h3><p><code>img</code> · <code>ul</code> · <code>ol</code> · <code>li</code> · <code>table</code></p></section>
+                            <section><h3>Sideområder</h3><p><code>header</code> · <code>nav</code> · <code>main</code> · <code>section</code> · <code>article</code> · <code>footer</code></p></section>
+                        </div>
+                        <p class="module-note-line">Dette er et utvalg for å forstå struktur og mening, ikke en full HTML-reference.</p>
+
+                        <h3 id="elementer-attributter">Elementer og attributter</h3>
+                        <p>Et <strong>element</strong> angir hvilken type innhold vi har. Et <strong>attribute</strong> gir informasjon om elementet. <strong>Content</strong> er innholdet elementet omslutter eller representerer.</p>
+                        <div class="it2810-code-anatomy" aria-label="Anatomi i et HTML-element">
+                            <code>&lt;p class="intro"&gt;Dette er innholdet.&lt;/p&gt;</code>
+                            <dl>
+                                <div><dt>Element</dt><dd><code>p</code></dd></div>
+                                <div><dt>Attribute</dt><dd><code>class="intro"</code></dd></div>
+                                <div><dt>Content</dt><dd>Dette er innholdet.</dd></div>
+                            </dl>
+                        </div>
+                        <pre><code>&lt;img src="campus.jpg" alt="Studenter utenfor campus"&gt;</code></pre>
+                        <p><code>alt</code>-attributtet beskriver bildet når selve bildet ikke kan oppfattes eller lastes. Andre vanlige attributter er <code>id</code>, <code>class</code>, <code>style</code>, <code>lang</code>, <code>dir</code>, <code>role</code>, <code>tabindex</code> og <code>aria-*</code>.</p>
+                    </section>
+
+                    <section class="module-study-section" id="semantikk-tilgjengelighet" aria-labelledby="semantikk-heading">
+                        <p class="it2810-section-kicker">Mening før presentasjon</p>
+                        <h2 id="semantikk-heading">Semantikk og tilgjengelighet</h2>
+
+                        <h3 id="semantisk-html">Semantisk HTML</h3>
+                        <p>Semantisk markup betyr at HTML-elementet kommuniserer hvilken type informasjon eller struktur det representerer, uavhengig av hvordan det ser ut.</p>
+                        <div class="comparison-pair it2810-markup-comparison">
+                            <section>
+                                <p class="comparison-label">Generisk struktur</p>
+                                <h4>Gir et navn, men lite innebygd mening</h4>
+                                <pre><code>&lt;div class="navigation"&gt;
+    ...
+&lt;/div&gt;</code></pre>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Bedre når innholdet er navigasjon</p>
+                                <h4>Elementet uttrykker rollen direkte</h4>
+                                <pre><code>&lt;nav&gt;
+    ...
+&lt;/nav&gt;</code></pre>
+                            </section>
+                        </div>
+                        <p><code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>footer</code> og <code>button</code> gir struktur med mening. <code>div</code> er fortsatt riktig når det ikke finnes et passende semantisk element; problemet er ukritisk bruk av generiske elementer.</p>
+
+                        <h3 id="tilgjengelighet">Tilgjengelighet / Accessibility</h3>
+                        <p>Informasjon og funksjoner på web skal kunne brukes uavhengig av funksjonsevne. God bruk av HTML er fundamentet for accessibility.</p>
+                        <ul class="it2810-accessibility-list">
+                            <li>Bruk en tydelig heading structure.</li>
+                            <li>Bruk lenker til navigasjon og native buttons til handlinger.</li>
+                            <li>Koble form controls til tydelige labels.</li>
+                            <li>Skriv meaningful text labels og text alternatives for images.</li>
+                            <li>Bruk ARIA når native HTML ikke er nok, ikke som førstevalg.</li>
+                        </ul>
+                        <div class="comparison-pair it2810-markup-comparison">
+                            <section>
+                                <h4 class="comparison-label">Native HTML</h4>
+                                <pre><code>&lt;button&gt;Lagre&lt;/button&gt;</code></pre>
+                                <p>Har riktig grunnlag for semantikk, fokus og tastaturinteraksjon.</p>
+                            </section>
+                            <section>
+                                <h4 class="comparison-label">Generisk element</h4>
+                                <pre><code>&lt;div class="button"&gt;Lagre&lt;/div&gt;</code></pre>
+                                <p>Ser kanskje lik ut, men mangler knappens innebygde betydning og oppførsel.</p>
+                            </section>
+                        </div>
+                        <div class="key-idea"><strong>Native first:</strong> Det er normalt bedre å velge riktig HTML-element enn å bygge interaksjon av en <code>div</code> og reparere semantikken manuelt.</div>
+                        <p><strong>WCAG</strong> gir retningslinjer for tilgjengelig webinnhold, og <strong>Google Lighthouse</strong> kan støtte evaluering. Detaljerte kriterier kommer senere; her er hovedpoenget at tilgjengelighet begynner i strukturen.</p>
+                    </section>
+
+                    <section class="module-study-section" id="frontend-lagene" aria-labelledby="frontend-heading">
+                        <p class="it2810-section-kicker">Tre ansvar</p>
+                        <h2 id="frontend-heading">HTML, CSS og JavaScript</h2>
+                        <div class="it2810-frontend-layers">
+                            <section><span aria-hidden="true">01</span><h3>HTML</h3><p>Struktur og mening</p></section>
+                            <section><span aria-hidden="true">02</span><h3>CSS</h3><p>Presentasjon og layout</p></section>
+                            <section><span aria-hidden="true">03</span><h3>JavaScript</h3><p>Dynamisk oppførsel</p></section>
+                        </div>
+                        <p>Den samme komponenten går gjennom flere lag. HTML beskriver at elementet er en knapp, CSS bestemmer hvordan den presenteres, og JavaScript kan senere bestemme hva som skjer når brukeren aktiverer den.</p>
+                        <div class="it2810-code-pair">
+                            <section>
+                                <h3>HTML</h3>
+                                <pre><code>&lt;button class="save-button"&gt;Lagre&lt;/button&gt;</code></pre>
+                            </section>
+                            <section>
+                                <h3>CSS</h3>
+                                <pre><code>.save-button {
+    padding: .75rem 1rem;
+    font-weight: bold;
+}</code></pre>
+                            </section>
+                        </div>
+                        <p class="module-note-line">JavaScript-teorien kommer i Modul 2. Her er det nok å forstå ansvarsdelingen.</p>
+                    </section>
+
+                    <section class="module-study-section" id="css-selectors" aria-labelledby="css-heading">
+                        <p class="it2810-section-kicker">Presentasjon og kobling</p>
+                        <h2 id="css-heading">CSS og selectors</h2>
+                        <blockquote class="definition-callout">
+                            <p>CSS står for Cascading Style Sheets og brukes til presentasjon og layout.</p>
+                        </blockquote>
+                        <p>CSS kan styre blant annet typography, size, margins, spacing, colors og layout. En regel består av en <strong>selector</strong> og én eller flere deklarasjoner med <strong>property</strong> og <strong>value</strong>.</p>
+                        <pre><code>selector {
+    property: value;
+}
+
+h1 {
+    font-size: 2rem;
+}</code></pre>
+
+                        <div class="it2810-selector-grid">
+                            <section>
+                                <h3 class="comparison-label">Element selector</h3>
+                                <pre><code>h1 {
+    font-size: 2rem;
+}</code></pre>
+                                <p>Bruker elementnavnet.</p>
+                            </section>
+                            <section>
+                                <h3 class="comparison-label">Class selector</h3>
+                                <pre><code>.card {
+    padding: 1rem;
+}</code></pre>
+                                <p>Starter med <code>.</code></p>
+                            </section>
+                            <section>
+                                <h3 class="comparison-label">ID selector</h3>
+                                <pre><code>#main-content {
+    max-width: 1200px;
+}</code></pre>
+                                <p>Starter med <code>#</code></p>
+                            </section>
+                        </div>
+                        <p class="module-note-line">Mer avanserte selector-uttrykk finnes, men denne modulen etablerer bare grunnformen.</p>
+                    </section>
+
+                    <section class="module-study-section" id="flexbox-grid" aria-labelledby="layout-heading">
+                        <p class="it2810-section-kicker">Moderne layout</p>
+                        <h2 id="layout-heading">Flexbox og Grid</h2>
+                        <p>Hovedforskjellen ligger i hvor mange dimensjoner layouten organiserer samtidig.</p>
+
+                        <div class="it2810-layout-comparison">
+                            <section>
+                                <p class="comparison-label">Flexbox · primært 1D</p>
+                                <h3>Row eller column</h3>
+                                <div class="it2810-flex-demo" aria-label="Tre elementer i én rad"><span>A</span><span>B</span><span>C</span></div>
+                                <pre><code>.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}</code></pre>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Grid · 2D</p>
+                                <h3>Rows og columns</h3>
+                                <div class="it2810-grid-demo" aria-label="Seks elementer i to rader og tre kolonner"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div>
+                                <pre><code>.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}</code></pre>
+                            </section>
+                        </div>
+                        <div class="key-idea"><strong>Parent/container-prinsippet:</strong> Layoutreglene settes på containeren og bestemmer hvordan child-elementene organiseres.</div>
+                    </section>
+
+                    <section class="module-study-section" id="responsivt-design" aria-labelledby="responsive-heading">
+                        <p class="it2810-section-kicker">Én løsning · flere enheter</p>
+                        <h2 id="responsive-heading">Responsivt webdesign</h2>
+                        <p>Responsive web design er webdesign der siden eller applikasjonen tilpasser seg størrelsen på skjermen og enheten den vises på. Målet er at løsningen skal se bra ut og være enkel å bruke uansett enhet.</p>
+                        <div class="it2810-responsive-toolkit" aria-label="Verktøy i responsivt webdesign">
+                            <strong>Responsive design</strong>
+                            <ul>
+                                <li>flexible layout</li>
+                                <li>viewport</li>
+                                <li>media queries</li>
+                                <li>responsive images</li>
+                                <li>breakpoints</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="module-study-section" id="responsive-mekanismer" aria-labelledby="mekanismer-heading">
+                        <p class="it2810-section-kicker">Mekanismene</p>
+                        <h2 id="mekanismer-heading">Viewport, media queries og bilder</h2>
+
+                        <h3 id="viewport">Viewport</h3>
+                        <p>Viewport er brukerens synlige del av siden eller skjermen.</p>
+                        <pre><code>&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                        <p><code>width=device-width</code> setter viewport-bredden i forhold til enhetens skjermbredde. <code>initial-scale=1.0</code> angir opprinnelig zoomnivå.</p>
+                        <p>CSS har også viewport-relative units: <code>vh</code>, <code>vw</code>, <code>vmin</code> og <code>vmax</code>.</p>
+                        <pre><code>.hero {
+    min-height: 100vh;
+}</code></pre>
+
+                        <h3 id="media-queries">Media queries</h3>
+                        <p>Media queries lar CSS-regler avhenge av betingelser som skjermstørrelse.</p>
+                        <pre><code>article {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 600px) {
+    article {
+        flex-direction: column;
+    }
+}</code></pre>
+                        <div class="it2810-breakpoint-demo">
+                            <section><h4>Desktop</h4><div class="it2810-demo-row"><b>A</b><b>B</b></div></section>
+                            <span class="it2810-breakpoint-arrow" aria-hidden="true">→</span>
+                            <section><h4>Mobil</h4><div class="it2810-demo-column"><b>A</b><b>B</b></div></section>
+                        </div>
+                        <p>Media queries kan blant annet endre layout, font size, component size og colors.</p>
+
+                        <h3 id="breakpoints">Breakpoints</h3>
+                        <p>Et breakpoint er en skjermstørrelse der layouten tilpasses eller endrer struktur. En desktop-layout med sidebar og main content kan for eksempel bli til kompakt hamburger navigation og main content på mobil.</p>
+                        <ul>
+                            <li>Flere columns kan bli til én column.</li>
+                            <li>En rad kan vise færre items.</li>
+                            <li>Navigation kan få en annen form.</li>
+                        </ul>
+                        <div class="key-idea"><strong>Viktig:</strong> Responsivt design handler ikke bare om å krympe innhold. Layouten kan organiseres annerledes.</div>
+
+                        <h3 id="responsive-bilder">Responsive bilder</h3>
+                        <pre><code>&lt;img
+    src="image.jpg"
+    alt="..."
+    style="max-width: 100%; height: auto;"
+&gt;</code></pre>
+                        <p><code>max-width: 100%</code> gjør at bildet kan tilpasse seg tilgjengelig plass, mens <code>height: auto</code> bevarer proporsjonene.</p>
+                        <pre><code>&lt;picture&gt;
+    &lt;source srcset="small.jpg" media="(max-width: 600px)"&gt;
+    &lt;source srcset="large.jpg" media="(max-width: 1500px)"&gt;
+    &lt;img src="fallback.jpg" alt="..."&gt;
+&lt;/picture&gt;</code></pre>
+                        <p><code>picture</code> kan velge forskjellige bilder ut fra media conditions.</p>
+                    </section>
+
+                    <section class="module-study-section" id="mobile-first-rammeverk" aria-labelledby="mobile-first-heading">
+                        <p class="it2810-section-kicker">Metode og forståelse</p>
+                        <h2 id="mobile-first-heading">Mobile-first og rammeverk</h2>
+                        <p>Forelesningen introduserer <em>mobile-first</em> som en mulig utviklingsmetode, ikke som et absolutt krav. Metoden starter med den mindre visningen og utvider layouten når mer plass blir tilgjengelig.</p>
+                        <p>Det finnes UI-frameworks og libraries med innebygd støtte for responsive design. I IT2810 er poenget først å forstå mekanismene: Grid, Flexbox, viewport, media queries, responsive images og breakpoints.</p>
+                        <p class="module-principle">Målet er forståelse, ikke et perfekt resultat ved hjelp av flest mulig rammeverk.</p>
+                    </section>
+
+                    <section class="module-study-section" id="helheten" aria-labelledby="helheten-heading">
+                        <p class="it2810-section-kicker">Hovedmodellen</p>
+                        <h2 id="helheten-heading">Hvordan alt henger sammen</h2>
+                        <p>Frontend bygges lagvis, men semantikk og tilgjengelighet må vurderes gjennom hele løsningen.</p>
+                        <figure class="it2810-foundation-model">
+                            <div class="it2810-foundation-main">
+                                <div><strong>Webplattform</strong><span>standarder og mekanismer rundt løsningen</span></div>
+                                <span aria-hidden="true">↓</span>
+                                <div><strong>HTML</strong><span>structure · semantics</span></div>
+                                <span aria-hidden="true">↓</span>
+                                <div><strong>CSS</strong><span>presentation · layout</span></div>
+                                <span aria-hidden="true">↓</span>
+                                <div class="it2810-foundation-split"><span>Flex / Grid</span><span>Responsive design</span></div>
+                                <span aria-hidden="true">↓</span>
+                                <div><strong>Viewport · media queries · breakpoints · images</strong><span>tilpasning til enhet og tilgjengelig plass</span></div>
+                                <span aria-hidden="true">↓</span>
+                                <div class="it2810-foundation-result"><strong>Tilgjengelig grensesnitt</strong><span>brukbart på tvers av enheter og brukere</span></div>
+                            </div>
+                            <aside>
+                                <strong>Gjennomgående</strong>
+                                <span>Semantic HTML</span>
+                                <span>Accessibility</span>
+                            </aside>
+                            <figcaption>Semantikk og accessibility er ikke et siste lag; de følger beslutningene fra dokumentstruktur til ferdig grensesnitt.</figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="module-study-section" id="prosjektfokus" aria-labelledby="prosjekt-heading">
+                        <p class="it2810-section-kicker">Fra teori til arbeid</p>
+                        <h2 id="prosjekt-heading">Hvorfor dette betyr noe i Prosjekt 1</h2>
+                        <p>Prosjekt 1 skal eksplisitt gi erfaring med responsive web design og accessibility. Senere brukes fundamentet sammen med TypeScript, Node.js, React, Git og testing.</p>
+                        <div class="key-idea"><strong>React erstatter ikke HTML/CSS-fundamentet:</strong> Komponentene produserer fortsatt et webgrensesnitt som må ha riktig struktur, styling, responsive behavior og accessibility.</div>
+
+                        <h3 id="vanlige-fallgruver">Vanlige fallgruver</h3>
+                        <ol class="it2810-pitfall-list">
+                            <li><strong>Klikkbar <code>div</code></strong><span>når <code>button</code> er riktig element.</span></li>
+                            <li><strong>Mange nested <code>div</code>-er</strong><span>uten semantisk struktur.</span></li>
+                            <li><strong>Fast desktop-layout</strong><span>med mål som ikke fungerer på små skjermer.</span></li>
+                            <li><strong>Grid uten layoutforståelse</strong><span>for 2D Grid sammenlignet med 1D Flexbox.</span></li>
+                            <li><strong>Responsivitet som bare krymping</strong><span>i stedet for å endre layout når det er nødvendig.</span></li>
+                            <li><strong>ARIA som reparasjon</strong><span>når et passende native element allerede finnes.</span></li>
+                        </ol>
+                    </section>
+
+                    <section class="module-study-section" id="kortversjonen" aria-labelledby="kortversjonen-heading">
+                        <p class="it2810-section-kicker">Rask repetisjon</p>
+                        <h2 id="kortversjonen-heading">Kortversjonen</h2>
+                        <div class="summary-sheet it2810-summary-sheet">
+                            <ul>
+                                <li><strong>HTML</strong> beskriver struktur og mening.</li>
+                                <li><strong>Semantic HTML</strong> gir informasjon både til mennesker og programvare.</li>
+                                <li><strong>CSS</strong> bestemmer presentasjon og layout.</li>
+                                <li><strong>Flexbox</strong> brukes hovedsakelig for én dimensjon.</li>
+                                <li><strong>Grid</strong> brukes for to dimensjoner.</li>
+                                <li><strong>Viewport</strong> er brukerens synlige område.</li>
+                                <li><strong>Media queries</strong> lar styling reagere på skjermforhold.</li>
+                                <li><strong>Breakpoints</strong> markerer steder hvor layouten endres.</li>
+                                <li><strong>Responsive images</strong> tilpasser seg tilgjengelig plass og enhet.</li>
+                                <li><strong>Accessibility</strong> begynner med god HTML.</li>
+                                <li><strong>Responsive design og accessibility</strong> bør bygges inn fra starten.</li>
+                                <li><strong>Dette er fundamentet</strong> for senere React-utvikling.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="module-study-section" id="selvtest" aria-labelledby="selvtest-heading" data-quiz>
+                        <p class="it2810-section-kicker">Kontroller forståelsen</p>
+                        <h2 id="selvtest-heading">Test deg selv</h2>
+                        <p>Svar på alle åtte spørsmål. Full poengsum registreres automatisk i modulprogresjonen.</p>
+                        <form class="module-quiz" data-quiz-form novalidate>
+                            <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="HTML beskriver dokumentets struktur og semantiske mening.">
+                                <legend><span>1</span> Hva er HTMLs primære rolle?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q1" value="a"> Styre layout og farger</label>
+                                    <label><input type="radio" name="quiz-q1" value="b"> Beskrive struktur og mening i innholdet</label>
+                                    <label><input type="radio" name="quiz-q1" value="c"> Hente data fra REST</label>
+                                    <label><input type="radio" name="quiz-q1" value="d"> Administrere packages</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="c" data-explanation="Semantic HTML uttrykker hvilken type innhold eller struktur elementet representerer, uavhengig av presentasjonen.">
+                                <legend><span>2</span> Hva betyr semantic HTML?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q2" value="a"> At alle elementer får visuell styling</label>
+                                    <label><input type="radio" name="quiz-q2" value="b"> At siden bruker færrest mulig elementer</label>
+                                    <label><input type="radio" name="quiz-q2" value="c"> At elementene uttrykker hvilken type innhold eller struktur de representerer</label>
+                                    <label><input type="radio" name="quiz-q2" value="d"> At alt innhold plasseres i <code>div</code>-elementer</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="a" data-explanation="Et native button-element har riktig semantikk og grunnlag for fokus og tastaturinteraksjon.">
+                                <legend><span>3</span> Hva er normalt riktig element for en interaktiv knapp?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q3" value="a"> <code>&lt;button&gt;</code></label>
+                                    <label><input type="radio" name="quiz-q3" value="b"> <code>&lt;div&gt;</code></label>
+                                    <label><input type="radio" name="quiz-q3" value="c"> <code>&lt;span&gt;</code></label>
+                                    <label><input type="radio" name="quiz-q3" value="d"> <code>&lt;section&gt;</code></label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="d" data-explanation="Grid organiserer rows og columns, mens Flexbox primært organiserer én hovedakse om gangen.">
+                                <legend><span>4</span> Hva er hovedforskjellen mellom Grid og Flexbox?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q4" value="a"> Flexbox er for tekst, Grid er for bilder</label>
+                                    <label><input type="radio" name="quiz-q4" value="b"> Grid fungerer bare på desktop</label>
+                                    <label><input type="radio" name="quiz-q4" value="c"> De er alltid like og kan ikke skilles</label>
+                                    <label><input type="radio" name="quiz-q4" value="d"> Grid er primært todimensjonalt, Flexbox primært endimensjonalt</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="width=device-width gjør at CSS-viewporten følger bredden på enhetens skjerm.">
+                                <legend><span>5</span> Hva gjør <code>width=device-width</code> i viewport-meta-elementet?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q5" value="a"> Setter alle elementer til full bredde</label>
+                                    <label><input type="radio" name="quiz-q5" value="b"> Setter viewport-bredden i forhold til enhetens skjermbredde</label>
+                                    <label><input type="radio" name="quiz-q5" value="c"> Låser siden til 600 piksler</label>
+                                    <label><input type="radio" name="quiz-q5" value="d"> Deaktiverer zoom</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="c" data-explanation="Media queries aktiverer CSS-regler når oppgitte forhold, for eksempel en skjermbredde, er oppfylt.">
+                                <legend><span>6</span> Hva brukes media queries til?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q6" value="a"> Å opprette HTML-elementer</label>
+                                    <label><input type="radio" name="quiz-q6" value="b"> Å sende HTTP-forespørsler</label>
+                                    <label><input type="radio" name="quiz-q6" value="c"> Å bruke CSS-regler avhengig av forhold som skjermstørrelse</label>
+                                    <label><input type="radio" name="quiz-q6" value="d"> Å installere et UI-rammeverk</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="a" data-explanation="Ved et breakpoint kan layouten reorganiseres; responsivitet er mer enn å skalere alt mindre.">
+                                <legend><span>7</span> Hva er et breakpoint?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q7" value="a"> En skjermstørrelse hvor layouten tilpasses eller endrer struktur</label>
+                                    <label><input type="radio" name="quiz-q7" value="b"> En feil i CSS-koden</label>
+                                    <label><input type="radio" name="quiz-q7" value="c"> En fast høyde på et bilde</label>
+                                    <label><input type="radio" name="quiz-q7" value="d"> En type HTML-attribute</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="d" data-explanation="Semantisk native HTML gir maskinlesbar struktur og betydning som blant annet hjelpe- og navigasjonsteknologi kan bruke.">
+                                <legend><span>8</span> Hvorfor er semantic HTML viktig for accessibility?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q8" value="a"> Fordi det automatisk gjør alle sider visuelt like</label>
+                                    <label><input type="radio" name="quiz-q8" value="b"> Fordi det fjerner behovet for CSS</label>
+                                    <label><input type="radio" name="quiz-q8" value="c"> Fordi det alltid gir høyere nettverkshastighet</label>
+                                    <label><input type="radio" name="quiz-q8" value="d"> Fordi strukturen og betydningen forstås bedre av blant annet hjelpe- og navigasjonsteknologi</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <div class="quiz-actions">
+                                <button class="button-link" type="submit">Sjekk svar</button>
+                                <button class="quiz-retry" type="button" data-quiz-retry hidden>Prøv på nytt</button>
+                                <p class="quiz-summary" data-quiz-summary aria-live="polite"></p>
+                            </div>
+                        </form>
+
+                        <label class="quiz-progress-status">
+                            <input type="checkbox" data-check-id="quiz-complete" data-quiz-progress-check disabled>
+                            Full poengsum i selvtesten
+                        </label>
+                    </section>
+
+                    <section class="module-study-section" id="etter-forelesningen" aria-labelledby="etter-heading">
+                        <p class="it2810-section-kicker">Avslutt arbeidet</p>
+                        <h2 id="etter-heading">Etter forelesningen</h2>
+                        <div class="module-panel">
+                            <ul class="checklist">
+                                <li><label><input type="checkbox" data-check-id="after-1"> Jeg kan forklare forskjellen mellom HTML, CSS og JavaScript</label></li>
+                                <li><label><input type="checkbox" data-check-id="after-2"> Jeg kan forklare Grid, Flexbox, viewport, media queries og breakpoints</label></li>
+                                <li><label><input type="checkbox" data-check-id="after-3"> Jeg kan forklare hvorfor semantic HTML og accessibility henger sammen</label></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <label class="completion-control">
+                <input type="checkbox" data-complete-toggle>
+                Marker modul som fullført
+            </label>
+
+            <nav class="module-navigation" aria-label="Modulnavigasjon">
+                <a class="button-link" href="index.html">← Til IT2810-oversikten</a>
+            </nav>
+        </main>
+        <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>
+    </div>
+
+    <script src="../../assets/site.js"></script>
+    <script src="../progress.js?v=20260828d"></script>
+    <script src="../quiz.js?v=20260828a"></script>
+</body>
+</html>

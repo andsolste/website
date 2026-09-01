@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT2810 – Webutvikling | Andreas Sollie Steffensen</title>
     <link rel="stylesheet" href="../../assets/site.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=20260901a">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
@@ -32,7 +32,7 @@
             <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="site-sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><span>Meny</span></button>
             <span class="mobile-brand">AS</span>
         </div>
-        <main class="site-main content-page it2810-overview-page" id="main-content">
+        <main class="site-main content-page it2810-overview-page" id="main-content" data-course="it2810" data-module-count="8">
             <a class="back-link" href="../index.html">← Til fagoversikten</a>
             <header class="page-intro it2810-course-header">
                 <p class="course-code">IT2810</p>
@@ -181,19 +181,29 @@
                     <p class="it2810-section-kicker">Semesterstruktur</p>
                     <h2 id="teorimoduler-heading">Teorimoduler</h2>
                     <p>Modulene bygges ut gjennom semesteret etter hvert som temaene gjennomgås i undervisningen og brukes i prosjektene.</p>
+                    <p class="it2810-module-availability">1 av 8 moduler er tilgjengelig nå.</p>
                 </header>
                 <ol class="it2810-module-grid">
                     <li>
-                        <article class="it2810-module-card" id="planlagt-modul-1">
+                        <article class="it2810-module-card is-available" id="modul-1" data-module-card data-module="1" data-module-title="Webplattformen og frontendgrunnlaget" data-module-href="modul-1.html" data-check-ids="before-1 before-2 before-3 understanding-1 understanding-2 understanding-3 understanding-4 understanding-5 understanding-6 understanding-7 understanding-8 quiz-complete after-1 after-2 after-3">
                             <header class="it2810-module-header">
                                 <div>
                                     <p class="module-number">Modul 1</p>
                                     <h3>Webplattformen og frontendgrunnlaget</h3>
                                 </div>
-                                <span class="it2810-module-status">Planlagt</span>
+                                <span class="it2810-module-status it2810-module-status-available">Tilgjengelig</span>
                             </header>
                             <p class="it2810-module-description">Fundamentet for webgrensesnitt: hvordan HTML beskriver struktur og mening, CSS styrer presentasjon og layout, og responsivt og tilgjengelig design gjør løsningen brukbar på tvers av enheter og brukere.</p>
                             <p class="it2810-module-concepts"><strong>Temaer</strong> HTML · semantisk HTML · CSS · selectors · CSS Grid · Flexbox · viewport · media queries · responsive design · tilgjengelighet · WCAG</p>
+                            <footer class="it2810-module-footer">
+                                <div>
+                                    <p class="module-status" data-module-status>Status: Ikke startet</p>
+                                    <div class="progress-track" role="progressbar" aria-label="Progresjon i IT2810 modul 1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                        <div class="progress-bar" data-module-progress></div>
+                                    </div>
+                                </div>
+                                <a class="button-link" href="modul-1.html">Åpne modul →</a>
+                            </footer>
                         </article>
                     </li>
                     <li>
@@ -339,5 +349,6 @@
         <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>
     </div>
     <script src="../../assets/site.js"></script>
+    <script src="../progress.js?v=20260828d"></script>
 </body>
 </html>

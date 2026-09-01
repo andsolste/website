@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "entries": [
     {
       "id": "page-home",
@@ -188,15 +188,70 @@
       "priority": 35
     },
     {
-      "id": "it2810-planned-module-1",
-      "type": "Tema",
-      "title": "Webplattformen og frontendgrunnlaget",
+      "id": "module-it2810-1",
+      "type": "Modul",
+      "title": "Modul 1 · Webplattformen og frontendgrunnlaget",
       "code": "IT2810",
-      "context": "IT2810 · Planlagt modul 1",
-      "description": "Semantisk HTML, moderne CSS, responsive grensesnitt og tilgjengelighet på tvers av enheter og brukere.",
-      "keywords": ["HTML", "semantisk HTML", "CSS", "selectors", "CSS Grid", "Flexbox", "viewport", "media queries", "responsive design", "tilgjengelighet", "accessibility", "WCAG"],
-      "url": "fag/it2810/index.html#planlagt-modul-1",
-      "priority": 16
+      "context": "IT2810 · HTML · CSS · responsive design",
+      "description": "Hvordan HTML beskriver struktur og mening, CSS styrer presentasjon og layout, og responsive og tilgjengelige grensesnitt bygges for ulike enheter og brukere.",
+      "keywords": ["webplattform", "HTML", "CSS", "semantisk HTML", "semantic HTML", "elementer", "attributter", "selectors", "Flexbox", "CSS Grid", "viewport", "media queries", "breakpoints", "responsive images", "responsive design", "mobile-first", "tilgjengelighet", "accessibility", "WCAG"],
+      "url": "fag/it2810/modul-1.html",
+      "priority": 25
+    },
+    {
+      "id": "topic-it2810-web-platform",
+      "type": "Tema",
+      "title": "Webplattformen",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 1",
+      "description": "Hvordan HTML, CSS og JavaScript inngår i en større webplattform med browser, HTTP, URI/URL, DNS og MIME types.",
+      "keywords": ["webplattform", "World Wide Web", "browser", "nettleser", "HTTP", "URI", "URL", "DNS", "MIME", "ECMAScript", "HTML", "CSS", "JavaScript"],
+      "url": "fag/it2810/modul-1.html#webplattformen",
+      "priority": 13
+    },
+    {
+      "id": "topic-it2810-semantic-html",
+      "type": "Tema",
+      "title": "Semantisk HTML",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 1",
+      "description": "HTML-elementer som uttrykker innholdets og dokumentstrukturens mening uavhengig av visuell presentasjon.",
+      "keywords": ["semantisk HTML", "semantic HTML", "HTML elements", "elementer", "attributter", "header", "nav", "main", "section", "article", "footer", "button", "div"],
+      "url": "fag/it2810/modul-1.html#semantisk-html",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-accessibility",
+      "type": "Tema",
+      "title": "Tilgjengelighet i webgrensesnitt",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 1",
+      "description": "Hvordan god native og semantisk HTML gir grunnlaget for tilgjengelige grensesnitt, labels, tekstalternativer og tastaturbruk.",
+      "keywords": ["tilgjengelighet", "accessibility", "universell utforming", "WCAG", "Google Lighthouse", "native HTML", "heading structure", "labels", "alt text", "ARIA", "keyboard"],
+      "url": "fag/it2810/modul-1.html#tilgjengelighet",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-css-layout",
+      "type": "Tema",
+      "title": "CSS layout · Flexbox og Grid",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 1",
+      "description": "CSS selectors, parent/container-prinsippet og forskjellen mellom endimensjonal Flexbox og todimensjonal CSS Grid.",
+      "keywords": ["CSS", "selectors", "element selector", "class selector", "ID selector", "Flexbox", "CSS Grid", "grid", "flex", "container", "parent", "children", "1D", "2D"],
+      "url": "fag/it2810/modul-1.html#flexbox-grid",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-responsive-design",
+      "type": "Tema",
+      "title": "Responsivt webdesign",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 1",
+      "description": "Hvordan viewport, media queries, breakpoints, flexible layout og responsive bilder tilpasser grensesnittet til ulike enheter.",
+      "keywords": ["responsivt webdesign", "responsive design", "viewport", "viewport meta", "width=device-width", "media queries", "breakpoints", "responsive images", "picture", "mobile-first", "hamburger navigation"],
+      "url": "fag/it2810/modul-1.html#responsive-mekanismer",
+      "priority": 15
     },
     {
       "id": "it2810-planned-module-2",
