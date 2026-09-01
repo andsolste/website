@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "entries": [
     {
       "id": "page-home",
@@ -254,14 +254,69 @@
       "priority": 15
     },
     {
-      "id": "it2810-planned-module-2",
-      "type": "Tema",
-      "title": "JavaScript og TypeScript",
+      "id": "module-it2810-2",
+      "type": "Modul",
+      "title": "Modul 2 · JavaScript og TypeScript",
       "code": "IT2810",
-      "context": "IT2810 · Planlagt modul 2",
-      "description": "Programmeringsgrunnlaget for frontend, fra JavaScript og ES modules til TypeScript og functional programming.",
-      "keywords": ["JavaScript", "TypeScript", "ES modules", "import", "export", "arrow functions", "functional programming", "immutability", "map", "filter", "reduce", "types", "interfaces", "type inference", "union types"],
-      "url": "fag/it2810/index.html#planlagt-modul-2",
+      "context": "IT2810 · ES modules · TypeScript · functional programming",
+      "description": "JavaScript som dynamisk typet språk, TypeScript som statisk typet lag, og en funksjonell programmeringsstil som forbereder videre arbeid med React.",
+      "keywords": ["JavaScript", "ECMAScript", "Node.js", "dynamic typing", "dynamisk typing", "TypeScript", "static typing", "type inference", "interface", "type aliases", "union type", "literal types", "tuple", "any", "ES modules", "import", "export", "arrow functions", "functional programming", "immutability", "pure functions", "side effects", "map", "filter", "reduce", "find", "some", "every", "declarative programming", "imperative programming", "object destructuring", "React fundamentals"],
+      "url": "fag/it2810/modul-2.html",
+      "priority": 25
+    },
+    {
+      "id": "topic-it2810-dynamic-typing",
+      "type": "Tema",
+      "title": "JavaScript og dynamisk typing",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2",
+      "description": "Hvordan JavaScript bestemmer typer ved runtime, med en trade-off mellom fleksibilitet og tidlig typekontroll.",
+      "keywords": ["JavaScript", "dynamic typing", "dynamisk typing", "runtime types", "flexibility", "type errors", "runtime"],
+      "url": "fag/it2810/modul-2.html#dynamisk-typing",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-es-modules",
+      "type": "Tema",
+      "title": "ES modules · import og export",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2",
+      "description": "Modularisering av JavaScript for vedlikehold, gjenbruk og organisering med import og export.",
+      "keywords": ["ES modules", "JavaScript modules", "modularization", "maintainability", "reuse", "import", "export"],
+      "url": "fag/it2810/modul-2.html#import-export",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-typescript-types",
+      "type": "Tema",
+      "title": "TypeScript og typekontroll",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2",
+      "description": "TypeScript fra type checking og transpilation til type inference, interfaces, unions, literal types, tuples og any.",
+      "keywords": ["TypeScript", "static typing", "type checking", "transpilation", "type inference", "interface", "type alias", "union type", "literal type", "tuple", "any"],
+      "url": "fag/it2810/modul-2.html#typescript",
+      "priority": 17
+    },
+    {
+      "id": "topic-it2810-functional-programming",
+      "type": "Tema",
+      "title": "Funksjonell programmering og immutability",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2",
+      "description": "Deklarative transformasjoner med immutable data, pure functions, callbacks og kontrollerte side effects.",
+      "keywords": ["functional programming", "funksjonell programmering", "immutability", "immutable data", "pure functions", "rene funksjoner", "side effects", "callbacks", "declarative style"],
+      "url": "fag/it2810/modul-2.html#funksjonell-programmering",
+      "priority": 17
+    },
+    {
+      "id": "topic-it2810-array-methods",
+      "type": "Tema",
+      "title": "Array-metoder i JavaScript",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2",
+      "description": "Datatransformasjon med map, filter, reduce, find, some, every og enkel function chaining.",
+      "keywords": ["JavaScript arrays", "array methods", "map", "filter", "reduce", "find", "some", "every", "function chaining", "callbacks"],
+      "url": "fag/it2810/modul-2.html#array-metoder",
       "priority": 16
     },
     {

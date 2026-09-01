@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT2810 – Modul 2 | Andreas Sollie Steffensen</title>
+    <link rel="stylesheet" href="../../assets/site.css">
+    <link rel="stylesheet" href="../styles.css?v=20260901b">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
+
+    <aside class="sidebar" id="site-sidebar" aria-label="Sidepanel">
+        <div class="sidebar-header">
+            <div class="sidebar-brand" aria-label="Andreas Sollie Steffensen">
+                <span class="brand-mark" aria-hidden="true">AS</span>
+                <span class="brand-name">Andreas</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="site-sidebar" aria-expanded="true" aria-label="Fold sammen meny" title="Fold sammen meny">
+                <svg class="collapse-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"></path></svg>
+                <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+            </button>
+        </div>
+        <nav class="sidebar-nav" id="primary-navigation" aria-label="Hovednavigasjon">
+            <ul>
+                <li><a href="../../about.html" aria-label="Om meg" title="Om meg"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.5 20c.7-4 3-6 6.5-6s5.8 2 6.5 6"></path></svg></span><span class="nav-label">Om meg</span></a></li>
+                <li><a href="../../projects/index.html" aria-label="Prosjekter" title="Prosjekter"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.5 5l-3 14"></path></svg></span><span class="nav-label">Prosjekter</span></a></li>
+                <li><a href="../index.html" aria-current="page" aria-label="Fag" title="Fag"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5c3-.8 5.6-.2 8 1.8v11c-2.4-2-5-2.6-8-1.8zM20 5.5c-3-.8-5.6-.2-8 1.8v11c2.4-2 5-2.6 8-1.8z"></path></svg></span><span class="nav-label">Fag</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">NTNU · 2026</div>
+    </aside>
+
+    <button class="sidebar-scrim" id="sidebar-scrim" type="button" aria-label="Lukk meny" hidden></button>
+
+    <div class="page-shell" id="page-shell">
+        <div class="mobile-bar">
+            <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="site-sidebar" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+                <span>Meny</span>
+            </button>
+            <span class="mobile-brand">AS</span>
+        </div>
+
+        <main class="site-main content-page module-page it2810-module-page" id="main-content" data-course="it2810" data-module="2" data-module-count="8">
+            <a class="back-link" href="index.html">← Til IT2810</a>
+
+            <header class="module-header module-study-header it2810-study-header">
+                <p class="module-number">IT2810 · Modul 2</p>
+                <h1>JavaScript og TypeScript</h1>
+                <p class="module-description">Programmeringsgrunnlaget for moderne frontendutvikling: JavaScript som språk for dynamiske webapplikasjoner, TypeScript som statisk typet lag over JavaScript, og en funksjonell programmeringsstil som forbereder videre arbeid med React.</p>
+                <ul class="module-meta" aria-label="Modulmetadata">
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>ES modules</li>
+                    <li>Functional programming</li>
+                </ul>
+
+                <div class="module-page-progress" aria-live="polite">
+                    <div class="module-page-progress-labels">
+                        <strong data-module-page-status>0 av 15 aktiviteter fullført</strong>
+                        <span data-module-page-percent>0 %</span>
+                    </div>
+                    <div class="progress-track" role="progressbar" aria-label="Progresjon i IT2810 modul 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="progress-bar" data-module-page-progress></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="module-section module-preparation" id="for-forelesningen" aria-labelledby="for-forelesningen-heading">
+                <h2 id="for-forelesningen-heading">Før forelesningen</h2>
+                <div class="module-panel">
+                    <ul class="checklist">
+                        <li><label><input type="checkbox" data-check-id="before-1"> Se over Modul 1 og husk rollen til JavaScript i frontend-laget</label></li>
+                        <li><label><input type="checkbox" data-check-id="before-2"> Finn frem forelesningsmaterialet om JavaScript, TypeScript og funksjonell programmering</label></li>
+                        <li><label><input type="checkbox" data-check-id="before-3"> Noter forskjeller du kjenner mellom JavaScript og tidligere programmeringsspråk du har brukt</label></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="module-section module-outcomes it2810-learning-map" id="dette-skal-du-forsta" aria-labelledby="forsta-heading">
+                <p class="it2810-section-kicker">Kart før du leser</p>
+                <h2 id="forsta-heading">Dette skal du forstå</h2>
+                <p>Kryss av etter hvert som du kan forklare sammenhengene med egne ord.</p>
+                <div class="it2810-understanding-grid">
+                    <section aria-labelledby="understanding-javascript-heading">
+                        <h3 id="understanding-javascript-heading">JavaScript-miljøet</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-1"> Jeg kan skille JavaScript som språk, browseren som kjøremiljø og Node.js som runtime og utviklingsmiljø</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-2"> Jeg kan forklare dynamisk typing og trade-offen mellom fleksibilitet og sen oppdagelse av typefeil</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-syntax-heading">
+                        <h3 id="understanding-syntax-heading">Moduler og syntaks</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-3"> Jeg kan forklare ES modules, <code>import</code>/<code>export</code>, arrow functions og enkel object destructuring</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-4"> Jeg kan forklare TypeScript som syntaktisk superset med valgfri statisk typing og transpilation til JavaScript</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-types-heading">
+                        <h3 id="understanding-types-heading">Typesystemet</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-5"> Jeg kan lese type inference, eksplisitte parameter- og returtyper og de sentrale grunntypene</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-6"> Jeg kan forklare interface/type alias, union/literal/tuple og hva <code>any</code> gjør med typekontrollen</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-functional-heading">
+                        <h3 id="understanding-functional-heading">Funksjonell stil</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-7"> Jeg kan forklare funksjonell programmering, immutability, pure functions og side effects</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-8"> Jeg kan bruke sentrale array-metoder og forklare deklarativ stil og hvorfor mønstrene forbereder React</label></li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+
+            <div class="module-study-layout">
+                <nav class="module-toc" aria-labelledby="innhold-heading">
+                    <p class="it2810-section-kicker">På denne siden</p>
+                    <h2 id="innhold-heading">Innhold</h2>
+                    <ol>
+                        <li><a href="#javascript-web">JavaScript i moderne webutvikling</a></li>
+                        <li><a href="#dynamisk-typing">Dynamisk typing</a></li>
+                        <li><a href="#moduler-moderne-syntaks">Moduler og moderne syntaks</a></li>
+                        <li><a href="#typescript">TypeScript til browser</a></li>
+                        <li><a href="#typescript-typer">Typer og datastrukturer</a></li>
+                        <li><a href="#funksjonell-programmering">Funksjonell programmering</a></li>
+                        <li><a href="#immutable-funksjoner">Immutability og side effects</a></li>
+                        <li><a href="#array-metoder">Array-metoder</a></li>
+                        <li><a href="#deklarativ-imperativ">Deklarativ og imperativ stil</a></li>
+                        <li><a href="#react-grunnlaget">Grunnlaget for React</a></li>
+                        <li><a href="#vanlige-fallgruver">Vanlige fallgruver</a></li>
+                        <li><a href="#kortversjonen">Kortversjonen</a></li>
+                        <li><a href="#selvtest">Test deg selv</a></li>
+                    </ol>
+                </nav>
+
+                <div class="module-study-content">
+                    <section class="module-study-section" id="javascript-web" aria-labelledby="javascript-web-heading">
+                        <p class="it2810-section-kicker">Språk og kjøremiljø</p>
+                        <h2 id="javascript-web-heading">JavaScript i moderne webutvikling</h2>
+                        <p>JavaScript er programmeringsspråket for interaktive websider. Det brukes i dag til store webapplikasjoner og <em>single page applications</em>, ikke bare små effekter på en dokumentbasert side.</p>
+
+                        <dl class="it2810-platform-terms">
+                            <div><dt>1995</dt><dd>JavaScript ble utviklet for Netscape.</dd></div>
+                            <div><dt>ECMAScript</dt><dd>Språket ble standardisert slik at implementasjoner kunne følge en felles spesifikasjon.</dd></div>
+                            <div><dt>DOM</dt><dd>Standardisering ga plattformuavhengig tilgang til websiders dokumentstruktur.</dd></div>
+                            <div><dt>Node.js · 2009</dt><dd>En runtime som gjorde JavaScript viktig også utenfor browseren.</dd></div>
+                        </dl>
+
+                        <figure class="technical-model it2810-programming-flow">
+                            <div class="model-node model-node-accent"><strong>Browser</strong><span>kjører webapplikasjonen</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="it2810-layer-row" aria-label="Frontendlag i browseren">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                            </div>
+                            <span class="model-arrow" aria-hidden="true">↕</span>
+                            <div class="model-node"><strong>Development environment</strong><span>Node.js brukes til verktøyene rundt utviklingen</span></div>
+                            <figcaption>I Prosjekt 1 brukes Node.js som utviklingsmiljø, mens sluttkoden fortsatt primært skal kjøre som JavaScript i browseren.</figcaption>
+                        </figure>
+
+                        <div class="key-idea"><strong>Skill mellom språk og runtime:</strong> JavaScript er språket. Browseren og Node.js er forskjellige miljøer som kan kjøre JavaScript.</div>
+                    </section>
+
+                    <section class="module-study-section" id="dynamisk-typing" aria-labelledby="dynamisk-typing-heading">
+                        <p class="it2810-section-kicker">En bevisst trade-off</p>
+                        <h2 id="dynamisk-typing-heading">JavaScript som dynamisk typet språk</h2>
+                        <p>I JavaScript bestemmes typen ved runtime ut fra verdien. Den samme variabelen kan derfor referere til verdier av forskjellige typer mens programmet kjører.</p>
+
+                        <pre><code>let value = 10;
+value = "ti";</code></pre>
+
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">Fordeler</p>
+                                <h3>Fleksibelt og lett å komme i gang med</h3>
+                                <ul>
+                                    <li>enklere språk</li>
+                                    <li>raskere koding</li>
+                                    <li>mindre kode</li>
+                                    <li>høy fleksibilitet</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Ulemper</p>
+                                <h3>Mindre kan kontrolleres før kjøring</h3>
+                                <ul>
+                                    <li>typefeil kan oppdages sent</li>
+                                    <li>mindre statisk kvalitetssikring</li>
+                                    <li>kan bli vanskeligere i større programvareprosjekter</li>
+                                </ul>
+                            </section>
+                        </div>
+                        <p class="module-principle">Dynamisk typing er ikke i seg selv dårlig. Den gir fleksibilitet, men flytter mer ansvar til runtime og utvikleren.</p>
+                    </section>
+
+                    <section class="module-study-section" id="moduler-moderne-syntaks" aria-labelledby="moduler-heading">
+                        <p class="it2810-section-kicker">Kode som kan organiseres og gjenbrukes</p>
+                        <h2 id="moduler-heading">Moduler og moderne syntaks</h2>
+
+                        <h3 id="import-export">Import og export</h3>
+                        <p>Modularisering deler et stort prosjekt i mindre filer med tydelig ansvar. Det gjør koden enklere å vedlikeholde, organisere og gjenbruke.</p>
+                        <div class="it2810-code-pair">
+                            <section>
+                                <h3>Eksporter fra en modul</h3>
+                                <pre><code>export const double = (x) => x * 2;</code></pre>
+                                <p><code>export</code> gjør en verdi eller funksjon tilgjengelig utenfor modulen.</p>
+                            </section>
+                            <section>
+                                <h3>Importer i en annen modul</h3>
+                                <pre><code>import { double } from "./math";</code></pre>
+                                <p><code>import</code> henter noe som en annen modul eksporterer.</p>
+                            </section>
+                        </div>
+                        <p>Denne strukturen blir viktig i React-prosjekter med mange filer og komponenter.</p>
+
+                        <h3 id="arrow-functions">Arrow functions</h3>
+                        <p>Arrow functions er en kompakt funksjonssyntaks som brukes mye i moderne JavaScript, særlig til korte funksjoner, callbacks og array-metoder.</p>
+                        <div class="it2810-code-pair">
+                            <section>
+                                <h3>Vanlig funksjon</h3>
+                                <pre><code>function double(x) {
+    return x * 2;
+}</code></pre>
+                            </section>
+                            <section>
+                                <h3>Arrow function</h3>
+                                <pre><code>const double = (x) => {
+    return x * 2;
+};
+
+const compactDouble = x => x * 2;</code></pre>
+                            </section>
+                        </div>
+                        <p>Den samme syntaksen dukker senere opp i React-komponenter og event handlers. Her er poenget å kunne lese og skrive funksjonsformen, ikke å gå inn i avansert <code>this</code>-semantikk.</p>
+
+                        <h3 id="destructuring">Object destructuring</h3>
+                        <p>Destructuring henter felt fra et objekt på en kompakt måte.</p>
+                        <pre><code>const user = {
+    name: "Andreas",
+    id: 1
+};
+
+const { name, id } = user;</code></pre>
+                        <p>Dette er en kort bro til syntaks som brukes mye i senere React-kode.</p>
+                    </section>
+
+                    <section class="module-study-section" id="typescript" aria-labelledby="typescript-heading">
+                        <p class="it2810-section-kicker">Typekontroll under utvikling</p>
+                        <h2 id="typescript-heading">TypeScript fra kildekode til browser</h2>
+                        <blockquote class="definition-callout">
+                            <p>TypeScript er et open-source programmeringsspråk utviklet av Microsoft. Det er et syntaktisk superset av JavaScript som legger til valgfri statisk typing.</p>
+                        </blockquote>
+
+                        <figure class="technical-model it2810-programming-flow">
+                            <div class="model-node"><strong>TypeScript source</strong><span>JavaScript-syntaks med typer</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node model-node-accent"><strong>Type checking</strong><span>problemer kan oppdages under utvikling</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Transpilation</strong><span>TypeScript omformes til JavaScript</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>JavaScript</strong><span>sluttresultatet browseren kan kjøre</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Browser</strong><span>kjører JavaScript, ikke TypeScript direkte</span></div>
+                            <figcaption>TypeScript erstatter ikke JavaScript. Det bygger oppå JavaScript og ender som JavaScript.</figcaption>
+                        </figure>
+
+                        <h3 id="javascript-vs-typescript">JavaScript og TypeScript</h3>
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">JavaScript</p>
+                                <h3>Språket som kjører</h3>
+                                <ul>
+                                    <li>dynamisk typing</li>
+                                    <li>typer avgjøres ved runtime</li>
+                                    <li>fleksibelt</li>
+                                    <li>browserens runtime-språk</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <p class="comparison-label">TypeScript</p>
+                                <h3>Et typet lag i utviklingssteget</h3>
+                                <ul>
+                                    <li>statisk typekontroll under utvikling</li>
+                                    <li>type annotations og interfaces</li>
+                                    <li>bedre tooling og tidligere oppdagelse av typeproblemer</li>
+                                    <li>transpileres til JavaScript</li>
+                                </ul>
+                            </section>
+                        </div>
+                    </section>
+
+                    <section class="module-study-section" id="typescript-typer" aria-labelledby="typescript-typer-heading">
+                        <p class="it2810-section-kicker">Fra enkeltverdier til datastrukturer</p>
+                        <h2 id="typescript-typer-heading">Typer og datastrukturer</h2>
+
+                        <h3 id="type-inference">Type inference og eksplisitte typer</h3>
+                        <p>TypeScript kan ofte finne typen automatisk fra verdien. Det kalles <em>type inference</em>.</p>
+                        <pre><code>let foo = "Dette er en test";
+// TypeScript infererer foo som string
+
+let bar: string = "test";
+
+function add(a: number, b: number): number {
+    return a + b;
+}</code></pre>
+                        <p>I funksjonen er <code>a</code> og <code>b</code> parametertyper, mens den siste <code>number</code>-annotasjonen er returtypen.</p>
+
+                        <h3 id="grunntyper">Grunntyper</h3>
+                        <p class="it2810-concepts"><code>string</code> · <code>number</code> · <code>bigint</code> · <code>boolean</code> · <code>undefined</code> · <code>null</code> · <code>symbol</code></p>
+                        <p>Dette er en kompakt oversikt over typene som ble introdusert, ikke en full TypeScript-reference.</p>
+
+                        <h3 id="interfaces-type-aliases">Interfaces og type aliases</h3>
+                        <p>Begge formene under beskriver strukturen data forventes å ha. På dette nivået er poenget å kunne type et dataobjekt, ikke å gå dypt inn i forskjellene mellom <code>interface</code> og <code>type</code>.</p>
+                        <div class="it2810-code-pair">
+                            <section>
+                                <h3>Interface</h3>
+                                <pre><code>interface User {
+    name: string;
+    id: number;
+}</code></pre>
+                            </section>
+                            <section>
+                                <h3>Type alias</h3>
+                                <pre><code>type User = {
+    name: string;
+    id: number;
+};</code></pre>
+                            </section>
+                        </div>
+                        <div class="inline-flow" aria-label="Sammenheng mellom data og typedeklarasjon">
+                            <span>Data object</span><span aria-hidden="true">→</span><span>type / interface</span><span aria-hidden="true">→</span><span>forventet struktur er kjent</span>
+                        </div>
+
+                        <h3 id="union-literal-tuple">Union types, literal types og tuples</h3>
+                        <div class="it2810-code-pair">
+                            <section>
+                                <h3>Union og literal</h3>
+                                <pre><code>let age: number | string;
+
+age = 18;
+age = "18";
+
+type AgeGroup = "barn" | "ungdom" | "voksen";
+let group: AgeGroup = "barn";</code></pre>
+                                <p>En union tillater én av flere eksplisitt angitte typer. En literal type begrenser verdien til konkrete alternativer.</p>
+                            </section>
+                            <section>
+                                <h3>Tuple</h3>
+                                <pre><code>let user: [string, number] = ["Andreas", 20];</code></pre>
+                                <p>En tuple er en array-lignende struktur med fast rekkefølge og bestemte typer per posisjon.</p>
+                            </section>
+                        </div>
+
+                        <h3 id="any"><code>any</code></h3>
+                        <pre><code>let value: any = 18;
+value = "atten";</code></pre>
+                        <p><code>any</code> betyr i praksis at TypeScript slutter å hjelpe med mye av typekontrollen for denne verdien. Det kan være nyttig i spesielle situasjoner, men overdreven bruk reduserer fordelene med TypeScript.</p>
+                    </section>
+
+                    <section class="module-study-section" id="funksjonell-programmering" aria-labelledby="funksjonell-heading">
+                        <p class="it2810-section-kicker">Data gjennom funksjoner</p>
+                        <h2 id="funksjonell-heading">Funksjonell programmering</h2>
+                        <p>Funksjonell programmering er et programmeringsparadigme der oppgaven uttrykkes som evaluering av funksjoner. Stilen legger vekt på immutable values, funksjoner som parametre og en deklarativ beskrivelse av hva som skal gjøres fremfor hvert enkelt steg.</p>
+
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">Funksjonell transformasjon</p>
+                                <h3>Nye data produseres</h3>
+                                <div class="inline-flow" aria-label="Input blir sendt gjennom en ren funksjon som produserer ny output">
+                                    <span>input</span><span aria-hidden="true">→</span><span>pure function</span><span aria-hidden="true">→</span><span>new output</span>
+                                </div>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Mutasjon</p>
+                                <h3>Originaldata endres</h3>
+                                <div class="inline-flow" aria-label="Input blir endret direkte">
+                                    <span>input</span><span aria-hidden="true">→</span><span>mutate original data</span>
+                                </div>
+                            </section>
+                        </div>
+                        <p>Denne programmeringsstilen har blitt sentral igjen i moderne JavaScript og danner et viktig grunnlag for måten React-kode senere organiseres på.</p>
+                    </section>
+
+                    <section class="module-study-section" id="immutable-funksjoner" aria-labelledby="immutable-heading">
+                        <p class="it2810-section-kicker">Forutsigbare transformasjoner</p>
+                        <h2 id="immutable-heading">Immutability, pure functions og side effects</h2>
+
+                        <pre><code>const array1 = [1, 4, 9, 16];
+const array2 = array1.map((x) => x * 2);</code></pre>
+                        <p><code>array1</code> forblir uendret. <code>array2</code> inneholder de nye, transformerte verdiene. I stedet for å endre eksisterende data produseres nye data.</p>
+
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">Pure function</p>
+                                <h3>Samme input gir samme output</h3>
+                                <ul>
+                                    <li>endrer ikke data utenfor eget scope</li>
+                                    <li>gir samme output for samme input</li>
+                                    <li>er lettere å forstå og teste</li>
+                                </ul>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Side effect</p>
+                                <h3>Påvirker noe utenfor resultatet</h3>
+                                <ul>
+                                    <li>endrer global state</li>
+                                    <li>skriver til noe utenfor funksjonen</li>
+                                    <li>muterer input</li>
+                                    <li>påvirker systemtilstand</li>
+                                </ul>
+                            </section>
+                        </div>
+                        <p class="module-principle">Immutability reduserer uforutsigbare side effects ved å gjøre transformasjonen fra input til ny output tydelig.</p>
+                    </section>
+
+                    <section class="module-study-section" id="array-metoder" aria-labelledby="array-metoder-heading">
+                        <p class="it2810-section-kicker">Callbacks og datatransformasjon</p>
+                        <h2 id="array-metoder-heading">Array-metoder og function chaining</h2>
+                        <p>Metodene under er sentrale fordi de uttrykker valg, transformasjon og aggregering med funksjoner. Målet er å forstå rollen deres, ikke å memorere en full API-reference.</p>
+
+                        <dl class="it2810-method-grid">
+                            <div>
+                                <dt><code>map()</code></dt>
+                                <dd><pre><code>const doubled = numbers.map(x => x * 2);</code></pre><p>Returnerer en ny array med transformerte verdier.</p></dd>
+                            </div>
+                            <div>
+                                <dt><code>filter()</code></dt>
+                                <dd><pre><code>const even = numbers.filter(x => x % 2 === 0);</code></pre><p>Returnerer en ny array med verdiene som matcher betingelsen.</p></dd>
+                            </div>
+                            <div>
+                                <dt><code>find()</code></dt>
+                                <dd><pre><code>const firstLarge = numbers.find(x => x > 10);</code></pre><p>Returnerer den første verdien som matcher.</p></dd>
+                            </div>
+                            <div>
+                                <dt><code>some()</code></dt>
+                                <dd><pre><code>const hasLarge = numbers.some(x => x > 10);</code></pre><p>Returnerer en boolean som sier om minst én verdi matcher.</p></dd>
+                            </div>
+                            <div>
+                                <dt><code>every()</code></dt>
+                                <dd><pre><code>const allPositive = numbers.every(x => x > 0);</code></pre><p>Returnerer en boolean som sier om alle verdiene matcher.</p></dd>
+                            </div>
+                            <div>
+                                <dt><code>reduce()</code></dt>
+                                <dd><pre><code>const sum = numbers.reduce((total, x) => total + x, 0);</code></pre><p>Kombinerer mange verdier til én verdi.</p></dd>
+                            </div>
+                        </dl>
+
+                        <h3 id="function-chaining">Function chaining</h3>
+                        <pre><code>const result = numbers
+    .filter(x => x > 0)
+    .map(x => x * 2);</code></pre>
+                        <ol>
+                            <li><code>filter</code> velger de relevante verdiene.</li>
+                            <li><code>map</code> transformerer dem.</li>
+                            <li>Den opprinnelige arrayen forblir uendret.</li>
+                        </ol>
+                    </section>
+
+                    <section class="module-study-section" id="deklarativ-imperativ" aria-labelledby="deklarativ-heading">
+                        <p class="it2810-section-kicker">Hva fremfor hvert steg</p>
+                        <h2 id="deklarativ-heading">Deklarativ og imperativ stil</h2>
+                        <div class="it2810-code-pair">
+                            <section>
+                                <h3>Imperativ</h3>
+                                <pre><code>const output = [];
+
+for (let i = 0; i &lt; numbers.length; i++) {
+    output.push(numbers[i] * 2);
+}</code></pre>
+                                <p>Fokuserer på hvordan operasjonen utføres steg for steg.</p>
+                            </section>
+                            <section>
+                                <h3>Deklarativ</h3>
+                                <pre><code>const output = numbers.map(x => x * 2);</code></pre>
+                                <p>Fokuserer på hva transformasjonen skal produsere.</p>
+                            </section>
+                        </div>
+                        <p>Imperativ kode er ikke alltid dårlig. Ved datatransformasjoner kan funksjonell og deklarativ stil likevel gi kortere og mer lesbar kode.</p>
+                    </section>
+
+                    <section class="module-study-section" id="react-grunnlaget" aria-labelledby="react-grunnlaget-heading">
+                        <p class="it2810-section-kicker">Broen videre</p>
+                        <h2 id="react-grunnlaget-heading">JavaScript, TypeScript og React</h2>
+                        <p>React-teorien kommer senere. Før den gir mening, må språkfunksjonene og programmeringsmønstrene under sitte.</p>
+
+                        <figure class="technical-model it2810-programming-flow">
+                            <div class="model-node"><strong>JavaScript fundamentals</strong><span>språk og runtime</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>ES modules</strong><span>import · export</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Arrow functions</strong><span>functions · callbacks</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Functional programming</strong><span>array methods · immutable data · declarativ stil</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>TypeScript</strong><span>typing · data structures</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node model-node-accent"><strong>React</strong><span>bygger videre på dette fundamentet</span></div>
+                            <figcaption>Senere React-kode bruker funksjoner, arrow functions, import/export, destructuring, array-metoder, immutable data og TypeScript-typing.</figcaption>
+                        </figure>
+                        <p class="module-note-line">Denne modulen introduserer ikke JSX, props, state, hooks eller components. Den etablerer programmeringsgrunnlaget de bygger på.</p>
+                    </section>
+
+                    <section class="module-study-section" id="vanlige-fallgruver" aria-labelledby="fallgruver-heading">
+                        <p class="it2810-section-kicker">Hold modellene fra hverandre</p>
+                        <h2 id="fallgruver-heading">Vanlige fallgruver</h2>
+                        <ol class="it2810-pitfall-list">
+                            <li><strong>TypeScript i browseren</strong><span>Tro at browseren kjører TypeScript direkte.</span></li>
+                            <li><strong><code>any</code> overalt</strong><span>Da forsvinner mye av typekontrollen TypeScript skulle gi.</span></li>
+                            <li><strong>Unødvendig mutasjon</strong><span>Endre arrays direkte når funksjonen kan returnere nye data.</span></li>
+                            <li><strong>Loops uten alternativer</strong><span>Bruke lange løkker til enkel <code>map</code> eller <code>filter</code> uten å kjenne den deklarative formen.</span></li>
+                            <li><strong>Svak modulstruktur</strong><span>Ikke forstå <code>import</code> og <code>export</code> før prosjektet vokser.</span></li>
+                            <li><strong>Kopiert React-kode</strong><span>Bruke arrow functions og callbacks uten å forstå syntaksen.</span></li>
+                            <li><strong>Node.js og JavaScript</strong><span>Blande sammen runtime-miljøet og selve programmeringsspråket.</span></li>
+                        </ol>
+                    </section>
+
+                    <section class="module-study-section" id="kortversjonen" aria-labelledby="kortversjonen-heading">
+                        <p class="it2810-section-kicker">Rask repetisjon</p>
+                        <h2 id="kortversjonen-heading">Kortversjonen</h2>
+                        <div class="summary-sheet it2810-summary-sheet">
+                            <ul>
+                                <li><strong>JavaScript</strong> gir webapplikasjoner dynamisk oppførsel.</li>
+                                <li><strong>Dynamisk typing</strong> betyr at typen bestemmes ved runtime ut fra verdien.</li>
+                                <li><strong>TypeScript</strong> er et superset av JavaScript med statisk typekontroll.</li>
+                                <li><strong>Transpilation</strong> gjør TypeScript om til JavaScript som browseren kan kjøre.</li>
+                                <li><strong>Type inference</strong> lar TypeScript finne typen automatisk.</li>
+                                <li><strong>Interfaces og type aliases</strong> beskriver strukturen på data.</li>
+                                <li><strong>Union types</strong> tillater flere eksplisitt definerte typer.</li>
+                                <li><strong><code>any</code></strong> slår i praksis av mye av typekontrollen.</li>
+                                <li><strong><code>import</code> og <code>export</code></strong> brukes til modularisering.</li>
+                                <li><strong>Arrow functions</strong> brukes mye i moderne JavaScript.</li>
+                                <li><strong>Funksjonell programmering</strong> favoriserer immutable data og pure functions.</li>
+                                <li><strong>Array-metodene</strong> <code>map</code>, <code>filter</code>, <code>reduce</code>, <code>find</code>, <code>some</code> og <code>every</code> bruker callbacks til databehandling.</li>
+                                <li><strong>Deklarativ kode</strong> beskriver ofte hva vi ønsker fremfor hvert enkelt steg.</li>
+                                <li><strong>React</strong> bygger videre på dette programmeringsgrunnlaget.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="module-study-section" id="selvtest" aria-labelledby="selvtest-heading" data-quiz>
+                        <p class="it2810-section-kicker">Kontroller forståelsen</p>
+                        <h2 id="selvtest-heading">Test deg selv</h2>
+                        <p>Svar på alle åtte spørsmål. Full poengsum registreres automatisk i modulprogresjonen.</p>
+                        <form class="module-quiz" data-quiz-form novalidate>
+                            <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="JavaScript knytter typen til den aktuelle verdien mens programmet kjører.">
+                                <legend><span>1</span> Hva betyr dynamisk typing i JavaScript?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q1" value="a"> At alle typer må deklareres før programmet kan kjøre</label>
+                                    <label><input type="radio" name="it2810-m2-q1" value="b"> At variabelens type bestemmes ved runtime basert på verdien</label>
+                                    <label><input type="radio" name="it2810-m2-q1" value="c"> At kompilatoren velger en tilfeldig type</label>
+                                    <label><input type="radio" name="it2810-m2-q1" value="d"> At bare string-verdier kan endre type</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="c" data-explanation="TypeScript bygger på JavaScript og legger valgfri statisk typekontroll til utviklingssteget.">
+                                <legend><span>2</span> Hva er TypeScript?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q2" value="a"> En egen browser for typede applikasjoner</label>
+                                    <label><input type="radio" name="it2810-m2-q2" value="b"> En preprosessor for CSS</label>
+                                    <label><input type="radio" name="it2810-m2-q2" value="c"> Et syntaktisk superset av JavaScript som legger til valgfri statisk typing</label>
+                                    <label><input type="radio" name="it2810-m2-q2" value="d"> En runtime som bare brukes av React</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="a" data-explanation="TypeScript transpileres til JavaScript før koden kjøres i browseren.">
+                                <legend><span>3</span> Hva kjører browseren til slutt?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q3" value="a"> JavaScript</label>
+                                    <label><input type="radio" name="it2810-m2-q3" value="b"> Rå TypeScript</label>
+                                    <label><input type="radio" name="it2810-m2-q3" value="c"> Node.js</label>
+                                    <label><input type="radio" name="it2810-m2-q3" value="d"> Interface-deklarasjoner</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="d" data-explanation="Export definerer hva en modul gjør tilgjengelig for andre moduler.">
+                                <legend><span>4</span> Hva gjør <code>export</code>?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q4" value="a"> Kjører funksjonen med en gang</label>
+                                    <label><input type="radio" name="it2810-m2-q4" value="b"> Konverterer JavaScript til TypeScript</label>
+                                    <label><input type="radio" name="it2810-m2-q4" value="c"> Installerer en package</label>
+                                    <label><input type="radio" name="it2810-m2-q4" value="d"> Gjør en verdi, funksjon eller binding tilgjengelig for andre moduler</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Ved immutable transformasjoner beholdes originaldata, mens resultatet produseres som nye data.">
+                                <legend><span>5</span> Hva betyr immutability?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q5" value="a"> At <code>const</code> aldri kan inneholde en array</label>
+                                    <label><input type="radio" name="it2810-m2-q5" value="b"> At eksisterende data ikke endres, men nye data produseres</label>
+                                    <label><input type="radio" name="it2810-m2-q5" value="c"> At all state må være global</label>
+                                    <label><input type="radio" name="it2810-m2-q5" value="d"> At input slettes etter at funksjonen er kjørt</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="c" data-explanation="Map anvender callbacken på hvert element og samler resultatene i en ny array.">
+                                <legend><span>6</span> Hva gjør <code>map()</code>?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q6" value="a"> Returnerer første verdi som matcher</label>
+                                    <label><input type="radio" name="it2810-m2-q6" value="b"> Returnerer alltid en boolean</label>
+                                    <label><input type="radio" name="it2810-m2-q6" value="c"> Returnerer en ny array der hvert element er transformert</label>
+                                    <label><input type="radio" name="it2810-m2-q6" value="d"> Muterer alltid den opprinnelige arrayen</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="a" data-explanation="Eksempelvis tillater number | string akkurat disse to typene uten å gi opp all typekontroll.">
+                                <legend><span>7</span> Hva er en union type?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q7" value="a"> En type som tillater én av flere eksplisitt angitte typer</label>
+                                    <label><input type="radio" name="it2810-m2-q7" value="b"> En verdi som tillater alle typer gjennom <code>any</code></label>
+                                    <label><input type="radio" name="it2810-m2-q7" value="c"> En array med fast rekkefølge og typer</label>
+                                    <label><input type="radio" name="it2810-m2-q7" value="d"> En metode for å slå sammen moduler</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="d" data-explanation="React-kode bygger direkte videre på disse funksjonelle JavaScript- og TypeScript-mønstrene.">
+                                <legend><span>8</span> Hvorfor er funksjonell programmeringsstil relevant før React?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="it2810-m2-q8" value="a"> Fordi React bare kan kjøre TypeScript</label>
+                                    <label><input type="radio" name="it2810-m2-q8" value="b"> Fordi React fjerner behovet for JavaScript</label>
+                                    <label><input type="radio" name="it2810-m2-q8" value="c"> Fordi React bare støtter class-basert kode</label>
+                                    <label><input type="radio" name="it2810-m2-q8" value="d"> Fordi React ofte bruker funksjoner, callbacks, immutable data og deklarativ datatransformasjon</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <div class="quiz-actions">
+                                <button class="button-link" type="submit">Sjekk svar</button>
+                                <button class="quiz-retry" type="button" data-quiz-retry hidden>Prøv på nytt</button>
+                                <p class="quiz-summary" data-quiz-summary aria-live="polite"></p>
+                            </div>
+                        </form>
+
+                        <label class="quiz-progress-status">
+                            <input type="checkbox" data-check-id="quiz-complete" data-quiz-progress-check disabled>
+                            Full poengsum i selvtesten
+                        </label>
+                    </section>
+
+                    <section class="module-study-section" id="etter-forelesningen" aria-labelledby="etter-heading">
+                        <p class="it2810-section-kicker">Avslutt arbeidet</p>
+                        <h2 id="etter-heading">Etter forelesningen</h2>
+                        <div class="module-panel">
+                            <ul class="checklist">
+                                <li><label><input type="checkbox" data-check-id="after-1"> Jeg kan forklare forskjellen mellom JavaScript og TypeScript</label></li>
+                                <li><label><input type="checkbox" data-check-id="after-2"> Jeg kan lese enkel TypeScript med typer, interfaces og union types</label></li>
+                                <li><label><input type="checkbox" data-check-id="after-3"> Jeg kan forklare arrow functions, immutability og sentrale array-metoder</label></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <label class="completion-control">
+                <input type="checkbox" data-complete-toggle>
+                Marker modul som fullført
+            </label>
+
+            <nav class="module-navigation" aria-label="Modulnavigasjon">
+                <a class="button-link" href="modul-1.html">← Forrige: Webplattformen og frontendgrunnlaget</a>
+                <a class="button-link" href="index.html">Til IT2810-oversikten →</a>
+            </nav>
+        </main>
+        <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>
+    </div>
+
+    <script src="../../assets/site.js"></script>
+    <script src="../progress.js?v=20260828d"></script>
+    <script src="../quiz.js?v=20260828a"></script>
+</body>
+</html>

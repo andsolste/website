@@ -2887,7 +2887,7 @@ th {
     }
 }
 
-/* IT2810 · Modul 1 */
+/* IT2810 · studiesider */
 .it2810-module-page {
     --it2810-line: #4c3b78;
 }
@@ -2936,40 +2936,55 @@ th {
     font-size: .92rem;
 }
 
-.it2810-platform-terms {
+.it2810-platform-terms,
+.it2810-method-grid {
     display: grid;
     margin: 1.5rem 0;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0 1.5rem;
 }
 
-.it2810-platform-terms > div {
+.it2810-platform-terms > div,
+.it2810-method-grid > div {
     padding: .8rem 0;
     border-top: 1px solid var(--border);
 }
 
-.it2810-platform-terms dt {
+.it2810-platform-terms dt,
+.it2810-method-grid dt {
     color: var(--blue-light);
     font-weight: 800;
 }
 
-.it2810-platform-terms dd {
+.it2810-platform-terms dd,
+.it2810-method-grid dd {
     margin: .2rem 0 0;
     color: var(--text-secondary);
     font-size: .92rem;
     line-height: 1.55;
 }
 
-.it2810-browser-flow {
+.it2810-browser-flow,
+.it2810-programming-flow {
     max-width: 680px;
 }
 
 .it2810-browser-flow figcaption,
+.it2810-programming-flow figcaption,
 .it2810-foundation-model figcaption {
     margin-top: .55rem;
     color: var(--text-muted);
     font-size: .82rem;
     line-height: 1.5;
+}
+
+.it2810-method-grid pre {
+    margin: .65rem 0;
+    font-size: .82rem;
+}
+
+.it2810-method-grid dd p {
+    margin: 0;
 }
 
 .it2810-layer-row {
@@ -3460,6 +3475,7 @@ th {
 @media (max-width: 760px) {
     .it2810-understanding-grid,
     .it2810-platform-terms,
+    .it2810-method-grid,
     .it2810-element-groups,
     .it2810-accessibility-list,
     .it2810-frontend-layers,
