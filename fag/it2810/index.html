@@ -32,7 +32,7 @@
             <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="site-sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><span>Meny</span></button>
             <span class="mobile-brand">AS</span>
         </div>
-        <main class="site-main content-page it2810-overview-page" id="main-content" data-course="it2810" data-module-count="8">
+        <main class="site-main content-page it2810-overview-page" id="main-content" data-course="it2810" data-module-count="3">
             <a class="back-link" href="../index.html">← Til fagoversikten</a>
             <header class="page-intro it2810-course-header">
                 <p class="course-code">IT2810</p>
@@ -178,23 +178,23 @@
 
             <section class="it2810-section" id="teorimoduler" aria-labelledby="teorimoduler-heading">
                 <header class="it2810-section-header">
-                    <p class="it2810-section-kicker">Semesterstruktur</p>
-                    <h2 id="teorimoduler-heading">Teorimoduler</h2>
-                    <p>Modulene bygges ut gjennom semesteret etter hvert som temaene gjennomgås i undervisningen og brukes i prosjektene.</p>
-                    <p class="it2810-module-availability">2 av 8 moduler er tilgjengelige nå.</p>
+                    <p class="it2810-section-kicker">Kunnskapsgrunnlag</p>
+                    <h2 id="teorimoduler-heading">Tre kompakte teorimoduler</h2>
+                    <p>Modulene dekker fundamentet som er nyttig å forstå. Detaljene læres og brukes videre gjennom prosjektarbeid, kode, feilsøking, dokumentasjon og code review.</p>
+                    <p class="it2810-module-availability">1 av 3 moduler er tilgjengelig nå.</p>
                 </header>
                 <ol class="it2810-module-grid">
                     <li>
-                        <article class="it2810-module-card is-available" id="modul-1" data-module-card data-module="1" data-module-title="Webplattformen og frontendgrunnlaget" data-module-href="modul-1.html" data-check-ids="before-1 before-2 before-3 understanding-1 understanding-2 understanding-3 understanding-4 understanding-5 understanding-6 understanding-7 understanding-8 quiz-complete after-1 after-2 after-3">
+                        <article class="it2810-module-card is-available" id="modul-1" data-module-card data-module="1" data-module-title="Frontendgrunnlaget" data-module-href="modul-1.html" data-check-ids="before-1 before-2 before-3 understanding-1 understanding-2 understanding-3 understanding-4 understanding-5 understanding-6 understanding-7 understanding-8 quiz-complete after-1 after-2 after-3">
                             <header class="it2810-module-header">
                                 <div>
                                     <p class="module-number">Modul 1</p>
-                                    <h3>Webplattformen og frontendgrunnlaget</h3>
+                                    <h3>Frontendgrunnlaget</h3>
                                 </div>
                                 <span class="it2810-module-status it2810-module-status-available">Tilgjengelig</span>
                             </header>
-                            <p class="it2810-module-description">Fundamentet for webgrensesnitt: hvordan HTML beskriver struktur og mening, CSS styrer presentasjon og layout, og responsivt og tilgjengelig design gjør løsningen brukbar på tvers av enheter og brukere.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTML · semantisk HTML · CSS · selectors · CSS Grid · Flexbox · viewport · media queries · responsive design · tilgjengelighet · WCAG</p>
+                            <p class="it2810-module-description">Det nødvendige fundamentet før React: webplattformen, semantisk HTML, CSS, responsivt og tilgjengelig design, samt JavaScript- og TypeScript-mønstrene du trenger for å lese moderne frontendkode.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTML · CSS · accessibility · responsive design · JavaScript · TypeScript · ES modules · arrow functions · array methods</p>
                             <footer class="it2810-module-footer">
                                 <div>
                                     <p class="module-status" data-module-status>Status: Ikke startet</p>
@@ -207,25 +207,16 @@
                         </article>
                     </li>
                     <li>
-                        <article class="it2810-module-card is-available" id="modul-2" data-module-card data-module="2" data-module-title="JavaScript og TypeScript" data-module-href="modul-2.html" data-check-ids="before-1 before-2 before-3 understanding-1 understanding-2 understanding-3 understanding-4 understanding-5 understanding-6 understanding-7 understanding-8 quiz-complete after-1 after-2 after-3">
+                        <article class="it2810-module-card" id="planlagt-modul-2">
                             <header class="it2810-module-header">
                                 <div>
                                     <p class="module-number">Modul 2</p>
-                                    <h3>JavaScript og TypeScript</h3>
+                                    <h3>React og dataflyt</h3>
                                 </div>
-                                <span class="it2810-module-status it2810-module-status-available">Tilgjengelig</span>
+                                <span class="it2810-module-status">Planlagt</span>
                             </header>
-                            <p class="it2810-module-description">Programmeringsgrunnlaget for moderne frontendutvikling, fra JavaScripts dynamiske modell til TypeScripts statiske typesystem og den funksjonelle programmeringsstilen som brukes videre i React.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> JavaScript · ES modules · import/export · arrow functions · functional programming · immutability · map/filter/reduce · TypeScript · types · interfaces · type inference · union types</p>
-                            <footer class="it2810-module-footer">
-                                <div>
-                                    <p class="module-status" data-module-status>Status: Ikke startet</p>
-                                    <div class="progress-track" role="progressbar" aria-label="Progresjon i IT2810 modul 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                                        <div class="progress-bar" data-module-progress></div>
-                                    </div>
-                                </div>
-                                <a class="button-link" href="modul-2.html">Åpne modul →</a>
-                            </footer>
+                            <p class="it2810-module-description">Komponentbasert frontend med JSX, props, state, hooks og dataflyt, fra små funksjonelle komponenter til delt state, Context og lokal lagring.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> React · JSX · components · props · state · hooks · Context · Web Storage</p>
                         </article>
                     </li>
                     <li>
@@ -233,77 +224,12 @@
                             <header class="it2810-module-header">
                                 <div>
                                     <p class="module-number">Modul 3</p>
-                                    <h3>Utviklingsmiljø og tooling</h3>
+                                    <h3>API, Git og kvalitet</h3>
                                 </div>
                                 <span class="it2810-module-status">Planlagt</span>
                             </header>
-                            <p class="it2810-module-description">Verktøyene rundt kildekoden: hvordan Node, pakkebehandlere og Vite brukes til å utvikle, bygge, kjøre og kvalitetssikre moderne frontendprosjekter.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> Node.js · Node v24 · npm/pnpm · packages · dependencies · Vite · development server · build · hot reload · ESLint</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="it2810-module-card" id="planlagt-modul-4">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 4</p>
-                                    <h3>React fundamentals</h3>
-                                </div>
-                                <span class="it2810-module-status">Planlagt</span>
-                            </header>
-                            <p class="it2810-module-description">Komponentbasert og deklarativ utvikling av brukergrensesnitt, med fokus på hvordan UI bygges av komponenter og hvordan data og brukerhandlinger driver rendering.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> React · JSX · functional components · component hierarchy · props · state · useState · events · callbacks · useEffect · rendering</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="it2810-module-card" id="planlagt-modul-5">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 5</p>
-                                    <h3>State management</h3>
-                                </div>
-                                <span class="it2810-module-status">Planlagt</span>
-                            </header>
-                            <p class="it2810-module-description">Hvordan applikasjonstilstand eies, flyttes, deles og lagres når en React-applikasjon vokser fra enkle komponenter til mer sammensatte grensesnitt.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> local state · lifting state up · props · callbacks · Context API · useContext · Web Storage · localStorage · sessionStorage · global state management</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="it2810-module-card" id="planlagt-modul-6">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 6</p>
-                                    <h3>Data, HTTP og API-er</h3>
-                                </div>
-                                <span class="it2810-module-status">Planlagt</span>
-                            </header>
-                            <p class="it2810-module-description">Hvordan frontend kommuniserer med andre systemer, hvordan REST modellerer ressurser over HTTP, og hvordan asynkrone data hentes og håndteres i klienten.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTTP · REST · resources · URI · GET · POST · PUT · DELETE · CRUD · JSON · Promises · fetch · async data · TanStack Query</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="it2810-module-card" id="planlagt-modul-7">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 7</p>
-                                    <h3>Git og samarbeid</h3>
-                                </div>
-                                <span class="it2810-module-status">Planlagt</span>
-                            </header>
-                            <p class="it2810-module-description">Versjonskontroll og arbeidsflyt for utvikling i team, med branching, pull requests, issues og code review som mekanismer for koordinering og kvalitet.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> Git · repository · clone · commit · pull · push · branches · merge · pull requests · issues · code review · team workflow</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="it2810-module-card" id="planlagt-modul-8">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 8</p>
-                                    <h3>Kvalitet i webapplikasjoner</h3>
-                                </div>
-                                <span class="it2810-module-status">Planlagt</span>
-                            </header>
-                            <p class="it2810-module-description">Kvaliteten rundt selve funksjonaliteten: testing, tilgjengelighet, kodekvalitet, dokumentasjon, bærekraft, levering og kritisk bruk av utviklingsverktøy og KI.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> code quality · linting · testing · documentation · accessibility · responsive design · sustainability · deployment · AI-assisted development</p>
+                            <p class="it2810-module-description">Hvordan webapplikasjonen kommuniserer med andre systemer og hvordan den utvikles og kvalitetssikres i praksis gjennom HTTP/REST, Git, testing og code review.</p>
+                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTTP · REST · fetch · async data · Git · pull requests · testing · code review</p>
                         </article>
                     </li>
                 </ol>
