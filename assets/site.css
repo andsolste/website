@@ -78,7 +78,8 @@ button:focus-visible {
     display: flex;
     width: var(--sidebar-width);
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     border-right: 1px solid var(--border);
     background: var(--surface-subtle);
     transition: width .2s ease;
@@ -210,6 +211,55 @@ button:focus-visible {
     overflow: hidden;
     font-weight: 600;
     white-space: nowrap;
+}
+
+.sidebar-subjects {
+    margin: .1rem 1rem 0;
+    padding: .85rem .25rem 0;
+    border-top: 1px solid var(--border);
+}
+
+.sidebar-subjects-label {
+    margin: 0 0 .35rem .55rem;
+    color: var(--text-muted);
+    font-size: .66rem;
+    font-weight: 750;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.sidebar-subjects-list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    gap: .1rem;
+    list-style: none;
+}
+
+.sidebar-subjects-link {
+    display: flex;
+    min-height: 36px;
+    padding: .4rem .55rem .4rem .75rem;
+    align-items: center;
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: .8rem;
+    font-weight: 650;
+    letter-spacing: .025em;
+    text-decoration: none;
+    transition: background-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+
+.sidebar-subjects-link:hover,
+.sidebar-subjects-link:focus-visible {
+    background: var(--surface);
+    color: var(--text-secondary);
+}
+
+.sidebar-subjects-link[aria-current="location"] {
+    background: rgb(46 27 78 / 48%);
+    box-shadow: inset 2px 0 0 var(--purple);
+    color: var(--text-primary);
 }
 
 .sidebar-footer {
@@ -419,6 +469,12 @@ html.sidebar-collapsed .sidebar-footer {
     display: none;
 }
 
+@media (min-width: 821px) {
+    html.sidebar-collapsed .sidebar-subjects {
+        display: none;
+    }
+}
+
 .sidebar-scrim[hidden] {
     display: none;
 }
@@ -468,6 +524,15 @@ html.sidebar-collapsed .sidebar-footer {
     html.sidebar-collapsed .nav-label,
     html.sidebar-collapsed .sidebar-footer {
         display: block;
+    }
+
+    .sidebar-subjects {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .sidebar-subjects-link {
+        min-height: 42px;
     }
 
     .collapse-icon {
@@ -1154,3 +1219,4 @@ html.search-open body {
         border-radius: 9px;
     }
 }
+

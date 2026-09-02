@@ -79,7 +79,64 @@
     mobileMenuButton.addEventListener("click", openMobileMenu);
     scrim.addEventListener("click", () => closeMobileMenu());
 
-    sidebarNavigation.querySelectorAll("a").forEach((link) => {
+    const activeSubjects = [
+        {
+            code: "DCST2001",
+            name: "Sammenkoblede nettverk og nettverkssikkerhet",
+            slug: "dcst2001"
+        },
+        {
+            code: "EXPH0300",
+            name: "Examen philosophicum for naturvitenskap og teknologi",
+            slug: "exph0300"
+        },
+        {
+            code: "IDATT2202",
+            name: "Operativsystemer",
+            slug: "idatt2202"
+        },
+        {
+            code: "IT2810",
+            name: "Webutvikling",
+            slug: "it2810"
+        }
+    ];
+    const currentPath = window.location.pathname.toLowerCase();
+    const subjectNavigation = document.createElement("nav");
+    const subjectLabel = document.createElement("p");
+    const subjectList = document.createElement("ul");
+
+    subjectNavigation.className = "sidebar-subjects";
+    subjectNavigation.setAttribute("aria-labelledby", "active-subjects-label");
+    subjectLabel.className = "sidebar-subjects-label";
+    subjectLabel.id = "active-subjects-label";
+    subjectLabel.textContent = "Aktive fag";
+    subjectList.className = "sidebar-subjects-list";
+
+    activeSubjects.forEach((subject) => {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        const subjectDirectory = new URL(`fag/${subject.slug}/`, siteRoot);
+
+        link.className = "sidebar-subjects-link";
+        link.href = new URL("index.html", subjectDirectory).href;
+        link.textContent = subject.code;
+        link.setAttribute("aria-label", `${subject.code} – ${subject.name}`);
+        link.title = `${subject.code} – ${subject.name}`;
+
+        if (currentPath === subjectDirectory.pathname.slice(0, -1).toLowerCase()
+            || currentPath.startsWith(subjectDirectory.pathname.toLowerCase())) {
+            link.setAttribute("aria-current", "location");
+        }
+
+        item.append(link);
+        subjectList.append(item);
+    });
+
+    subjectNavigation.append(subjectLabel, subjectList);
+    sidebarNavigation.after(subjectNavigation);
+
+    sidebar.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
             if (isMobile()) closeMobileMenu(false);
         });
@@ -507,3 +564,4 @@
 
     updateControls();
 })();
+
