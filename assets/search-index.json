@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "entries": [
     {
       "id": "page-home",
@@ -298,15 +298,114 @@
       "priority": 15
     },
     {
-      "id": "it2810-planned-module-2",
-      "type": "Tema",
-      "title": "React og dataflyt",
+      "id": "module-it2810-2",
+      "type": "Modul",
+      "title": "Modul 2 · React og dataflyt",
       "code": "IT2810",
-      "context": "IT2810 · Planlagt modul 2",
-      "description": "Komponentbasert frontend med JSX, props, state, hooks, Context og lokal lagring.",
-      "keywords": ["React", "JSX", "components", "functional components", "component hierarchy", "props", "state", "events", "callbacks", "useState", "useEffect", "hooks", "lifting state", "Context", "Web Storage", "localStorage", "sessionStorage", "dataflyt"],
-      "url": "fag/it2810/index.html#planlagt-modul-2",
-      "priority": 18
+      "context": "IT2810 · React · Components · State og dataflyt",
+      "description": "Hvordan funksjonelle React-komponenter, JSX, props, state, hooks, Context og Web Storage bygger og oppdaterer et brukergrensesnitt.",
+      "keywords": ["React", "JSX", "components", "functional components", "component hierarchy", "props", "state", "useState", "events", "callbacks", "lifting state", "rendering", "useEffect", "hooks", "Context", "useContext", "Web Storage", "localStorage", "sessionStorage", "dataflow", "dataflyt"],
+      "url": "fag/it2810/modul-2.html",
+      "priority": 25
+    },
+    {
+      "id": "topic-it2810-react-components",
+      "type": "Tema",
+      "title": "React og components",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "React som deklarativt UI-library, funksjonelle components, component hierarchy og Virtual DOM på overordnet nivå.",
+      "keywords": ["React", "components", "functional components", "component hierarchy", "declarative UI", "imperative UI", "Virtual DOM"],
+      "url": "fag/it2810/modul-2.html#react-og-komponenter",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-jsx",
+      "type": "Tema",
+      "title": "JSX og functional components",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "HTML-lignende syntaks i JavaScript og TypeScript, expressions, className og forskjellen mellom native elementer og egne components.",
+      "keywords": ["JSX", "functional components", "React elements", "expressions", "className", "component names"],
+      "url": "fag/it2810/modul-2.html#jsx",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-props-state",
+      "type": "Tema",
+      "title": "Props, state og rendering",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "Props som read-only input, state som endringsbar UI-data, useState og hvordan state-endringer fører til rendering.",
+      "keywords": ["props", "state", "useState", "read-only", "rendering", "state change", "parent", "child"],
+      "url": "fag/it2810/modul-2.html#props-og-state",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-events-callbacks",
+      "type": "Tema",
+      "title": "Events og callbacks",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "Hvordan user events utløser funksjoner og callbacks lar en child be en parent oppdatere state.",
+      "keywords": ["events", "event handling", "onClick", "onChange", "callbacks", "function props", "actions up"],
+      "url": "fag/it2810/modul-2.html#events-og-callbacks",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-state-ownership",
+      "type": "Tema",
+      "title": "State-eierskap og lifting state",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "Hvor state bør ligge, lifting state up og single source of truth når flere components trenger samme data.",
+      "keywords": ["state ownership", "lifting state", "lifting state up", "single source of truth", "local state", "shared state", "siblings"],
+      "url": "fag/it2810/modul-2.html#state-eierskap",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-hooks-effects",
+      "type": "Tema",
+      "title": "Hooks og useEffect",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "Hooks i functional components og useEffect for side effects og synkronisering utenfor ren rendering.",
+      "keywords": ["hooks", "useState", "useEffect", "side effects", "dependency array", "browser APIs", "subscriptions"],
+      "url": "fag/it2810/modul-2.html#hooks-og-useeffect",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-context",
+      "type": "Tema",
+      "title": "Context og useContext",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "Delt data i et component-subtree, Provider, useContext og når Context er nyttig sammenlignet med props.",
+      "keywords": ["Context", "Context API", "useContext", "Provider", "prop drilling", "shared data", "subtree"],
+      "url": "fag/it2810/modul-2.html#context",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-web-storage",
+      "type": "Tema",
+      "title": "Web Storage og persistence",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "Forskjellen mellom React state og persistent browser-lagring med localStorage og sessionStorage.",
+      "keywords": ["Web Storage", "localStorage", "sessionStorage", "persistence", "React state", "IndexedDB", "browser storage"],
+      "url": "fag/it2810/modul-2.html#web-storage",
+      "priority": 15
+    },
+    {
+      "id": "topic-it2810-dataflow",
+      "type": "Tema",
+      "title": "React-dataflyt",
+      "code": "IT2810",
+      "context": "IT2810 · Modul 2 · React og dataflyt",
+      "description": "Data ned gjennom props, handlinger opp gjennom callbacks, state-endring, rendering og oppdatert UI.",
+      "keywords": ["dataflow", "dataflyt", "props down", "actions up", "callbacks up", "state owner", "render", "updated UI"],
+      "url": "fag/it2810/modul-2.html#dataflyt",
+      "priority": 15
     },
     {
       "id": "it2810-planned-module-3",
@@ -678,3 +777,4 @@
     }
   ]
 }
+

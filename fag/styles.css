@@ -3536,3 +3536,128 @@ th {
         text-align: center;
     }
 }
+
+/* IT2810 · Modul 2: component hierarchy og dataflyt */
+.it2810-component-tree {
+    max-width: 680px;
+    margin: 1.5rem 0;
+    padding: 1.15rem 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-subtle);
+}
+
+.it2810-component-tree ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.it2810-component-tree ul ul {
+    margin: .35rem 0 0 1rem;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--it2810-line);
+}
+
+.it2810-component-tree li {
+    position: relative;
+    padding: .42rem .55rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+.it2810-component-tree ul ul > li::before {
+    position: absolute;
+    top: 1.05rem;
+    left: -1.25rem;
+    width: .9rem;
+    border-top: 1px solid var(--it2810-line);
+    content: "";
+}
+
+.it2810-component-tree strong {
+    color: var(--text-primary);
+}
+
+.it2810-component-tree.is-context-tree {
+    border-left: 3px solid var(--blue);
+}
+
+.it2810-dataflow-model .it2810-layer-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.it2810-explanation-steps {
+    display: grid;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1.5rem;
+    border-top: 1px solid var(--border);
+    list-style: none;
+    counter-reset: it2810-explanation;
+}
+
+.it2810-explanation-steps li {
+    display: grid;
+    padding: .8rem 0;
+    grid-template-columns: 1.8rem minmax(0, 1fr);
+    gap: .12rem .6rem;
+    border-bottom: 1px solid var(--border);
+    counter-increment: it2810-explanation;
+}
+
+.it2810-explanation-steps li::before {
+    grid-row: 1 / span 2;
+    color: var(--blue-light);
+    content: counter(it2810-explanation, decimal-leading-zero);
+    font-size: .72rem;
+    font-weight: 850;
+}
+
+.it2810-explanation-steps strong {
+    color: var(--text-primary);
+}
+
+.it2810-explanation-steps span {
+    color: var(--text-secondary);
+    font-size: .9rem;
+}
+
+.it2810-module-page .key-idea > strong:first-child {
+    display: block;
+    margin-bottom: .45rem;
+}
+
+.it2810-module-page .key-idea ol {
+    margin: .6rem 0 0;
+    padding-left: 1.25rem;
+}
+
+@media (max-width: 760px) {
+    .it2810-explanation-steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .it2810-component-tree {
+        padding: .9rem;
+    }
+
+    .it2810-component-tree ul ul {
+        margin-left: .25rem;
+        padding-left: .8rem;
+    }
+
+    .it2810-component-tree ul ul > li::before {
+        left: -.8rem;
+        width: .55rem;
+    }
+
+    .it2810-dataflow-model .it2810-layer-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+

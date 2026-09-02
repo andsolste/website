@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT2810 – Modul 2: React og dataflyt | Andreas Sollie Steffensen</title>
+    <link rel="stylesheet" href="../../assets/site.css">
+    <link rel="stylesheet" href="../styles.css?v=20260901c">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
+
+    <aside class="sidebar" id="site-sidebar" aria-label="Sidepanel">
+        <div class="sidebar-header">
+            <div class="sidebar-brand" aria-label="Andreas Sollie Steffensen">
+                <span class="brand-mark" aria-hidden="true">AS</span>
+                <span class="brand-name">Andreas</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="site-sidebar" aria-expanded="true" aria-label="Fold sammen meny" title="Fold sammen meny">
+                <svg class="collapse-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"></path></svg>
+                <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+            </button>
+        </div>
+        <nav class="sidebar-nav" id="primary-navigation" aria-label="Hovednavigasjon">
+            <ul>
+                <li><a href="../../about.html" aria-label="Om meg" title="Om meg"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.25"></circle><path d="M5.5 20c.7-4 3-6 6.5-6s5.8 2 6.5 6"></path></svg></span><span class="nav-label">Om meg</span></a></li>
+                <li><a href="../../projects/index.html" aria-label="Prosjekter" title="Prosjekter"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.5 5l-3 14"></path></svg></span><span class="nav-label">Prosjekter</span></a></li>
+                <li><a href="../index.html" aria-current="page" aria-label="Fag" title="Fag"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5c3-.8 5.6-.2 8 1.8v11c-2.4-2-5-2.6-8-1.8zM20 5.5c-3-.8-5.6-.2-8 1.8v11c2.4-2 5-2.6 8-1.8z"></path></svg></span><span class="nav-label">Fag</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">NTNU · 2026</div>
+    </aside>
+
+    <button class="sidebar-scrim" id="sidebar-scrim" type="button" aria-label="Lukk meny" hidden></button>
+
+    <div class="page-shell" id="page-shell">
+        <div class="mobile-bar">
+            <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="site-sidebar" aria-expanded="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+                <span>Meny</span>
+            </button>
+            <span class="mobile-brand">AS</span>
+        </div>
+
+        <main class="site-main content-page module-page it2810-module-page" id="main-content" data-course="it2810" data-module="2" data-module-count="3">
+            <a class="back-link" href="index.html">← Til IT2810</a>
+
+            <header class="module-header module-study-header it2810-study-header">
+                <p class="module-number">IT2810 · Modul 2</p>
+                <h1>React og dataflyt</h1>
+                <p class="module-description">Grunnmodellen for moderne React-utvikling: hvordan brukergrensesnitt bygges av funksjonelle komponenter, hvordan data sendes gjennom props, hvordan state driver rendering, og hvordan hooks, Context og lokal lagring brukes når applikasjonen vokser.</p>
+                <ul class="module-meta" aria-label="Modulmetadata">
+                    <li>React</li>
+                    <li>JSX</li>
+                    <li>Props &amp; state</li>
+                    <li>Hooks &amp; Context</li>
+                </ul>
+
+                <div class="module-page-progress" aria-live="polite">
+                    <div class="module-page-progress-labels">
+                        <strong data-module-page-status>0 av 15 aktiviteter fullført</strong>
+                        <span data-module-page-percent>0 %</span>
+                    </div>
+                    <div class="progress-track" role="progressbar" aria-label="Progresjon i IT2810 modul 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="progress-bar" data-module-page-progress></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="module-section module-preparation" id="for-forelesningen" aria-labelledby="for-forelesningen-heading">
+                <h2 id="for-forelesningen-heading">Før forelesningen</h2>
+                <div class="module-panel">
+                    <ul class="checklist">
+                        <li><label><input type="checkbox" data-check-id="before-1"> Jeg kan lese arrow functions og import/export fra Modul 1</label></li>
+                        <li><label><input type="checkbox" data-check-id="before-2"> Jeg kjenner enkel TypeScript-typing og interfaces</label></li>
+                        <li><label><input type="checkbox" data-check-id="before-3"> Jeg forstår at immutability ofte betyr å lage nye verdier fremfor å mutere eksisterende data</label></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="module-section module-outcomes it2810-learning-map" id="dette-skal-du-forsta" aria-labelledby="forsta-heading">
+                <p class="it2810-section-kicker">Kart før du leser</p>
+                <h2 id="forsta-heading">Dette skal du forstå</h2>
+                <p>Kryss av når du kan forklare sammenhengen med egne ord og kjenne den igjen i kode.</p>
+                <div class="it2810-understanding-grid">
+                    <section aria-labelledby="understanding-react-heading">
+                        <h3 id="understanding-react-heading">React og JSX</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-1"> Jeg kan forklare hva React er og hva det brukes til</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-2"> Jeg kan forklare hva JSX representerer</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-components-heading">
+                        <h3 id="understanding-components-heading">Components og data</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-3"> Jeg kan dele et UI inn i funksjonelle components med fornuftige ansvar</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-4"> Jeg kan forklare hvordan props flytter data fra parent til child</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-state-heading">
+                        <h3 id="understanding-state-heading">State og handlinger</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-5"> Jeg kan forklare forskjellen mellom props og state</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-6"> Jeg kan forklare hvordan events og callbacks lar en child påvirke state høyere i hierarkiet</label></li>
+                        </ul>
+                    </section>
+                    <section aria-labelledby="understanding-hooks-heading">
+                        <h3 id="understanding-hooks-heading">Hooks, deling og lagring</h3>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox" data-check-id="understanding-7"> Jeg kan bruke konseptene useState og useEffect på grunnnivå</label></li>
+                            <li><label><input type="checkbox" data-check-id="understanding-8"> Jeg kan forklare når Context og Web Storage er relevante</label></li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+
+            <div class="module-study-layout">
+                <nav class="module-toc" aria-labelledby="innhold-heading">
+                    <p class="it2810-section-kicker">På denne siden</p>
+                    <h2 id="innhold-heading">Innhold</h2>
+                    <ol>
+                        <li><a href="#react-og-komponenter">React og components</a></li>
+                        <li><a href="#jsx">JSX og functional components</a></li>
+                        <li><a href="#props-og-state">Props, state og rendering</a></li>
+                        <li><a href="#events-og-callbacks">Events og callbacks</a></li>
+                        <li><a href="#state-eierskap">Hvor state skal ligge</a></li>
+                        <li><a href="#hooks-og-useeffect">Hooks og useEffect</a></li>
+                        <li><a href="#context">Context</a></li>
+                        <li><a href="#web-storage">Web Storage</a></li>
+                        <li><a href="#dataflyt">Hele dataflyten</a></li>
+                        <li><a href="#fallgruver">Fallgruver og kodelesing</a></li>
+                        <li><a href="#kortversjonen">Kortversjonen</a></li>
+                        <li><a href="#selvtest">Test deg selv</a></li>
+                    </ol>
+                </nav>
+
+                <div class="module-study-content">
+                    <section class="module-study-section" id="react-og-komponenter" aria-labelledby="react-og-komponenter-heading">
+                        <p class="it2810-section-kicker">Beskriv UI fra data</p>
+                        <h2 id="react-og-komponenter-heading">React og components</h2>
+                        <blockquote class="definition-callout">
+                            <p>React er et JavaScript library for å bygge user interfaces av gjenbrukbare components.</p>
+                        </blockquote>
+                        <p>React er komponentbasert og deklarativt. Utvikleren beskriver hvordan grensesnittet skal se ut for en gitt state, og React sørger for å oppdatere relevant UI når state endres.</p>
+
+                        <figure class="technical-model it2810-programming-flow">
+                            <div class="model-node"><strong>Data</strong><span>props, state og annen input</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node model-node-accent"><strong>Components</strong><span>beskriver UI for dataene de mottar</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>UI</strong><span>det brukeren ser og kan bruke</span></div>
+                            <figcaption>Den grunnleggende mentale modellen: data behandles av components og blir til et brukergrensesnitt.</figcaption>
+                        </figure>
+
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">Imperativ tankegang</p>
+                                <h3>Utfør DOM-steg</h3>
+                                <p>Finn elementet → endre tekst → skjul noe → vis noe → endre class.</p>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Deklarativ React</p>
+                                <h3>Beskriv resultatet</h3>
+                                <p><code>state = loggedIn</code> → render UI-et som passer denne tilstanden.</p>
+                            </section>
+                        </div>
+                        <p class="module-principle">React spør først: «Hvordan skal UI se ut gitt disse dataene?»</p>
+
+                        <h3>Fra UI til component hierarchy</h3>
+                        <p>En component er en gjenbrukbar del av grensesnittet med et tydelig ansvar. Målet er ikke flest mulig components, men grenser som gjør løsningen forståelig og vedlikeholdbar.</p>
+                        <div class="it2810-component-tree" role="img" aria-label="Component hierarchy med App som inneholder Header, Search, ResultList og Footer. ResultList inneholder tre ResultCard-komponenter.">
+                            <ul>
+                                <li><strong>App</strong>
+                                    <ul>
+                                        <li>Header</li>
+                                        <li>Search</li>
+                                        <li><strong>ResultList</strong>
+                                            <ul>
+                                                <li>ResultCard</li>
+                                                <li>ResultCard</li>
+                                                <li>ResultCard</li>
+                                            </ul>
+                                        </li>
+                                        <li>Footer</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li>Components deler opp ansvar.</li>
+                            <li>Samme struktur kan gjenbrukes med forskjellige data.</li>
+                            <li>Hierarkiet gjør det lettere å se hvor data bør eies og sendes.</li>
+                        </ul>
+                        <p>React bruker en Virtual DOM som del av arbeidet med å finne nødvendige UI-oppdateringer. Her er det nok å vite at React evaluerer UI-et igjen og oppdaterer det som må endres; interne detaljer kommer ikke først.</p>
+                    </section>
+
+                    <section class="module-study-section" id="jsx" aria-labelledby="jsx-heading">
+                        <p class="it2810-section-kicker">UI i JavaScript og TypeScript</p>
+                        <h2 id="jsx-heading">JSX og functional components</h2>
+                        <p>JSX er en syntax extension som lar oss beskrive React-elementer med HTML-lignende syntaks inne i JavaScript eller TypeScript. JavaScript expressions settes inn med krøllparenteser.</p>
+
+                        <pre><code>const title = "Webutvikling";
+
+function Greeting() {
+    return (
+        &lt;section className="card"&gt;
+            &lt;h1&gt;{title}&lt;/h1&gt;
+        &lt;/section&gt;
+    );
+}</code></pre>
+
+                        <dl class="it2810-platform-terms">
+                            <div><dt>Lowercase</dt><dd>Native HTML-elementer skrives som <code>section</code>, <code>h1</code> og <code>button</code>.</dd></div>
+                            <div><dt>Stor bokstav</dt><dd>Egne React components skrives som <code>UserCard</code> og brukes som <code>&lt;UserCard /&gt;</code>.</dd></div>
+                            <div><dt>className</dt><dd>JSX bruker <code>className</code> i stedet for HTML-attributtet <code>class</code>.</dd></div>
+                            <div><dt>{ }</dt><dd>Krøllparenteser lar JSX bruke JavaScript expressions.</dd></div>
+                        </dl>
+
+                        <p>Moderne React bruker hovedsakelig functional components og hooks. Class components finnes historisk, men er ikke hovedmodellen i dette emnet.</p>
+                    </section>
+
+                    <section class="module-study-section" id="props-og-state" aria-labelledby="props-og-state-heading">
+                        <p class="it2810-section-kicker">Input og endring</p>
+                        <h2 id="props-og-state-heading">Props, state og rendering</h2>
+
+                        <h3>Props flytter data nedover</h3>
+                        <figure class="technical-model">
+                            <div class="model-node model-node-accent"><strong>Parent</strong><span>eier eller mottar data</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓ props</span>
+                            <div class="model-node"><strong>Child</strong><span>bruker data som read-only input</span></div>
+                        </figure>
+
+                        <pre><code>interface UserCardProps {
+    name: string;
+}
+
+function UserCard({ name }: UserCardProps) {
+    return &lt;p&gt;{name}&lt;/p&gt;;
+}
+
+&lt;UserCard name="Andreas" /&gt;
+&lt;UserCard name="Ola" /&gt;
+&lt;UserCard name="Kari" /&gt;</code></pre>
+                        <p>Component-strukturen er den samme, mens data varierer gjennom props. Fra child-perspektivet behandles props som read-only.</p>
+                        <p class="module-principle">Component + props → UI</p>
+
+                        <h3>State driver det som kan endres</h3>
+                        <p>State er data som kan endres mens applikasjonen kjører og som påvirker UI, for eksempel et søk, valgt element, aktiv fane eller om en dialog er åpen.</p>
+                        <pre><code>const [count, setCount] = useState(0);
+
+&lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+    Count: {count}
+&lt;/button&gt;</code></pre>
+
+                        <figure class="technical-model it2810-programming-flow">
+                            <div class="model-node"><strong>User action</strong><span>brukeren klikker</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>State changes</strong><span><code>setCount</code> oppdaterer state</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>Render</strong><span>component-funksjonen evaluerer UI-et igjen</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node model-node-accent"><strong>Updated UI</strong><span>den nye verdien vises</span></div>
+                            <figcaption>En brukerhandling kan oppdatere state, som igjen gjør at React renderer relevant UI på nytt.</figcaption>
+                        </figure>
+
+                        <table>
+                            <thead>
+                                <tr><th scope="col">Props</th><th scope="col">State</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Kommer fra parent</td><td>Eies av en component</td></tr>
+                                <tr><td>Read-only for child</td><td>Kan oppdateres med Reacts mekanismer</td></tr>
+                                <tr><td>Input og configuration</td><td>Påvirker rendering når verdien endres</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="key-idea"><strong>De henger sammen:</strong> State hos en parent kan sendes videre som props til en child.</div>
+
+                        <h3>Rendering er ikke full DOM-utskifting</h3>
+                        <p>Når relevante data endres, kjøres component-logikken igjen for å beskrive ønsket UI. Det betyr ikke at hele DOM-en nødvendigvis skrives på nytt; React oppdaterer det som må endres.</p>
+                        <p>En vanlig lokal variabel er ikke state. Hvis en verdi skal endre hva React viser, må React normalt kjenne til endringen gjennom state eller annen React-dataflyt.</p>
+                    </section>
+
+                    <section class="module-study-section" id="events-og-callbacks" aria-labelledby="events-og-callbacks-heading">
+                        <p class="it2810-section-kicker">Handlinger tilbake opp</p>
+                        <h2 id="events-og-callbacks-heading">Events og callbacks</h2>
+                        <p>Brukerhandlinger utløser funksjoner. Funksjonene kan oppdatere state direkte eller kalle en callback som en parent har sendt ned som prop.</p>
+
+                        <pre><code>&lt;button onClick={handleClick}&gt;
+    Save
+&lt;/button&gt;
+
+&lt;button onClick={() =&gt; setOpen(true)}&gt;
+    Open
+&lt;/button&gt;</code></pre>
+
+                        <div class="comparison-pair it2810-direction-pair">
+                            <section>
+                                <p class="comparison-label">Data ned</p>
+                                <h3>Parent → props → child</h3>
+                                <p>Parent sender verdier og funksjoner til child.</p>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Handlinger opp</p>
+                                <h3>Child → callback → parent</h3>
+                                <p>Child kaller funksjonen slik at eieren kan oppdatere state.</p>
+                            </section>
+                        </div>
+
+                        <pre><code>interface ChildProps {
+    onSelect: (id: string) =&gt; void;
+}
+
+function Parent() {
+    const [selected, setSelected] = useState("");
+
+    return &lt;Child onSelect={setSelected} /&gt;;
+}
+
+function Child({ onSelect }: ChildProps) {
+    return (
+        &lt;button onClick={() =&gt; onSelect("item-1")}&gt;
+            Select
+        &lt;/button&gt;
+    );
+}</code></pre>
+
+                        <figure class="technical-model">
+                            <div class="model-node model-node-accent"><strong>Parent</strong><span>eier state og sender callback</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓ function som prop</span>
+                            <div class="model-node"><strong>Child</strong><span>registrerer user event</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓ callback kalles</span>
+                            <div class="model-node"><strong>Parent oppdaterer state</strong><span>React renderer med ny verdi</span></div>
+                        </figure>
+                    </section>
+
+                    <section class="module-study-section" id="state-eierskap" aria-labelledby="state-eierskap-heading">
+                        <p class="it2810-section-kicker">Én tydelig eier</p>
+                        <h2 id="state-eierskap-heading">Hvor skal state ligge?</h2>
+                        <p>State bør ligge hos den nærmeste felles componenten som trenger å eie dataene. Når flere sibling-components trenger samme verdi, flyttes state ofte opp til deres nærmeste felles parent. Dette kalles <strong>lifting state up</strong>.</p>
+
+                        <div class="it2810-component-tree" role="img" aria-label="App eier query state og inneholder SearchInput og ResultList. SearchInput får en callback, mens ResultList får query som prop.">
+                            <ul>
+                                <li><strong>App · query state</strong>
+                                    <ul>
+                                        <li>SearchInput · får setter/callback</li>
+                                        <li>ResultList · får query som prop</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="key-idea"><strong>Single source of truth:</strong> Unngå unødvendige kopier av samme state flere steder. Én eier gjør det mindre sannsynlig at verdiene kommer ut av sync.</div>
+
+                        <dl class="it2810-platform-terms">
+                            <div><dt>Liten component</dt><dd>Local state er ofte nok.</dd></div>
+                            <div><dt>Noen components</dt><dd>Lift state og bruk props og callbacks.</dd></div>
+                            <div><dt>Mange components i et subtree</dt><dd>Context kan bli relevant.</dd></div>
+                            <div><dt>Større kompleksitet</dt><dd>Egnet global state management kan bli aktuelt, men ikke før problemet krever det.</dd></div>
+                        </dl>
+                        <p class="module-principle">Props og local state er standardvalget når dataflyten er enkel.</p>
+                    </section>
+
+                    <section class="module-study-section" id="hooks-og-useeffect" aria-labelledby="hooks-og-useeffect-heading">
+                        <p class="it2810-section-kicker">React-funksjonalitet i components</p>
+                        <h2 id="hooks-og-useeffect-heading">Hooks og useEffect</h2>
+                        <p>Hooks lar functional components bruke React-funksjonalitet som state, effects og Context. I denne modulen er <code>useState</code>, <code>useEffect</code> og <code>useContext</code> de viktigste.</p>
+
+                        <blockquote class="definition-callout">
+                            <p><code>useEffect</code> brukes til side effects som følger av rendering eller endringer i data.</p>
+                        </blockquote>
+                        <pre><code>useEffect(() =&gt; {
+    document.title = "Count: " + count;
+}, [count]);</code></pre>
+                        <p>Første argument er effect-funksjonen. Dependency arrayen <code>[count]</code> sier at effekten skal kjøres når <code>count</code> endres.</p>
+                        <ul>
+                            <li>synkronisering med systemer utenfor React</li>
+                            <li>datahenting på overordnet nivå</li>
+                            <li>subscriptions og event listeners</li>
+                            <li>browser APIs</li>
+                        </ul>
+                        <div class="key-idea"><strong>Ikke bruk useEffect automatisk:</strong> Hvis en verdi kan beregnes direkte fra props eller state under rendering, trenger den ofte ikke en effect.</div>
+                        <p>Noen effects trenger cleanup, men avansert lifecycle- og cleanup-logikk er ikke målet her. API- og datahenting behandles videre i Modul 3.</p>
+                    </section>
+
+                    <section class="module-study-section" id="context" aria-labelledby="context-heading">
+                        <p class="it2810-section-kicker">Delt data i et subtree</p>
+                        <h2 id="context-heading">Context</h2>
+                        <p>Når mellomliggende components bare videresender samme prop gjennom mange nivåer, får vi <em>prop drilling</em>. Context kan gjøre delt data tilgjengelig i et subtree uten at hvert nivå må sende prop-en videre.</p>
+
+                        <div class="it2810-component-tree is-context-tree" role="img" aria-label="App sender data gjennom Layout, Page og Toolbar før Button. Context Provider kan gjøre data tilgjengelig direkte for Button i samme subtree.">
+                            <ul>
+                                <li><strong>App / Provider</strong>
+                                    <ul>
+                                        <li>Layout
+                                            <ul>
+                                                <li>Page
+                                                    <ul>
+                                                        <li>Toolbar
+                                                            <ul>
+                                                                <li><strong>Button · useContext</strong></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <pre><code>const ThemeContext = createContext("light");
+
+function App() {
+    return (
+        &lt;ThemeContext.Provider value="dark"&gt;
+            &lt;Page /&gt;
+        &lt;/ThemeContext.Provider&gt;
+    );
+}
+
+function Page() {
+    const theme = useContext(ThemeContext);
+    return &lt;p&gt;{theme}&lt;/p&gt;;
+}</code></pre>
+
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">Bruk props</p>
+                                <h3>Enkel parent → child-flyt</h3>
+                                <p>Data skal bare ett eller få nivåer ned, og eierskapet er tydelig.</p>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Vurder Context</p>
+                                <h3>Delt data i et subtree</h3>
+                                <p>Flere components trenger samme data, eller prop drilling gjennom mange nivåer blir upraktisk.</p>
+                            </section>
+                        </div>
+                        <p class="module-principle">Context er ikke automatisk bedre enn props. Unngå over-engineering.</p>
+                    </section>
+
+                    <section class="module-study-section" id="web-storage" aria-labelledby="web-storage-heading">
+                        <p class="it2810-section-kicker">Persistence i browseren</p>
+                        <h2 id="web-storage-heading">Web Storage</h2>
+                        <p>React state og persistent lagring løser forskjellige problemer. State driver den kjørende UI-tilstanden, mens Web Storage kan bevare data i browseren.</p>
+
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">React state</p>
+                                <h3>Tilstand i applikasjonen</h3>
+                                <p>Eksisterer i den kjørende React-applikasjonen og påvirker rendering.</p>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Web Storage</p>
+                                <h3>Data i browseren</h3>
+                                <p><code>localStorage</code> beholdes mellom besøk. <code>sessionStorage</code> varer for tabben eller sessionen.</p>
+                            </section>
+                        </div>
+
+                        <pre><code>localStorage.setItem("theme", "dark");
+
+const theme = localStorage.getItem("theme");</code></pre>
+
+                        <figure class="technical-model">
+                            <div class="model-node"><strong>React state</strong><span><code>cart = [...]</code></span></div>
+                            <span class="model-arrow" aria-hidden="true">↓ optionally persist</span>
+                            <div class="model-node model-node-accent"><strong>localStorage</strong><span>bevarer verdien mellom besøk</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓ neste sideåpning</span>
+                            <div class="model-node"><strong>Initial state</strong><span>applikasjonen leser lagret verdi inn igjen</span></div>
+                        </figure>
+                        <p>For større og mer strukturerte lokale datasett finnes IndexedDB. Det er nok å kjenne til dette alternativet nå.</p>
+                    </section>
+
+                    <section class="module-study-section" id="dataflyt" aria-labelledby="dataflyt-heading">
+                        <p class="it2810-section-kicker">Samlemodellen</p>
+                        <h2 id="dataflyt-heading">Hele dataflyten</h2>
+                        <p>React blir lettere å lese når du følger hvem som eier data, hvordan data går ned, og hvordan handlinger kommer tilbake til eieren.</p>
+
+                        <figure class="technical-model it2810-dataflow-model">
+                            <div class="model-node model-node-accent"><strong>App / state owner</strong><span>eier state</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓ props</span>
+                            <div class="it2810-layer-row" aria-label="To child-components som mottar props">
+                                <span>Component A</span>
+                                <span>Component B</span>
+                            </div>
+                            <span class="model-arrow" aria-hidden="true">↓ user event i en child</span>
+                            <div class="model-node"><strong>Callback</strong><span>handlingen sendes tilbake til state owner</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓</span>
+                            <div class="model-node"><strong>State changes</strong><span>React evaluerer UI-et igjen</span></div>
+                            <span class="model-arrow" aria-hidden="true">↓ render</span>
+                            <div class="model-node model-node-accent"><strong>Updated UI</strong><span>components får nye data og viser resultatet</span></div>
+                            <figcaption>Context kan dele data på tvers av et subtree. Web Storage kan bevare data mellom sessions. Ingen av delene erstatter behovet for tydelig state-eierskap.</figcaption>
+                        </figure>
+
+                        <h3>Ett sammenhengende eksempel</h3>
+                        <pre><code>interface SearchProps {
+    query: string;
+    onQueryChange: (query: string) =&gt; void;
+}
+
+function App() {
+    const [query, setQuery] = useState("");
+
+    return (
+        &lt;&gt;
+            &lt;Search
+                query={query}
+                onQueryChange={setQuery}
+            /&gt;
+            &lt;p&gt;Du søker etter: {query}&lt;/p&gt;
+        &lt;/&gt;
+    );
+}
+
+function Search({ query, onQueryChange }: SearchProps) {
+    return (
+        &lt;input
+            value={query}
+            onChange={(event) =&gt;
+                onQueryChange(event.target.value)
+            }
+        /&gt;
+    );
+}</code></pre>
+
+                        <ol class="it2810-explanation-steps">
+                            <li><strong>App eier state.</strong><span><code>query</code> og <code>setQuery</code> opprettes med <code>useState</code>.</span></li>
+                            <li><strong>Data går ned.</strong><span><code>query</code> sendes til Search som prop.</span></li>
+                            <li><strong>En callback går ned.</strong><span><code>onQueryChange</code> peker til state-oppdateringen hos App.</span></li>
+                            <li><strong>En handling skjer i child.</strong><span>Input-eventet oppstår i Search.</span></li>
+                            <li><strong>Handlingen går opp.</strong><span>Callbacken oppdaterer state hos App.</span></li>
+                            <li><strong>UI rendres med nye data.</strong><span>React viser den oppdaterte query-verdien.</span></li>
+                        </ol>
+                    </section>
+
+                    <section class="module-study-section" id="fallgruver" aria-labelledby="fallgruver-heading">
+                        <p class="it2810-section-kicker">Forstå før du kopierer</p>
+                        <h2 id="fallgruver-heading">Fallgruver og kodelesing</h2>
+                        <ol class="it2810-pitfall-list">
+                            <li><strong>Vanlig variabel som state</strong><span>Forventer at UI oppdateres uten Reacts state-mekanisme.</span></li>
+                            <li><strong>Direkte mutasjon</strong><span>Endrer for eksempel en state-array med <code>items.push(newItem)</code>.</span></li>
+                            <li><strong>Flere kopier av samme state</strong><span>Data kan komme ut av sync.</span></li>
+                            <li><strong>All state i App</strong><span>Flytter state høyere enn de som faktisk trenger den.</span></li>
+                            <li><strong>Context på alt</strong><span>Gjør enkel dataflyt mer komplisert.</span></li>
+                            <li><strong>Unødvendig prop drilling</strong><span>Sender samme data gjennom mange nivåer når Context er passende.</span></li>
+                            <li><strong>useEffect for beregninger</strong><span>Bruker effect på noe som kan beregnes direkte under rendering.</span></li>
+                            <li><strong>Uforklart KI-kode</strong><span>Kan ikke svare på hvem som eier state og hva som utløser rendering.</span></li>
+                        </ol>
+
+                        <aside class="key-idea" aria-labelledby="react-review-heading">
+                            <strong id="react-review-heading">Fem spørsmål når du leser React-kode</strong>
+                            <ol>
+                                <li>Hvilke components finnes?</li>
+                                <li>Hvor ligger state?</li>
+                                <li>Hvordan går data nedover?</li>
+                                <li>Hvordan går handlinger tilbake opp?</li>
+                                <li>Hva utløser ny rendering?</li>
+                            </ol>
+                        </aside>
+
+                        <div class="comparison-pair">
+                            <section>
+                                <p class="comparison-label">Du trenger ikke memorere</p>
+                                <p>Alle hook-signatures, alle JSX-regler, avanserte React APIs eller alle Context-varianter.</p>
+                            </section>
+                            <section>
+                                <p class="comparison-label">Du bør kunne</p>
+                                <p>Kjenne igjen mønstrene, lese koden, forklare dataflyten og vite hva du må slå opp.</p>
+                            </section>
+                        </div>
+                    </section>
+
+                    <section class="module-study-section" id="kortversjonen" aria-labelledby="kortversjonen-heading">
+                        <p class="it2810-section-kicker">Rask repetisjon</p>
+                        <h2 id="kortversjonen-heading">Kortversjonen</h2>
+                        <div class="summary-sheet it2810-summary-sheet">
+                            <ul>
+                                <li><strong>React</strong> bygger UI av components.</li>
+                                <li><strong>JSX</strong> beskriver React-elementer med HTML-lignende syntaks.</li>
+                                <li><strong>Props</strong> flytter read-only data fra parent til child.</li>
+                                <li><strong>State</strong> er data som kan endres og påvirker UI.</li>
+                                <li><strong>useState</strong> brukes til lokal state.</li>
+                                <li><strong>Events</strong> utløser functions.</li>
+                                <li><strong>Callbacks</strong> lar child påvirke state hos parent.</li>
+                                <li><strong>State-eierskap</strong> bør ligge hos nærmeste felles eier som trenger dataene.</li>
+                                <li><strong>Rendering</strong> evaluerer UI-et på nytt når relevante data endres.</li>
+                                <li><strong>useEffect</strong> brukes til side effects og synkronisering utenfor ren rendering.</li>
+                                <li><strong>Context</strong> deler data i et subtree når prop drilling blir upraktisk.</li>
+                                <li><strong>Web Storage</strong> gir persistence; det er ikke React state management.</li>
+                            </ul>
+                        </div>
+                        <p class="module-principle">Data ned → handlinger opp → state endres → UI rendres.</p>
+                    </section>
+
+                    <section class="module-study-section" id="selvtest" aria-labelledby="selvtest-heading" data-quiz>
+                        <p class="it2810-section-kicker">Kontroller forståelsen</p>
+                        <h2 id="selvtest-heading">Test deg selv</h2>
+                        <p>Svar på alle ti spørsmål. Full poengsum registreres automatisk i modulprogresjonen.</p>
+                        <form class="module-quiz" data-quiz-form novalidate>
+                            <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="En component er en gjenbrukbar del av brukergrensesnittet med et avgrenset ansvar.">
+                                <legend><span>1</span> Hva er en React component?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q1" value="a"> En database som lagrer state</label>
+                                    <label><input type="radio" name="quiz-q1" value="b"> En gjenbrukbar del av brukergrensesnittet</label>
+                                    <label><input type="radio" name="quiz-q1" value="c"> En CSS-fil for hele applikasjonen</label>
+                                    <label><input type="radio" name="quiz-q1" value="d"> En HTTP-metode</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="c" data-explanation="JSX lar oss beskrive React-elementer og UI med HTML-lignende syntaks inne i JavaScript eller TypeScript.">
+                                <legend><span>2</span> Hva brukes JSX til?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q2" value="a"> Å lagre data permanent i browseren</label>
+                                    <label><input type="radio" name="quiz-q2" value="b"> Å definere Git-branches</label>
+                                    <label><input type="radio" name="quiz-q2" value="c"> Å beskrive React-elementer med HTML-lignende syntaks</label>
+                                    <label><input type="radio" name="quiz-q2" value="d"> Å erstatte TypeScript</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="a" data-explanation="Props sendes normalt fra en parent til en child og behandles som read-only input av child.">
+                                <legend><span>3</span> Hvilken retning går props normalt?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q3" value="a"> Fra parent til child</label>
+                                    <label><input type="radio" name="quiz-q3" value="b"> Fra child direkte til browserens lagring</label>
+                                    <label><input type="radio" name="quiz-q3" value="c"> Fra child til parent automatisk</label>
+                                    <label><input type="radio" name="quiz-q3" value="d"> Props har ingen retning</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="d" data-explanation="State er data som kan endres i den kjørende applikasjonen og påvirke hva React renderer.">
+                                <legend><span>4</span> Hva er state?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q4" value="a"> Bare props med et annet navn</label>
+                                    <label><input type="radio" name="quiz-q4" value="b"> En statisk HTML-fil</label>
+                                    <label><input type="radio" name="quiz-q4" value="c"> En verdi som aldri kan endres</label>
+                                    <label><input type="radio" name="quiz-q4" value="d"> Data som kan endres og påvirker UI</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Når state oppdateres gjennom Reacts mekanisme, evaluerer React relevant UI på nytt og oppdaterer det som må endres.">
+                                <legend><span>5</span> Hva skjer når React state oppdateres?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q5" value="a"> Hele browseren starter på nytt</label>
+                                    <label><input type="radio" name="quiz-q5" value="b"> React renderer relevant UI på nytt</label>
+                                    <label><input type="radio" name="quiz-q5" value="c"> Props blir automatisk slettet</label>
+                                    <label><input type="radio" name="quiz-q5" value="d"> localStorage tømmes</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="c" data-explanation="Når sibling-components trenger samme verdi, ligger state normalt hos deres nærmeste felles parent eller eier.">
+                                <legend><span>6</span> Hvor bør state normalt ligge hvis to sibling-components trenger samme verdi?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q6" value="a"> Som separate kopier i begge components</label>
+                                    <label><input type="radio" name="quiz-q6" value="b"> Alltid i localStorage</label>
+                                    <label><input type="radio" name="quiz-q6" value="c"> Hos deres nærmeste felles parent eller eier</label>
+                                    <label><input type="radio" name="quiz-q6" value="d"> Alltid helt øverst i App</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="a" data-explanation="Parent kan sende en function som prop. Child kaller denne callbacken slik at parent kan oppdatere state.">
+                                <legend><span>7</span> Hvordan kan en child be parent oppdatere state?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q7" value="a"> Kalle en callback som parent har sendt som prop</label>
+                                    <label><input type="radio" name="quiz-q7" value="b"> Mutere props direkte</label>
+                                    <label><input type="radio" name="quiz-q7" value="c"> Endre HTML-filen manuelt</label>
+                                    <label><input type="radio" name="quiz-q7" value="d"> Opprette en ny browser</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="d" data-explanation="useEffect brukes til side effects og synkronisering med ting utenfor den rene renderingen.">
+                                <legend><span>8</span> Hva brukes useEffect hovedsakelig til?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q8" value="a"> Å skrive alle components som classes</label>
+                                    <label><input type="radio" name="quiz-q8" value="b"> Å erstatte props</label>
+                                    <label><input type="radio" name="quiz-q8" value="c"> Å lage CSS selectors</label>
+                                    <label><input type="radio" name="quiz-q8" value="d"> Side effects og synkronisering utenfor ren rendering</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="Context er særlig nyttig når delt data trengs på tvers av et subtree og prop drilling blir upraktisk.">
+                                <legend><span>9</span> Når er Context spesielt nyttig?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q9" value="a"> For enhver enkel parent-child-relasjon</label>
+                                    <label><input type="radio" name="quiz-q9" value="b"> Når delt data trengs i et subtree og prop drilling blir upraktisk</label>
+                                    <label><input type="radio" name="quiz-q9" value="c"> Når JSX ikke kan brukes</label>
+                                    <label><input type="radio" name="quiz-q9" value="d"> Kun for å lagre filer permanent</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <fieldset class="quiz-question" data-quiz-question data-correct="c" data-explanation="React state driver den kjørende UI-tilstanden, mens localStorage brukes til persistent lagring i browseren.">
+                                <legend><span>10</span> Hva er hovedforskjellen mellom React state og localStorage?</legend>
+                                <div class="quiz-options">
+                                    <label><input type="radio" name="quiz-q10" value="a"> Det finnes ingen forskjell</label>
+                                    <label><input type="radio" name="quiz-q10" value="b"> State er permanent, localStorage varer bare ett render</label>
+                                    <label><input type="radio" name="quiz-q10" value="c"> State driver UI, localStorage gir persistence i browseren</label>
+                                    <label><input type="radio" name="quiz-q10" value="d"> localStorage kan bare brukes i React</label>
+                                </div>
+                                <p class="quiz-feedback" data-quiz-feedback hidden></p>
+                            </fieldset>
+
+                            <div class="quiz-actions">
+                                <button class="button-link" type="submit">Sjekk svar</button>
+                                <button class="quiz-retry" type="button" data-quiz-retry hidden>Prøv på nytt</button>
+                                <p class="quiz-summary" data-quiz-summary aria-live="polite"></p>
+                            </div>
+                        </form>
+
+                        <label class="quiz-progress-status">
+                            <input type="checkbox" data-check-id="quiz-complete" data-quiz-progress-check disabled>
+                            Full poengsum i selvtesten
+                        </label>
+                    </section>
+
+                    <section class="module-study-section" id="etter-forelesningen" aria-labelledby="etter-heading">
+                        <p class="it2810-section-kicker">Avslutt arbeidet</p>
+                        <h2 id="etter-heading">Etter modulen</h2>
+                        <div class="module-panel">
+                            <ul class="checklist">
+                                <li><label><input type="checkbox" data-check-id="after-1"> Jeg kan identifisere components, props og state i React-kode</label></li>
+                                <li><label><input type="checkbox" data-check-id="after-2"> Jeg kan forklare dataflyten gjennom props og callbacks</label></li>
+                                <li><label><input type="checkbox" data-check-id="after-3"> Jeg kan forklare når useState, useEffect, Context og Web Storage brukes</label></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <label class="completion-control">
+                <input type="checkbox" data-complete-toggle>
+                Marker modul som fullført
+            </label>
+
+            <nav class="module-navigation" aria-label="Modulnavigasjon">
+                <a class="button-link" href="modul-1.html">← Forrige: Frontendgrunnlaget</a>
+                <a class="button-link" href="index.html">Til IT2810-oversikten →</a>
+            </nav>
+        </main>
+        <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>
+    </div>
+
+    <script src="../../assets/site.js"></script>
+    <script src="../progress.js?v=20260828d"></script>
+    <script src="../quiz.js?v=20260828a"></script>
+</body>
+</html>
+
