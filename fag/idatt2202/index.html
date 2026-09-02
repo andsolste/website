@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDATT2202 – Operativsystemer | Andreas Sollie Steffensen</title>
     <link rel="stylesheet" href="../../assets/site.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=20260902a">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
@@ -39,368 +39,110 @@
             <span class="mobile-brand">AS</span>
         </div>
 
-    <main class="site-main content-page os-overview-page" id="main-content" data-course="idatt2202" data-module-count="8">
-        <a class="back-link" href="../index.html">← Til fagoversikten</a>
+        <main class="site-main content-page os-overview-page" id="main-content" data-course="idatt2202">
+            <a class="back-link" href="../index.html">← Til fagoversikten</a>
 
-        <header class="page-intro os-course-header">
-            <p class="course-code">IDATT2202</p>
-            <h1>Operativsystemer</h1>
-            <p class="os-course-lede">Et 7,5-studiepoengsemne om hvordan moderne operativsystemer fungerer og implementeres. Faget følger operativsystemet som laget mellom hardware og applications/users – et lag som abstraherer, fordeler og beskytter maskinens ressurser.</p>
-            <ul class="os-course-facts" aria-label="Emnefakta">
-                <li>7,5 studiepoeng</li>
-                <li>Undervises på engelsk</li>
-                <li>Skriftlig skoleeksamen</li>
-                <li>Hovedbok: utvalgte deler av Chapters 1–9, 11 og 13</li>
-            </ul>
-        </header>
+            <header class="page-intro os-course-header os-course-header-compact">
+                <p class="course-code">IDATT2202</p>
+                <h1>Operativsystemer</h1>
+                <p class="os-course-lede">En samlet inngang til emnet, semesterløpet og de 15 kunnskapsmodulene.</p>
+                <ul class="os-course-facts" aria-label="Emnefakta">
+                    <li>15 kunnskapsmoduler</li>
+                    <li>14 Canvas-quizer</li>
+                    <li>Flipped classroom</li>
+                </ul>
+            </header>
 
-        <section class="os-progress-section" aria-labelledby="progresjon-heading" aria-live="polite">
-            <div class="os-progress-summary">
-                <p class="os-section-kicker">Din status</p>
-                <h2 id="progresjon-heading">Progresjon</h2>
-                <div class="os-progress-labels">
-                    <strong data-course-progress>0 av 8 moduler fullført</strong>
-                    <span data-course-progress-percent>0 % samlet progresjon</span>
+            <section class="os-continue os-continue-compact" aria-labelledby="continue-heading" aria-live="polite" data-os-continue>
+                <div>
+                    <p class="os-section-kicker">Fortsett der du slapp</p>
+                    <p class="os-continue-module" data-os-continue-module>M1</p>
+                    <h2 id="continue-heading" data-os-continue-title>Introduction to Operating Systems</h2>
+                    <p data-os-continue-status>Ingen modul er besøkt ennå.</p>
                 </div>
-                <div class="progress-track" role="progressbar" aria-label="Samlet progresjon i IDATT2202" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-course-progress-track>
-                    <div class="progress-bar" data-course-progress-bar></div>
+                <div class="os-continue-action">
+                    <a class="button-link" href="modul-1.html" data-os-continue-link>Start M1 →</a>
                 </div>
-            </div>
+            </section>
 
-            <div class="os-continue" data-continue-card>
-                <p class="os-section-kicker">Fortsett der du slapp</p>
-                <p class="os-continue-module" data-continue-module>Modul 1</p>
-                <h2 data-continue-title>Introduction to Operating Systems</h2>
-                <p data-continue-status>Ikke startet</p>
-                <a class="button-link" href="modul-1.html" data-continue-link>Start modul →</a>
-            </div>
-        </section>
-
-        <section class="os-section" aria-labelledby="fagkart-heading">
-            <header class="os-section-header">
-                <p class="os-section-kicker">Faglig oversikt</p>
-                <h2 id="fagkart-heading">Hvordan faget henger sammen</h2>
-                <p>Emnet bygger lag for lag: først hvorfor vi trenger et OS, deretter hvordan kernel beholder kontroll, og videre hvordan prosesser, samtidighet, minne, lagring og sikkerhet virker sammen.</p>
-            </header>
-
-            <div class="os-learning-flow">
-                <section class="os-flow-stage" aria-labelledby="flow-foundation">
-                    <p class="os-flow-number">01</p>
-                    <h3 id="flow-foundation">Fundament og grensesnitt</h3>
-                    <ol>
-                        <li><a href="#tema-introduction"><strong>Introduction</strong><span>Hva gjør et operativsystem?</span></a></li>
-                        <li><a href="#tema-kernel"><strong>Kernel</strong><span>Hvordan beholder OS-et kontroll?</span></a></li>
-                        <li><a href="#tema-processes"><strong>Processes</strong><span>Hvordan representeres kjørende programmer?</span></a></li>
-                        <li><a href="#tema-programming-interface"><strong>Programming interface</strong><span>Hvordan bruker programmer OS-tjenester?</span></a></li>
-                    </ol>
-                </section>
-
-                <section class="os-flow-stage" aria-labelledby="flow-concurrency">
-                    <p class="os-flow-number">02</p>
-                    <h3 id="flow-concurrency">Samtidig utførelse</h3>
-                    <ol>
-                        <li><a href="#tema-concurrency"><strong>Threads &amp; concurrency</strong><span>Hvordan utføres flere ting samtidig?</span></a></li>
-                        <li><a href="#tema-synchronization"><strong>Synchronization</strong><span>Hvordan deles ressurser korrekt?</span></a></li>
-                        <li><a href="#tema-deadlock"><strong>Deadlock</strong><span>Hva skjer når flere ressurser må koordineres?</span></a></li>
-                        <li><a href="#tema-scheduling"><strong>Scheduling</strong><span>Hvem får bruke CPU-en?</span></a></li>
-                    </ol>
-                </section>
-
-                <section class="os-flow-stage" aria-labelledby="flow-memory">
-                    <p class="os-flow-number">03</p>
-                    <h3 id="flow-memory">Minne og persistent data</h3>
-                    <ol>
-                        <li><a href="#tema-address-translation"><strong>Address translation</strong><span>Hvordan isoleres og oversettes adresser?</span></a></li>
-                        <li><a href="#tema-virtual-memory"><strong>Caching &amp; virtual memory</strong><span>Hvordan håndteres minne effektivt?</span></a></li>
-                        <li><a href="#tema-file-systems"><strong>File systems</strong><span>Hvordan organiseres og lagres data?</span></a></li>
-                    </ol>
-                </section>
-
-                <section class="os-flow-stage" aria-labelledby="flow-protection">
-                    <p class="os-flow-number">04</p>
-                    <h3 id="flow-protection">Beskyttelse og praksis</h3>
-                    <ol>
-                        <li><a href="#tema-security"><strong>Security</strong><span>Hvordan beskyttes systemet og dataene?</span></a></li>
-                        <li><a href="#praktisk-systemprogrammering"><strong>System programming</strong><span>Hvordan brukes mekanismene i praksis?</span></a></li>
-                    </ol>
-                </section>
-            </div>
-        </section>
-
-        <section class="os-section" id="moduler" aria-labelledby="moduler-heading">
-            <header class="os-section-header">
-                <p class="os-section-kicker">8 eksisterende moduler</p>
-                <h2 id="moduler-heading">Moduler og hovedtemaer</h2>
-                <p>Modulrekkefølgen og URL-ene er beholdt. Modul 1 og 2 har undervisningsinnhold; de øvrige sidene er klargjort for detaljinnhold som legges inn senere.</p>
-            </header>
-
-            <div class="os-module-list">
-                <article class="os-module-card" id="tema-introduction" data-module-card data-module="1" data-module-title="Introduction to Operating Systems" data-module-href="modul-1.html" data-check-ids="before-1 before-2 before-3 exam-1 exam-2 exam-3 exam-4 exam-5 exam-6 exam-7 exam-8 quiz-complete after-1 after-2 after-3">
-                    <header class="os-module-header">
-                        <div>
-                            <p class="module-number">Modul 1</p>
-                            <h3>Introduction to Operating Systems</h3>
-                        </div>
-                        <p class="os-chapter">Chapter 1 · Sections 1.1–1.3</p>
+            <section class="os-section os-subject-overview" id="emneoversikt" aria-labelledby="emneoversikt-heading">
+                <div>
+                    <header class="os-section-header">
+                        <p class="os-section-kicker">Kort emneoversikt</p>
+                        <h2 id="emneoversikt-heading">Hva faget dekker</h2>
+                        <p>Faget handler om kernel og system calls, processes og threads, concurrency og synchronisation, scheduling, virtual memory, caching, file systems, security og low-level/system programming.</p>
                     </header>
-                    <p class="os-module-description">Fundamentet for resten av faget: hva et operativsystem er, hvilke problemer det løser, og hvordan det fungerer som referee, illusionist og glue mellom applications og hardware.</p>
-                    <p class="os-concepts"><strong>Sentrale concepts</strong> OS abstraction · resource management · protection and isolation · system calls · reliability · performance</p>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-1.html">Åpne modul →</a>
-                    </footer>
-                </article>
+                    <p class="os-teaching-note"><strong>Arbeidsform:</strong> Undervisningen bruker flipped classroom. Kunnskapsmodulen og Canvas-quizen gjennomføres før forelesningen, slik at tiden sammen kan brukes til utdyping og anvendelse.</p>
+                </div>
+                <div class="os-reading-list" aria-labelledby="pensum-heading">
+                    <p class="os-section-kicker" id="pensum-heading">Hovedpensum</p>
+                    <p><cite>Operating Systems: Principles and Practice</cite>, 2nd edition<br><span>Thomas Anderson &amp; Michael Dahlin</span></p>
+                    <p><strong>Security-modulen</strong><br><cite>Operating Systems and Middleware</cite>, Chapter 11<br><span>Max Hailperin</span></p>
+                </div>
+            </section>
 
-                <article class="os-module-card" id="tema-kernel" data-module-card data-module="2" data-module-title="The kernel abstraction – part 1" data-module-href="modul-2.html" data-check-ids="before-1 before-2 before-3 before-4 after-1 after-2 after-3">
-                    <header class="os-module-header">
-                        <div>
-                            <p class="module-number">Modul 2</p>
-                            <h3>The Kernel Abstraction – part 1</h3>
-                        </div>
-                        <p class="os-chapter">Chapter 2 · Sections 2.1–2.3</p>
-                    </header>
-                    <p class="os-module-description" id="tema-processes">Hvordan OS-et isolerer kjørende programmer og beholder kontroll gjennom process abstraction, dual-mode operation og kontrollerte mode transfers.</p>
-                    <p class="os-concepts"><strong>Sentrale concepts</strong> process · address space · user/kernel mode · privileged instructions · interrupts · exceptions · system calls</p>
-                    <p class="os-module-note"><strong>Videre i Chapter 2:</strong> Safe mode transfer (2.4), secure system calls (2.6), process creation (2.7), upcalls (2.8), booting (2.9) og virtual machines (2.10) inngår i fagoversikten, men er ikke bygget ut på denne modulsiden ennå.</p>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-2.html">Åpne modul →</a>
-                    </footer>
-                </article>
-
-                <article class="os-module-card" data-module-card data-module="3" data-module-title="The Programming Interface" data-module-href="modul-3.html" data-check-ids="before-1 before-2 before-3 after-1 after-2 after-3">
-                    <header class="os-module-header" id="tema-programming-interface">
-                        <div>
-                            <p class="module-number">Modul 3</p>
-                            <h3>The Programming Interface</h3>
-                        </div>
-                        <p class="os-chapter">Chapter 3 · Sections 3.1–3.5</p>
-                    </header>
-                    <p class="os-module-description">Operativsystemet fra programmererens perspektiv: process management, I/O, et Unix-lignende shell, IPC og organiseringen av OS-komponenter.</p>
-                    <p class="os-concepts"><strong>Sentrale concepts</strong> process APIs · file descriptors · open/read/write · shell · IPC · OS structure</p>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 3" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-3.html">Åpne klargjort modulside →</a>
-                    </footer>
-                </article>
-
-                <article class="os-module-card" data-module-card data-module="4" data-module-title="Concurrency og synchronization" data-module-href="modul-4.html" data-check-ids="before-1 before-2 before-3 after-1 after-2 after-3">
-                    <header class="os-module-header">
-                        <div>
-                            <p class="module-number">Modul 4</p>
-                            <h3>Concurrency og synchronization</h3>
-                        </div>
-                        <p class="os-chapter">Chapters 4–5</p>
-                    </header>
-                    <div class="os-topic-grid">
-                        <section class="os-topic" id="tema-concurrency">
-                            <p class="os-topic-meta">Chapter 4 · Sections 4.1–4.5, 4.8</p>
-                            <h4>Concurrency and Threads</h4>
-                            <p>Flere execution flows, delte address spaces, thread lifecycle, context switching og multi-threaded applications.</p>
-                            <p class="os-concepts"><strong>Concepts</strong> process vs. thread · shared address space · lifecycle · parallel execution</p>
-                        </section>
-                        <section class="os-topic" id="tema-synchronization">
-                            <p class="os-topic-meta">Chapter 5 · Sections 5.1–5.8</p>
-                            <h4>Synchronizing Shared Objects</h4>
-                            <p>Hvordan samtidige operasjoner bruker delt tilstand korrekt og unngår resultater som avhenger av uheldig rekkefølge.</p>
-                            <p class="os-concepts"><strong>Concepts</strong> race conditions · atomicity · locks · condition variables · wait/signal/broadcast</p>
-                        </section>
+            <section class="os-section" id="semesterlop" aria-labelledby="semesterlop-heading">
+                <header class="os-section-header os-section-header-split">
+                    <div>
+                        <p class="os-section-kicker">Før forelesningen</p>
+                        <h2 id="semesterlop-heading">Semesterløp</h2>
                     </div>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 4" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-4.html">Åpne klargjort modulside →</a>
-                    </footer>
-                </article>
+                    <p>Kunnskapsmodulen og Canvas-quizen gir grunnlaget før den tilhørende forelesningen.</p>
+                </header>
 
-                <article class="os-module-card" data-module-card data-module="5" data-module-title="Deadlock og scheduling" data-module-href="modul-5.html" data-check-ids="before-1 before-2 before-3 after-1 after-2 after-3">
-                    <header class="os-module-header">
-                        <div>
-                            <p class="module-number">Modul 5</p>
-                            <h3>Deadlock og scheduling</h3>
-                        </div>
-                        <p class="os-chapter">Chapters 6–7</p>
-                    </header>
-                    <div class="os-topic-grid">
-                        <section class="os-topic" id="tema-deadlock">
-                            <p class="os-topic-meta">Chapter 6 · Sections 6.1–6.3, 6.5</p>
-                            <h4>Multi-object Synchronization</h4>
-                            <p>Koordinering av flere ressurser, lock performance og hvordan resource dependencies kan føre til deadlock.</p>
-                            <p class="os-concepts"><strong>Concepts</strong> lock contention · granularity · multiple locks · deadlock · avoidance</p>
-                        </section>
-                        <section class="os-topic" id="tema-scheduling">
-                            <p class="os-topic-meta">Chapter 7 · Sections 7.1–7.2</p>
-                            <h4>Scheduling</h4>
-                            <p>Hvordan OS-et fordeler CPU-tid på én eller flere prosessorer og balanserer ulike scheduling goals.</p>
-                            <p class="os-concepts"><strong>Concepts</strong> preemption · response time · throughput · fairness · utilization</p>
-                        </section>
+                <div class="os-semester-map" role="region" data-os-semester-map aria-label="Semesterløp for IDATT2202"></div>
+                <p class="os-shared-quiz-note"><strong>15 moduler, 14 quizer:</strong> M13 og M14 deler <span>Quiz 10 – Storage and filesystems</span>, med del 1 før Storage Systems og del 2 før Files and Directories.</p>
+            </section>
+
+            <section class="os-section" id="arbeidsflyt" aria-labelledby="arbeidsflyt-heading">
+                <header class="os-section-header">
+                    <p class="os-section-kicker">Slik brukes siden</p>
+                    <h2 id="arbeidsflyt-heading">Fra teori til repetisjon</h2>
+                </header>
+                <ol class="os-study-flow">
+                    <li><span>01</span><strong>Kunnskapsmodul</strong><p>Lær teorien før undervisningen.</p></li>
+                    <li><span>02</span><strong>Canvas-quiz</strong><p>Test at grunnforståelsen sitter.</p></li>
+                    <li><span>03</span><strong>Forelesning</strong><p>Bruk grunnlaget til utdyping og anvendelse.</p></li>
+                    <li><span>04</span><strong>Repetisjon</strong><p>Bruk active recall og tidligere eksamensoppgaver.</p></li>
+                </ol>
+            </section>
+
+            <section class="os-section" id="moduler" aria-labelledby="moduler-heading">
+                <header class="os-section-header os-section-header-split">
+                    <div>
+                        <p class="os-section-kicker">Kunnskapsmoduler</p>
+                        <h2 id="moduler-heading">15 moduler i seks fagområder</h2>
                     </div>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 5" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-5.html">Åpne klargjort modulside →</a>
-                    </footer>
-                </article>
+                    <p>Grupperingen er tematisk. Den kronologiske undervisningsrekkefølgen står i semesterløpet over.</p>
+                </header>
+                <div class="os-module-groups" data-os-module-groups></div>
+            </section>
 
-                <article class="os-module-card" data-module-card data-module="6" data-module-title="Address translation og virtual memory" data-module-href="modul-6.html" data-check-ids="before-1 before-2 before-3 after-1 after-2 after-3">
-                    <header class="os-module-header">
-                        <div>
-                            <p class="module-number">Modul 6</p>
-                            <h3>Address translation og virtual memory</h3>
-                        </div>
-                        <p class="os-chapter">Chapters 8–9</p>
-                    </header>
-                    <div class="os-topic-grid">
-                        <section class="os-topic" id="tema-address-translation">
-                            <p class="os-topic-meta">Chapter 8 · Sections 8.1–8.4</p>
-                            <h4>Address Translation</h4>
-                            <p>Hvordan hvert process får et virtuelt adresserom som isoleres og oversettes til physical memory.</p>
-                            <p class="os-concepts"><strong>Concepts</strong> virtual/physical addresses · segmentation · paging · page tables · memory protection</p>
-                        </section>
-                        <section class="os-topic" id="tema-virtual-memory">
-                            <p class="os-topic-meta">Chapter 9 · Sections 9.1–9.7</p>
-                            <h4>Caching and Virtual Memory</h4>
-                            <p>Hvordan locality, cache layers og replacement policies gjør minnesystemet effektivt og fleksibelt.</p>
-                            <p class="os-concepts"><strong>Concepts</strong> cache hits/misses · page replacement · virtual memory · memory-mapped files</p>
-                        </section>
-                    </div>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 6" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-6.html">Åpne klargjort modulside →</a>
-                    </footer>
-                </article>
+            <section class="os-section os-future-note" id="eksamensrepetisjon" aria-labelledby="eksamensrepetisjon-heading">
+                <div>
+                    <p class="os-section-kicker">Kommer senere</p>
+                    <h2 id="eksamensrepetisjon-heading">Eksamensrepetisjon</h2>
+                    <p>En senere repetisjonsdel skal samle modulene på tvers av semesterrekkefølgen.</p>
+                </div>
+                <ul aria-label="Planlagte repetisjonstemaer">
+                    <li>Processes &amp; Kernel</li>
+                    <li>Concurrency &amp; Synchronisation</li>
+                    <li>Scheduling</li>
+                    <li>Memory</li>
+                    <li>Storage &amp; File Systems</li>
+                    <li>Security</li>
+                </ul>
+            </section>
 
-                <article class="os-module-card" data-module-card data-module="7" data-module-title="File systems" data-module-href="modul-7.html" data-check-ids="before-1 before-2 before-3 after-1 after-2 after-3">
-                    <header class="os-module-header" id="tema-file-systems">
-                        <div>
-                            <p class="module-number">Modul 7</p>
-                            <h3>File Systems</h3>
-                        </div>
-                        <p class="os-chapter">Chapters 11 og 13</p>
-                    </header>
-                    <div class="os-topic-grid">
-                        <section class="os-topic">
-                            <p class="os-topic-meta">Chapter 11 · Sections 11.1–11.3</p>
-                            <h4>Abstraction and Architecture</h4>
-                            <p>File abstraction, API, directories, metadata, I/O og software layers mellom logical files og physical storage.</p>
-                        </section>
-                        <section class="os-topic">
-                            <p class="os-topic-meta">Chapter 13 · Sections 13.1–13.4</p>
-                            <h4>Files and Directories</h4>
-                            <p>Hvordan directory lookup, file metadata og mapping til storage implementerer tilgang til persistent data.</p>
-                        </section>
-                    </div>
-                    <p class="os-concepts"><strong>Sentrale concepts</strong> persistent storage · naming · directories · file metadata · data lookup · physical storage organization</p>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 7" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-7.html">Åpne klargjort modulside →</a>
-                    </footer>
-                </article>
+            <noscript>
+                <p class="os-noscript-note">Semester- og moduloversikten krever JavaScript. Modul 1 kan fortsatt åpnes fra «Fortsett der du slapp».</p>
+            </noscript>
+        </main>
 
-                <article class="os-module-card" data-module-card data-module="8" data-module-title="Security og systemprogrammering" data-module-href="modul-8.html" data-check-ids="before-1 before-2 before-3 after-1 after-2 after-3">
-                    <header class="os-module-header">
-                        <div>
-                            <p class="module-number">Modul 8</p>
-                            <h3>Security og systemprogrammering</h3>
-                        </div>
-                        <p class="os-chapter">Kursmateriale · Hailpernin Chapter 11</p>
-                    </header>
-                    <div class="os-topic-grid">
-                        <section class="os-topic" id="tema-security">
-                            <p class="os-topic-meta">Operating System Security</p>
-                            <h4>Beskyttelse som eget tema</h4>
-                            <p>Security goals, access control, object security, memory safety, malware og mekanismene moderne OS bruker for å beskytte systemet.</p>
-                            <p class="os-concepts"><strong>Concepts</strong> protection · isolation · access control · memory safety · OS security mechanisms</p>
-                        </section>
-                        <section class="os-topic" id="praktisk-systemprogrammering">
-                            <p class="os-topic-meta">Tverrgående · ikke eget bokkapittel</p>
-                            <h4>Low-level / System Programming</h4>
-                            <p>Praktisk arbeid med Unix/Linux, C og/eller Rust, compilation, debugging og low-level interaction med prosesser, tråder, system calls og memory.</p>
-                        </section>
-                    </div>
-                    <footer class="os-module-footer">
-                        <div>
-                            <p class="module-status" data-module-status>Status: Ikke startet</p>
-                            <div class="progress-track" role="progressbar" aria-label="Progresjon i modul 8" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" data-module-progress></div></div>
-                        </div>
-                        <a class="button-link" href="modul-8.html">Åpne klargjort modulside →</a>
-                    </footer>
-                </article>
-            </div>
-        </section>
-
-        <section class="os-section os-security-thread" aria-labelledby="security-thread-heading">
-            <div>
-                <p class="os-section-kicker">Gjennomgående perspektiv</p>
-                <h2 id="security-thread-heading">Security begynner ikke i siste modul</h2>
-            </div>
-            <p>Security er både et eget pensumområde og en rød tråd gjennom resten av emnet. User/kernel separation beskytter kernel, process isolation skiller programmer, memory protection og virtual memory begrenser tilgang, og system calls gir kontrollerte innganger til privilegerte operasjoner.</p>
-        </section>
-
-        <section class="os-section" aria-labelledby="praktisk-heading">
-            <header class="os-section-header">
-                <p class="os-section-kicker">Fra teori til system</p>
-                <h2 id="praktisk-heading">Concept → mechanism → implementation → practical use</h2>
-                <p>Faget knytter sammen hva et problem er, hvordan OS-et løser det, hvordan løsningen implementeres og hvordan mekanismen brukes i praksis.</p>
-            </header>
-
-            <ol class="os-principle-chain">
-                <li><span>Concept</span><strong>Hva er problemet eller abstraksjonen?</strong></li>
-                <li><span>Mechanism</span><strong>Hvordan kontrollerer eller fordeler OS-et ressursen?</strong></li>
-                <li><span>Implementation</span><strong>Hvilke data structures, interfaces og hardwaremekanismer brukes?</strong></li>
-                <li><span>Practical use</span><strong>Hvordan observeres, programmeres og debugges dette i et virkelig system?</strong></li>
-            </ol>
-
-            <div class="os-practical-note">
-                <h3>Praktisk systemprogrammering går på tvers</h3>
-                <p>Arbeidsområdet omfatter Unix/Linux og command line, små programmer i C og/eller Rust, compilation og debugging, samt arbeid med memory, processes, threads, system calls og synchronization. Grunnleggende x86/x64-arkitektur brukes som forkunnskap der det er relevant.</p>
-            </div>
-        </section>
-
-        <section class="os-section" id="laeringsmal" aria-labelledby="laeringsmal-heading">
-            <header class="os-section-header">
-                <p class="os-section-kicker">Etter emnet</p>
-                <h2 id="laeringsmal-heading">Overordnede læringsmål</h2>
-            </header>
-            <div class="os-learning-goals">
-                <section>
-                    <h3>Understanding</h3>
-                    <p>Forstå abstraction og layering, OS-ets styring av fysiske og logiske ressurser, filsystemenes lagring og sikkerhetsmekanismene i moderne operativsystemer.</p>
-                </section>
-                <section>
-                    <h3>Practical skills</h3>
-                    <p>Bruke prosesser og tråder til concurrency og synchronization, vurdere performance med parallelism, caching og virtualization, og anvende teorien gjennom programmering og debugging.</p>
-                </section>
-                <section>
-                    <h3>Systems thinking</h3>
-                    <p>Se hvordan kernel, prosesser, CPU, minne, I/O, persistent storage og security inngår i ett sammenhengende system.</p>
-                </section>
-            </div>
-        </section>
-    </main>
         <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>
     </div>
+
     <script src="../../assets/site.js"></script>
-    <script src="../progress.js?v=20260828d"></script>
+    <script src="course.js?v=20260902a"></script>
 </body>
 </html>
-

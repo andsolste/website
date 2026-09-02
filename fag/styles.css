@@ -3661,3 +3661,522 @@ th {
     }
 }
 
+/* IDATT2202 course overview */
+.os-course-header-compact {
+    margin-bottom: 1.25rem;
+}
+
+.os-course-header-compact .os-course-lede {
+    max-width: 58rem;
+}
+
+.os-continue-compact {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding: 1.35rem 1.5rem;
+}
+
+.os-continue-compact h2 {
+    margin: .2rem 0 .35rem;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.os-continue-compact p:last-child {
+    margin-bottom: 0;
+}
+
+.os-continue-action {
+    justify-self: end;
+}
+
+.os-subject-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(16rem, .75fr);
+    gap: clamp(1.5rem, 4vw, 3.25rem);
+    align-items: start;
+}
+
+.os-teaching-note {
+    max-width: 64rem;
+    margin: 1.25rem 0 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--purple-primary);
+    color: var(--text-secondary);
+}
+
+.os-reading-list {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-subtle);
+}
+
+.os-reading-list p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.os-reading-list p + p {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.os-reading-list cite,
+.os-reading-list strong {
+    color: var(--text-primary);
+}
+
+.os-reading-list span {
+    color: var(--text-muted);
+}
+
+@media (max-width: 760px) {
+    .os-subject-overview {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .os-continue-compact {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+        padding: 1.15rem;
+    }
+
+    .os-continue-action,
+    .os-continue-action .button-link {
+        width: 100%;
+    }
+}
+
+.os-section-header-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, .7fr);
+    gap: 1.25rem 2.5rem;
+    align-items: end;
+}
+
+.os-section-header-split > p {
+    margin: 0 0 .15rem;
+    color: var(--text-muted);
+}
+
+.os-semester-map {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-subtle);
+}
+
+.os-semester-head,
+.os-semester-row {
+    display: grid;
+    grid-template-columns: minmax(3.25rem, .45fr) minmax(16rem, 2.35fr) minmax(7rem, 1fr) minmax(10rem, 1.45fr) minmax(6rem, .7fr);
+    gap: 1rem;
+    align-items: center;
+}
+
+.os-semester-head {
+    padding: .72rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--blue-light);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.os-semester-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.os-semester-row {
+    padding: .82rem 1rem;
+    color: var(--text-secondary);
+}
+
+.os-semester-row + .os-semester-row {
+    border-top: 1px solid var(--border);
+}
+
+.os-semester-row:hover {
+    background: color-mix(in srgb, var(--purple-subtle) 34%, transparent);
+}
+
+.os-semester-cell {
+    min-width: 0;
+}
+
+.os-semester-cell-value {
+    display: block;
+    overflow-wrap: anywhere;
+}
+
+.os-semester-cell-value strong {
+    color: var(--blue-light);
+}
+
+.os-semester-cell-label {
+    display: none;
+    margin-bottom: .2rem;
+    color: var(--text-muted);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.os-semester-week .os-semester-cell-value,
+.os-semester-status .os-semester-cell-value {
+    font-weight: 700;
+}
+
+.os-semester-status.is-available .os-semester-cell-value {
+    color: var(--purple-light);
+}
+
+.os-semester-status.is-planned .os-semester-cell-value {
+    color: var(--text-muted);
+}
+
+.os-shared-quiz-note {
+    margin: .9rem 0 0;
+    padding: .9rem 1rem;
+    border-left: 2px solid var(--amber);
+    background: var(--amber-subtle);
+    color: var(--text-secondary);
+    font-size: .92rem;
+}
+
+.os-shared-quiz-note strong,
+.os-shared-quiz-note span {
+    color: var(--amber-light);
+}
+
+.os-study-flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0;
+    padding: 1px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--border);
+    list-style: none;
+}
+
+.os-study-flow li {
+    position: relative;
+    min-width: 0;
+    padding: 1rem;
+    background: var(--surface-subtle);
+}
+
+.os-study-flow li:not(:last-child)::after {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: -.68rem;
+    width: 1.35rem;
+    height: 1.35rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--purple-light);
+    content: "→";
+    font-size: .8rem;
+    line-height: 1.2rem;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.os-study-flow span {
+    display: block;
+    margin-bottom: .55rem;
+    color: var(--blue-light);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.os-study-flow strong {
+    display: block;
+    color: var(--text-primary);
+}
+
+.os-study-flow p {
+    margin: .35rem 0 0;
+    color: var(--text-muted);
+    font-size: .9rem;
+}
+
+.os-module-groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.1rem clamp(1.5rem, 4vw, 3.25rem);
+}
+
+.os-module-group {
+    min-width: 0;
+    padding-top: .9rem;
+    border-top: 2px solid var(--border);
+    scroll-margin-top: 1.5rem;
+}
+
+.os-module-group:target {
+    border-top-color: var(--purple-primary);
+}
+
+.os-module-group h3 {
+    margin: 0 0 .75rem;
+    color: var(--blue-light);
+    font-size: 1rem;
+}
+
+.os-module-compact-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.os-module-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .4rem 1rem;
+    min-width: 0;
+    padding: .85rem 0;
+    scroll-margin-top: 1.5rem;
+}
+
+.os-module-item + .os-module-item {
+    border-top: 1px solid var(--border);
+}
+
+.os-module-item:target {
+    margin-inline: -.75rem;
+    padding-inline: .75rem;
+    border-radius: var(--radius-sm);
+    background: var(--purple-subtle);
+}
+
+.os-module-item-heading {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: .65rem;
+    align-items: baseline;
+    min-width: 0;
+}
+
+.os-module-number {
+    color: var(--blue-light);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .06em;
+}
+
+.os-module-item h4 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: .96rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.os-module-title-link {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .2em;
+}
+
+.os-module-title-link:hover,
+.os-module-title-link:focus-visible {
+    color: var(--purple-light);
+}
+
+.os-module-meta {
+    display: flex;
+    grid-column: 1;
+    flex-wrap: wrap;
+    gap: .35rem .8rem;
+    margin: 0 0 0 3.05rem;
+    color: var(--text-muted);
+    font-size: .78rem;
+}
+
+.os-module-status::before {
+    display: inline-block;
+    width: .42rem;
+    height: .42rem;
+    margin-right: .4rem;
+    border-radius: 50%;
+    background: currentColor;
+    content: "";
+    vertical-align: .06em;
+}
+
+.os-module-status.is-available {
+    color: var(--purple-light);
+}
+
+.os-module-status.is-planned {
+    color: var(--text-muted);
+}
+
+.os-module-action {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    color: var(--purple-light);
+    font-size: .82rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.os-module-action:hover,
+.os-module-action:focus-visible {
+    color: var(--text-primary);
+}
+
+.os-future-note {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.35fr);
+    gap: 1.5rem 3rem;
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--blue);
+}
+
+.os-future-note h2 {
+    margin-bottom: .45rem;
+}
+
+.os-future-note p {
+    margin-bottom: 0;
+}
+
+.os-future-note ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: .5rem 1.25rem;
+    margin: 0;
+    padding: 0;
+    color: var(--text-secondary);
+    list-style: none;
+}
+
+.os-future-note li::before {
+    margin-right: .45rem;
+    color: var(--blue);
+    content: "·";
+}
+
+.os-noscript-note {
+    padding: 1rem;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+@media (max-width: 980px) {
+    .os-semester-head {
+        display: none;
+    }
+
+    .os-semester-map {
+        overflow: visible;
+        border: 0;
+        background: transparent;
+    }
+
+    .os-semester-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .75rem;
+    }
+
+    .os-semester-row {
+        grid-template-areas:
+            "module module"
+            "week status"
+            "quiz lecture";
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .7rem 1rem;
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-subtle);
+    }
+
+    .os-semester-row + .os-semester-row {
+        border-top: 1px solid var(--border);
+    }
+
+    .os-semester-module {
+        grid-area: module;
+    }
+
+    .os-semester-week {
+        grid-area: week;
+    }
+
+    .os-semester-quiz {
+        grid-area: quiz;
+    }
+
+    .os-semester-lecture {
+        grid-area: lecture;
+    }
+
+    .os-semester-status {
+        grid-area: status;
+    }
+
+    .os-semester-cell-label {
+        display: block;
+    }
+}
+
+@media (max-width: 760px) {
+    .os-section-header-split,
+    .os-future-note {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .os-study-flow,
+    .os-module-groups,
+    .os-semester-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .os-study-flow li:not(:last-child)::after {
+        top: auto;
+        right: 50%;
+        bottom: -.68rem;
+        content: "↓";
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 520px) {
+    .os-module-item {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .os-module-action {
+        grid-column: 1;
+        grid-row: auto;
+        margin-left: 3.05rem;
+        white-space: normal;
+    }
+
+    .os-future-note {
+        padding-left: 1rem;
+    }
+}

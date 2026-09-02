@@ -7,6 +7,22 @@
     const storageKey = "fag-progress:" + course;
     const memoryStore = {};
 
+    function rememberVisitedModule() {
+        const module = context.dataset.module;
+        if (!module || !context.hasAttribute("data-track-last-visited")) return;
+
+        try {
+            if (typeof localStorage !== "undefined") {
+                localStorage.setItem("fag-last-visited:" + course, module);
+            }
+        } catch {
+            // Siden fungerer fortsatt når nettleseren blokkerer localStorage.
+        }
+    }
+
+    rememberVisitedModule();
+    window.addEventListener("pageshow", rememberVisitedModule);
+
     function getProgress() {
         try {
             if (typeof localStorage === "undefined") return memoryStore[storageKey] || {};
@@ -218,4 +234,3 @@
         window.addEventListener("pageshow", () => renderOverview(getProgress()));
     }
 })();
-

@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "entries": [
     {
       "id": "page-home",
@@ -171,8 +171,8 @@
       "title": "Operativsystemer",
       "code": "IDATT2202",
       "context": "Aktivt fag · Høst 2026 · 7,5 studiepoeng",
-      "description": "Operativsystemer, prosesser, tråder, scheduling, minne, filsystemer, virtualisering, samtidighet, sikkerhet og systemprogrammering.",
-      "keywords": ["operativsystemer", "kernel", "prosesser", "threads", "concurrency", "scheduling", "minne", "virtual memory", "file systems", "security", "system programming", "synkronisering", "feilsøking", "programvare", "maskinvare", "moduler", "progresjon"],
+      "description": "Semesteroversikt for kernel, system calls, prosesser, tråder, samtidighet, scheduling, minne, filsystemer, sikkerhet og systemprogrammering.",
+      "keywords": ["operativsystemer", "kernel", "system calls", "processes", "prosesser", "threads", "concurrency", "synchronisation", "scheduling", "caching", "paging", "virtual memory", "file systems", "security", "system programming", "flipped classroom", "Canvas quiz", "kunnskapsmoduler"],
       "url": "fag/idatt2202/index.html",
       "priority": 40
     },
@@ -531,13 +531,13 @@
     {
       "id": "module-idatt2202-2",
       "type": "Modul",
-      "title": "Modul 2 · The kernel abstraction – part 1",
+      "title": "Modul 2 · The Process Abstraction",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Chapter 2 · Sections 2.1–2.3",
-      "description": "Process isolation, dual-mode operation, virtual memory og kontrollerte overganger mellom user mode og kernel mode.",
-      "keywords": ["process", "process abstraction", "process isolation", "address space", "threads", "user mode", "kernel mode", "dual-mode operation", "privileged instructions", "memory protection", "base + bound", "fragmentation", "virtual memory", "translation table", "physical memory", "code", "data", "heap", "stack", "ASLR", "hardware timer", "timer interrupts", "system calls", "interrupts", "exceptions", "mode transfer", "interrupt vector", "kernel stack", "scheduler", "trap", "CPU", "C", "printf"],
-      "url": "fag/idatt2202/modul-2.html",
-      "priority": 25
+      "context": "IDATT2202 · Uke 35 · Quiz 02.1 · Planlagt",
+      "description": "Kunnskapsmodul om process abstraction i semesterets del om processes og kernel.",
+      "keywords": ["M2", "process", "process abstraction", "prosesser", "Quiz 02.1", "Kernel Abstraction Part 1"],
+      "url": "fag/idatt2202/index.html#module-m2",
+      "priority": 18
     },
     {
       "id": "topic-idatt2202-introduction",
@@ -606,7 +606,7 @@
       "context": "Operativsystemer · Chapter 2 · Sections 2.1–2.4, 2.6–2.10",
       "description": "Hvordan kernel isolerer prosesser, kontrollerer privilegier og håndterer sikre overganger mellom user og kernel mode.",
       "keywords": ["process abstraction", "address space", "PCB", "dual-mode operation", "privileged instructions", "hardware timer", "interrupts", "exceptions", "system calls", "safe mode transfer", "secure system calls", "process creation", "upcalls", "booting", "firmware", "BIOS", "UEFI", "bootloader", "virtual machines"],
-      "url": "fag/idatt2202/index.html#tema-kernel",
+      "url": "fag/idatt2202/index.html#theme-processes-kernel",
       "priority": 8
     },
     {
@@ -616,7 +616,7 @@
       "context": "Operativsystemer · Chapter 3 · Sections 3.1–3.5",
       "description": "Process management, I/O, shell, interprocess communication og operativsystemets struktur sett fra programmererens side.",
       "keywords": ["process management", "process identifiers", "PID", "parent child", "open", "close", "read", "write", "file descriptors", "I/O abstraction", "shell", "IPC", "interprocess communication", "operating system structure"],
-      "url": "fag/idatt2202/index.html#tema-programming-interface",
+      "url": "fag/idatt2202/index.html#module-m6",
       "priority": 8
     },
     {
@@ -626,7 +626,7 @@
       "context": "Operativsystemer · Chapter 4 · Sections 4.1–4.5, 4.8",
       "description": "Flere execution flows i samme process, thread lifecycle, context switching og parallel execution.",
       "keywords": ["concurrency", "threads", "process vs thread", "shared address space", "thread state", "thread creation", "thread termination", "thread lifecycle", "thread data structures", "context switching", "multi-threaded applications", "parallel execution"],
-      "url": "fag/idatt2202/index.html#tema-concurrency",
+      "url": "fag/idatt2202/index.html#module-m7",
       "priority": 8
     },
     {
@@ -636,7 +636,7 @@
       "context": "Operativsystemer · Chapter 5 · Sections 5.1–5.8",
       "description": "Hvordan samtidige operasjoner bruker shared state korrekt med locks og condition variables.",
       "keywords": ["shared state", "race conditions", "atomicity", "critical sections", "mutual exclusion", "locks", "acquire", "release", "condition variables", "wait", "signal", "broadcast", "synchronization primitives", "semaphores"],
-      "url": "fag/idatt2202/index.html#tema-synchronization",
+      "url": "fag/idatt2202/index.html#module-m10",
       "priority": 10
     },
     {
@@ -646,7 +646,7 @@
       "context": "Operativsystemer · Chapter 6 · Sections 6.1–6.3, 6.5",
       "description": "Lock performance og koordinering av flere ressurser, inkludert hvorfor deadlock oppstår og hvordan det kan håndteres.",
       "keywords": ["multiprocessor synchronization", "lock performance", "lock design patterns", "lock contention", "lock granularity", "multiple locks", "deadlock", "vranglås", "resource dependencies", "deadlock avoidance", "deadlock handling"],
-      "url": "fag/idatt2202/index.html#tema-deadlock",
+      "url": "fag/idatt2202/index.html#module-m11",
       "priority": 10
     },
     {
@@ -656,7 +656,7 @@
       "context": "Operativsystemer · Chapter 7 · Sections 7.1–7.2",
       "description": "Hvordan OS-et fordeler CPU-tid på én eller flere prosessorer og balanserer ulike mål.",
       "keywords": ["scheduler", "scheduling policy", "CPU allocation", "preemption", "response time", "throughput", "fairness", "waiting time", "processor utilization", "uniprocessor", "multiprocessor", "cores"],
-      "url": "fag/idatt2202/index.html#tema-scheduling",
+      "url": "fag/idatt2202/index.html#module-m12",
       "priority": 8
     },
     {
@@ -666,7 +666,7 @@
       "context": "Operativsystemer · Chapter 8 · Sections 8.1–8.4",
       "description": "Hvordan virtuelle adresser oversettes til fysisk minne samtidig som process isolation og memory protection opprettholdes.",
       "keywords": ["virtual addresses", "physical addresses", "address translation", "virtual address spaces", "process isolation", "memory protection", "segmentation", "paging", "page tables", "hardware software cooperation", "software protection"],
-      "url": "fag/idatt2202/index.html#tema-address-translation",
+      "url": "fag/idatt2202/index.html#module-m8",
       "priority": 10
     },
     {
@@ -676,7 +676,7 @@
       "context": "Operativsystemer · Chapter 9 · Sections 9.1–9.7",
       "description": "Hvordan caching, locality og replacement policies gjør minnesystemet effektivt og fleksibelt.",
       "keywords": ["caching", "locality", "memory hierarchy", "cache hits", "cache misses", "cache lookup", "replacement policies", "page replacement", "virtual memory", "pages", "memory-mapped files", "RAM", "secondary storage", "performance trade-offs"],
-      "url": "fag/idatt2202/index.html#tema-virtual-memory",
+      "url": "fag/idatt2202/index.html#module-m9",
       "priority": 10
     },
     {
@@ -686,7 +686,7 @@
       "context": "Operativsystemer · Chapters 11 og 13",
       "description": "Filsystemets abstraction, API og software layers, og hvordan files og directories kobles til physical storage.",
       "keywords": ["Chapter 11", "Sections 11.1–11.3", "Chapter 13", "Sections 13.1–13.4", "persistent storage", "file abstraction", "file system API", "files", "directories", "naming", "file metadata", "software layers", "directory structures", "directory lookup", "file access", "physical storage organization"],
-      "url": "fag/idatt2202/index.html#tema-file-systems",
+      "url": "fag/idatt2202/index.html#theme-storage-file-systems",
       "priority": 10
     },
     {
@@ -696,7 +696,7 @@
       "context": "Operativsystemer · Kursmateriale · Hailpernin Chapter 11",
       "description": "Security goals og mekanismene som beskytter kernel, prosesser, minne, objekter og data.",
       "keywords": ["security goals", "protection", "isolation", "access control", "object security", "memory safety", "malware", "OS security mechanisms", "hardware protection", "kernel protection", "process isolation", "memory protection", "secure system calls"],
-      "url": "fag/idatt2202/index.html#tema-security",
+      "url": "fag/idatt2202/index.html#module-m15",
       "priority": 10
     },
     {
@@ -706,75 +706,151 @@
       "context": "Operativsystemer · Tverrgående praktisk arbeid",
       "description": "Praktisk arbeid med Unix/Linux, C og/eller Rust, compilation, debugging og low-level interaction med OS-et.",
       "keywords": ["Unix", "Linux", "command line", "C", "Rust", "compilation", "debugging", "memory", "pointers", "addresses", "processes", "threads", "system calls", "synchronization", "x86", "x64", "assembly"],
-      "url": "fag/idatt2202/index.html#praktisk-systemprogrammering",
+      "url": "fag/idatt2202/index.html#emneoversikt",
       "priority": 8
     },
     {
       "id": "module-idatt2202-3",
       "type": "Modul",
-      "title": "Modul 3 – kommer snart",
+      "title": "Modul 3 · Dual-Mode Operation: Kernel Mode and User Mode",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
-      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
-      "keywords": ["modul 3", "kommer snart", "modulinnhold", "sjekklister", "notater"],
-      "url": "fag/idatt2202/modul-3.html",
-      "priority": -100
+      "context": "IDATT2202 · Uke 35 · Quiz 02.2 · Planlagt",
+      "description": "Kunnskapsmodul om dual-mode operation, kernel mode og user mode.",
+      "keywords": ["M3", "dual-mode operation", "kernel mode", "user mode", "Quiz 02.2", "Kernel Abstraction Part 1"],
+      "url": "fag/idatt2202/index.html#module-m3",
+      "priority": 18
     },
     {
       "id": "module-idatt2202-4",
       "type": "Modul",
-      "title": "Modul 4 – kommer snart",
+      "title": "Modul 4 · Mode Transfers: Interrupts, Exceptions and System Calls",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
-      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
-      "keywords": ["modul 4", "kommer snart", "modulinnhold", "sjekklister", "notater"],
-      "url": "fag/idatt2202/modul-4.html",
-      "priority": -100
+      "context": "IDATT2202 · Uke 36 · Quiz 02.3 · Planlagt",
+      "description": "Kunnskapsmodul om mode transfers, interrupts, exceptions og system calls.",
+      "keywords": ["M4", "mode transfers", "interrupts", "exceptions", "system calls", "Quiz 02.3", "Kernel Abstraction Part 2"],
+      "url": "fag/idatt2202/index.html#module-m4",
+      "priority": 18
     },
     {
       "id": "module-idatt2202-5",
       "type": "Modul",
-      "title": "Modul 5 – kommer snart",
+      "title": "Modul 5 · Safe Mode Transfer and Kernel Mechanisms",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
-      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
-      "keywords": ["modul 5", "kommer snart", "modulinnhold", "sjekklister", "notater"],
-      "url": "fag/idatt2202/modul-5.html",
-      "priority": -100
+      "context": "IDATT2202 · Uke 36 · Quiz 02.4 · Planlagt",
+      "description": "Kunnskapsmodul om safe mode transfer og kernel mechanisms.",
+      "keywords": ["M5", "safe mode transfer", "kernel mechanisms", "Quiz 02.4", "Kernel Abstraction Part 2"],
+      "url": "fag/idatt2202/index.html#module-m5",
+      "priority": 18
     },
     {
       "id": "module-idatt2202-6",
       "type": "Modul",
-      "title": "Modul 6 – kommer snart",
+      "title": "Modul 6 · The Programming Interface",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
-      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
-      "keywords": ["modul 6", "kommer snart", "modulinnhold", "sjekklister", "notater"],
-      "url": "fag/idatt2202/modul-6.html",
-      "priority": -100
+      "context": "IDATT2202 · Uke 37 · Quiz 03 · Planlagt",
+      "description": "Kunnskapsmodul om operativsystemets programming interface.",
+      "keywords": ["M6", "programming interface", "Quiz 03", "system programming"],
+      "url": "fag/idatt2202/index.html#module-m6",
+      "priority": 18
     },
     {
       "id": "module-idatt2202-7",
       "type": "Modul",
-      "title": "Modul 7 – kommer snart",
+      "title": "Modul 7 · Concurrency and Threads",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
-      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
-      "keywords": ["modul 7", "kommer snart", "modulinnhold", "sjekklister", "notater"],
-      "url": "fag/idatt2202/modul-7.html",
-      "priority": -100
+      "context": "IDATT2202 · Uke 38 · Quiz 04 · Planlagt",
+      "description": "Kunnskapsmodul om concurrency og threads.",
+      "keywords": ["M7", "concurrency", "threads", "Quiz 04"],
+      "url": "fag/idatt2202/index.html#module-m7",
+      "priority": 18
     },
     {
       "id": "module-idatt2202-8",
       "type": "Modul",
-      "title": "Modul 8 – kommer snart",
+      "title": "Modul 8 · Address Translation and Memory Protection",
       "code": "IDATT2202",
-      "context": "IDATT2202 · Operativsystemer",
-      "description": "Siden er klar for modulinnhold, sjekklister og egne notater.",
-      "keywords": ["modul 8", "kommer snart", "modulinnhold", "sjekklister", "notater"],
-      "url": "fag/idatt2202/modul-8.html",
-      "priority": -100
+      "context": "IDATT2202 · Uke 39 · Quiz 05 · Planlagt",
+      "description": "Kunnskapsmodul om address translation og memory protection.",
+      "keywords": ["M8", "address translation", "memory protection", "Quiz 05"],
+      "url": "fag/idatt2202/index.html#module-m8",
+      "priority": 18
+    },
+    {
+      "id": "module-idatt2202-9",
+      "type": "Modul",
+      "title": "Modul 9 · Caching, Paging and Virtual Memory",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Uke 40 · Quiz 06 · Planlagt",
+      "description": "Kunnskapsmodul om caching, paging og virtual memory.",
+      "keywords": ["M9", "caching", "paging", "virtual memory", "Quiz 06"],
+      "url": "fag/idatt2202/index.html#module-m9",
+      "priority": 18
+    },
+    {
+      "id": "module-idatt2202-10",
+      "type": "Modul",
+      "title": "Modul 10 · Synchronising Access to Shared Objects",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Uke 41 · Quiz 07 · Planlagt",
+      "description": "Kunnskapsmodul om synchronisation og tilgang til shared objects.",
+      "keywords": ["M10", "synchronisation", "shared objects", "Quiz 07"],
+      "url": "fag/idatt2202/index.html#module-m10",
+      "priority": 18
+    },
+    {
+      "id": "module-idatt2202-11",
+      "type": "Modul",
+      "title": "Modul 11 · Advanced Synchronisation and Deadlocks",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Uke 42 · Quiz 08 · Planlagt",
+      "description": "Kunnskapsmodul om advanced synchronisation og deadlocks.",
+      "keywords": ["M11", "advanced synchronisation", "deadlocks", "Quiz 08"],
+      "url": "fag/idatt2202/index.html#module-m11",
+      "priority": 18
+    },
+    {
+      "id": "module-idatt2202-12",
+      "type": "Modul",
+      "title": "Modul 12 · CPU Scheduling",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Uke 43 · Quiz 09 · Planlagt",
+      "description": "Kunnskapsmodul om CPU scheduling.",
+      "keywords": ["M12", "CPU scheduling", "scheduling", "Quiz 09"],
+      "url": "fag/idatt2202/index.html#module-m12",
+      "priority": 18
+    },
+    {
+      "id": "module-idatt2202-13",
+      "type": "Modul",
+      "title": "Modul 13 · Storage Systems and the File System Abstraction",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Uke 44 · Quiz 10 – del 1 · Planlagt",
+      "description": "Første del av den delte Canvas-quizen om storage og filesystems.",
+      "keywords": ["M13", "storage systems", "file system abstraction", "Quiz 10", "Storage and filesystems", "del 1"],
+      "url": "fag/idatt2202/index.html#module-m13",
+      "priority": 18
+    },
+    {
+      "id": "module-idatt2202-14",
+      "type": "Modul",
+      "title": "Modul 14 · Files and Directories",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Uke 45 · Quiz 10 – del 2 · Planlagt",
+      "description": "Andre del av den delte Canvas-quizen om storage og filesystems.",
+      "keywords": ["M14", "files", "directories", "Quiz 10", "Storage and filesystems", "del 2"],
+      "url": "fag/idatt2202/index.html#module-m14",
+      "priority": 18
+    },
+    {
+      "id": "module-idatt2202-15",
+      "type": "Modul",
+      "title": "Modul 15 · Operating System Security",
+      "code": "IDATT2202",
+      "context": "IDATT2202 · Uke 46 · Quiz 11 · Planlagt",
+      "description": "Kunnskapsmodul om operating system security.",
+      "keywords": ["M15", "operating system security", "security", "Quiz 11", "Hailperin Chapter 11"],
+      "url": "fag/idatt2202/index.html#module-m15",
+      "priority": 18
     }
   ]
 }
-
