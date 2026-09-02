@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "entries": [
     {
       "id": "page-home",
@@ -524,7 +524,7 @@
       "code": "IDATT2202",
       "context": "IDATT2202 · Chapter 1 · Sections 1.1–1.3",
       "description": "Hva et operativsystem er, hvordan det fordeler og abstraherer ressurser, og hvilke kvaliteter og trade-offs et OS må balansere.",
-      "keywords": ["introduksjon", "operating system", "operativsystem", "OS", "Chapter 1", "Sections 1.1–1.3", "OS abstraction", "hardware abstraction", "resource management", "resource allocation", "applications", "users", "hardware", "system calls", "referee", "illusionist", "glue"],
+      "keywords": ["M1", "Quiz 01", "introduksjon", "operating system", "operativsystem", "OS", "Chapter 1", "Sections 1.1–1.3", "OS abstraction", "hardware abstraction", "resource management", "resource allocation", "applications", "users", "hardware", "system calls", "referee", "illusionist", "glue", "reliability", "availability", "security", "privacy", "MTTF", "MTTR", "portability", "API", "HAL", "latency", "throughput", "overhead", "fairness", "predictability", "batch systems", "time-sharing", "bare metal", "virtualization"],
       "url": "fag/idatt2202/modul-1.html",
       "priority": 25
     },
@@ -546,7 +546,7 @@
       "context": "Operativsystemer · Chapter 1 · Sections 1.1–1.3",
       "description": "Definisjonen av et OS, modellen applications/users → operating system → hardware og kontrollert tilgang gjennom system calls.",
       "keywords": ["OS abstraction", "applications", "users", "operating system", "hardware", "CPU", "memory", "storage", "I/O", "system calls", "open", "read", "write"],
-      "url": "fag/idatt2202/modul-1.html#hva-er-et-operativsystem",
+      "url": "fag/idatt2202/modul-1.html#grunnmodell",
       "priority": 12
     },
     {
@@ -556,27 +556,27 @@
       "context": "Operativsystemer · Modul 1",
       "description": "Tre roller som forklarer hvordan OS-et fordeler, beskytter, abstraherer og binder sammen ressurser.",
       "keywords": ["referee", "illusionist", "glue", "resource allocation", "isolation", "protection", "controlled communication", "IPC", "virtual resources", "abstractions", "system libraries", "file systems", "networking"],
-      "url": "fag/idatt2202/modul-1.html#referee-illusionist-glue",
+      "url": "fag/idatt2202/modul-1.html#roller",
       "priority": 12
     },
     {
       "id": "topic-idatt2202-protection",
       "type": "Tema",
-      "title": "Protection og resource allocation",
+      "title": "Protection og untrusted applications",
       "context": "Operativsystemer · Modul 1",
-      "description": "Hvorfor untrusted applications må begrenses, og hvorfor scheduling policy avhenger av workload og mål.",
-      "keywords": ["untrusted application", "buggy", "malicious", "process isolation", "kernel memory", "user mode", "kernel mode", "privileged instructions", "hardware timer", "Meltdown", "Spectre", "scheduling policy", "workload"],
-      "url": "fag/idatt2202/modul-1.html#protection-resource-allocation",
+      "description": "Hvorfor untrusted applications må begrenses, samtidig som programmer trenger kontrollert kommunikasjon.",
+      "keywords": ["untrusted application", "buggy", "malicious", "fault isolation", "process isolation", "protection", "resource allocation", "controlled communication", "Meltdown", "Spectre", "hardware protection"],
+      "url": "fag/idatt2202/modul-1.html#protection",
       "priority": 12
     },
     {
       "id": "topic-idatt2202-challenges",
       "type": "Tema",
-      "title": "Reliability, availability og portability",
+      "title": "Reliability, availability, security og privacy",
       "context": "Operativsystemer · Modul 1",
-      "description": "Kvalitetsmålene reliability, availability, security, privacy og portability, inkludert MTTF, MTTR, API og HAL.",
-      "keywords": ["reliability", "availability", "MTTF", "MTTR", "security", "privacy", "portability", "API", "HAL", "Hardware Abstraction Layer"],
-      "url": "fag/idatt2202/modul-1.html#os-challenges",
+      "description": "Kvalitetsmålene reliability, availability, security og privacy, inkludert hvordan MTTF og MTTR påvirker availability.",
+      "keywords": ["reliability", "availability", "MTTF", "MTTR", "security", "privacy", "fault isolation", "system quality"],
+      "url": "fag/idatt2202/modul-1.html#kvalitetsmal",
       "priority": 12
     },
     {
@@ -586,8 +586,18 @@
       "context": "Operativsystemer · Modul 1",
       "description": "Latency, throughput, overhead, fairness og predictability – og trade-offen mellom time slice, context switches og responsiveness.",
       "keywords": ["performance", "trade-offs", "latency", "response time", "throughput", "overhead", "fairness", "predictability", "time slice", "context switch", "responsiveness", "resource utilization", "scheduling"],
-      "url": "fag/idatt2202/modul-1.html#performance-trade-offs",
+      "url": "fag/idatt2202/modul-1.html#performance",
       "priority": 14
+    },
+    {
+      "id": "topic-idatt2202-portability",
+      "type": "Tema",
+      "title": "Portability og OS-abstraksjoner",
+      "context": "Operativsystemer · Modul 1",
+      "description": "Hvordan API, abstract virtual machine og Hardware Abstraction Layer skjermer kode fra maskinvarespesifikke forskjeller.",
+      "keywords": ["portability", "API", "Application Programming Interface", "abstract virtual machine", "AVM", "HAL", "Hardware Abstraction Layer", "hardware-specific code", "device drivers"],
+      "url": "fag/idatt2202/modul-1.html#portability",
+      "priority": 12
     },
     {
       "id": "topic-idatt2202-history",
@@ -596,7 +606,7 @@
       "context": "Operativsystemer · Modul 1",
       "description": "Utviklingen fra early operating systems via batch og time-sharing til moderne systemer, bare metal og virtual machines.",
       "keywords": ["early operating systems", "batch systems", "time-sharing", "multiprogramming", "modern systems", "embedded systems", "bare metal", "virtualization", "virtual machines", "hypervisor"],
-      "url": "fag/idatt2202/modul-1.html#utvikling-virtualisering",
+      "url": "fag/idatt2202/modul-1.html#historie",
       "priority": 12
     },
     {
