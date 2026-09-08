@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IDATT2202 høsten 2026: et samlet fagkart med pensum, semesterplan, Canvas-quizer, forelesninger, eksamener og kursressurser.">
     <title>IDATT2202 – Operativsystemer | Andreas Sollie Steffensen</title>
     <link rel="stylesheet" href="../../assets/site.css">
-    <link rel="stylesheet" href="../styles.css?v=20260902a">
+    <link rel="stylesheet" href="course.css?v=20260908a">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
@@ -39,110 +40,329 @@
             <span class="mobile-brand">AS</span>
         </div>
 
-        <main class="site-main content-page os-overview-page" id="main-content" data-course="idatt2202">
+        <main class="site-main content-page course-map-page" id="main-content" data-course-map data-term-year="2026" data-week-start="34" data-week-end="46">
             <a class="back-link" href="../index.html">← Til fagoversikten</a>
 
-            <header class="page-intro os-course-header os-course-header-compact">
-                <p class="course-code">IDATT2202</p>
+            <header class="page-intro course-map-intro">
+                <p class="course-map-code">IDATT2202</p>
                 <h1>Operativsystemer</h1>
-                <p class="os-course-lede">En samlet inngang til emnet, semesterløpet og de 15 kunnskapsmodulene.</p>
-                <ul class="os-course-facts" aria-label="Emnefakta">
-                    <li>15 kunnskapsmoduler</li>
-                    <li>14 Canvas-quizer</li>
-                    <li>Flipped classroom</li>
+                <p class="course-map-lede">Hvordan operativsystemet abstraherer og forvalter hardware gjennom kernel, processes, concurrency, memory management, scheduling, file systems og security.</p>
+                <ul class="course-map-facts" aria-label="Emnefakta">
+                    <li>Høst 2026</li>
+                    <li>7,5 studiepoeng</li>
+                    <li>Donn Morrison</li>
+                    <li>Skriftlig eksamen</li>
+                    <li>Anderson &amp; Dahlin</li>
                 </ul>
+                <a class="course-map-current" href="#semesteroversikt" data-current-week hidden></a>
             </header>
 
-            <section class="os-continue os-continue-compact" aria-labelledby="continue-heading" aria-live="polite" data-os-continue>
-                <div>
-                    <p class="os-section-kicker">Fortsett der du slapp</p>
-                    <p class="os-continue-module" data-os-continue-module>M1</p>
-                    <h2 id="continue-heading" data-os-continue-title>Introduction to Operating Systems</h2>
-                    <p data-os-continue-status>Ingen modul er besøkt ennå.</p>
-                </div>
-                <div class="os-continue-action">
-                    <a class="button-link" href="modul-1.html" data-os-continue-link>Start M1 →</a>
-                </div>
-            </section>
+            <nav class="course-map-jumpnav" aria-label="På denne siden">
+                <a href="#semesteroversikt">Semesteroversikt</a>
+                <a href="#forelesninger">Forelesninger</a>
+                <a href="#quizer">Quizer</a>
+                <a href="#pensum">Pensum</a>
+                <a href="#eksamener">Eksamener</a>
+                <a href="#eksamensrelevans">Eksamensrelevans</a>
+                <a href="#praktisk-c">Praktisk C</a>
+                <a href="#ressurser">Ressurser</a>
+            </nav>
 
-            <section class="os-section os-subject-overview" id="emneoversikt" aria-labelledby="emneoversikt-heading">
-                <div>
-                    <header class="os-section-header">
-                        <p class="os-section-kicker">Kort emneoversikt</p>
-                        <h2 id="emneoversikt-heading">Hva faget dekker</h2>
-                        <p>Faget handler om kernel og system calls, processes og threads, concurrency og synchronisation, scheduling, virtual memory, caching, file systems, security og low-level/system programming.</p>
-                    </header>
-                    <p class="os-teaching-note"><strong>Arbeidsform:</strong> Undervisningen bruker flipped classroom. Kunnskapsmodulen og Canvas-quizen gjennomføres før forelesningen, slik at tiden sammen kan brukes til utdyping og anvendelse.</p>
-                </div>
-                <div class="os-reading-list" aria-labelledby="pensum-heading">
-                    <p class="os-section-kicker" id="pensum-heading">Hovedpensum</p>
-                    <p><cite>Operating Systems: Principles and Practice</cite>, 2nd edition<br><span>Thomas Anderson &amp; Michael Dahlin</span></p>
-                    <p><strong>Security-modulen</strong><br><cite>Operating Systems and Middleware</cite>, Chapter 11<br><span>Max Hailperin</span></p>
-                </div>
-            </section>
-
-            <section class="os-section" id="semesterlop" aria-labelledby="semesterlop-heading">
-                <header class="os-section-header os-section-header-split">
-                    <div>
-                        <p class="os-section-kicker">Før forelesningen</p>
-                        <h2 id="semesterlop-heading">Semesterløp</h2>
-                    </div>
-                    <p>Kunnskapsmodulen og Canvas-quizen gir grunnlaget før den tilhørende forelesningen.</p>
+            <section class="course-map-section course-map-at-a-glance" id="faget" aria-labelledby="faget-heading">
+                <header class="course-map-section-header">
+                    <h2 id="faget-heading">Faget på ett blikk</h2>
+                    <p>Den faglige sammenhengen. Ukeplanen under viser undervisningsrekkefølgen.</p>
                 </header>
-
-                <div class="os-semester-map" role="region" data-os-semester-map aria-label="Semesterløp for IDATT2202"></div>
-                <p class="os-shared-quiz-note"><strong>15 moduler, 14 quizer:</strong> M13 og M14 deler <span>Quiz 10 – Storage and filesystems</span>, med del 1 før Storage Systems og del 2 før Files and Directories.</p>
-            </section>
-
-            <section class="os-section" id="arbeidsflyt" aria-labelledby="arbeidsflyt-heading">
-                <header class="os-section-header">
-                    <p class="os-section-kicker">Slik brukes siden</p>
-                    <h2 id="arbeidsflyt-heading">Fra teori til repetisjon</h2>
-                </header>
-                <ol class="os-study-flow">
-                    <li><span>01</span><strong>Kunnskapsmodul</strong><p>Lær teorien før undervisningen.</p></li>
-                    <li><span>02</span><strong>Canvas-quiz</strong><p>Test at grunnforståelsen sitter.</p></li>
-                    <li><span>03</span><strong>Forelesning</strong><p>Bruk grunnlaget til utdyping og anvendelse.</p></li>
-                    <li><span>04</span><strong>Repetisjon</strong><p>Bruk active recall og tidligere eksamensoppgaver.</p></li>
-                </ol>
-            </section>
-
-            <section class="os-section" id="moduler" aria-labelledby="moduler-heading">
-                <header class="os-section-header os-section-header-split">
-                    <div>
-                        <p class="os-section-kicker">Kunnskapsmoduler</p>
-                        <h2 id="moduler-heading">15 moduler i seks fagområder</h2>
-                    </div>
-                    <p>Grupperingen er tematisk. Den kronologiske undervisningsrekkefølgen står i semesterløpet over.</p>
-                </header>
-                <div class="os-module-groups" data-os-module-groups></div>
-            </section>
-
-            <section class="os-section os-future-note" id="eksamensrepetisjon" aria-labelledby="eksamensrepetisjon-heading">
-                <div>
-                    <p class="os-section-kicker">Kommer senere</p>
-                    <h2 id="eksamensrepetisjon-heading">Eksamensrepetisjon</h2>
-                    <p>En senere repetisjonsdel skal samle modulene på tvers av semesterrekkefølgen.</p>
-                </div>
-                <ul aria-label="Planlagte repetisjonstemaer">
-                    <li>Processes &amp; Kernel</li>
-                    <li>Concurrency &amp; Synchronisation</li>
+                <ol class="course-map-chain" aria-label="Sammenhengen mellom temaene">
+                    <li>Introduction</li>
+                    <li>Kernel</li>
+                    <li>Processes</li>
+                    <li>Programming Interface</li>
+                    <li>Threads &amp; Concurrency</li>
+                    <li>Synchronisation</li>
+                    <li>Deadlocks</li>
                     <li>Scheduling</li>
                     <li>Memory</li>
                     <li>Storage &amp; File Systems</li>
                     <li>Security</li>
-                </ul>
+                </ol>
             </section>
 
-            <noscript>
-                <p class="os-noscript-note">Semester- og moduloversikten krever JavaScript. Modul 1 kan fortsatt åpnes fra «Fortsett der du slapp».</p>
-            </noscript>
+            <section class="course-map-section" id="semesteroversikt" aria-labelledby="semester-heading">
+                <header class="course-map-section-header">
+                    <div><p class="course-map-kicker">Tema → pensum → quiz → forelesning</p><h2 id="semester-heading">Semesteroversikt</h2></div>
+                    <p>15 kunnskapsområder gjennom uke 34–46.</p>
+                </header>
+                <table class="course-map-semester" role="table">
+                    <caption class="course-map-sr-only">Temaer med uke, pensum, Canvas-quiz og forelesning i IDATT2202 høsten 2026.</caption>
+                    <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Uke</th><th scope="col" role="columnheader">Tema</th><th scope="col" role="columnheader">Pensum</th><th scope="col" role="columnheader">Canvas-quiz</th><th scope="col" role="columnheader">Forelesning</th></tr></thead>
+                    <tbody role="rowgroup">
+                        <tr id="introduction" data-week="34" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>34</td>
+                            <th role="rowheader" scope="row">Introduction to Operating Systems</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 1.1–1.3</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-01">Quiz 01</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-01">Introduction</a></td>
+                        </tr>
+                        <tr id="process-abstraction" data-week="35" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>35</td>
+                            <th role="rowheader" scope="row">The Process Abstraction</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 2.1</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-02-1">Quiz 02.1</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-02">Kernel Abstraction Part 1</a></td>
+                        </tr>
+                        <tr id="dual-mode" data-week="35" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>35</td>
+                            <th role="rowheader" scope="row">Dual-Mode Operation</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 2.2</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-02-2">Quiz 02.2</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-02">Kernel Abstraction Part 1</a></td>
+                        </tr>
+                        <tr id="mode-transfers" data-week="36" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>36</td>
+                            <th role="rowheader" scope="row">Mode Transfers</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 2.3</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-02-3">Quiz 02.3</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-03">Kernel Abstraction Part 2</a></td>
+                        </tr>
+                        <tr id="safe-mode-transfer" data-week="36" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>36</td>
+                            <th role="rowheader" scope="row">Safe Mode Transfer &amp; Kernel Mechanisms</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 2.4, 2.6–2.10</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-02-4">Quiz 02.4</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-03">Kernel Abstraction Part 2</a></td>
+                        </tr>
+                        <tr id="programming-interface" data-week="37" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>37</td>
+                            <th role="rowheader" scope="row">The Programming Interface</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 3</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-03">Quiz 03</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-04">The Programming Interface</a></td>
+                        </tr>
+                        <tr id="concurrency" data-week="38" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>38</td>
+                            <th role="rowheader" scope="row">Concurrency and Threads</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 4.1–4.5, 4.8</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-04">Quiz 04</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-05">Concurrency and Threads</a></td>
+                        </tr>
+                        <tr id="address-translation" data-week="39" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>39</td>
+                            <th role="rowheader" scope="row">Address Translation</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 8.1–8.4</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-05">Quiz 05</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-06">Address Translation</a></td>
+                        </tr>
+                        <tr id="virtual-memory" data-week="40" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>40</td>
+                            <th role="rowheader" scope="row">Caching and Virtual Memory</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 9.1–9.7</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-06">Quiz 06</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-07">Caching and Virtual Memory</a></td>
+                        </tr>
+                        <tr id="synchronisation" data-week="41" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>41</td>
+                            <th role="rowheader" scope="row">Synchronisation</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 5.1–5.8</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-07">Quiz 07</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-08">Synchronisation</a></td>
+                        </tr>
+                        <tr id="deadlocks" data-week="42" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>42</td>
+                            <th role="rowheader" scope="row">Advanced Synchronisation &amp; Deadlocks</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 6.1–6.3, 6.5</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-08">Quiz 08</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-09">Advanced Synchronisation and Deadlocks</a></td>
+                        </tr>
+                        <tr id="scheduling" data-week="43" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>43</td>
+                            <th role="rowheader" scope="row">CPU Scheduling</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 7.1–7.2</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-09">Quiz 09</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-10">Scheduling</a></td>
+                        </tr>
+                        <tr id="storage" data-week="44" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>44</td>
+                            <th role="rowheader" scope="row">Storage Systems &amp; File System Abstraction</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 11.1–11.3</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-10">Quiz 10</a><small>del 1 · felles quiz</small></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-11">Storage Systems</a></td>
+                        </tr>
+                        <tr id="files-directories" data-week="45" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>45</td>
+                            <th role="rowheader" scope="row">Files and Directories</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Ch. 13.1–13.4</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-10">Quiz 10</a><small>del 2 · felles quiz</small></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-12">Files and Directories</a></td>
+                        </tr>
+                        <tr id="security" data-week="46" role="row">
+                            <td role="cell" class="course-map-week"><span class="course-map-mobile-label" aria-hidden="true">Uke </span>46</td>
+                            <th role="rowheader" scope="row">Operating System Security</th>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Pensum</span><span class="course-map-reading">Hailperin Ch. 11 + course material</span></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Canvas-quiz</span><a href="#quiz-11">Quiz 11</a></td>
+                            <td role="cell"><span class="course-map-mobile-label" aria-hidden="true">Forelesning</span><a href="#lecture-13">Security</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="course-map-shared-quiz"><strong>15 kunnskapsområder · 14 quizer.</strong> Uke 44 og 45 deler <a href="#quiz-10">Quiz 10 – Storage and filesystems</a>: del 1 hører til Storage Systems, del 2 til Files and Directories.</p>
+            </section>
+
+            <div class="course-map-paired">
+                <section class="course-map-section" id="forelesninger" aria-labelledby="lectures-heading">
+                    <header class="course-map-section-header">
+                        <div><p class="course-map-kicker">Canvas-strukturen</p><h2 id="lectures-heading">Forelesninger</h2></div>
+                        <p>13 lecture modules, i undervisningsrekkefølge.</p>
+                    </header>
+                    <ol class="course-map-list course-map-lectures">
+                        <li id="lecture-01"><span class="course-map-list-number" aria-hidden="true">01</span><span>Introduction<small>Uke 34</small></span></li>
+                        <li id="lecture-02"><span class="course-map-list-number" aria-hidden="true">02</span><span>The Kernel Abstraction Part 1<small>Uke 35</small></span></li>
+                        <li id="lecture-03"><span class="course-map-list-number" aria-hidden="true">03</span><span>The Kernel Abstraction Part 2<small>Uke 36</small></span></li>
+                        <li id="lecture-04"><span class="course-map-list-number" aria-hidden="true">04</span><span>The Programming Interface<small>Uke 37</small></span></li>
+                        <li id="lecture-05"><span class="course-map-list-number" aria-hidden="true">05</span><span>Concurrency and Threads<small>Uke 38</small></span></li>
+                        <li id="lecture-06"><span class="course-map-list-number" aria-hidden="true">06</span><span>Memory Management – Address Translation<small>Uke 39</small></span></li>
+                        <li id="lecture-07"><span class="course-map-list-number" aria-hidden="true">07</span><span>Memory Management – Caching and Virtual Memory<small>Uke 40</small></span></li>
+                        <li id="lecture-08"><span class="course-map-list-number" aria-hidden="true">08</span><span>Synchronisation<small>Uke 41</small></span></li>
+                        <li id="lecture-09"><span class="course-map-list-number" aria-hidden="true">09</span><span>Advanced Synchronisation and Deadlocks<small>Uke 42</small></span></li>
+                        <li id="lecture-10"><span class="course-map-list-number" aria-hidden="true">10</span><span>Scheduling<small>Uke 43</small></span></li>
+                        <li id="lecture-11"><span class="course-map-list-number" aria-hidden="true">11</span><span>Storage Systems<small>Uke 44</small></span></li>
+                        <li id="lecture-12"><span class="course-map-list-number" aria-hidden="true">12</span><span>Files and Directories<small>Uke 45</small></span></li>
+                        <li id="lecture-13"><span class="course-map-list-number" aria-hidden="true">13</span><span>Security<small>Uke 46</small></span></li>
+                    </ol>
+                </section>
+
+                <section class="course-map-section" id="quizer" aria-labelledby="quizzes-heading">
+                    <header class="course-map-section-header">
+                        <div><p class="course-map-kicker">Før forelesningen</p><h2 id="quizzes-heading">Canvas-quizer</h2></div>
+                        <p>De 14 quizene hører til temaene i semesteroversikten.</p>
+                    </header>
+                    <ul class="course-map-list course-map-quizzes">
+                        <li id="quiz-01"><span class="course-map-list-number">Quiz 01</span><span>Introduction</span></li>
+                        <li id="quiz-02-1"><span class="course-map-list-number">Quiz 02.1</span><span>Process abstraction</span></li>
+                        <li id="quiz-02-2"><span class="course-map-list-number">Quiz 02.2</span><span>Dual-mode operation</span></li>
+                        <li id="quiz-02-3"><span class="course-map-list-number">Quiz 02.3</span><span>Types of mode transfer</span></li>
+                        <li id="quiz-02-4"><span class="course-map-list-number">Quiz 02.4</span><span>Safe mode transfers, interrupts, exceptions and signals</span></li>
+                        <li id="quiz-03"><span class="course-map-list-number">Quiz 03</span><span>The programming interface</span></li>
+                        <li id="quiz-04"><span class="course-map-list-number">Quiz 04</span><span>Concurrency</span></li>
+                        <li id="quiz-05"><span class="course-map-list-number">Quiz 05</span><span>Address translation</span></li>
+                        <li id="quiz-06"><span class="course-map-list-number">Quiz 06</span><span>Paging and cache</span></li>
+                        <li id="quiz-07"><span class="course-map-list-number">Quiz 07</span><span>Synchronisation</span></li>
+                        <li id="quiz-08"><span class="course-map-list-number">Quiz 08</span><span>Advanced synchronisation</span></li>
+                        <li id="quiz-09"><span class="course-map-list-number">Quiz 09</span><span>Scheduling</span></li>
+                        <li id="quiz-10"><span class="course-map-list-number">Quiz 10</span><span>Storage and filesystems<small><a href="#storage">Uke 44 · Storage Systems</a><br><a href="#files-directories">Uke 45 · Files and Directories</a></small></span></li>
+                        <li id="quiz-11"><span class="course-map-list-number">Quiz 11</span><span>Security</span></li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="course-map-section" id="pensum" aria-labelledby="reading-heading">
+                <header class="course-map-section-header">
+                    <div><p class="course-map-kicker">Lærebøkene</p><h2 id="reading-heading">Pensum</h2></div>
+                    <p>Eksakte section-numre står i <a href="#semesteroversikt">semesteroversikten</a>.</p>
+                </header>
+                <div class="course-map-reading-layout">
+                    <div>
+                        <h3><cite>Operating Systems: Principles and Practice</cite></h3>
+                        <p class="course-map-book-meta">2nd edition · Thomas Anderson &amp; Michael Dahlin</p>
+                        <ul class="course-map-chapters">
+                            <li><span>Ch. 1</span>Introduction</li>
+                            <li><span>Ch. 2</span>The Kernel Abstraction</li>
+                            <li><span>Ch. 3</span>The Programming Interface</li>
+                            <li><span>Ch. 4</span>Concurrency and Threads</li>
+                            <li><span>Ch. 5</span>Synchronising Access to Shared Objects</li>
+                            <li><span>Ch. 6</span>Multi-object Synchronisation</li>
+                            <li><span>Ch. 7</span>Scheduling</li>
+                            <li><span>Ch. 8</span>Address Translation</li>
+                            <li><span>Ch. 9</span>Caching and Virtual Memory</li>
+                            <li><span>Ch. 11</span>File Systems</li>
+                            <li><span>Ch. 13</span>Files and Directories</li>
+                        </ul>
+                    </div>
+                    <aside class="course-map-security-reading" aria-labelledby="security-reading-heading">
+                        <p class="course-map-kicker">Security</p>
+                        <h3 id="security-reading-heading"><cite>Operating Systems and Middleware</cite></h3>
+                        <p>Max Hailperin · Chapter 11<br>+ course material</p>
+                        <a href="#security">Se koblingen til uke 46 →</a>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="course-map-section" id="eksamener" aria-labelledby="exams-heading">
+                <header class="course-map-section-header">
+                    <div><p class="course-map-kicker">Eksamen og løsningsforslag</p><h2 id="exams-heading">Tidligere eksamener</h2></div>
+                    <p>Materialet finnes i studiekildene. Dokumentene er ikke publisert her.</p>
+                </header>
+                <div class="course-map-exams">
+                    <article id="exam-h2023">
+                        <h3>H2023</h3>
+                        <ul><li>Eksamen</li><li>Løsning</li></ul>
+                    </article>
+                    <article id="exam-h2024">
+                        <h3>H2024</h3>
+                        <ul><li>Eksamen</li><li>Løsning</li><li>Egen correction</li></ul>
+                        <p class="course-map-correction"><strong>Correction to 2024 exam</strong>Question 21 skal bruke <code>if (f == 0)</code>, ikke <code>if (f &gt; 0)</code>.</p>
+                    </article>
+                    <article id="exam-h2025">
+                        <h3>H2025</h3>
+                        <ul><li>Eksamen</li><li>Suggested solution</li></ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="course-map-section" id="eksamensrelevans" aria-labelledby="exam-mapping-heading">
+                <header class="course-map-section-header">
+                    <div><p class="course-map-kicker">Eksamensoppgave ↔ tema</p><h2 id="exam-mapping-heading">Eksamensrelevans</h2></div>
+                </header>
+                <p class="course-map-mapping-note"><strong>Verifisert delutvalg.</strong> Dette er oppgaver som kunne kobles sikkert til et tema fra tilgjengelig eksamensmateriale. Listen er ikke en full kartlegging av eksamenene.</p>
+                <dl class="course-map-exam-mapping">
+                    <div>
+                        <dt><a href="#introduction">Introduction</a></dt>
+                        <dd><span>H2023 · spørsmål 1–2</span><span>H2024 · spørsmål 1–2</span></dd>
+                    </div>
+                    <div>
+                        <dt><a href="#safe-mode-transfer">Safe Mode Transfer</a></dt>
+                        <dd><span>H2025 · spørsmål 17</span></dd>
+                    </div>
+                    <div>
+                        <dt><a href="#scheduling">CPU Scheduling</a></dt>
+                        <dd><span>H2024 · spørsmål 26</span><span>H2025 · spørsmål 18</span></dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="course-map-section" id="praktisk-c" aria-labelledby="c-heading">
+                <header class="course-map-section-header">
+                    <div><p class="course-map-kicker">System programming</p><h2 id="c-heading">Praktisk C</h2></div>
+                    <p>Praktiske ferdigheter som brukes i kursarbeid og øvelser.</p>
+                </header>
+                <dl class="course-map-practice">
+                    <div><dt>Utvikling og minne</dt><dd>Kompilere og debugge enkle C-programmer; pointers, memory, <code>malloc/free</code> og <code>mmap</code>.</dd></div>
+                    <div><dt>Prosesser og I/O</dt><dd>Arbeide med <code>fork/exec/wait</code>, file I/O og signals.</dd></div>
+                    <div><dt>Tråder og synkronisering</dt><dd>Bruke <code>pthreads</code>, locks, semaphores og condition variables.</dd></div>
+                </dl>
+            </section>
+
+            <section class="course-map-section" id="ressurser" aria-labelledby="resources-heading">
+                <header class="course-map-section-header">
+                    <div><p class="course-map-kicker">Studiematerialet</p><h2 id="resources-heading">Ressurser</h2></div>
+                    <p>Lærebøker, undervisning og øvinger utfyller hverandre.</p>
+                </header>
+                <ul class="course-map-resources">
+                    <li>Textbook</li><li>Canvas lecture modules</li><li>Lecture slides</li>
+                    <li>Lecture transcripts</li><li>Canvas quizzes</li><li>Lab exercises</li>
+                    <li>Course work / assignments</li><li>C examples</li><li>Previous exams and solutions</li>
+                </ul>
+                <div class="course-map-resource-links">
+                    <a class="button-link" href="https://ntnu.instructure.com/" target="_blank" rel="noopener noreferrer">Åpne Canvas ↗</a>
+                    <a href="https://www.ntnu.no/studier/emner/IDATT2202/2026" target="_blank" rel="noopener noreferrer">Se emnet hos NTNU ↗</a>
+                    <p>Detaljerte dokument- og kurslenker finnes i emnerommet.</p>
+                </div>
+            </section>
         </main>
 
         <footer class="site-footer">© 2026 Andreas Sollie Steffensen</footer>
     </div>
 
     <script src="../../assets/site.js"></script>
-    <script src="course.js?v=20260902a"></script>
+    <script src="course.js?v=20260908a"></script>
 </body>
 </html>

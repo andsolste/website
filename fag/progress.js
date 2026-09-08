@@ -7,22 +7,6 @@
     const storageKey = "fag-progress:" + course;
     const memoryStore = {};
 
-    function rememberVisitedModule() {
-        const module = context.dataset.module;
-        if (!module || !context.hasAttribute("data-track-last-visited")) return;
-
-        try {
-            if (typeof localStorage !== "undefined") {
-                localStorage.setItem("fag-last-visited:" + course, module);
-            }
-        } catch {
-            // Siden fungerer fortsatt når nettleseren blokkerer localStorage.
-        }
-    }
-
-    rememberVisitedModule();
-    window.addEventListener("pageshow", rememberVisitedModule);
-
     function getProgress() {
         try {
             if (typeof localStorage === "undefined") return memoryStore[storageKey] || {};
@@ -46,10 +30,6 @@
         return value && typeof value === "object"
             ? { completed: Boolean(value.completed), checks: value.checks || {} }
             : { completed: Boolean(value), checks: {} };
-    }
-
-    function complete(progress, module) {
-        return moduleState(progress, module).completed;
     }
 
     function checklistIds(card) {
@@ -105,50 +85,6 @@
         setProgressBar(document.querySelector("[data-module-page-progress]"), percentage);
     }
 
-    function renderContinue(summaries, completedCount) {
-        const container = document.querySelector("[data-continue-card]");
-        if (!container) return;
-
-        const moduleLabel = container.querySelector("[data-continue-module]");
-        const title = container.querySelector("[data-continue-title]");
-        const status = container.querySelector("[data-continue-status]");
-        const link = container.querySelector("[data-continue-link]");
-        const next = summaries.find(item => !item.completed && item.checked > 0)
-            || summaries.find(item => !item.completed);
-
-        container.classList.toggle("is-course-complete", !next);
-
-        if (!next) {
-            if (moduleLabel) moduleLabel.textContent = "IDATT2202";
-            if (title) title.textContent = "Alle moduler fullført";
-            if (status) status.textContent = completedCount + " av " + moduleCount + " moduler fullført";
-            if (link) {
-                link.href = "#moduler";
-                link.textContent = "Se moduloversikten →";
-            }
-            return;
-        }
-
-        const moduleTitle = next.card.dataset.moduleTitle
-            || next.card.querySelector("h3")?.textContent?.trim()
-            || "Modul " + next.module;
-        const moduleHref = next.card.dataset.moduleHref
-            || next.card.querySelector("a[href]")?.getAttribute("href")
-            || "#moduler";
-
-        if (moduleLabel) moduleLabel.textContent = "Modul " + next.module;
-        if (title) title.textContent = moduleTitle;
-        if (status) {
-            status.textContent = next.checked > 0
-                ? next.checked + " av " + next.total + " aktiviteter · " + next.percentage + " %"
-                : "Ikke startet";
-        }
-        if (link) {
-            link.href = moduleHref;
-            link.textContent = next.checked > 0 ? "Fortsett →" : "Start modul →";
-        }
-    }
-
     function renderOverview(progress) {
         const summaries = Array.from(document.querySelectorAll("[data-module-card]"))
             .map(card => progressForCard(progress, card));
@@ -178,7 +114,6 @@
         document.querySelector("[data-course-progress-percent]")
             ?.replaceChildren(document.createTextNode(coursePercentage + " % samlet progresjon"));
         setProgressBar(document.querySelector("[data-course-progress-bar]"), coursePercentage);
-        renderContinue(summaries, completed);
     }
 
     const toggle = document.querySelector("[data-complete-toggle]");
