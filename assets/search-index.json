@@ -28,8 +28,8 @@
       "type": "Seksjon",
       "title": "Akkurat nå",
       "context": "Om meg",
-      "description": "Bachelorstudiet ved NTNU og nettsiden som samler fagnotater, studiemoduler og prosjekter.",
-      "keywords": ["NTNU", "bachelor", "Digital infrastruktur og cybersikkerhet", "fagnotater", "studiemoduler", "prosjekter"],
+      "description": "Bachelorstudiet ved NTNU og nettsiden som samler fagoversikter, notater og prosjekter.",
+      "keywords": ["NTNU", "bachelor", "Digital infrastruktur og cybersikkerhet", "fagoversikter", "notater", "prosjekter"],
       "url": "about.html#akkurat-na",
       "priority": 8
     },
@@ -138,7 +138,7 @@
       "title": "Fag",
       "context": "Studier",
       "description": "Aktive fag høsten 2026 og tidligere emner fra første studieår.",
-      "keywords": ["aktive fag", "tidligere fag", "høst 2026", "DCST2001", "EXPH0300", "IDATT2202", "IT2810", "DCST1001", "DCST1002", "HMS0002", "TDT4109", "TMA4412", "DCST1005", "DCST1006", "IDATT2002", "TDT4100", "moduler", "notater"],
+      "keywords": ["aktive fag", "tidligere fag", "høst 2026", "DCST2001", "EXPH0300", "IDATT2202", "IT2810", "DCST1001", "DCST1002", "HMS0002", "TDT4109", "TMA4412", "DCST1005", "DCST1006", "IDATT2002", "TDT4100", "fagoversikter", "notater"],
       "url": "fag/index.html",
       "featured": true,
       "priority": 20
