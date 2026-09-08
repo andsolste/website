@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT2810 – Webutvikling | Andreas Sollie Steffensen</title>
     <link rel="stylesheet" href="../../assets/site.css">
-    <link rel="stylesheet" href="../styles.css?v=20260908b">
+    <link rel="stylesheet" href="../styles.css?v=20260908c">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
@@ -176,60 +176,52 @@
                 </ol>
             </section>
 
-            <section class="it2810-section" id="teorimoduler" aria-labelledby="teorimoduler-heading">
+            <section class="it2810-section" id="fagkart" aria-labelledby="fagkart-heading">
                 <header class="it2810-section-header">
                     <p class="it2810-section-kicker">Kunnskapsgrunnlag</p>
-                    <h2 id="teorimoduler-heading">Tre kompakte teorimoduler</h2>
-                    <p>Modulene dekker fundamentet som er nyttig å forstå. Detaljene læres og brukes videre gjennom prosjektarbeid, kode, feilsøking, dokumentasjon og code review.</p>
-                    <p class="it2810-module-availability">2 av 3 moduler er tilgjengelig nå.</p>
+                    <h2 id="fagkart-heading">Sentrale temaer</h2>
+                    <p>Fra struktur og presentasjon i nettleseren til komponenter som deler data og reagerer på brukerhandlinger.</p>
                 </header>
-                <ol class="it2810-module-grid">
-                    <li>
-                        <article class="it2810-module-card is-available" id="modul-1">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 1</p>
-                                    <h3>Frontendgrunnlaget</h3>
-                                </div>
-                                <span class="it2810-module-status it2810-module-status-available">Tilgjengelig</span>
-                            </header>
-                            <p class="it2810-module-description">Det nødvendige fundamentet før React: webplattformen, semantisk HTML, CSS, responsivt og tilgjengelig design, samt JavaScript- og TypeScript-mønstrene du trenger for å lese moderne frontendkode.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTML · CSS · accessibility · responsive design · JavaScript · TypeScript · ES modules · arrow functions · array methods</p>
-                            <footer class="it2810-module-footer">
-                                <a class="button-link" href="modul-1.html">Åpne modul →</a>
-                            </footer>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="it2810-module-card is-available" id="modul-2">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 2</p>
-                                    <h3>React og dataflyt</h3>
-                                </div>
-                                <span class="it2810-module-status it2810-module-status-available">Tilgjengelig</span>
-                            </header>
-                            <p class="it2810-module-description">Komponentbasert frontend med JSX, props, state, hooks og dataflyt, fra små funksjonelle komponenter til delt state, Context og lokal lagring.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> React · JSX · components · props · state · hooks · Context · Web Storage</p>
-                            <footer class="it2810-module-footer">
-                                <a class="button-link" href="modul-2.html">Åpne modul →</a>
-                            </footer>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="it2810-module-card" id="planlagt-modul-3">
-                            <header class="it2810-module-header">
-                                <div>
-                                    <p class="module-number">Modul 3</p>
-                                    <h3>API, Git og kvalitet</h3>
-                                </div>
-                                <span class="it2810-module-status">Planlagt</span>
-                            </header>
-                            <p class="it2810-module-description">Hvordan webapplikasjonen kommuniserer med andre systemer og hvordan den utvikles og kvalitetssikres i praksis gjennom HTTP/REST, Git, testing og code review.</p>
-                            <p class="it2810-module-concepts"><strong>Temaer</strong> HTTP · REST · fetch · async data · Git · pull requests · testing · code review</p>
-                        </article>
-                    </li>
-                </ol>
+                <div class="it2810-topic-grid">
+                    <section class="it2810-topic" id="webplattform" aria-labelledby="webplattform-heading">
+                        <h3 id="webplattform-heading">Webplattform og grensesnitt</h3>
+                        <p>HTML beskriver struktur og mening, CSS styrer presentasjon, og JavaScript gir dynamisk oppførsel. Nettleseren kobler dette til webplattformen med HTTP, URL-er og browser APIs.</p>
+                        <ul>
+                            <li><strong>Semantikk og accessibility:</strong> Bruk riktige HTML-elementer, tydelige overskrifter, labels og alternativ tekst. Native knapper og lenker gir et bedre utgangspunkt for tastaturbruk enn generiske elementer; WCAG støtter vurderingen av tilgjengelighet.</li>
+                            <li><strong>Layout:</strong> CSS-selectors knytter regler til elementer. Flexbox organiserer primært én dimensjon, mens Grid organiserer rader og kolonner.</li>
+                            <li><strong>Responsivt design:</strong> Viewport, media queries, breakpoints og fleksible bilder tilpasser layouten til plassen som finnes – ikke bare ved å krympe innholdet.</li>
+                        </ul>
+                    </section>
+                    <section class="it2810-topic" id="javascript-typescript" aria-labelledby="javascript-typescript-heading">
+                        <h3 id="javascript-typescript-heading">JavaScript og TypeScript</h3>
+                        <p>JavaScript er dynamisk typet: typen følger verdien ved runtime. TypeScript legger til statisk typekontroll under utvikling og blir til JavaScript før kjøring.</p>
+                        <ul>
+                            <li><strong>Kodelesing:</strong> Arrow functions brukes til callbacks og datatransformasjoner. ES modules deler kode med import/export, og destructuring henter felt fra objekter.</li>
+                            <li><strong>Data:</strong> Interfaces og union types beskriver forventede verdier; type inference kan utlede typen. <code>map</code> transformerer, <code>filter</code> velger og <code>reduce</code> samler verdier.</li>
+                            <li><strong>Immutability:</strong> Lag nye verdier fremfor å mutere eksisterende data. Dette gjør datatransformasjoner tydeligere og er relevant når React-state oppdateres.</li>
+                        </ul>
+                        <p class="it2810-concepts">Verktøy: Node.js kjører utviklingsverktøyene · npm/pnpm håndterer pakker · Vite gir development server og build · ESLint analyserer kode.</p>
+                    </section>
+                    <section class="it2810-topic" id="react" aria-labelledby="react-heading">
+                        <h3 id="react-heading">React og komponenter</h3>
+                        <p>React er et JavaScript-bibliotek som bygger UI av gjenbrukbare komponenter. Utvikleren beskriver resultatet for gitte data fremfor å styre hvert enkelt DOM-steg.</p>
+                        <ul>
+                            <li><strong>JSX:</strong> HTML-lignende syntaks beskriver React-elementer inne i JavaScript eller TypeScript. Funksjonelle komponenter deler grensesnittet i tydelige ansvarsområder.</li>
+                            <li><strong>Props:</strong> Data sendes fra parent til child og behandles som read-only av mottakeren. Samme komponent kan gjenbrukes med ulike data.</li>
+                            <li><strong>Events og callbacks:</strong> Brukerhandlinger utløser funksjoner. En child kan kalle en callback fra parent slik at dataenes eier oppdaterer state.</li>
+                        </ul>
+                        <p class="it2810-concepts">Data ned gjennom props → handlinger tilbake gjennom callbacks → state endres → UI rendres.</p>
+                    </section>
+                    <section class="it2810-topic" id="state-dataflyt" aria-labelledby="state-dataflyt-heading">
+                        <h3 id="state-dataflyt-heading">State og dataflyt</h3>
+                        <p>State er data som kan endres og påvirker UI. <code>useState</code> gir lokal state; en oppdatering får React til å evaluere grensesnittet på nytt, uten at hele DOM-en nødvendigvis erstattes.</p>
+                        <ul>
+                            <li><strong>Eierskap:</strong> Løft delt state til nærmeste felles parent og unngå flere kopier av samme verdi. Context og <code>useContext</code> deler data i et subtree når prop drilling blir upraktisk.</li>
+                            <li><strong>Effects:</strong> <code>useEffect</code> håndterer side effects og synkronisering utenfor ren rendering. Verdier som kan beregnes direkte fra props eller state trenger normalt ikke en effect.</li>
+                            <li><strong>Web Storage:</strong> <code>localStorage</code> bevarer data mellom besøk, mens <code>sessionStorage</code> gjelder tabben eller sesjonen. Lagring er ikke React-state og erstatter ikke tydelig dataeierskap.</li>
+                        </ul>
+                    </section>
+                </div>
             </section>
 
             <section class="it2810-section" id="arbeidsform" aria-labelledby="arbeidsform-heading">
