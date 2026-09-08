@@ -96,6 +96,8 @@ button:focus-visible {
 }
 
 .sidebar-brand {
+    color: inherit;
+    text-decoration: none;
     display: flex;
     min-width: 0;
     align-items: center;
@@ -439,11 +441,12 @@ html.sidebar-collapsed {
     --sidebar-width: 76px;
 }
 
-html.sidebar-collapsed .sidebar-brand {
+html.sidebar-collapsed .brand-name {
     display: none;
 }
 
 html.sidebar-collapsed .sidebar-header {
+    flex-direction: column;
     justify-content: center;
     padding-right: .75rem;
     padding-left: .75rem;
@@ -507,7 +510,12 @@ html.sidebar-collapsed .sidebar-footer {
         display: flex;
     }
 
+    html.sidebar-collapsed .brand-name {
+        display: block;
+    }
+
     html.sidebar-collapsed .sidebar-header {
+        flex-direction: row;
         padding: 1rem;
         justify-content: space-between;
     }
@@ -1220,3 +1228,9 @@ html.search-open body {
     }
 }
 
+
+/* Restore desktop width before enabling its normal transitions. */
+html.sidebar-restoring .sidebar,
+html.sidebar-restoring .page-shell {
+    transition: none;
+}

@@ -25,6 +25,42 @@
     let activeResultIndex = -1;
 
     const isMobile = () => mobileViewport.matches;
+    const collapseStorageKey = "sidebar-collapsed";
+    let desktopCollapsed = false;
+
+    try {
+        desktopCollapsed = localStorage.getItem(collapseStorageKey) === "true";
+    } catch {
+        // Navigation remains usable when browser storage is unavailable.
+    }
+
+    root.classList.add("sidebar-restoring");
+    root.classList.toggle("sidebar-collapsed", !isMobile() && desktopCollapsed);
+
+    const currentPath = window.location.pathname.toLowerCase();
+    const relativePath = currentPath.startsWith(siteRoot.pathname.toLowerCase())
+        ? currentPath.slice(siteRoot.pathname.length)
+        : "";
+    const activeSection = relativePath === "about.html" ? "about"
+        : /^(projects)(\/|$)/.test(relativePath) ? "projects"
+        : /^(fag)(\/|$)/.test(relativePath) ? "fag"
+        : null;
+    const navigationPaths = {
+        about: "about.html",
+        projects: "projects/index.html",
+        fag: "fag/index.html"
+    };
+
+    const brandLink = sidebar.querySelector("a.sidebar-brand");
+    if (brandLink) brandLink.href = new URL("index.html", siteRoot).href;
+
+    sidebarNavigation.querySelectorAll("[data-nav-section]").forEach((link) => {
+        const section = link.dataset.navSection;
+        if (!navigationPaths[section]) return;
+        link.href = new URL(navigationPaths[section], siteRoot).href;
+        link.removeAttribute("aria-current");
+        if (section === activeSection) link.setAttribute("aria-current", "page");
+    });
 
     const updateControls = () => {
         if (isMobile()) {
@@ -72,7 +108,13 @@
             return;
         }
 
-        root.classList.toggle("sidebar-collapsed");
+        desktopCollapsed = !desktopCollapsed;
+        root.classList.toggle("sidebar-collapsed", desktopCollapsed);
+        try {
+            localStorage.setItem(collapseStorageKey, String(desktopCollapsed));
+        } catch {
+            // Keep the in-memory preference for this page.
+        }
         updateControls();
     });
 
@@ -101,7 +143,6 @@
             slug: "it2810"
         }
     ];
-    const currentPath = window.location.pathname.toLowerCase();
     const subjectNavigation = document.createElement("nav");
     const subjectLabel = document.createElement("p");
     const subjectList = document.createElement("ul");
@@ -544,6 +585,7 @@
     });
 
     const resetResponsiveState = () => {
+        root.classList.toggle("sidebar-collapsed", !isMobile() && desktopCollapsed);
         root.classList.remove("sidebar-open");
         scrim.hidden = true;
         pageShell.removeAttribute("inert");
@@ -562,6 +604,9 @@
         mobileViewport.addListener(resetResponsiveState);
     }
 
-    updateControls();
+    resetResponsiveState();
+    // Commit the restored layout without animating from the default width.
+    sidebar.getBoundingClientRect();
+    root.classList.remove("sidebar-restoring");
 })();
 
