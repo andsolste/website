@@ -20,7 +20,6 @@
         const questions = Array.from(quiz.querySelectorAll("[data-quiz-question]"));
         const summary = quiz.querySelector("[data-quiz-summary]");
         const retry = quiz.querySelector("[data-quiz-retry]");
-        const progressCheck = quiz.querySelector("[data-quiz-progress-check]");
         if (!form || !questions.length) return;
 
         form.addEventListener("submit", (event) => {
@@ -61,17 +60,6 @@
             }
             if (retry) retry.hidden = false;
 
-            if (score === questions.length && progressCheck && !progressCheck.checked) {
-                const completionToggle = document.querySelector("[data-complete-toggle]");
-                const wasManuallyComplete = Boolean(completionToggle?.checked);
-                progressCheck.checked = true;
-                progressCheck.dispatchEvent(new Event("change", { bubbles: true }));
-
-                if (wasManuallyComplete && completionToggle && !completionToggle.checked) {
-                    completionToggle.checked = true;
-                    completionToggle.dispatchEvent(new Event("change", { bubbles: true }));
-                }
-            }
         });
 
         retry?.addEventListener("click", () => {
@@ -98,4 +86,3 @@
         });
     });
 })();
-

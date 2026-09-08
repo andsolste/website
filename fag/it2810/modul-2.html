@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT2810 – Modul 2: React og dataflyt | Andreas Sollie Steffensen</title>
     <link rel="stylesheet" href="../../assets/site.css">
-    <link rel="stylesheet" href="../styles.css?v=20260901c">
+    <link rel="stylesheet" href="../styles.css?v=20260908b">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
@@ -42,7 +42,7 @@
             <span class="mobile-brand">AS</span>
         </div>
 
-        <main class="site-main content-page module-page it2810-module-page" id="main-content" data-course="it2810" data-module="2" data-module-count="3">
+        <main class="site-main content-page module-page it2810-module-page" id="main-content">
             <a class="back-link" href="index.html">← Til IT2810</a>
 
             <header class="module-header module-study-header it2810-study-header">
@@ -56,24 +56,15 @@
                     <li>Hooks &amp; Context</li>
                 </ul>
 
-                <div class="module-page-progress" aria-live="polite">
-                    <div class="module-page-progress-labels">
-                        <strong data-module-page-status>0 av 15 aktiviteter fullført</strong>
-                        <span data-module-page-percent>0 %</span>
-                    </div>
-                    <div class="progress-track" role="progressbar" aria-label="Progresjon i IT2810 modul 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                        <div class="progress-bar" data-module-page-progress></div>
-                    </div>
-                </div>
             </header>
 
             <section class="module-section module-preparation" id="for-forelesningen" aria-labelledby="for-forelesningen-heading">
                 <h2 id="for-forelesningen-heading">Før forelesningen</h2>
                 <div class="module-panel">
-                    <ul class="checklist">
-                        <li><label><input type="checkbox" data-check-id="before-1"> Jeg kan lese arrow functions og import/export fra Modul 1</label></li>
-                        <li><label><input type="checkbox" data-check-id="before-2"> Jeg kjenner enkel TypeScript-typing og interfaces</label></li>
-                        <li><label><input type="checkbox" data-check-id="before-3"> Jeg forstår at immutability ofte betyr å lage nye verdier fremfor å mutere eksisterende data</label></li>
+                    <ul class="study-list">
+                        <li>Jeg kan lese arrow functions og import/export fra Modul 1</li>
+                        <li>Jeg kjenner enkel TypeScript-typing og interfaces</li>
+                        <li>Jeg forstår at immutability ofte betyr å lage nye verdier fremfor å mutere eksisterende data</li>
                     </ul>
                 </div>
             </section>
@@ -81,34 +72,34 @@
             <section class="module-section module-outcomes it2810-learning-map" id="dette-skal-du-forsta" aria-labelledby="forsta-heading">
                 <p class="it2810-section-kicker">Kart før du leser</p>
                 <h2 id="forsta-heading">Dette skal du forstå</h2>
-                <p>Kryss av når du kan forklare sammenhengen med egne ord og kjenne den igjen i kode.</p>
+                <p>Bruk punktene til å sjekke at du kan forklare sammenhengen med egne ord og kjenne den igjen i kode.</p>
                 <div class="it2810-understanding-grid">
                     <section aria-labelledby="understanding-react-heading">
                         <h3 id="understanding-react-heading">React og JSX</h3>
-                        <ul class="checklist">
-                            <li><label><input type="checkbox" data-check-id="understanding-1"> Jeg kan forklare hva React er og hva det brukes til</label></li>
-                            <li><label><input type="checkbox" data-check-id="understanding-2"> Jeg kan forklare hva JSX representerer</label></li>
+                        <ul class="study-list">
+                            <li>Jeg kan forklare hva React er og hva det brukes til</li>
+                            <li>Jeg kan forklare hva JSX representerer</li>
                         </ul>
                     </section>
                     <section aria-labelledby="understanding-components-heading">
                         <h3 id="understanding-components-heading">Components og data</h3>
-                        <ul class="checklist">
-                            <li><label><input type="checkbox" data-check-id="understanding-3"> Jeg kan dele et UI inn i funksjonelle components med fornuftige ansvar</label></li>
-                            <li><label><input type="checkbox" data-check-id="understanding-4"> Jeg kan forklare hvordan props flytter data fra parent til child</label></li>
+                        <ul class="study-list">
+                            <li>Jeg kan dele et UI inn i funksjonelle components med fornuftige ansvar</li>
+                            <li>Jeg kan forklare hvordan props flytter data fra parent til child</li>
                         </ul>
                     </section>
                     <section aria-labelledby="understanding-state-heading">
                         <h3 id="understanding-state-heading">State og handlinger</h3>
-                        <ul class="checklist">
-                            <li><label><input type="checkbox" data-check-id="understanding-5"> Jeg kan forklare forskjellen mellom props og state</label></li>
-                            <li><label><input type="checkbox" data-check-id="understanding-6"> Jeg kan forklare hvordan events og callbacks lar en child påvirke state høyere i hierarkiet</label></li>
+                        <ul class="study-list">
+                            <li>Jeg kan forklare forskjellen mellom props og state</li>
+                            <li>Jeg kan forklare hvordan events og callbacks lar en child påvirke state høyere i hierarkiet</li>
                         </ul>
                     </section>
                     <section aria-labelledby="understanding-hooks-heading">
                         <h3 id="understanding-hooks-heading">Hooks, deling og lagring</h3>
-                        <ul class="checklist">
-                            <li><label><input type="checkbox" data-check-id="understanding-7"> Jeg kan bruke konseptene useState og useEffect på grunnnivå</label></li>
-                            <li><label><input type="checkbox" data-check-id="understanding-8"> Jeg kan forklare når Context og Web Storage er relevante</label></li>
+                        <ul class="study-list">
+                            <li>Jeg kan bruke konseptene useState og useEffect på grunnnivå</li>
+                            <li>Jeg kan forklare når Context og Web Storage er relevante</li>
                         </ul>
                     </section>
                 </div>
@@ -595,7 +586,7 @@ function Search({ query, onQueryChange }: SearchProps) {
                     <section class="module-study-section" id="selvtest" aria-labelledby="selvtest-heading" data-quiz>
                         <p class="it2810-section-kicker">Kontroller forståelsen</p>
                         <h2 id="selvtest-heading">Test deg selv</h2>
-                        <p>Svar på alle ti spørsmål. Full poengsum registreres automatisk i modulprogresjonen.</p>
+                        <p>Svar på alle ti spørsmål, sjekk resultatet og les forklaringene.</p>
                         <form class="module-quiz" data-quiz-form novalidate>
                             <fieldset class="quiz-question" data-quiz-question data-correct="b" data-explanation="En component er en gjenbrukbar del av brukergrensesnittet med et avgrenset ansvar.">
                                 <legend><span>1</span> Hva er en React component?</legend>
@@ -713,31 +704,21 @@ function Search({ query, onQueryChange }: SearchProps) {
                                 <p class="quiz-summary" data-quiz-summary aria-live="polite"></p>
                             </div>
                         </form>
-
-                        <label class="quiz-progress-status">
-                            <input type="checkbox" data-check-id="quiz-complete" data-quiz-progress-check disabled>
-                            Full poengsum i selvtesten
-                        </label>
                     </section>
 
                     <section class="module-study-section" id="etter-forelesningen" aria-labelledby="etter-heading">
                         <p class="it2810-section-kicker">Avslutt arbeidet</p>
                         <h2 id="etter-heading">Etter modulen</h2>
                         <div class="module-panel">
-                            <ul class="checklist">
-                                <li><label><input type="checkbox" data-check-id="after-1"> Jeg kan identifisere components, props og state i React-kode</label></li>
-                                <li><label><input type="checkbox" data-check-id="after-2"> Jeg kan forklare dataflyten gjennom props og callbacks</label></li>
-                                <li><label><input type="checkbox" data-check-id="after-3"> Jeg kan forklare når useState, useEffect, Context og Web Storage brukes</label></li>
+                            <ul class="study-list">
+                                <li>Jeg kan identifisere components, props og state i React-kode</li>
+                                <li>Jeg kan forklare dataflyten gjennom props og callbacks</li>
+                                <li>Jeg kan forklare når useState, useEffect, Context og Web Storage brukes</li>
                             </ul>
                         </div>
                     </section>
                 </div>
             </div>
-
-            <label class="completion-control">
-                <input type="checkbox" data-complete-toggle>
-                Marker modul som fullført
-            </label>
 
             <nav class="module-navigation" aria-label="Modulnavigasjon">
                 <a class="button-link" href="modul-1.html">← Forrige: Frontendgrunnlaget</a>
@@ -748,8 +729,6 @@ function Search({ query, onQueryChange }: SearchProps) {
     </div>
 
     <script src="../../assets/site.js"></script>
-    <script src="../progress.js?v=20260828d"></script>
-    <script src="../quiz.js?v=20260828a"></script>
+    <script src="../quiz.js?v=20260908b"></script>
 </body>
 </html>
-

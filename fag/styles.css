@@ -273,22 +273,6 @@
     margin-bottom: 0;
 }
 
-.progress-track {
-    width: 100%;
-    height: .5rem;
-    overflow: hidden;
-    border-radius: 999px;
-    background: var(--border);
-}
-
-.progress-bar {
-    width: 0;
-    height: 100%;
-    border-radius: inherit;
-    background: var(--purple);
-    transition: width .2s ease;
-}
-
 /* Moduloversikt på fagets index-side */
 .module-section {
     margin-top: 2.5rem;
@@ -299,14 +283,6 @@
 .module-section > h2 {
     margin: 0 0 1.25rem;
     font-size: 1.45rem;
-}
-
-.module-status {
-    min-height: 1.5rem;
-    margin: .65rem 0 .55rem;
-    grid-area: status;
-    color: var(--text-muted);
-    font-size: .92rem;
 }
 
 /* IT2810 – emneoversikt og webstack */
@@ -846,59 +822,19 @@
     margin-bottom: 0;
 }
 
-/* Sjekklister og fullføringskontroll */
-.checklist {
+/* Faglige læringspunkter og selvkontroll */
+.study-list {
     display: grid;
     margin: 0;
-    padding: 0;
+    padding-left: 1.25rem;
     gap: .85rem;
-    list-style: none;
 }
 
-.checklist label {
-    display: flex;
-    align-items: flex-start;
-    gap: .75rem;
+.study-list li {
     color: var(--text-primary);
     line-height: 1.55;
-    cursor: pointer;
 }
 
-.checklist input,
-.completion-control input {
-    width: 1.1rem;
-    height: 1.1rem;
-    flex: 0 0 auto;
-    accent-color: var(--purple);
-}
-
-.checklist input {
-    margin-top: .2rem;
-}
-
-.completion-control {
-    display: flex;
-    width: fit-content;
-    margin: 2rem 0 0;
-    padding: .8rem 1rem;
-    align-items: center;
-    gap: .7rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface-subtle);
-    color: var(--text-primary);
-    font-weight: 700;
-    cursor: pointer;
-    transition: border-color .15s ease, background-color .15s ease;
-}
-
-.completion-control:hover {
-    border-color: var(--purple);
-    background: var(--purple-subtle);
-}
-
-.checklist input:focus-visible,
-.completion-control input:focus-visible,
 summary:focus-visible {
     outline: 3px solid var(--purple-light);
     outline-offset: 3px;
@@ -1026,34 +962,6 @@ th {
     margin-right: 1.25rem;
     color: var(--border);
     content: "·";
-}
-
-.module-page-progress {
-    max-width: 620px;
-    margin-top: 1.5rem;
-    padding: 1rem 1.1rem;
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--purple);
-    border-radius: 10px;
-    background: var(--surface-subtle);
-}
-
-.module-page-progress-labels {
-    display: flex;
-    margin-bottom: .65rem;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.module-page-progress-labels strong {
-    color: var(--text-primary);
-    font-size: .94rem;
-}
-
-.module-page-progress-labels span {
-    color: var(--text-muted);
-    font-size: .88rem;
 }
 
 .module-outcomes > p:not(.it2810-section-kicker) {
@@ -1461,26 +1369,6 @@ th {
     font-weight: 750;
 }
 
-.quiz-progress-status {
-    display: flex;
-    width: fit-content;
-    margin-top: 1rem;
-    align-items: center;
-    gap: .6rem;
-    color: var(--text-muted);
-    font-size: .9rem;
-}
-
-.quiz-progress-status input {
-    width: 1rem;
-    height: 1rem;
-    accent-color: var(--purple);
-}
-
-.quiz-progress-status:has(input:checked) {
-    color: var(--purple-light);
-}
-
 @media (max-width: 900px) {
     .module-study-layout {
         grid-template-columns: minmax(0, 1fr);
@@ -1531,12 +1419,6 @@ th {
 
     .module-meta li + li::before {
         display: none;
-    }
-
-    .module-page-progress-labels {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: .25rem;
     }
 
     .module-toc ol {
@@ -1696,11 +1578,11 @@ th {
     font-size: 1rem;
 }
 
-.it2810-understanding-grid .checklist {
+.it2810-understanding-grid .study-list {
     gap: .75rem;
 }
 
-.it2810-understanding-grid .checklist label {
+.it2810-understanding-grid .study-list li {
     color: var(--text-secondary);
     font-size: .92rem;
 }
@@ -2218,21 +2100,11 @@ th {
     display: grid;
     margin-top: auto;
     padding-top: 1rem;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
     align-items: end;
     gap: 1rem;
     border-top: 1px solid var(--border);
-}
-
-.it2810-module-footer .module-status {
-    margin: 0 0 .5rem;
-    color: var(--text-secondary);
-    font-size: .85rem;
-    font-weight: 700;
-}
-
-.it2810-module-footer .progress-track {
-    max-width: 18rem;
 }
 
 .it2810-module-availability {

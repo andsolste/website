@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "entries": [
     {
       "id": "page-home",
@@ -138,7 +138,7 @@
       "title": "Fag",
       "context": "Studier",
       "description": "Aktive fag høsten 2026 og tidligere emner fra første studieår.",
-      "keywords": ["aktive fag", "tidligere fag", "høst 2026", "DCST2001", "EXPH0300", "IDATT2202", "IT2810", "DCST1001", "DCST1002", "HMS0002", "TDT4109", "TMA4412", "DCST1005", "DCST1006", "IDATT2002", "TDT4100", "moduler", "notater", "progresjon"],
+      "keywords": ["aktive fag", "tidligere fag", "høst 2026", "DCST2001", "EXPH0300", "IDATT2202", "IT2810", "DCST1001", "DCST1002", "HMS0002", "TDT4109", "TMA4412", "DCST1005", "DCST1006", "IDATT2002", "TDT4100", "moduler", "notater"],
       "url": "fag/index.html",
       "featured": true,
       "priority": 20
