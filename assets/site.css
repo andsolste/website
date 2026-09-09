@@ -691,6 +691,12 @@ html.sidebar-collapsed .sidebar-footer {
     text-decoration: underline;
 }
 
+.error-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
 .page-intro {
     max-width: 780px;
     margin: 0 0 2.75rem;
