@@ -124,21 +124,25 @@
     const activeSubjects = [
         {
             code: "DCST2001",
+            label: "Nettverk",
             name: "Sammenkoblede nettverk og nettverkssikkerhet",
             slug: "dcst2001"
         },
         {
             code: "EXPH0300",
+            label: "Exphil",
             name: "Examen philosophicum for naturvitenskap og teknologi",
             slug: "exph0300"
         },
         {
             code: "IDATT2202",
+            label: "Operativsystemer",
             name: "Operativsystemer",
             slug: "idatt2202"
         },
         {
             code: "IT2810",
+            label: "Webutvikling",
             name: "Webutvikling",
             slug: "it2810"
         }
@@ -161,7 +165,7 @@
 
         link.className = "sidebar-subjects-link";
         link.href = new URL("index.html", subjectDirectory).href;
-        link.textContent = subject.code;
+        link.textContent = subject.label;
         link.setAttribute("aria-label", `${subject.code} – ${subject.name}`);
         link.title = `${subject.code} – ${subject.name}`;
 
